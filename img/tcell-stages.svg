@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" width="900" height="530" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="530" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">T-cell precursor stages and the T-ALL subtypes</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Thymocytes mature from early precursors to single-positive T cells; T-ALL freezes at one stage.</text>
+<circle cx="250" cy="128" r="30" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.6"/>
+<circle cx="250" cy="128" r="18.0" fill="#b3541e" opacity=".55"/>
+<text x="250" y="182.0" font-size="14" font-weight="700" fill="#b3541e" text-anchor="middle">ETP</text>
+<text x="250" y="200.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="middle">early T precursor</text>
+<path d="M286 128 L349 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="385" cy="128" r="30" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.6"/>
+<circle cx="385" cy="128" r="18.0" fill="#3d5fa8" opacity=".55"/>
+<text x="385" y="182.0" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">Pro-T</text>
+<text x="385" y="200.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="middle">T-I</text>
+<path d="M421 128 L484 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="520" cy="128" r="30" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.6"/>
+<circle cx="520" cy="128" r="18.0" fill="#3d5fa8" opacity=".55"/>
+<text x="520" y="182.0" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">Pre-T</text>
+<text x="520" y="200.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="middle">T-II</text>
+<path d="M556 128 L619 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="655" cy="128" r="30" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.6"/>
+<circle cx="655" cy="128" r="18.0" fill="#5b3f8c" opacity=".55"/>
+<text x="655" y="182.0" font-size="14" font-weight="700" fill="#5b3f8c" text-anchor="middle">Cortical</text>
+<text x="655" y="200.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="middle">T-III</text>
+<path d="M691 128 L754 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="790" cy="128" r="30" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.6"/>
+<circle cx="790" cy="128" r="18.0" fill="#2f7d4f" opacity=".55"/>
+<text x="790" y="182.0" font-size="14" font-weight="700" fill="#2f7d4f" text-anchor="middle">Medullary</text>
+<text x="790" y="200.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="middle">T-IV</text>
+<rect x="20" y="230" width="860" height="27" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="248.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">Cytoplasmic CD3, CD7</text>
+<rect x="200" y="237" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="335" y="237" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="470" y="237" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="605" y="237" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="740" y="237" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="260" width="860" height="27" rx="4" fill="#fff" stroke="none" stroke-width="0"/>
+<text x="30" y="278.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">TdT</text>
+<rect x="200" y="267" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="335" y="267" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="470" y="267" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="605" y="267" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="740" y="267" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<rect x="20" y="290" width="860" height="27" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="308.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">CD34</text>
+<rect x="200" y="297" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="335" y="297" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<rect x="470" y="297" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<line x1="637" y1="303.5" x2="673" y2="303.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="772" y1="303.5" x2="808" y2="303.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="20" y="320" width="860" height="27" rx="4" fill="#fff" stroke="none" stroke-width="0"/>
+<text x="30" y="338.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">Myeloid or stem markers</text>
+<rect x="200" y="327" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<line x1="367" y1="333.5" x2="403" y2="333.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="502" y1="333.5" x2="538" y2="333.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="637" y1="333.5" x2="673" y2="333.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="772" y1="333.5" x2="808" y2="333.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="20" y="350" width="860" height="27" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="368.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">CD5</text>
+<rect x="200" y="357" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<line x1="367" y1="363.5" x2="403" y2="363.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="470" y="357" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="605" y="357" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="740" y="357" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="380" width="860" height="27" rx="4" fill="#fff" stroke="none" stroke-width="0"/>
+<text x="30" y="398.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">CD2</text>
+<rect x="200" y="387" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<line x1="367" y1="393.5" x2="403" y2="393.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="470" y="387" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<rect x="605" y="387" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="740" y="387" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="410" width="860" height="27" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="428.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">CD1a</text>
+<line x1="232" y1="423.5" x2="268" y2="423.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="367" y1="423.5" x2="403" y2="423.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="502" y1="423.5" x2="538" y2="423.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="605" y="417" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<line x1="772" y1="423.5" x2="808" y2="423.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="20" y="440" width="860" height="27" rx="4" fill="#fff" stroke="none" stroke-width="0"/>
+<text x="30" y="458.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">CD4 and CD8</text>
+<line x1="232" y1="453.5" x2="268" y2="453.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="367" y1="453.5" x2="403" y2="453.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="470" y="447" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<rect x="605" y="447" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="740" y="447" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<rect x="20" y="470" width="860" height="27" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="488.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">Surface CD3</text>
+<line x1="232" y1="483.5" x2="268" y2="483.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="367" y1="483.5" x2="403" y2="483.5" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="502" y1="483.5" x2="538" y2="483.5" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="605" y="477" width="100" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<rect x="740" y="477" width="100" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="512" width="400" height="44" rx="8" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<rect x="34" y="527" width="36" height="13" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<text x="78" y="538.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">expressed</text>
+<rect x="160" y="527" width="36" height="13" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<text x="204" y="538.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">dim, partial or variable</text>
+<rect x="440" y="512" width="440" height="44" rx="8" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="660" y="530.0" font-size="11.5" font-weight="600" fill="#a3223a" text-anchor="middle">CD4 and CD8: double positive in cortical, single positive in medullary.</text>
+<text x="660" y="547.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">ETP: CD1a and CD8 &lt;5%, CD5 &lt;75%, myeloid/stem ≥25%, MPO &lt;3%.</text>
+</svg>

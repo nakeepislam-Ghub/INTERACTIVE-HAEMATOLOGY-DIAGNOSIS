@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 530" width="880" height="530" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="880" height="530" fill="#fff"/>
+<text x="440" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Why patients with CKD are anaemic</text>
+<circle cx="440" cy="282" r="74" fill="#a3223a"/>
+<text x="440" y="278.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Anaemia</text>
+<text x="440" y="300.0" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">of CKD</text>
+<line x1="440.0" y1="204.0" x2="440.0" y2="82.0" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="325.0" y="56.0" width="230" height="52" rx="10" fill="#fff" stroke="#a3223a" stroke-width="1.6"/>
+<text x="440.0" y="78.0" font-size="14.5" font-weight="700" fill="#a3223a" text-anchor="middle">Low erythropoietin</text>
+<text x="440.0" y="97.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">the main cause</text>
+<line x1="495.2" y1="226.8" x2="645.1" y2="140.6" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="530.0609665440988" y="114.57864376269052" width="230" height="52" rx="10" fill="#fff" stroke="#a8700f" stroke-width="1.6"/>
+<text x="645.0609665440988" y="136.6" font-size="14.5" font-weight="700" fill="#a8700f" text-anchor="middle">Iron deficiency</text>
+<text x="645.0609665440988" y="155.6" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">blood loss, dialysis, poor absorption</text>
+<line x1="518.0" y1="282.0" x2="730.0" y2="282.0" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="615.0" y="256.0" width="230" height="52" rx="10" fill="#fff" stroke="#a8700f" stroke-width="1.6"/>
+<text x="730.0" y="278.0" font-size="14.5" font-weight="700" fill="#a8700f" text-anchor="middle">High hepcidin</text>
+<text x="730.0" y="297.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">inflammation, less renal clearance</text>
+<line x1="495.2" y1="337.2" x2="645.1" y2="423.4" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="530.0609665440988" y="397.4213562373095" width="230" height="52" rx="10" fill="#fff" stroke="#5b3f8c" stroke-width="1.6"/>
+<text x="645.0609665440988" y="419.4" font-size="14.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">Shorter red cell life</text>
+<text x="645.0609665440988" y="438.4" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">uraemic toxins</text>
+<line x1="440.0" y1="360.0" x2="440.0" y2="482.0" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="325.0" y="456.0" width="230" height="52" rx="10" fill="#fff" stroke="#3d5fa8" stroke-width="1.6"/>
+<text x="440.0" y="478.0" font-size="14.5" font-weight="700" fill="#3d5fa8" text-anchor="middle">Marrow suppression</text>
+<text x="440.0" y="497.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">uraemia; hyperparathyroid fibrosis</text>
+<line x1="384.8" y1="337.2" x2="234.9" y2="423.4" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="119.93903345590124" y="397.4213562373095" width="230" height="52" rx="10" fill="#fff" stroke="#2f7d4f" stroke-width="1.6"/>
+<text x="234.93903345590124" y="419.4" font-size="14.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">Vitamin loss</text>
+<text x="234.93903345590124" y="438.4" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">folate and B12 lost in dialysis</text>
+<line x1="362.0" y1="282.0" x2="150.0" y2="282.0" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="35.0" y="256.0" width="230" height="52" rx="10" fill="#fff" stroke="#5d5663" stroke-width="1.6"/>
+<text x="150.0" y="278.0" font-size="14.5" font-weight="700" fill="#5d5663" text-anchor="middle">Drugs</text>
+<text x="150.0" y="297.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">ACE inhibitors; aluminium (old)</text>
+<line x1="384.8" y1="226.8" x2="234.9" y2="140.6" stroke="#b8b1bd" stroke-width="1.5"/>
+<rect x="119.93903345590118" y="114.57864376269052" width="230" height="52" rx="10" fill="#fff" stroke="#a3223a" stroke-width="1.6"/>
+<text x="234.93903345590118" y="136.6" font-size="14.5" font-weight="700" fill="#a3223a" text-anchor="middle">Blood loss</text>
+<text x="234.93903345590118" y="155.6" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">platelet dysfunction, sampling</text>
+<circle cx="440" cy="282" r="74" fill="#a3223a"/>
+<text x="440" y="278.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Anaemia</text>
+<text x="440" y="300.0" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">of CKD</text>
+</svg>

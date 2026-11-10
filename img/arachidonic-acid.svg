@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="880" height="520" fill="#fff"/>
+<text x="440" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Arachidonic acid: two products with opposite effects</text>
+<rect x="300.0" y="64.0" width="280" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="440" y="88.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">Membrane phospholipids</text>
+<path d="M440 104 L440 140" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<text x="452" y="128.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="start">phospholipase A₂</text>
+<rect x="330.0" y="142.0" width="220" height="40" rx="10" fill="#fbeccb" stroke="#a8700f" stroke-width="1.3"/>
+<text x="440" y="166.9" font-size="14" font-weight="700" fill="#a8700f" text-anchor="middle">Arachidonic acid</text>
+<path d="M440 182 L440 222" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<text x="452" y="206.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="start">cyclo-oxygenase (COX-1)</text>
+<rect x="98.32000000000002" y="193" width="303.35999999999996" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="250" y="208.3" font-size="12" font-weight="700" fill="#a3223a" text-anchor="middle">aspirin blocks it for the platelet's life</text>
+<path d="M352 204 L430 204" fill="none" stroke="#a3223a" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="310.0" y="226.0" width="260" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="440" y="250.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">PGG₂ → PGH₂ (endoperoxides)</text>
+<rect x="40" y="300" width="380" height="200" rx="14" fill="#fdf1ef" stroke="#a3223a" stroke-width="1.3"/>
+<rect x="460" y="300" width="380" height="200" rx="14" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="60" y="324.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="start" letter-spacing="1.5">IN THE PLATELET</text>
+<text x="820" y="324.0" font-size="12" font-weight="700" fill="#3d5fa8" text-anchor="end" letter-spacing="1.5">IN THE ENDOTHELIUM</text>
+<path d="M380 266 L230 356" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<path d="M500 266 L650 356" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<text x="230" y="376.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">thromboxane synthase</text>
+<text x="650" y="376.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">prostacyclin synthase</text>
+<rect x="120.0" y="390.0" width="220" height="40" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="230" y="415.2" font-size="15" font-weight="700" fill="#a3223a" text-anchor="middle">Thromboxane A₂</text>
+<rect x="540.0" y="390.0" width="220" height="40" rx="10" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="650" y="415.2" font-size="15" font-weight="700" fill="#3d5fa8" text-anchor="middle">Prostacyclin (PGI₂)</text>
+<text x="230" y="452.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">aggregation, vasoconstriction</text>
+<text x="230" y="474.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(raises Ca²⁺, lowers cAMP)</text>
+<text x="650" y="452.0" font-size="13.5" font-weight="700" fill="#3d5fa8" text-anchor="middle">inhibits aggregation, vasodilation</text>
+<text x="650" y="474.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(raises cAMP)</text>
+</svg>

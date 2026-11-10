@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="880" height="420" fill="#fff"/>
+<text x="440" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Megakaryopoiesis</text>
+<text x="440" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Thrombopoietin (TPO, from the liver) drives every step. Nuclei copy DNA without dividing (endomitosis).</text>
+<circle cx="80" cy="190" r="26" fill="#c9b6e4" stroke="#5b3f8c" stroke-width="1.4"/>
+<circle cx="80.0" cy="190.0" r="14.3" fill="#8e5bb8" opacity=".85"/>
+<text x="80" y="242.0" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">Stem cell</text>
+<rect x="64.04" y="131" width="31.919999999999998" height="22" rx="11" fill="#fff" stroke="#5b3f8c" stroke-width="1.1"/>
+<text x="80" y="146.3" font-size="12" font-weight="700" fill="#5b3f8c" text-anchor="middle">2N</text>
+<circle cx="220" cy="190" r="30" fill="#c9b6e4" stroke="#5b3f8c" stroke-width="1.4"/>
+<circle cx="220.0" cy="190.0" r="16.5" fill="#8e5bb8" opacity=".85"/>
+<text x="220" y="246.0" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">Megakaryocyte</text>
+<text x="220" y="263.5" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">progenitor</text>
+<rect x="204.04" y="127" width="31.919999999999998" height="22" rx="11" fill="#fff" stroke="#5b3f8c" stroke-width="1.1"/>
+<text x="220" y="142.3" font-size="12" font-weight="700" fill="#5b3f8c" text-anchor="middle">2N</text>
+<circle cx="380" cy="190" r="42" fill="#d6c3ec" stroke="#5b3f8c" stroke-width="1.4"/>
+<circle cx="392.6" cy="194.6" r="16.0" fill="#8e5bb8" opacity=".85"/>
+<circle cx="367.4" cy="185.4" r="16.0" fill="#8e5bb8" opacity=".85"/>
+<text x="380" y="258.0" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">Immature</text>
+<text x="380" y="275.5" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">megakaryocyte</text>
+<rect x="357.08" y="115" width="45.839999999999996" height="22" rx="11" fill="#fff" stroke="#5b3f8c" stroke-width="1.1"/>
+<text x="380" y="130.3" font-size="12" font-weight="700" fill="#5b3f8c" text-anchor="middle">4–8N</text>
+<circle cx="580" cy="190" r="62" fill="#e4d6f3" stroke="#5b3f8c" stroke-width="1.4"/>
+<circle cx="598.6" cy="196.8" r="23.6" fill="#8e5bb8" opacity=".85"/>
+<circle cx="573.2" cy="208.6" r="23.6" fill="#8e5bb8" opacity=".85"/>
+<circle cx="561.4" cy="183.2" r="23.6" fill="#8e5bb8" opacity=".85"/>
+<circle cx="586.8" cy="171.4" r="23.6" fill="#8e5bb8" opacity=".85"/>
+<circle cx="635.0" cy="190.0" r="2.2" fill="#b07ad0"/>
+<circle cx="630.8" cy="211.0" r="2.2" fill="#b07ad0"/>
+<circle cx="618.9" cy="228.9" r="2.2" fill="#b07ad0"/>
+<circle cx="601.0" cy="240.8" r="2.2" fill="#b07ad0"/>
+<circle cx="580.0" cy="245.0" r="2.2" fill="#b07ad0"/>
+<circle cx="559.0" cy="240.8" r="2.2" fill="#b07ad0"/>
+<circle cx="541.1" cy="228.9" r="2.2" fill="#b07ad0"/>
+<circle cx="529.2" cy="211.0" r="2.2" fill="#b07ad0"/>
+<circle cx="525.0" cy="190.0" r="2.2" fill="#b07ad0"/>
+<circle cx="529.2" cy="169.0" r="2.2" fill="#b07ad0"/>
+<circle cx="541.1" cy="151.1" r="2.2" fill="#b07ad0"/>
+<circle cx="559.0" cy="139.2" r="2.2" fill="#b07ad0"/>
+<circle cx="580.0" cy="135.0" r="2.2" fill="#b07ad0"/>
+<circle cx="601.0" cy="139.2" r="2.2" fill="#b07ad0"/>
+<circle cx="618.9" cy="151.1" r="2.2" fill="#b07ad0"/>
+<circle cx="630.8" cy="169.0" r="2.2" fill="#b07ad0"/>
+<text x="580" y="278.0" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">Mature</text>
+<text x="580" y="295.5" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">megakaryocyte</text>
+<rect x="550.12" y="95" width="59.76" height="22" rx="11" fill="#fff" stroke="#5b3f8c" stroke-width="1.1"/>
+<text x="580" y="110.3" font-size="12" font-weight="700" fill="#5b3f8c" text-anchor="middle">16–64N</text>
+<path d="M116 190 L180 190" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<path d="M260 190 L328 190" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<path d="M432 190 L508 190" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<path d="M642 180 q40 -20 70 0 q20 14 44 0" fill="none" stroke="#b07ad0" stroke-width="5" stroke-linecap="round"/><path d="M642 204 q40 20 72 4" fill="none" stroke="#b07ad0" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="790" cy="160" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="814" cy="160" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="838" cy="160" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="790" cy="188" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="814" cy="188" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="838" cy="188" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="790" cy="216" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="814" cy="216" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<ellipse cx="838" cy="216" rx="8" ry="5" fill="#c79be0" stroke="#5b3f8c" stroke-width=".8"/>
+<text x="814" y="260.0" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">Platelets</text>
+<text x="814" y="280.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">1000–3000 per cell</text>
+<text x="700" y="146.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">proplatelets</text>
+<rect x="40" y="330" width="800" height="60" rx="10" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="440" y="354.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Cytokines: TPO throughout; SCF, IL-3, IL-6, IL-11 and LIF in early stages</text>
+<text x="440" y="374.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Platelets live 7–10 days; a third are pooled in the spleen.</text>
+</svg>

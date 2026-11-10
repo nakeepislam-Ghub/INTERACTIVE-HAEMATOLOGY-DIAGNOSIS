@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="470" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">How vitamin B12 is absorbed</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Three carrier proteins hand cobalamin (Cbl) on: haptocorrin, intrinsic factor (IF), then transcobalamin (TC).</text>
+<rect x="25.0" y="86" width="196" height="300" rx="14" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.5"/>
+<text x="123.0" y="116.0" font-size="16" font-weight="700" fill="#b3541e" text-anchor="middle">1  Stomach</text>
+<text x="123.0" y="150.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Acid and pepsin free Cbl</text>
+<text x="123.0" y="171.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">from food protein</text>
+<text x="123.0" y="192.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Cbl binds haptocorrin</text>
+<text x="123.0" y="213.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Parietal cells secrete IF</text>
+<rect x="59.62500000000001" y="289" width="126.74999999999999" height="22" rx="11" fill="#fff" stroke="#b3541e" stroke-width="1.1"/>
+<text x="123.0" y="304.5" font-size="12.5" font-weight="700" fill="#b3541e" text-anchor="middle">Cbl–haptocorrin</text>
+<rect x="106.75" y="323" width="32.5" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="123.0" y="338.5" font-size="12.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">IF</text>
+<path d="M223.0 236 L241.0 236" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="243.0" y="86" width="196" height="300" rx="14" fill="#fbeccb" stroke="#a8700f" stroke-width="1.5"/>
+<text x="341.0" y="116.0" font-size="16" font-weight="700" fill="#a8700f" text-anchor="middle">2  Duodenum</text>
+<text x="341.0" y="150.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Pancreatic proteases</text>
+<text x="341.0" y="171.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">digest haptocorrin</text>
+<text x="341.0" y="192.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(alkaline pH)</text>
+<text x="341.0" y="213.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Freed Cbl binds IF</text>
+<rect x="310.25" y="289" width="61.5" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="341.0" y="304.5" font-size="12.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">IF–Cbl</text>
+<path d="M441.0 236 L459.0 236" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="461.0" y="86" width="196" height="300" rx="14" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.5"/>
+<text x="559.0" y="116.0" font-size="16" font-weight="700" fill="#3d5fa8" text-anchor="middle">3  Terminal ileum</text>
+<text x="559.0" y="150.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Cubilin receptor takes up</text>
+<text x="559.0" y="171.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">the IF–Cbl complex</text>
+<text x="559.0" y="192.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">IF is degraded;</text>
+<text x="559.0" y="213.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Cbl leaves the enterocyte</text>
+<rect x="524.625" y="289" width="68.75" height="22" rx="11" fill="#fff" stroke="#3d5fa8" stroke-width="1.1"/>
+<text x="559.0" y="304.5" font-size="12.5" font-weight="700" fill="#3d5fa8" text-anchor="middle">cubilin</text>
+<path d="M659.0 236 L677.0 236" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="679.0" y="86" width="196" height="300" rx="14" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.5"/>
+<text x="777.0" y="116.0" font-size="16" font-weight="700" fill="#a3223a" text-anchor="middle">4  Plasma</text>
+<text x="777.0" y="150.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Cbl travels on</text>
+<text x="777.0" y="171.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">transcobalamin to the</text>
+<text x="777.0" y="192.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">marrow and tissues;</text>
+<text x="777.0" y="213.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="middle">liver stores 2–5 mg</text>
+<rect x="746.25" y="289" width="61.5" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="777.0" y="304.5" font-size="12.5" font-weight="700" fill="#a3223a" text-anchor="middle">TC–Cbl</text>
+<rect x="25.0" y="404" width="850" height="46" rx="10" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="450" y="433.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">Takes 3–4 hours, ileum only. Loss of IF (pernicious anaemia, gastrectomy) or of the terminal ileum (resection, Crohn) stops absorption.</text>
+</svg>

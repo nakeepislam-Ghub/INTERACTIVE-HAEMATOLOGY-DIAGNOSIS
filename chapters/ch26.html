@@ -1,0 +1,247 @@
+<article class="col chead" id="top">
+  <div class="eyebrow">Part 5 · Flow cytometry · Chapter 26</div>
+  <h1>Principles and gating</h1>
+  <p>How a flow cytometer reads single cells with light, how a sample is prepared and controlled, how the CD45/side scatter plot sorts the cells of blood and marrow, and why flow cytometry sits at the centre of leukaemia and lymphoma diagnosis.</p>
+  <div class="meta"><span>Source: Dr Abeer's Flow cytometry notes, pp 1–17</span><span>Reading time about 25 min</span></div>
+  <div class="jump" aria-label="Jump to">
+    <a href="#lecture">Lecture</a><a href="#gate">CD45/SSC explorer</a><a href="#gateflow">Where are the abnormal cells?</a><a href="#gallery">Real plots</a><a href="#case">Case</a><a href="#quiz">Quiz</a>
+  </div>
+</article>
+
+<div class="col lec" id="lecture">
+<section>
+  <h2><span class="sn">26.1</span>What flow cytometry measures</h2>
+  <div class="video" data-video="jiiZMnhpft8" data-list="PL0vx7sJVoFltHESqEREzpg7_YJu70vHCa" data-title="Flow cytometry: Dr Abeer's playlist" data-sub="Starts with the first lecture. Use the playlist menu in the player to move between videos."></div>
+  <p><b>Flow cytometry</b> detects cellular antigens while cells move one by one in a fluid stream: <i>flow</i> (moving in a stream), <i>cyto</i> (cell), <i>metry</i> (measurement). Each cell crosses a laser beam, and detectors record the light it scatters and the fluorescence it emits.</p>
+  <ul>
+    <li><b>Event:</b> the unit of data, one particle or cell.</li>
+    <li><b>Dot plot:</b> a two-parameter graph; each dot is one event.</li>
+    <li><b>Threshold:</b> a lower signal limit that ignores stray light, dust, very small particles and debris.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Signal</th><th>Collected</th><th>Tells you about</th></tr></thead>
+    <tbody>
+      <tr><td><b>Forward scatter (FSC)</b></td><td>Along the laser axis, up to about 20°, by a photodiode</td><td>Cell <b>size</b></td></tr>
+      <tr><td><b>Side scatter (SSC)</b></td><td>At about 90° to the beam, by a photomultiplier tube</td><td>Internal <b>complexity</b>: nuclear lobes and cytoplasmic granules</td></tr>
+      <tr><td><b>Fluorescence (FL1, FL2 …)</b></td><td>At set wavelengths through filters</td><td><b>Protein expression</b>: fluorochrome-labelled antibodies bound to surface or intracellular antigens</td></tr>
+    </tbody>
+  </table></div>
+  <p>The light signal is converted into a digital value proportional to its intensity and plotted. The fluorescence intensity is proportional to the number of binding sites on the cell: more antigen, more fluorescence, higher on the scale.</p>
+</section>
+
+<section>
+  <h2><span class="sn">26.2</span>Inside the instrument</h2>
+  <figure class="redraw"><img src="img/flow-cytometer.svg" alt="Schematic of a flow cytometer: sample injected into sheath fluid and focused into single file, a laser hitting the stream, forward scatter collected by a photodiode, side scatter and fluorescence reflected by dichroic mirrors through band-pass filters to photomultiplier tubes, then converted by an analogue to digital converter and displayed as histograms and dot plots" width="900" height="690" loading="lazy"><figcaption>The three systems of a flow cytometer. Redrawn summary; tap to enlarge.</figcaption></figure>
+  <h3>Fluidics: the flow chamber</h3>
+  <ul>
+    <li>The sample is injected under high pressure into a <b>sheath fluid</b> stream of lower pressure that moves faster. This <b>hydrodynamic focusing</b> lines the cells up in single file.</li>
+    <li><b>Coincident events:</b> if two or more cells cross the laser together only one event is recorded, and data are lost. Running a sample too fast or too concentrated causes this.</li>
+  </ul>
+  <h3>Optics</h3>
+  <ul>
+    <li><b>Laser source</b> excites the fluorochromes; <b>mirrors</b> direct the emitted light to detectors.</li>
+    <li><b>Detectors:</b> photodiodes (forward scatter) and photomultiplier tubes (PMTs) for side scatter and the weaker fluorescence signals.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Filter</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td>Long pass</td><td>Transmits light <b>above</b> a cut-off wavelength (for example, 520 nm long pass passes &gt;520 nm)</td></tr>
+      <tr><td>Short pass</td><td>Transmits light <b>below</b> a cut-off wavelength</td></tr>
+      <tr><td>Band pass</td><td>Transmits a <b>narrow band</b> (the band width) around a centre, for example 530/30</td></tr>
+      <tr><td>Dichroic</td><td>Set at an angle: passes chosen wavelengths forwards and <b>reflects the rest at 90°</b> to the next detector</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Electronics and analysis</h3>
+  <p>Photons striking the PMT or photodiode become a proportional number of electrons, giving a voltage pulse that returns to baseline as the cell leaves the beam. <b>Analogue-to-digital converters (ADCs)</b> turn each pulse into a number, so the computer can plot the <b>proportion</b> of cells that are positive and the <b>intensity</b> of their fluorescence.</p>
+</section>
+
+<section>
+  <h2><span class="sn">26.3</span>Sample preparation and controls</h2>
+  <ul>
+    <li><b>Fresh samples are required.</b> Dead and dying cells show reduced antigen expression, non-specific antibody binding and increased background fluorescence.</li>
+    <li>Adjust the cell suspension to about <b>1 × 10⁷ cells/mL in cold (4 °C) PBS</b>.</li>
+    <li><b>Antibody titration:</b> use the manufacturer's concentration, or stain known positive cells at doubling dilutions (1:50, 1:100, 1:200 …) and choose the one that best separates positive from negative.</li>
+    <li><b>Isotype control:</b> cells incubated with an irrelevant antibody of the same isotype and concentration show the non-specific binding. A cell is negative when its fluorescence matches this control.</li>
+    <li>Appropriate controls are run with every test.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="sn">26.4</span>Gating: the CD45 / side scatter plot</h2>
+  <p><b>Gating</b> means drawing a region around the cells of interest and analysing only those. The first gate is almost always <b>CD45 against side scatter</b>, the "flow differential". CD45 is on every nucleated haemopoietic cell, so this plot also excludes debris and non-haemopoietic cells.</p>
+  <figure class="redraw"><img src="img/cd45-ssc.svg" alt="Two schematic CD45 versus side scatter plots: in normal marrow lymphocytes are bright CD45 with low side scatter, monocytes bright CD45 with moderate side scatter, granulocytes high side scatter, blasts dim CD45 with low side scatter and a CD45 negative group; in AML a large blast cluster fills the dim CD45 low side scatter area" width="900" height="520" loading="lazy"><figcaption>Where each cell type falls on CD45 versus side scatter. Redrawn schematic; tap to enlarge.</figcaption></figure>
+  <div class="tbl"><table>
+    <thead><tr><th>Population</th><th>CD45</th><th>Side scatter</th></tr></thead>
+    <tbody>
+      <tr><td>Lymphocytes</td><td>Bright</td><td>Low</td></tr>
+      <tr><td>Monocytes</td><td>Bright</td><td>Moderate</td></tr>
+      <tr><td>Granulocytes</td><td>Bright (a little less than lymphocytes)</td><td>High</td></tr>
+      <tr><td>Blasts</td><td><b>Dim to negative</b></td><td>Low to variable</td></tr>
+      <tr><td>Apoptotic cells, erythroid precursors, plasma cells</td><td>Negative</td><td>Variable</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Sequential gating</b> combines gates in order. For example, lymphocytes are gated on CD45/SSC; within that gate, CD2+CD20− T cells are selected on a CD2/CD20 plot; both gates are then applied to a CD2/CD8 plot to count CD2+CD8+ cells. Try the <a href="#gate">CD45/SSC explorer</a>.</p>
+</section>
+
+<section>
+  <h2><span class="sn">26.5</span>Reading histograms and plots</h2>
+  <ul>
+    <li><b>Histogram:</b> one parameter. The x-axis is signal intensity (channel number), the y-axis the number of events. It gives the percentage of positive cells and their fluorescence intensity. The negative region is set with the isotype control.</li>
+    <li><b>Mean fluorescence intensity (MFI)</b> of a population is linearly related to the mean number of antigens per cell. "Dim", "moderate" and "bright" describe it.</li>
+    <li><b>Dot (density) plot:</b> two parameters; each dot is one cell, often coloured by density.</li>
+    <li><b>Contour plot:</b> looks like a survey map; each line marks a change in the number of events.</li>
+  </ul>
+  <p class="note"><b>When is a marker positive?</b> Use a threshold of <b>20%</b> of the gated cells, except <b>MPO, CD79a, CD34 and TdT</b>, which count as positive at <b>10%</b>.</p>
+  <h3>How a panel is built</h3>
+  <p>Antibody panels combine markers of <b>lineage</b>, <b>clonality</b>, <b>stage of maturation</b>, and markers for further specification of the disease.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Marker</th><th>Main cells</th><th>Marker</th><th>Main cells</th></tr></thead>
+    <tbody>
+      <tr><td>CD2, CD3, CD5, CD7</td><td>Pan-T (CD2, CD7 also NK; CD5 on CLL B cells)</td><td>CD19, CD20, CD22, CD79a</td><td>Pan-B</td></tr>
+      <tr><td>CD4</td><td>Helper T cells, monocytes</td><td>CD8</td><td>Cytotoxic T cells, some NK</td></tr>
+      <tr><td>CD10</td><td>Precursor B, germinal-centre B, neutrophils</td><td>CD23, FMC7, CD79b</td><td>Mature B cells; CLL scoring</td></tr>
+      <tr><td>CD13, CD33, CD117, MPO</td><td>Myeloid</td><td>CD14, CD64, CD36, CD11b, CD11c</td><td>Monocytic</td></tr>
+      <tr><td>CD15, CD16, CD65</td><td>Maturing granulocytes</td><td>CD16, CD56, CD57</td><td>NK and cytotoxic cells</td></tr>
+      <tr><td>CD34, TdT, HLA-DR</td><td>Progenitors (immaturity)</td><td>CD41, CD61, CD42b</td><td>Megakaryocytic</td></tr>
+      <tr><td>CD235a, CD71</td><td>Erythroid</td><td>CD38, CD138</td><td>Plasma cells</td></tr>
+      <tr><td>CD45</td><td>All leucocytes</td><td>Surface κ and λ</td><td>B-cell clonality</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="sn">26.6</span>Flow cytometry in haematological malignancy</h2>
+  <p>Haematological malignancies are clonal, uncontrolled growths of haemopoietic cells. Diagnosis combines clinical findings, morphology, cytochemistry, immunophenotyping and genetics. Malignant cells stand out on flow by:</p>
+  <ul>
+    <li><b>Clonality:</b> a monoclonal phenotype, and light-chain restriction in B-cell neoplasms.</li>
+    <li><b>Aberrant antigen expression:</b> abnormal intensity, asynchronous maturation, or markers of another lineage.</li>
+    <li><b>A disproportionate increase</b> of one cell population.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>What flow cytometry adds</th><th>How</th></tr></thead>
+    <tbody>
+      <tr><td>Confirms clonality</td><td>Monoclonal phenotype; κ or λ restriction</td></tr>
+      <tr><td>Determines lineage</td><td>Myeloid, B and T lineage markers</td></tr>
+      <tr><td>Stage of maturation</td><td>Immaturity: TdT, CD34, CD117. Maturity: CD10, CD11b, CD15, CD16, CD65</td></tr>
+      <tr><td>Classification</td><td>Precursor or mature; lineage; subtype</td></tr>
+      <tr><td>Ambiguous lineage</td><td>Mixed-phenotype and undifferentiated leukaemias</td></tr>
+      <tr><td>Minimal residual disease</td><td>The <b>leukaemia-associated phenotype (LAP)</b>: the aberrant phenotype that separates residual leukaemia from normal regenerating precursors</td></tr>
+      <tr><td>Other uses</td><td>Infiltration of CSF and effusions; prognosis; showing the target of antibody therapy (CD20, CD33, CD38, CD52)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Flow is <b>not</b> the method for counting marrow blasts: haemodilution and variable lysis of erythroid precursors distort the percentage. Count blasts on the aspirate smear.</p>
+</section>
+</div>
+
+<section class="wide panel" id="gate">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>CD45 / side scatter explorer</h2>
+    <p>Tap a cluster to see what it is, or switch to "Test yourself". Schematic dot plots based on Dr Abeer's flow differential (notes, pp 13–18).</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="gate" data-src="d26-gate"></div>
+  <script type="application/json" id="d26-gate">{"scenarios":[
+   {"name":"Normal blood","note":"Peripheral blood after red cell lysis.","pops":[
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.07,"ry":0.05,"c":"haem","k":170,"d":"Bright CD45, low side scatter: small cells with little cytoplasm and no granules."},
+    {"n":"Monocytes","x":0.73,"y":0.36,"rx":0.06,"ry":0.06,"c":"purple","k":70,"d":"Bright CD45 with moderate side scatter: larger, folded nucleus and fine granules."},
+    {"n":"Neutrophils","x":0.6,"y":0.7,"rx":0.09,"ry":0.13,"c":"blue","k":260,"d":"High side scatter from lobed nuclei and granules; CD45 slightly dimmer than lymphocytes."},
+    {"n":"Eosinophils","x":0.74,"y":0.86,"rx":0.05,"ry":0.06,"c":"orange","k":40,"d":"Highest side scatter and brighter CD45 than neutrophils."},
+    {"n":"Debris","x":0.1,"y":0.06,"rx":0.07,"ry":0.04,"c":"grey","k":40,"d":"CD45 negative events; excluded by the threshold and the CD45 gate."}]},
+   {"name":"Normal marrow","note":"Marrow contains every stage of maturation.","pops":[
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.07,"ry":0.05,"c":"haem","k":110,"d":"Bright CD45, low side scatter."},
+    {"n":"Monocytes","x":0.73,"y":0.37,"rx":0.06,"ry":0.06,"c":"purple","k":60,"d":"Bright CD45, moderate side scatter."},
+    {"n":"Granulocytes","x":0.58,"y":0.68,"rx":0.1,"ry":0.17,"c":"blue","k":300,"d":"All the maturing granulocytes, from promyelocytes to neutrophils: high side scatter."},
+    {"n":"Blasts","x":0.44,"y":0.17,"rx":0.04,"ry":0.04,"c":"green","k":20,"d":"Dim CD45, low side scatter: the blast gate. Normally only a few per cent."},
+    {"n":"Nucleated red cells","x":0.12,"y":0.1,"rx":0.08,"ry":0.06,"c":"grey","k":90,"d":"CD45 negative with low side scatter; confirm with CD235a and CD71."}]},
+   {"name":"Acute myeloid leukaemia","note":"Blasts replace the marrow.","pops":[
+    {"n":"Myeloblasts","x":0.43,"y":0.2,"rx":0.09,"ry":0.08,"c":"green","k":360,"d":"A dense cluster in the blast gate: dim CD45, low side scatter. Next, test CD34, CD117, HLA-DR, CD13, CD33 and MPO."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.06,"ry":0.04,"c":"haem","k":60,"d":"Residual normal lymphocytes: a useful internal bright CD45 reference."},
+    {"n":"Granulocytes","x":0.6,"y":0.72,"rx":0.07,"ry":0.11,"c":"blue","k":60,"d":"Few residual maturing granulocytes."}]}
+  ]}</script>
+</section>
+
+<section class="wide panel" id="gateflow">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>Where are the abnormal cells?</h2>
+    <p>Answer Yes or No to find the right gate and the next panel. Based on Dr Abeer's flow notes.</p>
+  </header>
+  <div class="fl" data-widget="flow" data-src="d26-flow"></div>
+  <script type="application/json" id="d26-flow">
+{"q":"Is the abnormal population CD45 negative?","hint":"Start with the CD45 / side scatter plot of a fresh, viable sample.",
+ "y":{"q":"Do the cells express bright CD38 and CD138?",
+   "y":{"dx":"Plasma cells","d":"Neoplastic plasma cells are typically CD45−, CD19−, CD56+, CD20−, with cytoplasmic light-chain restriction.","next":"Cytoplasmic κ/λ, CD56, CD19, CD117; serum and urine paraprotein studies (Chapter 24)."},
+   "n":{"q":"Do they express CD235a (glycophorin A) and strong CD71?",
+     "y":{"dx":"Erythroid precursors","d":"Normal nucleated red cells, or an erythroid neoplasm if they dominate with dysplasia.","next":"Correlate with the aspirate; consider pure erythroid leukaemia (CD235a, CD36, strong CD71)."},
+     "n":{"q":"Do they express CD41/CD61 or CD36 with no CD45?",
+       "y":{"dx":"Megakaryoblasts","d":"Acute megakaryoblastic leukaemia is often CD45 negative.","next":"CD41, CD42b, CD61; exclude t(1;22) in infants and Down syndrome."},
+       "n":{"dx":"Debris, dead cells or non-haemopoietic cells","d":"CD45-negative events may be apoptotic cells or carcinoma or small round cell tumour cells.","next":"Check viability; morphology and immunohistochemistry (cytokeratin etc.)."}}}},
+ "n":{"q":"Are the cells in the blast gate: dim CD45 with low or variable side scatter?",
+   "y":{"q":"Do they express CD34, TdT or CD117, without markers of maturity?",
+     "y":{"dx":"Acute leukaemia: blasts","d":"Assign the lineage: MPO, CD13, CD33, CD117 (myeloid); CD19, cCD79a, cCD22, CD10 (B); cytoplasmic CD3 (T).","next":"Acute leukaemia panel (Chapter 27); morphology for the blast count; cytogenetics."},
+     "n":{"q":"Is there a smooth maturation continuum (CD10 and CD20 rising, CD34 and TdT falling) in a child or regenerating marrow?",
+       "y":{"dx":"Haematogones (normal B precursors)","d":"Normal B-cell precursors, prominent after chemotherapy, in infants and in immune thrombocytopenia.","next":"No clonal phenotype; avoid calling MRD without a LAP."},
+       "n":{"dx":"Blasts lacking immaturity markers","d":"Some blasts are CD34−, TdT− (for example APL, NPM1-mutated AML, monoblasts). They are CD16−, CD10− and may be CD56 bright, unlike benign maturing myeloid cells (CD16+, CD10+, CD56−).","next":"Full acute leukaemia panel including HLA-DR, CD64, CD14, CD11b."}}},
+   "n":{"q":"Are the cells bright CD45 with low side scatter (the lymphocyte gate)?",
+     "y":{"q":"Do they express B-cell markers (CD19, CD20, CD22)?",
+       "y":{"dx":"Mature B cells: test for clonality","d":"Look for κ or λ restriction, and define the CD5/CD10 group.","next":"Mature B panel: sIg κ/λ, CD5, CD10, CD23, FMC7, CD79b, CD11c, CD25, CD103 (Chapter 27)."},
+       "n":{"dx":"T or NK cells: look for aberrancy","d":"Loss or dim expression of pan-T markers (especially CD7), CD4/CD8 restriction, NK markers.","next":"T panel: CD2, CD3, CD5, CD7, CD4, CD8, CD16, CD56, CD57, CD25, CD30, TCR; TCR clonality studies."}},
+     "n":{"q":"Are the cells in the granulocyte or monocyte region (moderate to high side scatter)?",
+       "y":{"dx":"Maturing myeloid or monocytic cells","d":"Look at the maturation pattern: abnormal CD13/CD16/CD11b patterns, low side scatter (hypogranular) neutrophils or aberrant CD56 suggest MDS or CMML; high SSC with CD45 brighter than blasts and CD34−HLA-DR− suggests APL.","next":"Myeloid maturation tubes; monocyte subsets (CD14/CD16) for CMML."},
+       "n":{"dx":"Large cells with high forward scatter","d":"Consider large-cell lymphoma (DLBCL, Burkitt), ALCL or hairy cells (slightly increased SSC, bright CD45).","next":"Gate on FSC; B or T panel with κ/λ, CD10, CD30, CD11c, CD25, CD103."}}}}}
+  </script>
+</section>
+
+<section class="wide panel" id="gallery">
+  <header>
+    <div class="eyebrow">From Dr Abeer's laboratory notes</div>
+    <h2>Real flow cytometry plots</h2>
+    <p>Tap an image to enlarge it.</p>
+  </header>
+  <div class="gal" data-widget="gallery" data-src="d26-gal"></div>
+  <script type="application/json" id="d26-gal">[
+   {"src":"img/gal-flow-fsc-ssc.jpg","cap":"Forward against side scatter: lymphocytes low on both, monocytes in the middle, granulocytes high side scatter."},
+   {"src":"img/gal-flow-fsc-gate.jpg","cap":"Gate R1 drawn around lymphocytes on a forward/side scatter plot; the line shows debris excluded by the threshold."},
+   {"src":"img/gal-flow-sequential.jpg","cap":"Sequential gating: lymphocytes on CD45/SSC, then CD2+CD20− T cells, then CD2+CD8+ cells."},
+   {"src":"img/gal-flow-histogram.jpg","cap":"Histogram: region M1 covers the negative peak and M2 the positive peak."},
+   {"src":"img/gal-flow-cd4-histogram.jpg","cap":"CD4 histogram with a small negative population on the left and a bright positive peak."},
+   {"src":"img/gal-flow-titration.jpg","cap":"Antibody titration: the positive peak moves right as the antibody becomes more concentrated (1/40 to 1/5); the blue line marks the unstained level."},
+   {"src":"img/gal-flow-density.jpg","cap":"Density plot with contour lines: colour shows where events are crowded."},
+   {"src":"img/gal-flow-contour.jpg","cap":"Contour diagram of blood: lymphocytes, monocytes and granulocytes as separate peaks, like a survey map."}
+  ]</script>
+</section>
+
+<section class="wide panel" id="case">
+  <header>
+    <div class="eyebrow">Case scenario</div>
+    <h2>A sample that arrived late</h2>
+  </header>
+  <div class="case" data-widget="case" data-src="d26-case"></div>
+  <script type="application/json" id="d26-case">[
+  {"stage":"Arrival","scene":"A marrow aspirate for suspected acute leukaemia reaches the laboratory 3 days after collection, left at room temperature. The isotype control shows high background fluorescence and many markers are weakly positive.","q":"What is the most likely explanation?","o":["A biphenotypic leukaemia","Dead and dying cells with non-specific binding","Antibody concentration too low","Laser failure"],"a":1,"e":"Old samples contain non-viable cells with reduced antigen expression, non-specific binding and raised background. Ask for a fresh sample."},
+  {"stage":"Repeat","scene":"A fresh sample is stained. The technologist suspends cells at 1 × 10⁷/mL in cold PBS and runs it quickly to save time. Some events look like doublets.","q":"Running a concentrated sample fast mainly risks:","o":["Coincident events","Photobleaching","Compensation error","Isotype mismatch"],"a":0,"e":"Two cells crossing the beam together are recorded as one event, and data are lost."},
+  {"stage":"Gating","scene":"On CD45/SSC, 70% of events sit in a dense cluster with dim CD45 and low side scatter.","q":"Which gate is this?","o":["Lymphocyte gate","Granulocyte gate","Blast gate","CD45-negative gate"],"a":2,"e":"Blasts are dim to negative CD45 with low to variable side scatter."},
+  {"stage":"Reading","scene":"Within that gate, 14% of cells are MPO positive and 15% are CD13 positive.","q":"Using the standard thresholds, which marker is positive?","o":["Both","MPO only","CD13 only","Neither"],"a":1,"e":"Most markers need 20%, but MPO, CD79a, CD34 and TdT count as positive at 10%."},
+  {"stage":"Report","scene":"The clinician asks the laboratory to report the marrow blast percentage from the flow result.","q":"What is the best reply?","o":["Report the flow percentage as the blast count","Count blasts on the aspirate smear","Average the two","Use the CD34 percentage"],"a":1,"e":"Flow blast counts in marrow are distorted by haemodilution and variable lysis of erythroid precursors; morphology gives the blast count."}
+  ]</script>
+</section>
+
+<section class="wide panel" id="quiz">
+  <header>
+    <div class="eyebrow">Self-assessment</div>
+    <h2>Chapter quiz</h2>
+  </header>
+  <div class="case" data-widget="quiz" data-src="d26-quiz" data-key="quiz-ch26"></div>
+  <script type="application/json" id="d26-quiz">[
+  {"q":"Forward scatter mainly reflects:","o":["Granularity","Cell size","DNA content","Antigen density"],"a":1,"e":"Side scatter, collected at 90°, reflects internal complexity."},
+  {"q":"Hydrodynamic focusing is produced by:","o":["The laser","Sheath fluid around the injected sample","Dichroic mirrors","The ADC"],"a":1,"e":"The faster sheath stream narrows the sample into single file."},
+  {"q":"A filter that passes 530 ± 15 nm is a:","o":["Long-pass filter","Short-pass filter","Band-pass filter","Neutral density filter"],"a":2,"e":"Written 530/30: centre 530 nm, band width 30 nm."},
+  {"q":"Which device reflects some wavelengths at 90° and passes the rest?","o":["Photodiode","Dichroic mirror","Photomultiplier tube","Flow cell"],"a":1,"e":"Dichroic filters split the colours between detectors."},
+  {"q":"The isotype control is used to:","o":["Count cells","Define the level of non-specific binding","Measure size","Calibrate the laser"],"a":1,"e":"A cell is negative when its fluorescence matches the isotype control."},
+  {"q":"On CD45/SSC, monocytes are:","o":["CD45 dim, low SSC","CD45 bright, moderate SSC","CD45 negative","CD45 bright, highest SSC"],"a":1,"e":"Lymphocytes are bright and low; granulocytes high SSC; blasts dim."},
+  {"q":"Which group lies in the CD45-negative region?","o":["Monocytes","Erythroid precursors and plasma cells","Eosinophils","Lymphocytes"],"a":1,"e":"Also apoptotic cells and non-haemopoietic cells."},
+  {"q":"MFI of a population is related to:","o":["Cell size","Number of antigens per cell","Number of cells","Sheath pressure"],"a":1,"e":"Mean fluorescence intensity rises linearly with antigen density."},
+  {"q":"Which marker counts as positive at 10% of cells?","o":["CD13","CD33","TdT","CD19"],"a":2,"e":"MPO, CD79a, CD34 and TdT use 10%; others 20%."},
+  {"q":"Detecting minimal residual disease by flow relies on:","o":["The CD4/CD8 ratio","The leukaemia-associated phenotype","Forward scatter alone","The isotype control"],"a":1,"e":"The LAP separates residual leukaemia from normal regenerating precursors."}
+  ]</script>
+</section>

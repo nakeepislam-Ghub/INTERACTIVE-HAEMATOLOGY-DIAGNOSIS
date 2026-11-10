@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker></defs>
+<rect width="900" height="470" fill="#fff"/>
+<text x="450" y="32" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">The B-cell journey</text>
+<text x="450" y="54" font-size="13.5" fill="#5d5663" text-anchor="middle">Antigen-independent maturation in the marrow, then antigen-dependent maturation in lymph node and spleen</text>
+<rect x="20" y="72" width="300" height="380" rx="14" fill="#f3eef8" stroke="#5b3f8c" stroke-width="1.5"/>
+<text x="170" y="96" font-size="15" font-weight="700" fill="#5b3f8c" text-anchor="middle">Bone marrow: antigen-independent</text>
+<rect x="335" y="72" width="545" height="380" rx="14" fill="#fdf1ec" stroke="#a3223a" stroke-width="1.5"/>
+<text x="607" y="96" font-size="15" font-weight="700" fill="#a3223a" text-anchor="middle">Lymph node and spleen: antigen-dependent</text>
+<g font-size="13" fill="#1d1a24">
+<circle cx="70" cy="140" r="22" fill="#d9cbe9" stroke="#5b3f8c"/><text x="70" y="145" text-anchor="middle" font-weight="700">Pro-B</text>
+<text x="102" y="130">TdT+ CD19+</text><text x="102" y="147" fill="#5d5663">Heavy chain VDJ</text><text x="102" y="163" fill="#5d5663">rearrangement (chr 14)</text>
+<line x1="70" y1="164" x2="70" y2="196" stroke="#3b3540" stroke-width="1.5" marker-end="url(#ak)"/>
+<circle cx="70" cy="222" r="22" fill="#d9cbe9" stroke="#5b3f8c"/><text x="70" y="227" text-anchor="middle" font-weight="700">Pre-B</text>
+<text x="102" y="212">Cytoplasmic µ+</text><text x="102" y="229" fill="#5d5663">Light chain VJ: κ (chr 2)</text><text x="102" y="245" fill="#5d5663">or λ (chr 22), no D segment</text>
+<line x1="70" y1="246" x2="70" y2="278" stroke="#3b3540" stroke-width="1.5" marker-end="url(#ak)"/>
+<circle cx="70" cy="304" r="22" fill="#d9cbe9" stroke="#5b3f8c"/><text x="70" y="301" text-anchor="middle" font-weight="700" font-size="11.5">Imma-</text><text x="70" y="314" text-anchor="middle" font-weight="700" font-size="11.5">ture B</text>
+<text x="102" y="296">Surface IgM appears</text><text x="102" y="313" fill="#5d5663">Self-reactive clones</text><text x="102" y="329" fill="#5d5663">are deleted</text>
+<line x1="70" y1="328" x2="70" y2="360" stroke="#3b3540" stroke-width="1.5" marker-end="url(#ak)"/>
+<circle cx="70" cy="386" r="22" fill="#c3b0de" stroke="#5b3f8c"/><text x="70" y="383" text-anchor="middle" font-weight="700" font-size="11.5">Naive</text><text x="70" y="396" text-anchor="middle" font-weight="700" font-size="11.5">B</text>
+<text x="102" y="378">IgM+ IgD+, CD5+</text><text x="102" y="395" fill="#5d5663">Recirculates; fills primary</text><text x="102" y="411" fill="#5d5663">follicles and mantle zones</text>
+</g>
+<line x1="270" y1="386" x2="388" y2="386" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<text x="330" y="376" font-size="12" fill="#5d5663" text-anchor="middle">meets antigen</text>
+<ellipse cx="560" cy="262" rx="150" ry="132" fill="#f6d9cf" stroke="#c06a55" stroke-width="1.5"/>
+<ellipse cx="560" cy="262" rx="112" ry="98" fill="#fff6f2" stroke="#c06a55" stroke-dasharray="5 4"/>
+<text x="560" y="150" font-size="12.5" fill="#8a4a3b" text-anchor="middle" font-weight="700">Mantle zone</text>
+<path d="M448 262 H672" stroke="#c06a55" stroke-dasharray="3 4"/>
+<text x="560" y="196" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">Dark zone: centroblasts</text>
+<text x="560" y="214" font-size="12.5" fill="#5d5663" text-anchor="middle">proliferate; somatic hypermutation</text>
+<text x="560" y="232" font-size="12.5" fill="#5d5663" text-anchor="middle">of the variable regions</text>
+<text x="560" y="290" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">Light zone: centrocytes</text>
+<text x="560" y="308" font-size="12.5" fill="#5d5663" text-anchor="middle">selected on follicular dendritic cells</text>
+<text x="560" y="326" font-size="12.5" fill="#5d5663" text-anchor="middle">and TFH cells; class switch</text>
+<path d="M630 245 C 660 255 660 272 630 280" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<path d="M490 280 C 460 272 460 255 490 245" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<text x="560" y="416" font-size="12.5" fill="#5d5663" text-anchor="middle">Germinal centre markers: CD10, BCL6, LMO2, HGAL;</text>
+<text x="560" y="432" font-size="12.5" fill="#5d5663" text-anchor="middle">low BCL2; MYC re-induced in light-zone cells</text>
+<line x1="700" y1="220" x2="768" y2="165" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<line x1="700" y1="310" x2="768" y2="345" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<g font-size="13">
+<circle cx="800" cy="146" r="32" fill="#cfe0f2" stroke="#3d5fa8"/><text x="800" y="151" text-anchor="middle" font-weight="700" fill="#1d1a24">Memory</text>
+<text x="800" y="196" text-anchor="middle" fill="#5d5663" font-size="12">IgM+ low IgD,</text><text x="800" y="211" text-anchor="middle" fill="#5d5663" font-size="12">CD5− CD10−; marginal</text><text x="800" y="226" text-anchor="middle" fill="#5d5663" font-size="12">zones and MALT</text>
+<circle cx="800" cy="356" r="32" fill="#e9d6a8" stroke="#a8700f"/><text x="800" y="361" text-anchor="middle" font-weight="700" fill="#1d1a24">Plasma</text>
+<text x="800" y="406" text-anchor="middle" fill="#5d5663" font-size="12">IRF4, CD38, CD138,</text><text x="800" y="421" text-anchor="middle" fill="#5d5663" font-size="12">CD79a; IgG or IgA</text>
+</g>
+</svg>

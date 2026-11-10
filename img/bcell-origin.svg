@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 616" width="900" height="616" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="616" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Where B-cell neoplasms come from</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Each lymphoma mirrors the normal B-cell stage at which its clone is frozen.</text>
+<rect x="40" y="84" width="300" height="92" rx="12" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.6"/>
+<text x="190" y="116.0" font-size="16" font-weight="700" fill="#b3541e" text-anchor="middle">Bone marrow</text>
+<text x="190" y="138.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Progenitor, pre-B and</text>
+<text x="190" y="153.6" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">immature B cells</text>
+<path d="M340 130.0 L470 130.0" fill="none" stroke="#b3541e" stroke-width="1.8" marker-end="url(#ak)"/>
+<rect x="475" y="114.0" width="385" height="32" rx="10" fill="#fff" stroke="#b3541e" stroke-width="1.4"/>
+<text x="493" y="135.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• B-lymphoblastic leukaemia/lymphoma</text>
+<path d="M190 176 L226 198" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<rect x="76" y="198" width="300" height="92" rx="12" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.6"/>
+<text x="226" y="230.0" font-size="16" font-weight="700" fill="#3d5fa8" text-anchor="middle">Pre-germinal centre</text>
+<text x="226" y="252.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Naïve B cells (mantle zone),</text>
+<text x="226" y="267.6" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">extrafollicular B blasts</text>
+<path d="M376 244.0 L470 244.0" fill="none" stroke="#3d5fa8" stroke-width="1.8" marker-end="url(#ak)"/>
+<rect x="475" y="228.0" width="385" height="32" rx="10" fill="#fff" stroke="#3d5fa8" stroke-width="1.4"/>
+<text x="493" y="249.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• Mantle cell lymphoma</text>
+<path d="M226 290 L262 312" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<rect x="112" y="312" width="300" height="116" rx="12" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.6"/>
+<text x="262" y="356.0" font-size="16" font-weight="700" fill="#5b3f8c" text-anchor="middle">Germinal centre</text>
+<text x="262" y="378.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Centrocytes, centroblasts,</text>
+<text x="262" y="393.6" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">follicular dendritic cells</text>
+<path d="M412 370.0 L470 370.0" fill="none" stroke="#5b3f8c" stroke-width="1.8" marker-end="url(#ak)"/>
+<rect x="475" y="318.0" width="385" height="104" rx="10" fill="#fff" stroke="#5b3f8c" stroke-width="1.4"/>
+<text x="493" y="339.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• Follicular lymphoma</text>
+<text x="493" y="363.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• Burkitt lymphoma</text>
+<text x="493" y="387.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• DLBCL, germinal centre type</text>
+<text x="493" y="411.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• Hodgkin lymphoma</text>
+<path d="M262 428 L298 450" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<rect x="148" y="450" width="300" height="140" rx="12" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.6"/>
+<text x="298" y="506.0" font-size="16" font-weight="700" fill="#2f7d4f" text-anchor="middle">Post-germinal centre</text>
+<text x="298" y="528.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Memory B cells, marginal zone</text>
+<text x="298" y="543.6" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">B cells, plasma cells</text>
+<path d="M448 520.0 L470 520.0" fill="none" stroke="#2f7d4f" stroke-width="1.8" marker-end="url(#ak)"/>
+<rect x="475" y="456.0" width="385" height="128" rx="10" fill="#fff" stroke="#2f7d4f" stroke-width="1.4"/>
+<text x="493" y="477.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• Marginal zone lymphoma</text>
+<text x="493" y="501.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• Lymphoplasmacytic lymphoma</text>
+<text x="493" y="525.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• Plasmacytoma and myeloma</text>
+<text x="493" y="549.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• DLBCL, non-germinal centre type</text>
+<text x="493" y="573.0" font-size="13.5" font-weight="400" fill="#1d1a24" text-anchor="start">• CLL/SLL</text>
+</svg>

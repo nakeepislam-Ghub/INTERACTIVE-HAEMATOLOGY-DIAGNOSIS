@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker></defs>
+<rect width="900" height="400" fill="#fff"/>
+<text x="450" y="32" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Why lymphocytes pile up in ALPS</text>
+<text x="450" y="54" font-size="13.5" fill="#5d5663" text-anchor="middle">After an infection, activated lymphocytes are normally removed by FAS-mediated apoptosis</text>
+<g>
+<rect x="30" y="76" width="405" height="300" rx="14" fill="#eef5ef" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="232" y="100" font-size="15" font-weight="700" fill="#2f7d4f" text-anchor="middle">Normal</text>
+<rect x="60" y="190" width="345" height="14" fill="#e7dccd"/><text x="300" y="224" font-size="12" fill="#5d5663" text-anchor="middle">Activated T-cell membrane</text>
+<rect x="125" y="125" width="16" height="40" rx="6" fill="#c0392b"/><rect x="145" y="125" width="16" height="40" rx="6" fill="#c0392b"/><rect x="165" y="125" width="16" height="40" rx="6" fill="#c0392b"/>
+<text x="153" y="118" font-size="13" text-anchor="middle" font-weight="700">FAS ligand</text>
+<g fill="#7db8e8" stroke="#3d5fa8"><circle cx="133" cy="175" r="9"/><circle cx="153" cy="175" r="9"/><circle cx="173" cy="175" r="9"/></g>
+<g fill="#3d5fa8"><rect x="128" y="183" width="10" height="40"/><rect x="148" y="183" width="10" height="40"/><rect x="168" y="183" width="10" height="40"/></g>
+<text x="215" y="178" font-size="13" font-weight="700">FAS trimer</text>
+<line x1="153" y1="228" x2="153" y2="262" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<text x="165" y="250" font-size="12.5" fill="#5d5663">FADD, caspase 8 and 10</text>
+<rect x="88" y="268" width="130" height="32" rx="8" fill="#2f7d4f"/><text x="153" y="289" font-size="13.5" font-weight="700" fill="#fff" text-anchor="middle">Apoptosis</text>
+<text x="232" y="330" font-size="13" fill="#1d1a24" text-anchor="middle">The expanded clone shrinks back:</text>
+<text x="232" y="348" font-size="13" fill="#1d1a24" text-anchor="middle">nodes and spleen return to normal</text>
+</g>
+<g>
+<rect x="465" y="76" width="405" height="300" rx="14" fill="#fbeeee" stroke="#a3223a" stroke-width="1.5"/>
+<text x="667" y="100" font-size="15" font-weight="700" fill="#a3223a" text-anchor="middle">ALPS</text>
+<rect x="495" y="190" width="345" height="14" fill="#e7dccd"/>
+<rect x="560" y="125" width="16" height="40" rx="6" fill="#c0392b"/><rect x="580" y="125" width="16" height="40" rx="6" fill="#c0392b"/><rect x="600" y="125" width="16" height="40" rx="6" fill="#c0392b"/>
+<g fill="#7db8e8" stroke="#3d5fa8"><circle cx="568" cy="175" r="9"/><circle cx="588" cy="175" r="9" fill="#f4b6b6" stroke="#a3223a"/><circle cx="608" cy="175" r="9"/></g>
+<g fill="#3d5fa8"><rect x="563" y="183" width="10" height="40"/><rect x="583" y="183" width="10" height="22" fill="#a3223a"/><rect x="603" y="183" width="10" height="40"/></g>
+<text x="650" y="170" font-size="13" font-weight="700">Mutant FAS</text><text x="650" y="186" font-size="12" fill="#5d5663">(autosomal dominant; less</text><text x="650" y="201" font-size="12" fill="#5d5663">often FASLG or CASP10)</text>
+<line x1="588" y1="228" x2="588" y2="262" stroke="#a3223a" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="572" y="252" font-size="22" font-weight="700" fill="#a3223a">✕</text>
+<rect x="505" y="268" width="330" height="32" rx="8" fill="#a3223a"/><text x="670" y="289" font-size="13.5" font-weight="700" fill="#fff" text-anchor="middle">No apoptosis: cells survive</text>
+<text x="667" y="324" font-size="13" fill="#1d1a24" text-anchor="middle">Lymphadenopathy, splenomegaly, double-negative</text>
+<text x="667" y="342" font-size="13" fill="#1d1a24" text-anchor="middle">T cells, autoimmune cytopenias, and lymphoma</text>
+<text x="667" y="360" font-size="13" fill="#1d1a24" text-anchor="middle">in about 10%</text>
+</g>
+</svg>

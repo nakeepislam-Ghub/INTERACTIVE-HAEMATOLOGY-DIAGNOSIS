@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" width="880" height="540" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="880" height="540" fill="#fff"/>
+<text x="440" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">G6PD deficiency: why oxidants cause haemolysis</text>
+<text x="440" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">The pentose phosphate shunt is the red cell's only source of NADPH.</text>
+<rect x="40.0" y="90.0" width="180" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="130" y="114.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">Glucose-6-phosphate</text>
+<rect x="40.0" y="200.0" width="180" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="130" y="224.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">6-phosphogluconate</text>
+<path d="M130 130 L130 198" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="98.0" y="153" width="64" height="22" rx="11" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.1"/>
+<text x="130" y="168.7" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">G6PD</text>
+<text x="130" y="164.0" font-size="1" font-weight="400" fill="#1d1a24" text-anchor="middle"></text>
+<rect x="310.0" y="144.0" width="120" height="40" rx="10" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="370" y="168.6" font-size="13" font-weight="700" fill="#3d5fa8" text-anchor="middle">NADP⁺ → NADPH</text>
+<path d="M164 164 L306 164" fill="none" stroke="#3d5fa8" stroke-width="2" marker-end="url(#ab)"/>
+<rect x="510.0" y="90.0" width="180" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="600" y="114.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">GSSG (oxidised)</text>
+<rect x="510.0" y="200.0" width="180" height="40" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="600" y="224.9" font-size="14" font-weight="700" fill="#2f7d4f" text-anchor="middle">GSH (reduced)</text>
+<path d="M600 130 L600 198" fill="none" stroke="#2f7d4f" stroke-width="2.4" marker-end="url(#ag)"/>
+<path d="M432 164 L594 164" fill="none" stroke="#3d5fa8" stroke-width="2" marker-end="url(#ab)"/>
+<text x="612" y="170.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="start">glutathione reductase</text>
+<rect x="470.0" y="278.0" width="260" height="44" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="600" y="304.7" font-size="13.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">GSH removes H₂O₂ and free radicals</text>
+<path d="M600 240 L600 276" fill="none" stroke="#2f7d4f" stroke-width="2" marker-end="url(#ag)"/>
+<line x1="30" y1="350" x2="850" y2="350" stroke="#e7e3e9"/>
+<text x="440" y="374.0" font-size="11" font-weight="700" fill="#a3223a" text-anchor="middle" letter-spacing="1.5">WHEN G6PD IS LOW AND AN OXIDANT ARRIVES</text>
+<rect x="30.0" y="394.0" width="220" height="52" rx="10" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.3"/>
+<text x="140" y="416.5" font-size="13" font-weight="700" fill="#b3541e" text-anchor="middle">Oxidant: drugs (primaquine,</text>
+<text x="140" y="432.7" font-size="13" font-weight="700" fill="#b3541e" text-anchor="middle">dapsone), fava beans, infection</text>
+<rect x="310.0" y="394.0" width="220" height="52" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="420" y="416.5" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Hb oxidised and denatured:</text>
+<text x="420" y="432.7" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Heinz bodies on the membrane</text>
+<rect x="585.0" y="394.0" width="230" height="52" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="700" y="416.5" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Spleen bites them out (bite cells);</text>
+<text x="700" y="432.7" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">some cells lyse in the vessels</text>
+<path d="M250 420 L306 420" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<path d="M530 420 L582 420" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<rect x="130" y="478" width="620" height="46" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="440" y="506.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">Acute haemolysis 1–3 days later: dark urine (haemoglobinuria), jaundice, falling Hb</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="560" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">MDS/MPN: dysplasia and proliferation in one clone</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Effective growth of one lineage raises a count, while ineffective growth of another causes cytopenia.</text>
+<ellipse cx="300" cy="190" rx="200" ry="105" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.6"/>
+<ellipse cx="600" cy="190" rx="200" ry="105" fill="#fbeccb" stroke="#a8700f" stroke-width="1.6"/>
+<path d="M450 120 A200 105 0 0 1 450 260 A200 105 0 0 1 450 120Z" fill="none"/>
+<ellipse cx="450" cy="190" rx="92" ry="70" fill="#a3223a"/>
+<text x="190" y="170.0" font-size="17" font-weight="700" fill="#3d5fa8" text-anchor="middle">Dysplastic</text>
+<text x="190" y="192.0" font-size="14" font-weight="400" fill="#3d5fa8" text-anchor="middle">(MDS)</text>
+<text x="190" y="222.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">cytopenias,</text>
+<text x="190" y="240.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">dysplasia</text>
+<text x="710" y="170.0" font-size="17" font-weight="700" fill="#a8700f" text-anchor="middle">Proliferative</text>
+<text x="710" y="192.0" font-size="14" font-weight="400" fill="#a8700f" text-anchor="middle">(MPN)</text>
+<text x="710" y="222.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">high counts,</text>
+<text x="710" y="240.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">organomegaly</text>
+<text x="450" y="182.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">MDS/MPN</text>
+<text x="450" y="204.0" font-size="12.5" font-weight="400" fill="#fff" text-anchor="middle">both at once</text>
+<path d="M450 262 L124 322" fill="none" stroke="#3b3540" stroke-width="1.2" marker-end="url(#ak)"/>
+<rect x="22" y="330" width="204" height="126" rx="12" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.4"/>
+<text x="124" y="356.0" font-size="15" font-weight="700" fill="#5b3f8c" text-anchor="middle">CMML</text>
+<text x="124" y="382.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Monocytes ≥0.5 × 10⁹/L</text>
+<text x="124" y="399.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">and ≥10%</text>
+<text x="124" y="432.0" font-size="12" font-weight="700" fill="#5d5663" text-anchor="middle">TET2 · SRSF2 · ASXL1</text>
+<path d="M450 262 L341 322" fill="none" stroke="#3b3540" stroke-width="1.2" marker-end="url(#ak)"/>
+<rect x="239" y="330" width="204" height="126" rx="12" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.4"/>
+<text x="341" y="356.0" font-size="15" font-weight="700" fill="#b3541e" text-anchor="middle">MDS/MPN-N</text>
+<text x="341" y="382.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">WBC ≥13, ≥10% immature</text>
+<text x="341" y="399.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">granulocytes; mono &lt;10%</text>
+<text x="341" y="432.0" font-size="12" font-weight="700" fill="#5d5663" text-anchor="middle">SETBP1 · ETNK1</text>
+<path d="M450 262 L558 322" fill="none" stroke="#3b3540" stroke-width="1.2" marker-end="url(#ak)"/>
+<rect x="456" y="330" width="204" height="126" rx="12" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.4"/>
+<text x="558" y="356.0" font-size="15" font-weight="700" fill="#a3223a" text-anchor="middle">MDS/MPN-SF3B1-T</text>
+<text x="558" y="382.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Platelets ≥450 +</text>
+<text x="558" y="399.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">ring sideroblasts ≥15%</text>
+<text x="558" y="432.0" font-size="12" font-weight="700" fill="#5d5663" text-anchor="middle">SF3B1 + JAK2/CALR/MPL</text>
+<path d="M450 262 L775 322" fill="none" stroke="#3b3540" stroke-width="1.2" marker-end="url(#ak)"/>
+<rect x="673" y="330" width="204" height="126" rx="12" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.4"/>
+<text x="775" y="356.0" font-size="15" font-weight="700" fill="#2f7d4f" text-anchor="middle">MDS/MPN-NOS</text>
+<text x="775" y="382.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Mixed features, no</text>
+<text x="775" y="399.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">other MDS/MPN type</text>
+<text x="775" y="432.0" font-size="12" font-weight="700" fill="#5d5663" text-anchor="middle">TET2 · NRAS · RUNX1</text>
+<rect x="20" y="476" width="860" height="62" rx="10" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="450" y="500.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">Excluded first: BCR::ABL1 (CML), PDGFRA / PDGFRB / FGFR1 / PCM1::JAK2 rearrangement, prior cytotoxic therapy,</text>
+<text x="450" y="521.0" font-size="13" font-weight="400" fill="#5d5663" text-anchor="middle">and a known MPN that later acquires dysplasia (that is progression, not MDS/MPN).</text>
+</svg>

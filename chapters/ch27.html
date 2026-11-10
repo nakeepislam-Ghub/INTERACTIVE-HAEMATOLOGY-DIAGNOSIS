@@ -1,0 +1,469 @@
+<article class="col chead" id="top">
+  <div class="eyebrow">Part 5 · Flow cytometry · Chapter 27</div>
+  <h1>Immunophenotyping of leukaemias and lymphomas</h1>
+  <p>Reading the flow report: blasts and their lineage, the phenotypes of the genetic AML entities, B and T lymphoblastic leukaemia, mixed-phenotype leukaemia, then mature B-cell, plasma cell and T-cell neoplasms.</p>
+  <div class="meta"><span>Source: Dr Abeer's Flow cytometry notes, pp 17–69</span><span>Reading time about 45 min</span></div>
+  <div class="jump" aria-label="Jump to">
+    <a href="#lecture">Lecture</a><a href="#blast">Blast finder</a><a href="#alflow">Lineage chart</a><a href="#amlmatch">AML matcher</a><a href="#egil">EGIL score</a><a href="#mpal">WHO MPAL</a><a href="#kl">Clonality ratio</a><a href="#bmatch">B-cell matcher</a><a href="#tmatch">T-cell matcher</a><a href="#gallery">Real plots</a><a href="#case">Case</a><a href="#quiz">Quiz</a>
+  </div>
+</article>
+
+<div class="col lec" id="lecture">
+<section>
+  <h2><span class="sn">27.1</span>Flow cytometry in acute leukaemia</h2>
+  <div class="video" data-video="H7g2aaVIRq0" data-title="Role of flow cytometry in diagnosis of mature lymphoid neoplasms" data-sub="One of 2 lectures listed below."></div>
+  <div class="vmore" data-widget="vmore" data-src="d27-vids"></div>
+  <script type="application/json" id="d27-vids">[{"v": "ysQS112ELtM", "t": "Laboratory diagnosis of haematological and lymphoid malignancy: practical for undergraduates"}]</script>
+  <p>Acute leukaemia is a clonal expansion of blasts, arrested in differentiation, in marrow, blood or other tissues. Flow cytometry:</p>
+  <ul>
+    <li><b>Confirms that blasts are present</b> and helps count them in blood, but <b>not in marrow</b> (haemodilution and variable red cell lysis): count marrow blasts on the smear.</li>
+    <li><b>Determines lineage.</b> The most useful markers: <b>AML</b> CD13, CD33, CD117 (and MPO); <b>B-ALL</b> CD10, CD19, cytoplasmic CD79a; <b>T-ALL</b> cytoplasmic CD3.</li>
+    <li>Recognises <b>acute undifferentiated leukaemia</b>: CD34, TdT, HLA-DR or CD38 with no cCD3, MPO, cCD22, cCD79a or strong CD19.</li>
+    <li>Defines the <b>leukaemia-associated phenotype</b> used later for minimal residual disease.</li>
+  </ul>
+  <h3>How blasts look on flow</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Feature</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>CD45 / SSC</td><td>Dim to negative CD45, variable side scatter (the blast gate)</td></tr>
+      <tr><td>Immaturity markers</td><td>TdT, CD34 and/or CD117; CD34 is negative in many cases. Myeloblasts are CD117+CD34+; less differentiated blasts may be TdT+</td></tr>
+      <tr><td>Blasts without immaturity markers</td><td>Recognised as CD16−, CD10− and/or CD56 bright, unlike benign maturing myeloid cells (CD16+, CD10+, CD56−)</td></tr>
+      <tr><td>Maturity markers</td><td>Absent: CD10 (myeloid), CD11b, CD15, CD16, CD65</td></tr>
+      <tr><td>HLA-DR</td><td>Positive in most AML except APL; positive in B-ALL; only a few T-ALL</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Leukaemia-associated phenotype (LAP)</h3>
+  <ul>
+    <li>Abnormal intensity of an antigen.</li>
+    <li><b>Asynchronous</b> expression of maturity and immaturity markers together.</li>
+    <li><b>Homogeneous</b> expression of an antigen normally variable during maturation.</li>
+    <li><b>Cross-lineage</b> antigens: CD2 on monoblastic AML, hypogranular APL or AML with or without maturation; CD7 dim, CD19, CD56, or CD19 with CD56 in t(8;21).</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Lineage</th><th>Initial panel (AML or ALL; B or T)</th><th>Second panel (subclassify)</th></tr></thead>
+    <tbody>
+      <tr><td>Progenitor</td><td>CD34, HLA-DR, TdT (CD45 for all)</td><td>CD117</td></tr>
+      <tr><td>Myeloid</td><td>CD13, CD33, CD117, cytoplasmic MPO</td><td>CD15, CD11b, CD65; monocytic CD14, CD64, CD36; megakaryocytic CD41, CD42, CD61; erythroid glycophorin A (CD235a), CD71</td></tr>
+      <tr><td>B lymphoid</td><td>CD19, CD10, cytoplasmic CD22, cytoplasmic CD79a</td><td>Cytoplasmic μ, surface Ig</td></tr>
+      <tr><td>T lymphoid</td><td>CD2, CD7, cytoplasmic CD3</td><td>CD1a, CD5, CD4, CD8, anti-TCR</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">CD34 or TdT also separates acute leukaemia from the leukaemic phase of a large-cell lymphoma.</p>
+</section>
+
+<section>
+  <h2><span class="sn">27.2</span>Phenotypes of the AML entities</h2>
+  <p>AML is classified by genetics, morphology and history; immunophenotype matters most for the residual AML, NOS group. Still, many genetic entities have a recognisable flow fingerprint. Test yourself with the <a href="#amlmatch">AML matcher</a>.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Entity (FAB)</th><th>CD45/SSC</th><th>Immaturity and myeloid</th><th>Clues and aberrant markers</th></tr></thead>
+    <tbody>
+      <tr><td><b>t(8;21) RUNX1::RUNX1T1</b> (M2)</td><td>Blast gate</td><td>CD34+, CD117+, MPO, CD13, CD33; CD15/CD65+ but CD11b−</td><td><b>Weak CD19</b> (with PAX5, cCD79a); <b>CD56</b> (poorer prognosis). Long thin Auer rods</td></tr>
+      <tr><td><b>inv(16)/t(16;16) CBFB::MYH11</b> (M4Eo)</td><td><b>Multiple populations</b>: myeloblasts low SSC, monoblasts higher SSC</td><td>Strong CD34, CD117; subsets CD13, CD33, MPO, CD15, CD65 (asynchrony)</td><td>Monocytic subset CD14, CD4, CD11b, CD11c, CD64, CD36; aberrant <b>CD2</b>. Abnormal eosinophils</td></tr>
+      <tr><td><b>APL PML::RARA</b> (M3, M3v)</td><td>CD45 brighter, <b>high SSC</b> (hypogranular: lower SSC)</td><td><b>HLA-DR−, CD34−</b>, CD117+; <b>CD33 bright homogeneous</b>, CD13 heterogeneous; CD11b−, CD15 weak</td><td>CD34 and <b>CD2</b> may be positive in the microgranular variant; CD56 in about 10% (worse)</td></tr>
+      <tr><td><b>t(9;11) KMT2A::MLLT3</b> (M5a)</td><td>Monoblasts: CD45 moderate, higher SSC</td><td>Strong HLA-DR, weak CD34/CD117; CD33 strong, CD13 weak, <b>MPO−</b>; CD65 strong</td><td>CD11b, CD11c, CD64, CD36, strong CD4, weak CD14; <b>CD56</b></td></tr>
+      <tr><td><b>t(6;9) DEK::NUP214</b> (M2, M4)</td><td>Blast gate</td><td>HLA-DR, CD117, CD34, MPO, CD13, CD33; CD64</td><td>Increased <b>basophils</b> (CD123, CD33, CD38); FLT3-ITD common</td></tr>
+      <tr><td><b>inv(3)/t(3;3) GATA2, MECOM</b></td><td>Blast gate</td><td>CD34 (stronger in inv(3)), CD117, HLA-DR, CD13, CD33</td><td>Aberrant <b>CD7</b>; some CD41/CD61; normal or high platelets, dysplastic megakaryocytes</td></tr>
+      <tr><td><b>t(1;22) RBM15::MRTFA</b> (M7, infants)</td><td>Often <b>CD45−</b></td><td>CD34−, HLA-DR−, MPO−; CD13/CD33 ±</td><td><b>CD41, CD61, CD42b</b>; <b>CD36</b> characteristic. Blasts with cytoplasmic blebs</td></tr>
+      <tr><td><b>BCR::ABL1</b></td><td>Blast gate</td><td>Myeloid antigens</td><td>Aberrant <b>CD7 and CD19</b></td></tr>
+      <tr><td><b>NPM1 mutated</b></td><td>Blast or monocyte region</td><td><b>CD34− in two-thirds</b>, <b>HLA-DR− in one-third</b> ("APL-like"); CD33, CD117, MPO</td><td>Monocytic cases CD64, CD14, CD11b; CD4 or CD19 may be +. Cup-shaped nuclei</td></tr>
+      <tr><td><b>Biallelic CEBPA</b></td><td>Blast gate</td><td>HLA-DR, CD34, myeloid</td><td>More often <b>CD7</b>, CD15, HLA-DR; less often CD56</td></tr>
+      <tr><td><b>RUNX1 mutated</b> (often M0)</td><td>Blast gate</td><td>Immature myeloid</td><td>Aberrant CD56 or CD7</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Myelodysplasia-related, therapy-related and NOS</h3>
+  <ul>
+    <li><b>AML with myelodysplasia-related changes:</b> abnormal antigen patterns and light scatter; prior MDS links to CD34; CD34, TdT and CD7 link to chromosome 5 and 7 abnormalities; CD11b with high-risk karyotypes; strong CD14 with poor prognosis; aberrant CD56/CD7. Multilineage dysplasia lowers HLA-DR, CD117, CD135 and CD38.</li>
+    <li><b>Therapy-related myeloid neoplasms:</b> CD34+ blasts with pan-myeloid antigens (CD13, CD33, MPO, which may be downregulated) and abnormal maturing myeloid cells.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>AML, NOS type</th><th>Confirming phenotype</th></tr></thead>
+    <tbody>
+      <tr><td>Pure erythroid leukaemia</td><td><b>CD235a</b> (glycophorin A), often CD36 and <b>strong CD71</b></td></tr>
+      <tr><td>Acute megakaryoblastic leukaemia</td><td><b>CD41, CD42 and/or CD61</b>; exclude t(1;22) and Down syndrome</td></tr>
+      <tr><td>Acute basophilic leukaemia</td><td><b>CD123, CD203c</b>, CD11b with myeloid antigens; CD22 may be +; <b>HLA-DR−</b></td></tr>
+      <tr><td>Acute panmyelosis with myelofibrosis</td><td>Trephine biopsy and immunohistochemistry show multilineage involvement</td></tr>
+      <tr><td>Acute undifferentiated leukaemia</td><td>CD34, HLA-DR with at most one non-specific myeloid antigen (CD13 or CD33) on some blasts; TdT and CD7 may be +</td></tr>
+      <tr><td>Myeloid sarcoma</td><td>Immunohistochemistry separates it from other tumours</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Myeloid proliferations of Down syndrome (first 5 years; megakaryoblasts, giant hypogranular platelets) are diagnosed on blood morphology.</p>
+</section>
+
+<section>
+  <h2><span class="sn">27.3</span>B- and T-lymphoblastic leukaemia</h2>
+  <h3>B-lymphoblastic leukaemia/lymphoma</h3>
+  <ul>
+    <li>Low SSC, <b>CD45 dim</b> (may be negative or moderate).</li>
+    <li><b>TdT+, CD34+, HLA-DR+, CD117−.</b></li>
+    <li>B lineage: <b>strong CD19</b> plus one of cCD79a, cCD22, CD10, or <b>weak CD19</b> plus two of them. CD19 and cytoplasmic CD22 are the most sensitive B markers.</li>
+    <li>Typical: CD19+, CD22+, CD79a+, <b>CD10 bright</b>, CD20−; no surface light chain.</li>
+    <li>Aberrant CD13, CD33, CD56 or CD117 occasionally.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Stage</th><th>Phenotype (all TdT+, HLA-DR+, CD34+, CD19+, CD79a+, cCD22+, CD24+)</th></tr></thead>
+    <tbody>
+      <tr><td>Pro-B ALL</td><td>No other B-cell markers (CD10−); typical of KMT2A-rearranged infant ALL</td></tr>
+      <tr><td>Common ALL</td><td><b>CD10+</b>, CD20 ±, cytoplasmic IgM−</td></tr>
+      <tr><td>Pre-B ALL</td><td>CD10+, CD20 ±, <b>cytoplasmic IgM+</b></td></tr>
+    </tbody>
+  </table></div>
+  <h3>T-lymphoblastic leukaemia/lymphoma</h3>
+  <ul>
+    <li>Slightly higher forward scatter than normal T cells; low SSC, <b>CD45 moderate</b>.</li>
+    <li>TdT+, CD34 ±, <b>HLA-DR−</b>, CD1a ±.</li>
+    <li><b>Cytoplasmic CD3+</b>, surface CD3−, CD7+, CD10 ±, CD2 ±, CD5 ±; CD4+CD8+ or CD4−CD8−. Occasionally CD13, CD33, CD56 or CD117.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>EGIL stage</th><th>Phenotype (all TdT+, cytoplasmic CD3+, CD7+)</th></tr></thead>
+    <tbody>
+      <tr><td>Pro-T ALL</td><td>CD34 ±; no other T-cell markers</td></tr>
+      <tr><td>Pre-T ALL</td><td>CD34 ±; CD2 and/or CD5</td></tr>
+      <tr><td>Cortical T-ALL</td><td>CD34−; CD2/CD5; <b>CD1a+, CD4+ and CD8+</b></td></tr>
+      <tr><td>Mature (medullary) T-ALL</td><td>CD34−; CD2/CD5; CD1a−; <b>CD4 or CD8</b>; surface CD3</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Early T-precursor ALL and its markers are covered in <a href="#ch25">Chapter 25</a>.</p>
+</section>
+
+<section>
+  <h2><span class="sn">27.4</span>Acute leukaemia of ambiguous lineage</h2>
+  <ul>
+    <li><b>Acute undifferentiated leukaemia (AUL):</b> no lineage-specific antigen.</li>
+    <li><b>Mixed-phenotype acute leukaemia (MPAL):</b> antigens of more than one lineage, as <b>distinct populations</b> each of one lineage (bilineal), <b>one population</b> carrying several lineages (biphenotypic), or a combination.</li>
+  </ul>
+  <p>The older <b>EGIL score</b> gives points per marker (2, 1 or 0.5); a biphenotypic leukaemia scores <b>more than 2</b> for the myeloid lineage and one lymphoid lineage. The <b>WHO criteria</b> instead require: myeloid = MPO, or monocytic differentiation (at least two of NSE, CD11c, CD14, CD64, lysozyme); T = cytoplasmic (or surface) CD3; B = strong CD19 with one of CD79a, cCD22, CD10, or weak CD19 with two. Try both calculators below.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>EGIL points</th><th>B lymphoid</th><th>T lymphoid</th><th>Myeloid</th></tr></thead>
+    <tbody>
+      <tr><td>2</td><td>CD79a, cyt IgM, cyt CD22</td><td>CD3 (membrane or cytoplasmic), anti-TCR α/β, anti-TCR γ/δ</td><td>Anti-MPO (anti-lysozyme)</td></tr>
+      <tr><td>1</td><td>CD19, CD10, CD20</td><td>CD2, CD5, CD8, CD10</td><td>CD13, CD33, CDw65, CD117</td></tr>
+      <tr><td>0.5</td><td>TdT, CD24</td><td>TdT, CD1a, CD7</td><td>CD14, CD15, CD64</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="sn">27.5</span>Mature B-cell and plasma cell neoplasms</h2>
+  <p>Mature lymphoid neoplasms are clonal proliferations of mature B, T or NK cells. Work-up: blood count, film or tissue biopsy, immunophenotyping, genetics and clonality, renal and liver function, LDH, β2-microglobulin, albumin, calcium, uric acid, and lumbar puncture if CNS disease is suspected. The microscope comes first: small mature cells (SLL, MCL, MZL, low-grade FL, LPL) or medium blastoid cells (lymphoblastic lymphoma, blastoid MCL, high-grade B-cell lymphoma, DLBCL).</p>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>B-cell markers</th><th>T-cell markers</th></tr></thead>
+    <tbody>
+      <tr><td>First line</td><td>Surface Ig κ/λ, CD19, CD23, FMC7, CD79b, CD22, CD5 (CD20 as therapy target; CD10 for some lymphomas)</td><td>CD2, CD3, CD5, CD7, CD4, CD8</td></tr>
+      <tr><td>Second line</td><td>CD11c, CD25, CD103, CD123, CD38, CD138, cytoplasmic Ig</td><td>CD25, CD30, CD56, CD57, CD16, TCR</td></tr>
+    </tbody>
+  </table></div>
+  <p>The first line separates B from T disorders, shows B-cell clonality, and confirms or excludes CLL (the Matutes score: <a href="#ch21">Chapter 21</a>). The second line is used when the diagnosis is still unclear.</p>
+  <h3>General features of mature B-cell neoplasms</h3>
+  <ul>
+    <li><b>Clonality:</b> one light chain only (κ or λ), best seen on a two-parameter dot plot, ideally within the abnormal population (by size, CD5 or CD10, or CD20/CD19 intensity). The κ+ cells should equal the λ− cells and vice versa.</li>
+    <li>T-cell markers negative; B markers dim to moderate; <b>CD45 bright</b>; HLA-DR+.</li>
+    <li><b>Surface Ig-negative</b> B-cell neoplasms: plasma cells, CLL/SLL (very dim), follicular lymphoma, PMBL and DLBCL. Do not confuse them with B lymphoblasts and haematogones (CD10+, CD34/TdT+). Try the <a href="#kl">clonality ratio tool</a>.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Plasma cells</th><th>Benign</th><th>Neoplastic</th></tr></thead>
+    <tbody>
+      <tr><td>Cytoplasmic Ig</td><td>Polyclonal</td><td><b>Monoclonal</b> (a few biclonal): κ:λ ≥8:1, or λ:κ ≥4:1</td></tr>
+      <tr><td>CD38 / CD138</td><td>Bright / +</td><td>Bright / dim or bright</td></tr>
+      <tr><td>CD19</td><td>+</td><td><b>−</b></td></tr>
+      <tr><td>CD45</td><td>− or dim</td><td><b>−</b></td></tr>
+      <tr><td>CD56</td><td>−</td><td><b>+</b></td></tr>
+      <tr><td>CD20, CD22, surface Ig</td><td>−</td><td>− (CD20 + in some)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">CD38 is also on haematogones, some mature B cells, activated T cells and myeloid cells, but dimmer. CD138 is plasma-cell specific (and on some carcinomas) but less sensitive, so use CD38 and CD138 together with CD45.</p>
+  <h3>The CD5 / CD10 groups</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Group</th><th>Disease</th><th>Flow phenotype</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3"><b>CD5+ CD10−</b></td><td>CLL/SLL</td><td>CD45 bright; CD19 moderate, <b>CD20 dim</b>, <b>surface Ig dim</b> with light-chain restriction; <b>CD23+</b>, CD43+; FMC7−; cyclin D1−, BCL2+. CD38 or ZAP-70 = unmutated IGHV, worse prognosis</td></tr>
+      <tr><td>Atypical CLL</td><td>CD45 dim, CD20 bright, sIg bright, CD23 dim or −, CD7+</td></tr>
+      <tr><td>Mantle cell lymphoma</td><td>CD20 moderate to bright, sIg moderate to bright, <b>FMC7+</b>, <b>CD23−</b>, CD43+; nuclear <b>cyclin D1</b> (t(11;14)). Few cases CD5−, CD10+ or CD23+</td></tr>
+      <tr><td rowspan="3"><b>CD5− CD10+</b></td><td>Follicular lymphoma</td><td>Low FSC (higher in high grade); CD19 dim, CD20 moderate to bright, sIg ±, BCL2+, BCL6+. Marrow flow often falsely negative (paratrabecular disease)</td></tr>
+      <tr><td>Burkitt lymphoma</td><td><b>High FSC</b>, sIg+ restricted, CD20 bright, CD43+, <b>BCL2−</b>, BCL6+, Ki-67 near 100%</td></tr>
+      <tr><td>DLBCL, GCB type</td><td>High FSC; CD10+, BCL6+, MUM1− (non-GCB: CD10−, MUM1+)</td></tr>
+      <tr><td><b>CD5+ CD10+</b></td><td>A few DLBCL, FL, MCL, CLL, Burkitt</td><td>Rare; needs genetics</td></tr>
+      <tr><td><b>CD5− CD10− CD11c bright</b></td><td>Hairy cell leukaemia</td><td>Bright CD45, slightly raised SSC; CD20, CD22, sIg and <b>CD11c bright</b>; FMC7+; <b>CD25 and CD103</b> (variant CD25−); CD123+; <b>CD38−</b></td></tr>
+      <tr><td><b>CD5− CD10− CD11c dim/−</b></td><td>MZL, B-PLL, some LPL; CD5− MCL; CD10− FL; leukaemic DLBCL</td><td>Non-specific; needs FISH: t(11;14) for MCL, t(14;18) for FL and some DLBCL</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="sn">27.6</span>Mature T- and NK-cell neoplasms</h2>
+  <p>These are 10–12% of lymphoid malignancies. Flow often can only <b>suspect</b> a T-cell lymphoma, because it cannot prove T-cell clonality; TCR gene studies, morphology, cytogenetics and viral studies complete the picture.</p>
+  <ul>
+    <li><b>Benign T cells:</b> CD2, CD3, CD5, CD7, CD4 or CD8, CD43, CD45, TCRαβ; HLA-DR−. Unusual T-cell populations appear in many reactive states, and one odd antigen on a few cells means little.</li>
+    <li><b>Suspicious features:</b> high forward scatter (ALCL, large-cell PTCL); <b>abnormal expression of 3 or 4 pan-T markers</b> (or 1–2 with other abnormalities); <b>complete loss</b> is more specific than dim; "smeary" heterogeneous expression; <b>CD7 loss</b> is common.</li>
+    <li><b>CD45 loss</b> does not occur in reactive T cells (seen in T-PLL, ALCL). <b>TCR:</b> dim αβ, γδ positive, or both absent suggests malignancy.</li>
+    <li><b>CD4/CD8:</b> normal blood about 2:1. Restriction, double positive or double negative raise suspicion when the T-cell population is expanded; double positive or negative is commoner in T-ALL, CD4+ in mature T neoplasms.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Pattern</th><th>Typical diseases</th></tr></thead>
+    <tbody>
+      <tr><td>CD4+ CD8−</td><td>AITL, MF/Sézary, most T-PLL, most PTCL NOS, most ALCL, ATLL</td></tr>
+      <tr><td>CD4− CD8+</td><td>T-LGL leukaemia, subcutaneous panniculitis-like TCL, some EATL; a few PTCL, T-PLL, ALCL, hepatosplenic TCL</td></tr>
+      <tr><td>CD4+ CD8+</td><td>Some T-PLL, some T-LGL; rare PTCL NOS, ALCL</td></tr>
+      <tr><td>CD4− CD8−</td><td>EATL, NK-LGL, extranodal NK/T-cell lymphoma, hepatosplenic γδ TCL, PTCL NOS, T-PLL</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>NK markers</b> (CD16, CD56, CD57): T-LGL and T/NK neoplasms; CD56 also in PTCL NOS, ALCL, hepatosplenic TCL (dim in reactive states).</li>
+    <li><b>CD30:</b> ALCL, PTCL NOS, EATL, AITL. <b>CD103:</b> EATL. <b>CD117:</b> T-PLL. <b>CD10:</b> some PTCL (and AITL). CD19/CD20 in some PTCL NOS. CD13 and CD33 are not seen.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Disease</th><th>Flow phenotype</th></tr></thead>
+    <tbody>
+      <tr><td>T-PLL</td><td>CD45+; TdT−, CD34−, CD1a−, HLA-DR−; CD2, CD3, CD5, <b>CD7+</b>, TCRαβ, <b>CD52</b> high; CD4+CD8− (also CD4+CD8+, or CD8+ with aberrant CD117)</td></tr>
+      <tr><td>T-LGL leukaemia</td><td>CD3+, CD2+, <b>CD5 and/or CD7 dim or partial</b>; CD4−CD8+; TCRαβ; CD57, CD16, CD56, CD11b, CD11c variable (no CD16/CD56 co-expression)</td></tr>
+      <tr><td>NK-LGL (CLPD-NK)</td><td><b>sCD3−</b>, CD5−, CD2+, CD7+, CD4−; CD8 ±; <b>CD16+CD56+</b> co-expressed, CD57+</td></tr>
+      <tr><td>γδ T-LGL</td><td>sCD3+, CD2, CD5, CD7, TCRγδ; CD4−CD8+ or double negative; CD11c+; CD16, CD56, CD57 variable</td></tr>
+      <tr><td>ATLL</td><td>CD3, CD2, CD5+, <b>CD7−</b>; <b>CD25+</b>; CD4+CD8−; no cytotoxic markers (CD16, CD56, CD57, TIA-1, granzyme)</td></tr>
+      <tr><td>ALCL</td><td>High FSC and SSC; CD3−, CD5−, CD7−, CD2+; CD4+; CD25+; <b>CD30 strong</b> (membrane and Golgi); EMA+; ALK in ALK+ cases</td></tr>
+      <tr><td>Mycosis fungoides / Sézary</td><td>CD3+, <b>CD7−</b>, <b>CD26 dim/−</b>, CD4+CD8−; loss of CD2, CD3 or CD5 may occur. Sézary: count &gt;1000/mm³, or CD4:CD8 &gt;10, or loss of pan-T markers, plus a blood T-cell clone</td></tr>
+    </tbody>
+  </table></div>
+</section>
+</div>
+
+<section class="wide panel" id="blast">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>Blast finder on CD45 / side scatter</h2>
+    <p>Each leukaemia puts its blasts in a typical place. Tap a cluster, or test yourself. Schematic plots based on Dr Abeer's notes (pp 18–43).</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="gate" data-src="d27-gate"></div>
+  <script type="application/json" id="d27-gate">{"scenarios":[
+   {"name":"AML with maturation","note":"Myeloblasts with residual granulocytes.","pops":[
+    {"n":"Myeloblasts","x":0.43,"y":0.2,"rx":0.08,"ry":0.08,"c":"green","k":280,"d":"Dim CD45, low side scatter. Typically CD34+, CD117+, HLA-DR+, CD13+, CD33+, MPO+."},
+    {"n":"Granulocytes","x":0.6,"y":0.7,"rx":0.08,"ry":0.13,"c":"blue","k":120,"d":"Maturing neutrophils: high side scatter. In t(8;21) they may be dysplastic."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.06,"ry":0.04,"c":"haem","k":60,"d":"Residual lymphocytes: bright CD45, low side scatter."}]},
+   {"name":"APL","note":"Hypergranular acute promyelocytic leukaemia.","pops":[
+    {"n":"Neoplastic promyelocytes","x":0.52,"y":0.56,"rx":0.07,"ry":0.17,"c":"orange","k":340,"d":"High side scatter from the granules, CD45 brighter than myeloblasts. HLA-DR−, CD34−, CD117+, CD33 bright and homogeneous, CD13 heterogeneous, CD11b−."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.06,"ry":0.04,"c":"haem","k":50,"d":"Residual lymphocytes."}]},
+   {"name":"Hypogranular APL","note":"Microgranular variant (M3v).","pops":[
+    {"n":"Abnormal promyelocytes","x":0.47,"y":0.3,"rx":0.07,"ry":0.08,"c":"orange","k":300,"d":"Lower side scatter because the granules are submicroscopic. Still HLA-DR−; CD34 and CD2 may be positive. Bilobed nuclei on the film."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.06,"ry":0.04,"c":"haem","k":50,"d":"Residual lymphocytes."}]},
+   {"name":"Monoblastic AML","note":"For example AML with t(9;11).","pops":[
+    {"n":"Monoblasts","x":0.62,"y":0.36,"rx":0.07,"ry":0.08,"c":"purple","k":300,"d":"CD45 moderate with higher side scatter than myeloblasts. HLA-DR strong, CD33 strong, CD64, CD11b, CD4, CD36, MPO−; CD56 common."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.06,"ry":0.04,"c":"haem","k":50,"d":"Residual lymphocytes."},
+    {"n":"Granulocytes","x":0.6,"y":0.76,"rx":0.06,"ry":0.09,"c":"blue","k":50,"d":"Few residual granulocytes."}]},
+   {"name":"AML with inv(16)","note":"Several blast populations.","pops":[
+    {"n":"Myeloblasts","x":0.45,"y":0.18,"rx":0.06,"ry":0.06,"c":"green","k":170,"d":"Low SSC, CD45 moderate; strong CD34 and CD117."},
+    {"n":"Monoblasts","x":0.62,"y":0.38,"rx":0.06,"ry":0.07,"c":"purple","k":160,"d":"Higher SSC, CD45 moderate; CD14, CD64, CD11b, CD36, CD4. Blasts may be CD2+."},
+    {"n":"Granulocytes","x":0.6,"y":0.74,"rx":0.07,"ry":0.11,"c":"blue","k":90,"d":"Includes abnormal eosinophils with large proeosinophilic granules."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.05,"ry":0.04,"c":"haem","k":40,"d":"Residual lymphocytes."}]},
+   {"name":"B-ALL","note":"B-lymphoblastic leukaemia.","pops":[
+    {"n":"Lymphoblasts","x":0.36,"y":0.12,"rx":0.08,"ry":0.05,"c":"green","k":340,"d":"Low SSC with dim (or negative) CD45, lower than normal lymphocytes. TdT, CD34, HLA-DR, CD19, cCD79a, cCD22, CD10 bright."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.05,"ry":0.04,"c":"haem","k":50,"d":"Residual normal lymphocytes: brighter CD45."},
+    {"n":"Granulocytes","x":0.6,"y":0.72,"rx":0.06,"ry":0.09,"c":"blue","k":40,"d":"Few residual granulocytes."}]},
+   {"name":"T-ALL","note":"T-lymphoblastic leukaemia.","pops":[
+    {"n":"T lymphoblasts","x":0.6,"y":0.12,"rx":0.07,"ry":0.05,"c":"teal","k":320,"d":"Low SSC with moderate CD45, between B lymphoblasts and lymphocytes. Cytoplasmic CD3, CD7, TdT; HLA-DR−."},
+    {"n":"Lymphocytes","x":0.82,"y":0.13,"rx":0.05,"ry":0.04,"c":"haem","k":50,"d":"Residual normal lymphocytes."}]},
+   {"name":"Myeloma marrow","note":"Neoplastic plasma cells.","pops":[
+    {"n":"Plasma cells","x":0.2,"y":0.22,"rx":0.07,"ry":0.07,"c":"amber","k":160,"d":"CD45 negative to dim with low to moderate SSC. Gate them on CD38 bright / CD138 and check CD19−, CD56+ and cytoplasmic light chain."},
+    {"n":"Lymphocytes","x":0.8,"y":0.12,"rx":0.06,"ry":0.04,"c":"haem","k":80,"d":"Lymphocytes."},
+    {"n":"Granulocytes","x":0.6,"y":0.7,"rx":0.08,"ry":0.13,"c":"blue","k":150,"d":"Maturing granulocytes."},
+    {"n":"Monocytes","x":0.73,"y":0.37,"rx":0.05,"ry":0.05,"c":"purple","k":50,"d":"Monocytes."}]},
+   {"name":"Hairy cell leukaemia","note":"Blood with pancytopenia.","pops":[
+    {"n":"Hairy cells","x":0.86,"y":0.25,"rx":0.05,"ry":0.05,"c":"orange","k":200,"d":"Bright CD45 with slightly raised side scatter, between lymphocytes and monocytes. CD11c, CD25, CD103, CD123 positive; CD38−."},
+    {"n":"Lymphocytes","x":0.78,"y":0.11,"rx":0.05,"ry":0.04,"c":"haem","k":90,"d":"Normal lymphocytes."},
+    {"n":"Granulocytes","x":0.6,"y":0.72,"rx":0.06,"ry":0.08,"c":"blue","k":50,"d":"Neutropenia: few granulocytes. Monocytes are typically absent."}]}
+  ]}</script>
+</section>
+
+<section class="wide panel" id="alflow">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>Assigning the lineage of blasts</h2>
+    <p>Answer Yes or No. Based on Dr Abeer's acute leukaemia panels and the WHO lineage rules.</p>
+  </header>
+  <div class="fl" data-widget="flow" data-src="d27-flow"></div>
+  <script type="application/json" id="d27-flow">
+{"q":"Are there blasts: dim CD45 cells expressing CD34, TdT, CD117 or HLA-DR?","hint":"Gate on CD45/SSC first.",
+ "n":{"dx":"Not acute leukaemia by flow","d":"Consider a mature lymphoid neoplasm, a myelodysplastic or myeloproliferative neoplasm, or blasts lacking immaturity markers (APL, NPM1-mutated, monoblastic AML).","next":"Look at morphology; extend the panel (CD64, CD14, CD11b) if the smear shows blasts."},
+ "y":{"q":"Do the blasts express two lineages (MPO with cytoplasmic CD3, or MPO with strong CD19 plus another B marker), or are there two blast populations?",
+   "y":{"dx":"Mixed-phenotype acute leukaemia","d":"Bilineal (two populations) or biphenotypic (one population). Use the WHO criteria and the EGIL score below.","next":"BCR::ABL1, KMT2A rearrangement, ZNF384 and BCL11B define genetic MPAL types."},
+   "n":{"q":"Is MPO positive (≥10%) or are there at least two monocytic markers (CD11c, CD14, CD64, lysozyme, NSE)?",
+     "y":{"q":"HLA-DR and CD34 negative, with bright homogeneous CD33 and high side scatter?",
+       "y":{"dx":"Suspect APL (PML::RARA)","d":"Start ATRA immediately while PML::RARA is confirmed; check coagulation for DIC. NPM1-mutated AML can look similar (CD34− and sometimes HLA-DR−).","next":"PML::RARA by FISH or PCR; fibrinogen, PT, D-dimer."},
+       "n":{"dx":"AML","d":"Subtype with the second panel (CD15, CD11b, CD65, CD14, CD64, CD36; CD41/CD61; CD235a/CD71) and genetics. Look for clues: CD19 and CD56 in t(8;21), CD2 with monocytic subsets in inv(16), CD7 in inv(3) or BCR::ABL1.","next":"Karyotype, FISH, NPM1, FLT3, CEBPA and the myeloid NGS panel."}},
+     "n":{"q":"Is cytoplasmic CD3 positive?",
+       "y":{"dx":"T-lymphoblastic leukaemia/lymphoma","d":"CD7, TdT, CD1a, CD2, CD5, CD4/CD8 define the stage; HLA-DR usually negative.","next":"Check ETP criteria (CD1a, CD8, CD5, myeloid/stem markers); mediastinal imaging; CSF."},
+       "n":{"q":"Strong CD19 with one of CD79a, cCD22, CD10 (or weak CD19 with two)?",
+         "y":{"dx":"B-lymphoblastic leukaemia/lymphoma","d":"TdT+, CD34+, HLA-DR+, CD10 bright (CD10− pro-B suggests KMT2A rearrangement).","next":"BCR::ABL1, ETV6::RUNX1, KMT2A, hyperdiploidy and Ph-like screening; MRD planning from the LAP."},
+         "n":{"q":"CD41, CD61 or CD42b positive, or CD235a with strong CD71?",
+           "y":{"dx":"Megakaryoblastic or erythroid leukaemia","d":"These blasts are MPO negative and often CD45 negative.","next":"Exclude t(1;22) and Down syndrome (megakaryoblastic); TP53 in erythroid leukaemia."},
+           "n":{"dx":"Acute undifferentiated leukaemia","d":"Only CD34, HLA-DR, TdT or CD38, with at most one non-specific myeloid antigen.","next":"Exclude AML with minimal differentiation (MPO by flow), basophilic and dendritic-cell neoplasms, and non-haemopoietic tumours."}}}}}}}
+  </script>
+</section>
+
+<section class="wide panel" id="amlmatch">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>AML phenotype matcher</h2>
+    <p>Enter the blast phenotype and see which AML entity fits best. Based on Dr Abeer's flow notes (pp 21–37).</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="blpd" data-src="d27-aml"></div>
+  <script type="application/json" id="d27-aml">{"markers":["CD34","HLA-DR","CD117","CD13","CD33","MPO","CD14","CD64","CD11b","CD15/CD65","CD56","CD19","CD7","CD2","CD41/CD61","CD36","CD123","CD235a"],
+  "rows":[
+   ["AML with t(8;21) RUNX1::RUNX1T1",["+","+","+","+","+","+","−","−","−","+","+/−","+","−/+","−","−","−","n/a","−"],"Weak CD19 and CD56 on myeloid blasts; CD15/CD65 without CD11b; long thin Auer rods."],
+   ["AML with inv(16) CBFB::MYH11",["+","+","+","+","+","+","+/−","+","+","+","−/+","−","−","+/−","−","+","n/a","−"],"Several blast populations (myeloblasts and monoblasts), maturation asynchrony, aberrant CD2, abnormal eosinophils."],
+   ["Acute promyelocytic leukaemia",["−","−","+","+/−","+","+","−","+/−","−","−/+","−/+","−","−","−/+","−","−","n/a","−"],"HLA-DR−, CD34−, CD33 bright homogeneous, CD13 heterogeneous, high SSC. Start ATRA."],
+   ["AML with t(9;11) KMT2A::MLLT3 (monoblastic)",["−/+","+","−/+","−/+","+","−","+/−","+","+","+","+","−","−","−","−","+","n/a","−"],"Strong HLA-DR and CD33, MPO−, CD11b, CD64, CD36, strong CD4, weak CD14; CD56."],
+   ["AML with t(6;9) DEK::NUP214",["+","+","+","+","+","+","−","+","n/a","n/a","n/a","−","n/a","−","−","n/a","+","−"],"Basophilia (CD123+, CD33, CD38); dysplasia; FLT3-ITD."],
+   ["AML with inv(3) GATA2, MECOM",["+","+","+","+","+","+/−","−","−","n/a","n/a","n/a","−","+","−","+/−","n/a","n/a","−"],"Aberrant CD7, megakaryocytic markers in some, normal or high platelets."],
+   ["AML (megakaryoblastic) with t(1;22)",["−","−","n/a","+/−","+/−","−","−","−","−","−","n/a","−","−","−","+","+","n/a","−"],"Infants; CD45 often negative; CD41, CD61, CD42b and CD36."],
+   ["AML with BCR::ABL1",["+","+","+","+","+","+","−","n/a","n/a","n/a","n/a","+","+","n/a","−","n/a","n/a","−"],"Myeloid blasts with aberrant CD7 and CD19; exclude CML in blast phase."],
+   ["AML with mutated NPM1",["−","+/−","+","+","+","+","−/+","−/+","−/+","n/a","n/a","−/+","−","−","−","n/a","n/a","−"],"CD34− in two-thirds and HLA-DR− in one-third (APL-like); cup-shaped nuclei; monocytic cases CD64, CD14, CD11b."],
+   ["AML with myelodysplasia-related changes",["+","+/−","+/−","+","+","+/−","−/+","n/a","−/+","n/a","+/−","−","+/−","−","−","n/a","n/a","−"],"Abnormal patterns and scatter; CD34, CD7 and TdT with −5/−7; CD56 or CD7."],
+   ["Pure erythroid leukaemia",["−","−","+/−","−","−/+","−","−","−","−","−","n/a","−","−","−","−","+","n/a","+"],"CD235a, CD36 and strong CD71; TP53 mutated."],
+   ["Acute basophilic leukaemia",["+/−","−","−","+","+","−","−","n/a","+","n/a","n/a","−","−","−","−","n/a","+","−"],"CD123, CD203c, CD11b; HLA-DR−; CD22 may be +."],
+   ["Acute undifferentiated leukaemia",["+","+","−/+","−/+","−/+","−","−","−","−","−","−","−","−/+","−","−","−","n/a","−"],"No lineage marker; at most one non-specific myeloid antigen; TdT and CD7 may be +."]
+  ]}</script>
+</section>
+
+<section class="wide panel" id="egil">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>EGIL biphenotypic score</h2>
+    <p>Tick the markers expressed by the blasts. Points per lineage add up automatically.</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="egil"></div>
+</section>
+
+<section class="wide panel" id="mpal">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>WHO lineage assignment</h2>
+    <p>The current rules for mixed-phenotype acute leukaemia (also in Chapter 18).</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="mpal"></div>
+</section>
+
+<section class="wide panel" id="kl">
+  <header>
+    <div class="eyebrow">Calculator</div>
+    <h2>Clonality ratio: κ/λ and CD4/CD8</h2>
+    <p>Enter the percentages from the gated population. Plasma-cell thresholds from Dr Abeer's notes (p 52).</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="kl"></div>
+</section>
+
+<section class="wide panel" id="bmatch">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>Mature B-cell flow matcher</h2>
+    <p>Enter the flow phenotype of the abnormal B cells. "Bright" markers mean bright when positive. Based on Dr Abeer's notes (pp 54–62).</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="blpd" data-src="d27-b"></div>
+  <script type="application/json" id="d27-b">{"markers":["sIg bright","CD20 bright","CD5","CD10","CD23","FMC7","CD79b","CD11c","CD25","CD103","CD38","High forward scatter"],
+  "rows":[
+   ["CLL/SLL",["−","−","+","−","+","−","−","−/+","−/+","−","−/+","−"],"Dim sIg and CD20, CD23+, CD43+, FMC7−. CD38 or ZAP-70 = worse prognosis. Matutes score 4–5."],
+   ["Atypical CLL",["+/−","+/−","+","−","−/+","+/−","+/−","−/+","−/+","−","+/−","−"],"CD20 or sIg bright, CD23 dim, sometimes CD7+; exclude MCL with cyclin D1 or t(11;14)."],
+   ["Mantle cell lymphoma",["+","+","+","−","−","+","+","−","−","−","+/−","−"],"FMC7+, CD23−; nuclear cyclin D1 and SOX11; t(11;14)."],
+   ["Follicular lymphoma",["+/−","+","−","+","−/+","+","+","−","−","−","+/−","−"],"Low FSC in low grade; BCL2+, BCL6+; marrow flow often negative."],
+   ["Burkitt lymphoma",["+","+","−","+","−","+","+","−","−","−","+","+"],"High FSC, CD38 bright, CD43+, BCL2−, Ki-67 near 100%; MYC rearrangement."],
+   ["Diffuse large B-cell lymphoma",["+/−","+","−/+","+/−","−","+","+","−/+","−","−","+/−","+"],"High FSC; GCB (CD10+, BCL6+, MUM1−) or non-GCB (CD10−, MUM1+)."],
+   ["Hairy cell leukaemia",["+","+","−","−/+","−","+","+","+","+","+","−","−/+"],"Bright CD11c, CD25, CD103, CD123, CD38−; slightly raised SSC; BRAF V600E."],
+   ["Hairy cell leukaemia variant (SBLPN)",["+","+","−","−","−","+","+","+","−","+/−","−","−/+"],"CD25− and CD123−; no BRAF mutation; lymphocytosis with nucleolated cells."],
+   ["Marginal zone lymphoma",["+","+","−","−","−/+","+","+","−/+","−/+","−","−","−"],"Non-specific CD5−CD10− phenotype; villous lymphocytes in SMZL."],
+   ["Lymphoplasmacytic lymphoma",["+","+/−","−","−","−","+/−","+","−/+","+/−","−","+/−","−"],"Plasmacytoid cells with a clonal plasma cell component; IgM; MYD88 L265P."],
+   ["B-prolymphocytic phenotype",["+","+","−/+","−","−","+","+","−","−","−","n/a","+/−"],"Prominent nucleoli; most cases are now reclassified as MCL or CLL in prolymphocytic progression."]
+  ]}</script>
+</section>
+
+<section class="wide panel" id="tmatch">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>Mature T- and NK-cell flow matcher</h2>
+    <p>Enter the phenotype of the suspicious T or NK population. Based on Dr Abeer's notes (pp 63–69).</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="blpd" data-src="d27-t"></div>
+  <script type="application/json" id="d27-t">{"markers":["Surface CD3","CD2","CD5","CD7","CD4","CD8","CD25","CD30","CD26","CD56","CD57","CD16","TdT or CD1a"],
+  "rows":[
+   ["T-lymphoblastic leukaemia",["−","+/−","+/−","+","+/−","+/−","−","−","n/a","−/+","−","−","+"],"Cytoplasmic CD3, TdT, CD1a; CD4+CD8+ or double negative; HLA-DR−."],
+   ["T-prolymphocytic leukaemia",["+","+","+","+","+","−/+","−/+","−","+","−","−","−","−"],"CD7 bright, CD52 high, TCL1A; very high lymphocyte count."],
+   ["T-LGL leukaemia",["+","+","−/+","−/+","−","+","−","−","n/a","−/+","+","+/−","−"],"CD8+ cytotoxic cells with CD5/CD7 dim; STAT3 mutation; neutropenia."],
+   ["NK-LGL (chronic NK lymphoproliferation)",["−","+","−","+","−","−/+","−","−","n/a","+","+","+","−"],"sCD3−, CD16+CD56+ co-expression, KIR restriction."],
+   ["Adult T-cell leukaemia/lymphoma",["+","+","+","−","+","−","+","−/+","n/a","−","−","−","−"],"CD7−, CD25 bright, CCR4; HTLV-1; flower cells."],
+   ["Anaplastic large cell lymphoma",["−","+","−","−","+","−","+","+","n/a","−/+","−","−","−"],"High FSC and SSC; strong CD30; loss of pan-T markers; ALK in ALK+ cases."],
+   ["Mycosis fungoides / Sézary syndrome",["+","+","+","−","+","−","−","−/+","−","−","−","−","−"],"CD4+ with CD7 and CD26 loss; CD4:CD8 >10 in Sézary syndrome."],
+   ["Hepatosplenic T-cell lymphoma",["+","+","−","+","−","−/+","−","−","n/a","+","−","+/−","−"],"γδ T cells, double negative or CD8+, CD56+; sinusoidal infiltration."],
+   ["Extranodal NK/T-cell lymphoma",["−","+","−","−/+","−","−","−","−/+","n/a","+","−","−/+","−"],"Cytoplasmic CD3ε, CD56+, cytotoxic granules, EBER+."],
+   ["PTCL, NOS",["+/−","+/−","+/−","−","+","−","n/a","−/+","n/a","−/+","−","−","−"],"Loss of pan-T markers (often CD7), mostly CD4+; diagnosis of exclusion."],
+   ["Nodal TFH lymphoma (AITL)",["+","+","+","−/+","+","−","n/a","−/+","n/a","−","−","−","−"],"CD4+ cells with CD10, PD1, ICOS, CXCL13; sometimes dim surface CD3."]
+  ]}</script>
+</section>
+
+<section class="wide panel" id="gallery">
+  <header>
+    <div class="eyebrow">From Dr Abeer's laboratory notes</div>
+    <h2>Real flow plots and films</h2>
+    <p>Tap an image to enlarge it.</p>
+  </header>
+  <div class="gal" data-widget="gallery" data-src="d27-gal"></div>
+  <script type="application/json" id="d27-gal">[
+   {"src":"img/gal-flow-myeloblasts.jpg","cap":"CD45/SSC: myeloblasts in the blast gate (dim CD45, low side scatter)."},
+   {"src":"img/gal-flow-apl.jpg","cap":"CD45/SSC in APL: neoplastic promyelocytes with high side scatter."},
+   {"src":"img/gal-flow-hypogranular-apl.jpg","cap":"CD45/SSC in hypogranular APL: the cells fall lower, because the granules are submicroscopic."},
+   {"src":"img/gal-flow-monoblasts.jpg","cap":"CD45/SSC: monoblasts with moderate CD45 and higher side scatter."},
+   {"src":"img/gal-flow-cd34-cd45.jpg","cap":"CD34 against CD45 in acute leukaemia: the arrow marks CD34+ blasts with dim CD45."},
+   {"src":"img/gal-flow-inv16.jpg","cap":"AML with inv(16): CD11b against CD15 shows several populations with asynchronous maturation."},
+   {"src":"img/gal-flow-t911.jpg","cap":"AML with t(9;11): blasts (red) bright CD33 with little CD34."},
+   {"src":"img/gal-flow-cd41.jpg","cap":"Megakaryoblastic AML: blasts (red) express CD41; blue and green are reference populations."},
+   {"src":"img/gal-flow-ball-hladr.jpg","cap":"B-ALL: blasts (red) HLA-DR+ and CD34+."},
+   {"src":"img/gal-flow-ball-cd10.jpg","cap":"B-ALL: blasts (red) CD10 bright with CD34."},
+   {"src":"img/gal-flow-ball-cd79a.jpg","cap":"B-ALL: cytoplasmic CD79a and TdT positive."},
+   {"src":"img/gal-flow-ball-cd13.jpg","cap":"B-ALL: blasts negative for CD13 and CD117 (no myeloid commitment)."},
+   {"src":"img/gal-flow-mpal-bmy.jpg","cap":"MPAL B/myeloid: one population carries both cytoplasmic CD79a and MPO."},
+   {"src":"img/gal-flow-mpal-tmy.jpg","cap":"MPAL T/myeloid: separate populations positive for cytoplasmic CD3 (green) and for MPO (red)."},
+   {"src":"img/gal-flow-pc-gate.jpg","cap":"Gating possible plasma cells (green) in the CD45-negative region."},
+   {"src":"img/gal-flow-pc-kappa.jpg","cap":"Plasma cells: no surface light chain but intracellular κ restriction."},
+   {"src":"img/gal-flow-pc-cd56.jpg","cap":"Myeloma cells (red): CD45 negative and CD56 positive."},
+   {"src":"img/gal-flow-pc-cd38.jpg","cap":"Plasma cells (red): CD38 bright and CD20 negative; blue dots are normal B cells."},
+   {"src":"img/gal-flow-lambda.jpg","cap":"λ light-chain restriction: 79% of CD19/CD20+ B cells are λ positive."},
+   {"src":"img/gal-flow-burkitt-fsc.jpg","cap":"Burkitt lymphoma: large lymphoid cells with high forward scatter (green) above normal small lymphocytes."},
+   {"src":"img/gal-flow-burkitt-cd5.jpg","cap":"Burkitt lymphoma: CD20 bright, CD5 negative B cells."},
+   {"src":"img/gal-flow-hcl-gate.jpg","cap":"Hairy cell leukaemia: atypical lymphocytes with bright CD45 and slightly raised side scatter."},
+   {"src":"img/gal-flow-tcell-cd7.jpg","cap":"T-cell lymphoma: tumour cells lose CD3 while benign T cells keep CD3 and CD7."},
+   {"src":"img/gal-t69-basophils.jpg","cap":"AML with t(6;9): increased marrow basophils beside blasts."},
+   {"src":"img/gal-npm1-cup.jpg","cap":"AML with mutated NPM1: blasts with cup-like nuclear invaginations."},
+   {"src":"img/gal-amkl-blasts.jpg","cap":"Acute megakaryoblastic leukaemia: blasts with cytoplasmic blebs."},
+   {"src":"img/gal-ball-blasts.jpg","cap":"B lymphoblasts: high nuclear to cytoplasmic ratio and fine chromatin."}
+  ]</script>
+</section>
+
+<section class="wide panel" id="case">
+  <header>
+    <div class="eyebrow">Case scenario</div>
+    <h2>A young woman with bruising and bleeding gums</h2>
+  </header>
+  <div class="case" data-widget="case" data-src="d27-case"></div>
+  <script type="application/json" id="d27-case">[
+  {"stage":"Presentation","scene":"A 28-year-old woman has bruises and gum bleeding. WBC 2.1 × 10⁹/L, Hb 82 g/L, platelets 18 × 10⁹/L, fibrinogen 0.9 g/L. The marrow is packed with heavily granular cells, some with bundles of Auer rods.","q":"Where will these cells sit on CD45/SSC?","o":["CD45 bright, low SSC","Dim CD45, low SSC","CD45 brighter than blasts, high SSC","CD45 negative"],"a":2,"e":"Neoplastic promyelocytes are granular, so side scatter is high."},
+  {"stage":"Flow","scene":"The abnormal cells are CD117+, CD33 bright and homogeneous, CD13 heterogeneous, MPO strong, CD11b−, CD15 weak.","q":"Which two markers are expected to be negative?","o":["CD33 and MPO","HLA-DR and CD34","CD13 and CD117","CD45 and CD38"],"a":1,"e":"HLA-DR−CD34− is the classic APL pattern (NPM1-mutated AML can mimic it)."},
+  {"stage":"Action","scene":"Genetics will take 24 hours.","q":"What should happen now?","o":["Wait for PML::RARA","Start ATRA and support coagulation now","Give heparin","Start hydroxycarbamide only"],"a":1,"e":"Early death from bleeding is the main risk; ATRA is started on suspicion."},
+  {"stage":"Variant","scene":"A second patient has few granules, bilobed nuclei, lower SSC, and blasts that are CD34+ and CD2+.","q":"This is most likely:","o":["Acute monoblastic leukaemia","Microgranular APL (M3v)","T-ALL","AML with t(8;21)"],"a":1,"e":"The hypogranular variant can be CD34+ and CD2+ and is easily confused with monocytic leukaemia."},
+  {"stage":"Follow-up","scene":"After treatment, the laboratory plans to monitor her by flow.","q":"What allows flow to detect residual disease?","o":["CD45 alone","The leukaemia-associated phenotype recorded at diagnosis","The κ/λ ratio","The CD4/CD8 ratio"],"a":1,"e":"The LAP separates residual leukaemic cells from normal regenerating precursors; in APL, PML::RARA PCR is the standard MRD test."}
+  ]</script>
+</section>
+
+<section class="wide panel" id="quiz">
+  <header>
+    <div class="eyebrow">Self-assessment</div>
+    <h2>Chapter quiz</h2>
+  </header>
+  <div class="case" data-widget="quiz" data-src="d27-quiz" data-key="quiz-ch27"></div>
+  <script type="application/json" id="d27-quiz">[
+  {"q":"The most valuable markers to identify T-ALL are:","o":["CD2 and CD7","Cytoplasmic CD3","CD4 and CD8","CD1a"],"a":1,"e":"CD7 and CD2 also appear on AML and NK blasts."},
+  {"q":"Aberrant CD19 and CD56 on myeloid blasts suggest:","o":["APL","AML with t(8;21)","AML with inv(3)","Pure erythroid leukaemia"],"a":1,"e":"CD15/CD65 without CD11b and long thin Auer rods also fit."},
+  {"q":"HLA-DR is typically negative in:","o":["B-ALL","APL","AML with inv(16)","Monoblastic AML"],"a":1,"e":"Also negative in most T-ALL and in acute basophilic leukaemia."},
+  {"q":"CD45-negative blasts expressing CD41, CD61 and CD36 in an infant suggest:","o":["AML with t(1;22)","B-ALL","AML with t(9;11)","APL"],"a":0,"e":"Megakaryoblastic AML with RBM15::MRTFA."},
+  {"q":"In the EGIL score, which marker scores 2 points for the B lineage?","o":["CD19","CD10","CD79a","TdT"],"a":2,"e":"Also cytoplasmic IgM and cytoplasmic CD22."},
+  {"q":"A common ALL is:","o":["CD10 negative","CD10 positive, cytoplasmic IgM negative","Cytoplasmic IgM positive","Surface Ig positive"],"a":1,"e":"Pre-B ALL adds cytoplasmic μ; pro-B lacks CD10."},
+  {"q":"Which phenotype fits CLL?","o":["CD5+, CD23−, FMC7+, sIg bright","CD5+, CD23+, FMC7−, sIg dim","CD5−, CD10+","CD11c, CD25, CD103 bright"],"a":1,"e":"Option A describes mantle cell lymphoma."},
+  {"q":"A κ:λ ratio of 10:1 among marrow plasma cells means:","o":["Polyclonal","Monoclonal κ","Monoclonal λ","Uninterpretable"],"a":1,"e":"κ:λ ≥8:1 or λ:κ ≥4:1 indicates clonal plasma cells."},
+  {"q":"Which feature is most specific for a T-cell neoplasm?","o":["Dim CD7 on a few cells","Complete loss of several pan-T antigens in an expanded population","CD4:CD8 of 3:1","HLA-DR on activated T cells"],"a":1,"e":"Complete loss is more specific than dim expression; CD45 loss also does not occur in reactive T cells."},
+  {"q":"CD4+ T cells lacking CD7 and CD26 with a CD4:CD8 ratio of 15 suggest:","o":["T-LGL leukaemia","Sézary syndrome","ALCL","T-ALL"],"a":1,"e":"Confirm with a blood T-cell clone and the Sézary count."}
+  ]</script>
+</section>

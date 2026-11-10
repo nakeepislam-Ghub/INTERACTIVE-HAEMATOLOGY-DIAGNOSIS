@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 430" width="860" height="430" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="860" height="430" fill="#fff"/>
+<text x="430" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Serum iron within the total iron-binding capacity</text>
+<line x1="250.0" y1="84" x2="250.0" y2="372" stroke="#e7e3e9" stroke-width="1"/>
+<text x="250.0" y="80.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="middle">0</text>
+<line x1="378.0" y1="84" x2="378.0" y2="372" stroke="#e7e3e9" stroke-width="1"/>
+<text x="378.0" y="80.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="middle">20</text>
+<line x1="506.0" y1="84" x2="506.0" y2="372" stroke="#e7e3e9" stroke-width="1"/>
+<text x="506.0" y="80.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="middle">40</text>
+<line x1="634.0" y1="84" x2="634.0" y2="372" stroke="#e7e3e9" stroke-width="1"/>
+<text x="634.0" y="80.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="middle">60</text>
+<line x1="762.0" y1="84" x2="762.0" y2="372" stroke="#e7e3e9" stroke-width="1"/>
+<text x="762.0" y="80.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="middle">80</text>
+<text x="506.0" y="392.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">µmol/L</text>
+<text x="234" y="120.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="end">Normal</text>
+<rect x="250" y="104" width="384.0" height="38" rx="6" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.2"/>
+<rect x="250" y="104" width="128.0" height="38" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="1"/>
+<text x="370.0" y="128.0" font-size="12.5" font-weight="700" fill="#fff" text-anchor="end">Fe 20</text>
+<text x="642.0" y="128.0" font-size="12.5" font-weight="700" fill="#3d5fa8" text-anchor="start">TIBC 60</text>
+<text x="234" y="188.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="end">Iron overload</text>
+<text x="234" y="206.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="end">high iron, TIBC low-normal</text>
+<rect x="250" y="172" width="320.0" height="38" rx="6" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.2"/>
+<rect x="250" y="172" width="288.0" height="38" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="1"/>
+<text x="530.0" y="196.0" font-size="12.5" font-weight="700" fill="#fff" text-anchor="end">Fe 45</text>
+<text x="578.0" y="196.0" font-size="12.5" font-weight="700" fill="#3d5fa8" text-anchor="start">TIBC 50</text>
+<text x="234" y="256.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="end">Iron deficiency, pregnancy</text>
+<text x="234" y="274.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="end">low iron, TIBC high</text>
+<rect x="250" y="240" width="512.0" height="38" rx="6" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.2"/>
+<rect x="250" y="240" width="38.400000000000006" height="38" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="1"/>
+<text x="296.4" y="264.0" font-size="12.5" font-weight="700" fill="#a3223a" text-anchor="start">Fe 6</text>
+<text x="770.0" y="264.0" font-size="12.5" font-weight="700" fill="#3d5fa8" text-anchor="start">TIBC 80</text>
+<text x="234" y="324.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="end">Infection, cancer (ACD)</text>
+<text x="234" y="342.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="end">low iron, TIBC low</text>
+<rect x="250" y="308" width="256.0" height="38" rx="6" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.2"/>
+<rect x="250" y="308" width="44.800000000000004" height="38" rx="6" fill="#a3223a" stroke="#a3223a" stroke-width="1"/>
+<text x="302.8" y="332.0" font-size="12.5" font-weight="700" fill="#a3223a" text-anchor="start">Fe 7</text>
+<text x="514.0" y="332.0" font-size="12.5" font-weight="700" fill="#3d5fa8" text-anchor="start">TIBC 40</text>
+<rect x="250" y="404" width="14" height="14" rx="3" fill="#a3223a" stroke="#a3223a" stroke-width="1.3"/>
+<text x="270" y="416.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="start">Serum iron (bound to transferrin)</text>
+<rect x="500" y="404" width="14" height="14" rx="3" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="520" y="416.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="start">Unsaturated binding capacity (UIBC)</text>
+</svg>

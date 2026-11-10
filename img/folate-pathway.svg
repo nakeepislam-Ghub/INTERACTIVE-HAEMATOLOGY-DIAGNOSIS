@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 860" width="760" height="860" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="760" height="860" fill="#fff"/>
+<text x="380" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">From dietary folate to DNA</text>
+<rect x="20" y="720" width="720" height="100" rx="14" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.2"/>
+<text x="36" y="808.0" font-size="11" font-weight="700" fill="#2f7d4f" text-anchor="start" letter-spacing="1.5">SMALL INTESTINE</text>
+<rect x="20" y="600" width="720" height="108" rx="14" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.2"/>
+<text x="36" y="696.0" font-size="11" font-weight="700" fill="#a3223a" text-anchor="start" letter-spacing="1.5">PLASMA</text>
+<rect x="20" y="70" width="720" height="518" rx="14" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.2"/>
+<text x="36" y="576.0" font-size="11" font-weight="700" fill="#3d5fa8" text-anchor="start" letter-spacing="1.5">CELL (ERYTHROBLAST)</text>
+<rect x="70.0" y="770.0" width="280" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="210" y="794.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">Dietary folate (polyglutamates)</text>
+<text x="370" y="762.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="start">deconjugated to monoglutamate,</text>
+<text x="370" y="778.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="start">reduced and methylated</text>
+<path d="M210 768 L210 676" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="85.0" y="634.0" width="250" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="210" y="658.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">5-methyl-THF (monoglutamate)</text>
+<path d="M210 632 L210 540" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<text x="222" y="600.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="start">carrier-mediated uptake</text>
+<rect x="110.0" y="498.0" width="200" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="210" y="522.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">5-methyl-THF</text>
+<rect x="270" y="438" width="250" height="62" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="395" y="462.0" font-size="13.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">Methionine synthase (B12)</text>
+<text x="395" y="482.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">homocysteine → methionine</text>
+<path d="M210 496 L210 410" fill="none" stroke="#2f7d4f" stroke-width="2.4" marker-end="url(#ag)"/>
+<rect x="150.0" y="368.0" width="120" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="210" y="393.2" font-size="15" font-weight="600" fill="#1d1a24" text-anchor="middle">THF</text>
+<path d="M210 366 L210 300" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<text x="222" y="340.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="start">polyglutamation (keeps folate in the cell)</text>
+<rect x="125.0" y="258.0" width="170" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="210" y="282.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">THF polyglu</text>
+<path d="M296 278 L380 278" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="380.0" y="258.0" width="180" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="470" y="282.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">5,10-methylene THF</text>
+<rect x="290.0" y="146.0" width="140" height="40" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="360" y="170.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">DHF</text>
+<path d="M470 256 L400 188" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<path d="M292 170 L220 256" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<rect x="50" y="120" width="170" height="60" rx="10" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.3"/>
+<text x="135" y="144.0" font-size="13.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">DHF reductase</text>
+<text x="135" y="164.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">blocked by methotrexate</text>
+<rect x="595.0" y="382.0" width="90" height="36" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="640" y="404.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">dUMP</text>
+<rect x="595.0" y="260.0" width="90" height="36" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="640" y="282.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">dTMP</text>
+<rect x="595.0" y="148.0" width="90" height="36" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="640" y="170.9" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">dTTP</text>
+<rect x="595.0" y="78.0" width="90" height="36" rx="10" fill="#a3223a" stroke="#a3223a" stroke-width="1.3"/>
+<text x="640" y="101.2" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">DNA</text>
+<path d="M640 382 L640 298" fill="none" stroke="#a3223a" stroke-width="2.6" marker-end="url(#ar)"/>
+<path d="M586 342 L634 342" fill="none" stroke="#a3223a" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M640 260 L640 186" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<path d="M640 148 L640 116" fill="none" stroke="#3b3540" stroke-width="2.2" marker-end="url(#ak)"/>
+<rect x="470" y="318" width="116" height="48" rx="8" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="528" y="338.0" font-size="12.5" font-weight="700" fill="#a3223a" text-anchor="middle">Thymidylate</text>
+<text x="528" y="354.0" font-size="12.5" font-weight="700" fill="#a3223a" text-anchor="middle">synthase</text>
+<path d="M560 278 Q540 278 530 316" fill="none" stroke="#a3223a" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="528" y="384.0" font-size="12" font-weight="400" fill="#a3223a" text-anchor="middle">the step that fails</text>
+<text x="528" y="400.0" font-size="12" font-weight="400" fill="#a3223a" text-anchor="middle">in B12 or folate lack</text>
+</svg>

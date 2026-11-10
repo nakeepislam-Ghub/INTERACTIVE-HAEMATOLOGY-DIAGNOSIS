@@ -1,0 +1,229 @@
+<article class="col chead" id="top">
+  <div class="eyebrow">Part 8 · Laboratory haematology · Chapter 40</div>
+  <h1>The automated blood count</h1>
+  <p>How analysers count and size cells by light scatter and impedance, where spurious results come from, and how to read red cell, white cell and platelet histograms, their flags, and the white cell scattergram in health and disease.</p>
+  <div class="meta"><span>Source: Dr Abeer's Haematological Investigations notes, pp 4–30</span><span>Reading time about 25 min</span></div>
+  <div class="jump" aria-label="Jump to">
+    <a href="#lecture">Lecture</a><a href="#cbcsim">Histogram and scattergram explorer</a><a href="#spur">Spurious result finder</a><a href="#case">Case</a><a href="#quiz">Quiz</a>
+  </div>
+</article>
+
+<div class="col lec" id="lecture">
+<section>
+  <h2><span class="sn">40.1</span>What the analyser measures</h2>
+  <p>The automated blood picture is a series of tests of the composition and concentration of the cells in blood:</p>
+  <ul>
+    <li><b>Red cells:</b> count, haemoglobin concentration and indices (MCV, MCH, MCHC, RDW).</li>
+    <li><b>White cells:</b> total and differential count.</li>
+    <li><b>Platelets:</b> count and indices (MPV, PDW).</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="sn">40.2</span>How it works</h2>
+  <h3>Light scattering</h3>
+  <ul>
+    <li>Diluted blood is injected into a sheath stream and <b>hydrodynamically focused</b> so cells pass a laser beam in single file, one at a time.</li>
+    <li>Each cell scatters light onto photodetectors: <b>forward scatter measures size</b> and <b>side (right-angle) scatter measures granularity</b>. Each signal becomes an electrical pulse.</li>
+    <li>The number of pulses in a set time is proportional to the number of cells.</li>
+  </ul>
+  <h3>Electrical impedance</h3>
+  <ul>
+    <li>Cells do not conduct electricity; the diluent does. Cells are drawn through an aperture between two electrodes and each one briefly raises the impedance.</li>
+    <li>The <b>number</b> of pulses gives the count; the <b>height</b> of each pulse gives the cell's volume. The computer sorts the pulses into histograms (size on the x axis, number on the y axis).</li>
+  </ul>
+  <h3>The two baths</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Bath</th><th>What happens</th></tr></thead>
+    <tbody>
+      <tr><td>Red cell and platelet bath</td><td>Further dilution. Red cells and platelets are counted in the same aperture; platelets are the particles of 2–30 fL. White cells are present but too few to matter, unless the count is very high (for example CLL), when they distort the red cell histogram.</td></tr>
+      <tr><td>White cell and haemoglobin bath</td><td>A lysing agent destroys red cells and shrinks white cells to a size set by their nucleus. Monocytes (about 20 µm) shrink most, and with eosinophils and basophils form one mixed middle population; lymphocytes and neutrophils shrink least. The lyse contains <b>potassium cyanide</b>, which turns haemoglobin into cyanmethaemoglobin, whose optical density is proportional to the haemoglobin concentration.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="sn">40.3</span>Spurious results</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Result</th><th>Causes</th></tr></thead>
+    <tbody>
+      <tr><td>Falsely high WBC</td><td>Platelet clumps; skin cells; cryoglobulins; carry-over; red cells that resist lysis (HbS, HbC, uraemia, neonates)</td></tr>
+      <tr><td>Falsely low WBC</td><td>Very high counts; leucocyte agglutination; fragile CLL cells; prolonged storage</td></tr>
+      <tr><td>Falsely high Hb</td><td>Hyperlipidaemia; very high WBC; gross in-vivo haemolysis</td></tr>
+      <tr><td>Falsely low Hb</td><td>Clotted sample; short sample</td></tr>
+      <tr><td>Falsely high RBC</td><td>Very high WBC</td></tr>
+      <tr><td>Falsely low RBC</td><td>Gross microcytosis (cells fall below the lower discriminator); cold agglutinins; haemolysed sample</td></tr>
+      <tr><td>False indices</td><td>Cold agglutinins (high MCV and MCHC, low RBC); dimorphic picture; CML (white cells counted as red cells: high MCV, low MCH, turbidity); hyperosmolar states and hyperglycaemia (cells swell in the diluent: high MCV); dehydrated cells; hyperlipidaemia; autoagglutination; hereditary spherocytosis (high MCHC)</td></tr>
+      <tr><td>MCV and MCH disagree</td><td>Uncalibrated analyser; high reticulocyte count (high MCV with normal MCH)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="key"><b>Practical rule:</b> an MCHC above about 37 g/dL is almost never real. Think of cold agglutinins (warm the sample to 37 °C and rerun), lipaemia or haemolysis, or genuine spherocytosis. Try the <a href="#spur">spurious result finder</a>.</div>
+</section>
+
+<section>
+  <h2><span class="sn">40.4</span>Histograms</h2>
+  <p>A histogram shows how a set of measurements is distributed: the x axis is the value (cell volume), the y axis how often it occurs. Explore every pattern below in the <a href="#cbcsim">histogram explorer</a>.</p>
+  <h3>Red cell histogram</h3>
+  <ul>
+    <li>A symmetrical bell curve. <b>Macrocytosis shifts it right, microcytosis left.</b></li>
+    <li>The curve should start and end on the baseline between the discriminators: lower discriminator 25–75 fL, upper 200–250 fL. Particles of 25–250 fL are counted; the peak area (60–125 fL) gives MCV and RDW.</li>
+    <li><b>RDW-SD</b> is the width of the curve at 20% of its height, in fL (normal 35–45 fL). <b>RDW-CV</b> = SD ÷ MCV × 100 (normal 11.5–14.5%).</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Flag</th><th>Meaning</th><th>Causes</th></tr></thead>
+    <tbody>
+      <tr><td>RL</td><td>Curve more than 10% above preset height at the lower discriminator</td><td>Platelet clumps, giant platelets, red cell fragments, severe microcytosis</td></tr>
+      <tr><td>RU</td><td>Curve more than 5% above preset height at the upper discriminator</td><td>Red cell agglutination; extreme leucocytosis (CLL)</td></tr>
+      <tr><td>DW</td><td>Abnormal distribution width</td><td>The causes of RL or RU</td></tr>
+      <tr><td>Bimodal curve</td><td>Two red cell populations</td><td>Transfusion; cold agglutinin disease; fragmentation; combined iron and folate deficiency; iron or folate deficiency on treatment; extreme leucocytosis</td></tr>
+    </tbody>
+  </table></div>
+  <h3>White cell histogram (3-part differential)</h3>
+  <ul>
+    <li>Lower discriminator 30–60 fL, upper fixed at 300 fL; the cells between them are the WBC count.</li>
+    <li>Two troughs, <b>T1</b> (78–114 fL) and <b>T2</b> (under 150 fL), give three groups: <b>small cells</b> 35–90 fL (lymphocytes), <b>mid cells</b> 90–160 fL (monocytes, eosinophils, basophils, promyelocytes), <b>large cells</b> 160–300 fL (neutrophils).</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Flag</th><th>Meaning</th><th>Causes</th></tr></thead>
+    <tbody>
+      <tr><td>WL</td><td>Curve above 20% at the lower discriminator, or a peak at 30–35 fL</td><td>Normoblasts, lysis-resistant red cells, cold agglutinins, platelet clumps</td></tr>
+      <tr><td>WU</td><td>Curve above 10% at the upper discriminator</td><td>White cell aggregates, extreme neutrophilia</td></tr>
+      <tr><td>T1</td><td>Small and mid cells cannot be separated</td><td>CML</td></tr>
+      <tr><td>T2</td><td>Mid cells and neutrophils cannot be separated</td><td></td></tr>
+      <tr><td>F1</td><td>T1 above 40%: small and mid cell data unreliable</td><td>ALL</td></tr>
+      <tr><td>F2</td><td>T1 above 40% or T2 above 50%: mid cell data unreliable</td><td>Eosinophilia, AML, monocytosis</td></tr>
+      <tr><td>F3</td><td>T2 above 50%: large cell data unreliable</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <h3>Platelet histogram</h3>
+  <ul>
+    <li>A single right-skewed peak. <b>MPV</b> is the average platelet size (7.4–10.4 fL); <b>PDW</b> is the width of the size distribution.</li>
+    <li><b>PL flag</b> (lower discriminator over 10%): high blank, dust or bubbles, electrical noise, red cell or white cell fragments, bacteria.</li>
+    <li><b>PU flag</b> (upper discriminator over 40%): platelet clumps, giant platelets, severe microcytosis, fragmented red cells, leucocyte fragments.</li>
+    <li><b>MP flag</b> (several peaks): platelet anisocytosis, recovery after chemotherapy, clumps.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="sn">40.5</span>Scattergrams</h2>
+  <p>A scattergram plots two measurements against each other; each cell is one dot, placed where its two channel values meet.</p>
+  <h3>Abbott Cell-Dyn (Ruby)</h3>
+  <ul>
+    <li><b>Mononuclear vs polymorphonuclear:</b> 90° against 10° scatter. Mononuclear cells have lower values of both.</li>
+    <li><b>Neutrophil vs eosinophil:</b> 90° depolarised against 90° scatter, for polymorphs only. Eosinophil granules depolarise light, so eosinophils sit higher.</li>
+    <li><b>Mononuclear separation:</b> 0° against 10° scatter. Basophil granules dissolve in the lyse, so basophils fall among mononuclear cells: lymphocytes lowest, basophils slightly higher, monocytes highest.</li>
+  </ul>
+  <h3>Sysmex 5-part analysers</h3>
+  <ul>
+    <li>Combine impedance and radiofrequency conductance, a diode laser with side scatter (SSC) and forward scatter (FSC), and a polymethine dye that stains RNA and DNA for <b>side fluorescence (SFL)</b>.</li>
+    <li>In the <b>WDF channel</b> cells are sorted by SSC and SFL into lymphocytes, monocytes, eosinophils, and neutrophils plus basophils. Basophils are counted separately in the <b>WBC/BASO channel</b>, whose lyse spares basophil granules.</li>
+    <li><b>Neutrophils</b> (violet): central dense teardrop, spreading upwards with immature forms. <b>Lymphocytes</b> (blue): thumbprint at the bottom left. <b>Monocytes</b> (green): circular cluster above the lymphocytes. <b>Eosinophils</b> (pink): irregular cluster at the right. <b>Basophils</b> (white): small cluster in the lower left of the neutrophil area.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>Condition</th><th>WDF pattern</th></tr></thead>
+    <tbody>
+      <tr><td>Lymphocytosis</td><td>Denser, elongated lymphocyte region with events above it</td></tr>
+      <tr><td>Eosinophilia</td><td>Larger, denser, elongated eosinophil region</td></tr>
+      <tr><td>Monocytosis</td><td>Larger, denser, more dispersed monocyte region</td></tr>
+      <tr><td>CLL and other chronic lymphoproliferative disorders</td><td>Compact cluster touching the y axis and rising, but not as high as in acute leukaemia; a small smudge-cell cluster just above the debris; an "inverted comma" trailing to higher FSC suggests prolymphocytes. ALL and CLL can look alike.</td></tr>
+      <tr><td>CML</td><td>Dense neutrophil cluster extending upwards (left shift), clustering in the upper monocyte region (early precursors), prominent basophil cluster</td></tr>
+      <tr><td>CML in blast phase</td><td>Prominent basophil cluster, a monocyte-region cluster extending upwards (blasts) and a large immature granulocyte cluster</td></tr>
+      <tr><td>Leukaemoid reaction</td><td>Prominent immature granulocyte cluster above the neutrophils, <b>no</b> basophil cluster</td></tr>
+      <tr><td>ALL</td><td>Large compact cluster in the lymphocyte region encroaching on the monocytes</td></tr>
+      <tr><td>AML (M1, M2)</td><td>A small lymphocyte cluster and a larger blast cluster between lymphocytes and monocytes, with monocyte-like fluorescence</td></tr>
+      <tr><td>APL (M3)</td><td>Small lymphocyte cluster with a large neutrophil cluster above encroaching on the monocytes: a teardrop</td></tr>
+      <tr><td>AML (M4)</td><td>Dense neutrophil cluster rising into the immature granulocyte region and a dense monocyte cluster reaching the top margin</td></tr>
+      <tr><td>AML (M5a, M5b)</td><td>A large monocyte-region cluster reaching the top margin (monoblasts); in M5b a second cluster below it with lower fluorescence (promonocytes)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="sn">40.6</span>Reference ranges in adults</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Test</th><th>Men</th><th>Women</th></tr></thead>
+    <tbody>
+      <tr><td>Haemoglobin (g/dL)</td><td>13.0–17.0</td><td>12.0–15.0</td></tr>
+      <tr><td>Red cells (×10¹²/L)</td><td>4.5–5.5</td><td>3.8–4.8</td></tr>
+      <tr><td>Haematocrit (%)</td><td>40–50</td><td>36–46</td></tr>
+      <tr><td>MCV (fL)</td><td colspan="2">83–101</td></tr>
+      <tr><td>MCH (pg)</td><td colspan="2">27–32</td></tr>
+      <tr><td>MCHC (g/dL)</td><td colspan="2">31.5–34.5</td></tr>
+      <tr><td>RDW-CV (%)</td><td colspan="2">11.5–14.5</td></tr>
+      <tr><td>White cells (×10⁹/L)</td><td colspan="2">4.0–10.0</td></tr>
+      <tr><td>Neutrophils / lymphocytes / monocytes (×10⁹/L)</td><td colspan="2">2.0–7.0 / 1.0–3.0 / 0.2–1.0</td></tr>
+      <tr><td>Eosinophils / basophils (×10⁹/L)</td><td colspan="2">0.02–0.5 / 0.02–0.1</td></tr>
+      <tr><td>Platelets (×10⁹/L)</td><td colspan="2">150–410</td></tr>
+      <tr><td>MPV (fL)</td><td colspan="2">7.4–10.4</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Widely used adult values. Children have different ranges, and each laboratory should use its own, checked for its analyser and population.</p>
+</section>
+</div>
+
+<section class="wide panel" id="cbcsim">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>Histogram and scattergram explorer</h2>
+    <p>Choose a plot, then a pattern, to see its shape, its flag and what causes it.</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="cbcsim"></div>
+</section>
+
+<section class="wide panel" id="spur">
+  <header>
+    <div class="eyebrow">Interactive</div>
+    <h2>Spurious result finder</h2>
+    <p>Tick what looks odd in the report or the sample. The likeliest artefacts are ranked below.</p>
+  </header>
+  <div class="calc" style="display:block" data-widget="ddx" data-src="d40-ddx"></div>
+  <script type="application/json" id="d40-ddx">{"f":[
+   ["mchc","MCHC above 37 g/dL","Indices"],["mcvhi","MCV unexpectedly high","Indices"],["rbclo","Red cell count low for the Hb","Indices"],["hbhi","Hb high for the red cell count and Hct","Indices"],["mchlo","MCH low with high MCV","Indices"],
+   ["wbchi","Very high WBC (over 100 ×10⁹/L)","Counts"],["plt_lo","Low platelets with a PU or RL flag","Counts"],["wl","WL flag or a peak at 30–35 fL","Counts"],["ru","RU flag or red cell clumps on the film","Counts"],["bimod","Bimodal red cell histogram","Counts"],
+   ["cold","Sample stood cold; improves at 37 °C","Sample"],["lip","Milky (lipaemic) plasma","Sample"],["clot","Clot in the tube","Sample"],["hyperg","Very high glucose or uraemia","Sample"],["nrbc","Nucleated red cells on the film","Sample"],["edta","Clumps only in EDTA, not in citrate","Sample"]],
+  "dx":[
+   {"n":"Cold agglutinins","y":["mchc","mcvhi","rbclo","ru","cold","bimod"],"d":"Red cells clump and are counted as large single cells. Warm the sample to 37 °C and rerun."},
+   {"n":"Lipaemia","y":["hbhi","mchc","lip"],"d":"Turbidity raises the optical Hb. Replace plasma with diluent, or correct the Hb."},
+   {"n":"Very high white count","y":["wbchi","hbhi","mcvhi","mchlo","ru"],"d":"Turbidity raises Hb; white cells are counted as red cells (CML, CLL). Check a film and dilute."},
+   {"n":"EDTA-dependent platelet clumping","y":["plt_lo","edta","wl"],"d":"Pseudothrombocytopenia. Look at the film and recount in citrate (multiply by 1.1)."},
+   {"n":"Clotted or short sample","y":["clot","plt_lo"],"d":"Low counts in every line. Recollect."},
+   {"n":"Nucleated red cells or lysis-resistant red cells","y":["nrbc","wl"],"d":"Counted as white cells. Correct the WBC for nucleated red cells, or rerun with a longer lysis."},
+   {"n":"Hyperosmolar plasma","y":["hyperg","mcvhi","mchc"],"d":"Cells swell in the diluent, so MCV rises falsely and MCHC falls; or, with uraemia, red cells resist lysis."},
+   {"n":"Genuine spherocytosis","y":["mchc"],"x":["cold","lip","wbchi"],"d":"Real MCHC up to about 36–37 g/dL: hereditary spherocytosis, immune haemolysis, burns."},
+   {"n":"Dimorphic picture or recent transfusion","y":["bimod"],"x":["cold","ru"],"d":"Two red cell populations. Indices are an average and can mislead."}]}</script>
+</section>
+
+<section class="wide panel" id="case">
+  <header>
+    <div class="eyebrow">Case</div>
+    <h2>An impossible MCHC</h2>
+    <p>Work through the case one step at a time.</p>
+  </header>
+  <div class="case" data-widget="case" data-src="d40-case"></div>
+  <script type="application/json" id="d40-case">[
+  {"stage":"Report","scene":"A sample from Hassan, 70, sent from a cold clinic in winter: Hb 11.2 g/dL, RBC 1.9 ×10¹²/L, MCV 128 fL, MCHC 41 g/dL. The red cell histogram has an RU flag.","q":"What is the most likely explanation?","o":["Severe megaloblastic anaemia","Cold agglutinins clumping the red cells","Hereditary spherocytosis","Iron deficiency"],"a":1,"e":"Clumps of red cells are counted as single giant cells: the count falls, the MCV rises, and the calculated MCHC becomes impossible. The RU flag supports agglutination."},
+  {"stage":"Action","scene":"You warm the sample to 37 °C for 30 minutes and rerun it.","q":"What do you expect?","o":["No change","RBC rises, MCV and MCHC fall towards normal","Hb doubles","Platelets disappear"],"a":1,"e":"At 37 °C the agglutinins let go and the true count and indices appear. The Hb, measured after lysis, barely changes."},
+  {"stage":"Follow-up","scene":"After warming: RBC 3.6 ×10¹²/L, MCV 92 fL, MCHC 33.5 g/dL. The film still shows agglutinates at room temperature.","q":"Which test comes next?","o":["Direct antiglobulin test with anti-C3 and cold agglutinin titre","Hb electrophoresis","Bone marrow biopsy","Osmotic fragility"],"a":0,"e":"Cold agglutinin disease gives a C3d-positive DAT and a high titre. Look for an underlying lymphoproliferative disorder or infection (Chapter 8)."}
+  ]</script>
+</section>
+
+<section class="wide panel" id="quiz">
+  <header>
+    <div class="eyebrow">Self-test</div>
+    <h2>Quiz</h2>
+    <p>Pick an answer to see the explanation. Your score is saved on this device.</p>
+  </header>
+  <div class="case" data-widget="quiz" data-src="d40-quiz" data-key="quiz-ch40"></div>
+  <script type="application/json" id="d40-quiz">[
+  {"q":"Forward light scatter mainly measures:","o":["Granularity","Cell size","DNA content","Haemoglobin"],"a":1,"e":"Side (right-angle) scatter measures granularity."},
+  {"q":"In impedance counting, the height of each pulse reflects:","o":["The number of cells","Cell volume","Nuclear lobes","Haemoglobin"],"a":1,"e":"The number of pulses gives the count."},
+  {"q":"Haemoglobin is measured on analysers as:","o":["Oxyhaemoglobin","Cyanmethaemoglobin","Carboxyhaemoglobin","Sulphaemoglobin"],"a":1,"e":"The lyse contains potassium cyanide."},
+  {"q":"Which red cells can resist lysis and raise the WBC falsely?","o":["Spherocytes","HbS and HbC cells, and in uraemia and neonates","Iron-deficient cells","Target cells only"],"a":1,"e":"They remain intact and are counted as small white cells (WL flag)."},
+  {"q":"RDW-CV is calculated as:","o":["MCV ÷ SD","SD ÷ MCV × 100","Width at 20% of peak height","MCH ÷ MCV"],"a":1,"e":"RDW-SD is the width at 20% height in fL."},
+  {"q":"An RL flag on the red cell histogram may be due to:","o":["Cold agglutinins","Giant platelets or red cell fragments","Extreme leucocytosis","Transfusion"],"a":1,"e":"Also platelet clumps and severe microcytosis."},
+  {"q":"In the 3-part white cell histogram, the mid-cell zone contains:","o":["Neutrophils","Lymphocytes","Monocytes, eosinophils and basophils","Platelets"],"a":2,"e":"About 90–160 fL after lysis."},
+  {"q":"A T1 flag on the white cell histogram suggests:","o":["CML","Iron deficiency","Thalassaemia","ITP"],"a":0,"e":"The left-shifted granulocytes blur the trough between small and mid cells."},
+  {"q":"A dense immature granulocyte cluster WITHOUT a basophil cluster suggests:","o":["CML","Leukaemoid reaction","CLL","APL"],"a":1,"e":"CML has a prominent basophil cluster."},
+  {"q":"A falsely high MCV with a low MCH is typical of:","o":["Very high WBC in CML","Iron deficiency","Haemolysed sample","Short sample"],"a":0,"e":"White cells are counted as red cells, and turbidity raises Hb."}
+  ]</script>
+</section>

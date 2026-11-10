@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="540" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">B-cell precursor stages and their markers</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Lymphoblasts freeze at one of these stages; hematogones pass through all of them in an orderly way.</text>
+<circle cx="250" cy="128" r="30" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.6"/>
+<circle cx="250" cy="128" r="18.6" fill="#3d5fa8" opacity=".55"/>
+<text x="250" y="182.0" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">Pro-B</text>
+<text x="250" y="200.0" font-size="10.5" font-weight="400" fill="#5d5663" text-anchor="middle">early pre-B</text>
+<path d="M286 128 L349 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="385" cy="128" r="30" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.6"/>
+<circle cx="385" cy="128" r="18.6" fill="#3d5fa8" opacity=".55"/>
+<text x="385" y="182.0" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">Common B</text>
+<text x="385" y="200.0" font-size="10.5" font-weight="400" fill="#5d5663" text-anchor="middle">CD10+</text>
+<path d="M421 128 L484 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="520" cy="128" r="30" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.6"/>
+<circle cx="520" cy="128" r="18.6" fill="#5b3f8c" opacity=".55"/>
+<text x="520" y="182.0" font-size="14" font-weight="700" fill="#5b3f8c" text-anchor="middle">Pre-B</text>
+<text x="520" y="200.0" font-size="10.5" font-weight="400" fill="#5d5663" text-anchor="middle">cytoplasmic μ</text>
+<path d="M556 128 L619 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="655" cy="128" r="30" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.6"/>
+<circle cx="655" cy="128" r="18.6" fill="#5b3f8c" opacity=".55"/>
+<text x="655" y="182.0" font-size="14" font-weight="700" fill="#5b3f8c" text-anchor="middle">Transitional</text>
+<text x="655" y="200.0" font-size="10.5" font-weight="400" fill="#5d5663" text-anchor="middle">surface μ, no κ/λ</text>
+<path d="M691 128 L754 128" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<circle cx="790" cy="128" r="26" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.6"/>
+<circle cx="790" cy="128" r="16.12" fill="#2f7d4f" opacity=".55"/>
+<text x="790" y="182.0" font-size="14" font-weight="700" fill="#2f7d4f" text-anchor="middle">Mature B</text>
+<text x="790" y="200.0" font-size="10.5" font-weight="400" fill="#5d5663" text-anchor="middle">surface IgM + κ or λ</text>
+<text x="30" y="226.0" font-size="12" font-weight="700" fill="#5d5663" text-anchor="start">Marker</text>
+<rect x="20" y="232" width="860" height="30" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="252.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">TdT</text>
+<rect x="195" y="240" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="330" y="240" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="465" y="240" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="600" y="240" width="110" height="14" rx="7" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<line x1="770" y1="247" x2="810" y2="247" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="20" y="266" width="860" height="30" rx="4" fill="#fff" stroke="none" stroke-width="0"/>
+<text x="30" y="286.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">CD34</text>
+<rect x="195" y="274" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="330" y="274" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="465" y="274" width="110" height="14" rx="7" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<line x1="635" y1="281" x2="675" y2="281" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="770" y1="281" x2="810" y2="281" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="20" y="300" width="860" height="30" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="320.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">CD19, CD79a, CD22</text>
+<rect x="195" y="308" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="330" y="308" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="465" y="308" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="600" y="308" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="735" y="308" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="334" width="860" height="30" rx="4" fill="#fff" stroke="none" stroke-width="0"/>
+<text x="30" y="354.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">CD10</text>
+<line x1="230" y1="349" x2="270" y2="349" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="330" y="342" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="465" y="342" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="600" y="342" width="110" height="14" rx="7" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<line x1="770" y1="349" x2="810" y2="349" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="20" y="368" width="860" height="30" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="388.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">Cytoplasmic μ</text>
+<line x1="230" y1="383" x2="270" y2="383" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="365" y1="383" x2="405" y2="383" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="465" y="376" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="600" y="376" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="735" y="376" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="402" width="860" height="30" rx="4" fill="#fff" stroke="none" stroke-width="0"/>
+<text x="30" y="422.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">CD20</text>
+<line x1="230" y1="417" x2="270" y2="417" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="330" y="410" width="110" height="14" rx="7" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<rect x="465" y="410" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="600" y="410" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="735" y="410" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="436" width="860" height="30" rx="4" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="30" y="456.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">Surface Ig light chain</text>
+<line x1="230" y1="451" x2="270" y2="451" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="365" y1="451" x2="405" y2="451" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="500" y1="451" x2="540" y2="451" stroke="#b8b1bd" stroke-width="2"/>
+<line x1="635" y1="451" x2="675" y2="451" stroke="#b8b1bd" stroke-width="2"/>
+<rect x="735" y="444" width="110" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<rect x="20" y="484" width="420" height="46" rx="8" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<rect x="36" y="500" width="40" height="14" rx="7" fill="#a3223a" stroke="#a3223a" stroke-width="0"/>
+<text x="84" y="512.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">expressed</text>
+<rect x="170" y="500" width="40" height="14" rx="7" fill="#f6d9dd" stroke="#a3223a" stroke-width="1"/>
+<text x="218" y="512.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">partial or weak</text>
+<line x1="330" y1="507" x2="370" y2="507" stroke="#b8b1bd" stroke-width="2"/>
+<text x="378" y="512.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">absent</text>
+<rect x="460" y="484" width="420" height="46" rx="8" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="670" y="503.0" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="middle">Blasts vs hematogones (MRD): blasts have dim CD45, CD38, CD81;</text>
+<text x="670" y="520.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">bright CD19, CD58; and gain CD66c, CD73, CD86, CD123, CD304</text>
+</svg>

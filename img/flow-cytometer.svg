@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 690" width="900" height="690" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="690" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">How a flow cytometer works</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Fluidics line the cells up, optics read the light, electronics turn it into numbers.</text>
+<text x="30" y="96.0" font-size="11.5" font-weight="700" fill="#3d5fa8" text-anchor="start" letter-spacing="1.5">1  FLUIDICS</text>
+<text x="300" y="96.0" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="start" letter-spacing="1.5">2  OPTICS</text>
+<text x="680" y="96.0" font-size="11.5" font-weight="700" fill="#2f7d4f" text-anchor="start" letter-spacing="1.5">3  ELECTRONICS</text>
+<path d="M70 230 L190 230 L150 360 L150 580 L110 580 L110 360 Z" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.6"/>
+<rect x="126" y="214" width="8" height="120" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.2"/>
+<text x="130" y="208.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="middle">Sample</text>
+<text x="55" y="260.0" font-size="12" font-weight="700" fill="#3d5fa8" text-anchor="end">Sheath</text>
+<text x="55" y="275.0" font-size="12" font-weight="700" fill="#3d5fa8" text-anchor="end">fluid</text>
+<path d="M60 285 L95 285" fill="none" stroke="#3d5fa8" stroke-width="1.6" marker-end="url(#ab)"/>
+<path d="M200 285 L168 285" fill="none" stroke="#3d5fa8" stroke-width="1.6" marker-end="url(#ab)"/>
+<circle cx="130" cy="372" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="372" r="3" fill="#a3223a"/>
+<circle cx="130" cy="398" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="398" r="3" fill="#a3223a"/>
+<circle cx="130" cy="424" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="424" r="3" fill="#a3223a"/>
+<circle cx="130" cy="450" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="450" r="3" fill="#a3223a"/>
+<circle cx="130" cy="476" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="476" r="3" fill="#a3223a"/>
+<circle cx="130" cy="502" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="502" r="3" fill="#a3223a"/>
+<circle cx="130" cy="528" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="528" r="3" fill="#a3223a"/>
+<circle cx="130" cy="554" r="7.5" fill="#fff" stroke="#a3223a" stroke-width="1.6"/><circle cx="130" cy="554" r="3" fill="#a3223a"/>
+<text x="170" y="501.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">Hydrodynamic focusing:</text>
+<text x="170" y="516.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">cells pass in single file</text>
+<text x="170" y="580.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="start">Two cells in the beam</text>
+<text x="170" y="594.4" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="start">together = coincident</text>
+<text x="170" y="608.8" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="start">event (lost data)</text>
+<rect x="30" y="440" width="70" height="38" rx="6" fill="#fbeccb" stroke="#a8700f" stroke-width="1.3"/>
+<text x="65" y="464.0" font-size="13" font-weight="700" fill="#a8700f" text-anchor="middle">Laser</text>
+<line x1="100" y1="459" x2="122" y2="459" stroke="#a8700f" stroke-width="5" opacity=".75"/>
+<circle cx="130" cy="459" r="13" fill="none" stroke="#a8700f" stroke-width="2" stroke-dasharray="3 3"/>
+<path d="M146 459 L300 459" fill="none" stroke="#a8700f" stroke-width="2.2" marker-end="url(#aa)"/>
+<rect x="305" y="436" width="130" height="46" rx="8" fill="#fff" stroke="#a8700f" stroke-width="1.3"/>
+<text x="370" y="456.0" font-size="12.5" font-weight="700" fill="#a8700f" text-anchor="middle">Forward scatter</text>
+<text x="370" y="473.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="middle">photodiode, ≤20°</text>
+<rect x="324.315" y="493" width="91.36999999999999" height="22" rx="11" fill="#fbeccb" stroke="#a8700f" stroke-width="1.1"/>
+<text x="370" y="508.1" font-size="11.5" font-weight="700" fill="#a8700f" text-anchor="middle">= cell size</text>
+<path d="M140 449 L240 370 L314 306" fill="none" stroke="#a3223a" stroke-width="2.2" marker-end="url(#ar)"/>
+<text x="196" y="418.0" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="start">side scatter</text>
+<text x="196" y="432.4" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="start">(90° light)</text>
+<line x1="312" y1="308" x2="348" y2="272" stroke="#5b3f8c" stroke-width="4" stroke-linecap="round"/>
+<rect x="316" y="200" width="28" height="20" rx="3" fill="#f1eff2" stroke="#3b3540" stroke-width="1.3"/>
+<text x="330" y="214.0" font-size="9.5" font-weight="700" fill="#3b3540" text-anchor="middle">BP</text>
+<path d="M330 270 L330 220" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<path d="M330 200 L330 178" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="272" y="132" width="116" height="44" rx="8" fill="#f1eff2" stroke="#3b3540" stroke-width="1.3"/>
+<text x="330" y="151.0" font-size="12.5" font-weight="700" fill="#3b3540" text-anchor="middle">PMT SSC</text>
+<text x="330" y="167.0" font-size="10.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Side scatter</text>
+<path d="M350 290 L438 290" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<line x1="442" y1="308" x2="478" y2="272" stroke="#5b3f8c" stroke-width="4" stroke-linecap="round"/>
+<rect x="446" y="200" width="28" height="20" rx="3" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="460" y="214.0" font-size="9.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">BP</text>
+<path d="M460 270 L460 220" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<path d="M460 200 L460 178" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="402" y="132" width="116" height="44" rx="8" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="460" y="151.0" font-size="12.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">PMT FL1</text>
+<text x="460" y="167.0" font-size="10.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Green 530/30</text>
+<path d="M480 290 L568 290" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<line x1="572" y1="308" x2="608" y2="272" stroke="#5b3f8c" stroke-width="4" stroke-linecap="round"/>
+<rect x="576" y="200" width="28" height="20" rx="3" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.3"/>
+<text x="590" y="214.0" font-size="9.5" font-weight="700" fill="#b3541e" text-anchor="middle">BP</text>
+<path d="M590 270 L590 220" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<path d="M590 200 L590 178" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="532" y="132" width="116" height="44" rx="8" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.3"/>
+<text x="590" y="151.0" font-size="12.5" font-weight="700" fill="#b3541e" text-anchor="middle">PMT FL2</text>
+<text x="590" y="167.0" font-size="10.5" font-weight="400" fill="#1d1a24" text-anchor="middle">Orange 585/42</text>
+<text x="470" y="338.0" font-size="11" font-weight="600" fill="#5b3f8c" text-anchor="middle">dichroic mirrors split colours · BP = band-pass filter</text>
+<line x1="610" y1="290" x2="640" y2="290" stroke="#3b3540" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="644" y="294.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="start">FL3 …</text>
+<rect x="305" y="540" width="370" height="130" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="321" y="562.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="start">Optical filters</text>
+<text x="321" y="586.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="start">Long pass</text>
+<text x="423" y="586.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">passes light above a cut-off</text>
+<text x="321" y="607.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="start">Short pass</text>
+<text x="423" y="607.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">passes light below a cut-off</text>
+<text x="321" y="628.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="start">Band pass (BP)</text>
+<text x="423" y="628.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">passes a narrow band, e.g. 530/30</text>
+<text x="321" y="649.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="start">Dichroic</text>
+<text x="423" y="649.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="start">angled: passes some colours, reflects the rest</text>
+<rect x="690" y="200" width="180" height="58" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="780" y="224.0" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="middle">Photons → electrons</text>
+<text x="780" y="242.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">voltage pulse per cell</text>
+<rect x="690" y="290" width="180" height="58" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="780" y="314.0" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="middle">ADC</text>
+<text x="780" y="332.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">analogue → digital value</text>
+<path d="M780 258 L780 288" fill="none" stroke="#2f7d4f" stroke-width="1.8" marker-end="url(#ag)"/>
+<path d="M648 154 L688 220" fill="none" stroke="#2f7d4f" stroke-width="1.8" marker-end="url(#ag)"/>
+<path d="M437 459 L682 459 L682 240 L688 240" fill="none" stroke="#2f7d4f" stroke-width="1.6" marker-end="url(#ag)" stroke-dasharray="5 4"/>
+<rect x="690" y="380" width="180" height="170" rx="10" fill="#fff" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="780" y="404.0" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="middle">Computer</text>
+<text x="780" y="422.0" font-size="11" font-weight="400" fill="#5d5663" text-anchor="middle">% of cells and intensity</text>
+<path d="M705 520 C723 520 727 450 740 450 C753 450 757 520 775 520" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.5"/>
+<path d="M705 440V520H777" fill="none" stroke="#3b3540" stroke-width="1.2"/>
+<text x="742" y="536.0" font-size="10.5" font-weight="400" fill="#5d5663" text-anchor="middle">histogram</text>
+<path d="M785 440V520H857" fill="none" stroke="#3b3540" stroke-width="1.2"/>
+<circle cx="805.2" cy="504.2" r="1.6" fill="#a3223a"/>
+<circle cx="802.1" cy="503.7" r="1.6" fill="#a3223a"/>
+<circle cx="810.8" cy="504.1" r="1.6" fill="#a3223a"/>
+<circle cx="813.4" cy="498.2" r="1.6" fill="#a3223a"/>
+<circle cx="805.4" cy="498.4" r="1.6" fill="#a3223a"/>
+<circle cx="800.0" cy="501.1" r="1.6" fill="#a3223a"/>
+<circle cx="806.3" cy="504.0" r="1.6" fill="#a3223a"/>
+<circle cx="807.3" cy="510.2" r="1.6" fill="#a3223a"/>
+<circle cx="809.6" cy="495.2" r="1.6" fill="#a3223a"/>
+<circle cx="806.3" cy="498.9" r="1.6" fill="#a3223a"/>
+<circle cx="802.0" cy="508.2" r="1.6" fill="#a3223a"/>
+<circle cx="803.8" cy="494.0" r="1.6" fill="#a3223a"/>
+<circle cx="806.8" cy="500.6" r="1.6" fill="#a3223a"/>
+<circle cx="798.2" cy="497.7" r="1.6" fill="#a3223a"/>
+<circle cx="801.1" cy="501.9" r="1.6" fill="#a3223a"/>
+<circle cx="802.5" cy="502.3" r="1.6" fill="#a3223a"/>
+<circle cx="814.2" cy="498.8" r="1.6" fill="#a3223a"/>
+<circle cx="799.9" cy="500.7" r="1.6" fill="#a3223a"/>
+<circle cx="811.6" cy="498.6" r="1.6" fill="#a3223a"/>
+<circle cx="812.3" cy="496.6" r="1.6" fill="#a3223a"/>
+<circle cx="798.5" cy="501.7" r="1.6" fill="#a3223a"/>
+<circle cx="799.6" cy="498.9" r="1.6" fill="#a3223a"/>
+<circle cx="807.9" cy="505.7" r="1.6" fill="#a3223a"/>
+<circle cx="805.6" cy="500.8" r="1.6" fill="#a3223a"/>
+<circle cx="813.0" cy="503.9" r="1.6" fill="#a3223a"/>
+<circle cx="803.6" cy="507.9" r="1.6" fill="#a3223a"/>
+<circle cx="831.3" cy="465.8" r="1.6" fill="#3d5fa8"/>
+<circle cx="841.1" cy="464.9" r="1.6" fill="#3d5fa8"/>
+<circle cx="833.4" cy="466.8" r="1.6" fill="#3d5fa8"/>
+<circle cx="833.6" cy="462.0" r="1.6" fill="#3d5fa8"/>
+<circle cx="831.3" cy="470.8" r="1.6" fill="#3d5fa8"/>
+<circle cx="833.7" cy="470.6" r="1.6" fill="#3d5fa8"/>
+<circle cx="839.3" cy="463.7" r="1.6" fill="#3d5fa8"/>
+<circle cx="841.2" cy="466.4" r="1.6" fill="#3d5fa8"/>
+<circle cx="837.8" cy="458.5" r="1.6" fill="#3d5fa8"/>
+<circle cx="837.5" cy="469.5" r="1.6" fill="#3d5fa8"/>
+<circle cx="840.0" cy="470.0" r="1.6" fill="#3d5fa8"/>
+<circle cx="845.5" cy="466.9" r="1.6" fill="#3d5fa8"/>
+<circle cx="845.5" cy="459.8" r="1.6" fill="#3d5fa8"/>
+<circle cx="836.0" cy="456.5" r="1.6" fill="#3d5fa8"/>
+<circle cx="842.2" cy="465.5" r="1.6" fill="#3d5fa8"/>
+<circle cx="846.2" cy="463.4" r="1.6" fill="#3d5fa8"/>
+<circle cx="828.0" cy="469.5" r="1.6" fill="#3d5fa8"/>
+<circle cx="829.9" cy="459.7" r="1.6" fill="#3d5fa8"/>
+<circle cx="835.9" cy="468.1" r="1.6" fill="#3d5fa8"/>
+<circle cx="833.9" cy="465.9" r="1.6" fill="#3d5fa8"/>
+<circle cx="829.1" cy="470.8" r="1.6" fill="#3d5fa8"/>
+<circle cx="836.7" cy="465.5" r="1.6" fill="#3d5fa8"/>
+<circle cx="840.6" cy="465.8" r="1.6" fill="#3d5fa8"/>
+<circle cx="838.2" cy="460.3" r="1.6" fill="#3d5fa8"/>
+<circle cx="836.3" cy="467.1" r="1.6" fill="#3d5fa8"/>
+<circle cx="843.5" cy="464.4" r="1.6" fill="#3d5fa8"/>
+<text x="822" y="536.0" font-size="10.5" font-weight="400" fill="#5d5663" text-anchor="middle">dot plot</text>
+</svg>

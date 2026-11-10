@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="540" fill="#fff"/>
+<text x="450" y="34.0" font-size="19" font-weight="700" fill="#1d1a24" text-anchor="middle">Acute leukaemias of ambiguous lineage: how the blasts declare themselves</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">At least 20% blasts that do not commit to one lineage. Flow cytometry assigns lineage.</text>
+<rect x="12" y="76" width="276" height="220" rx="14" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.4"/>
+<text x="150" y="102.0" font-size="15.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">Biphenotypic MPAL</text>
+<text x="150" y="121.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">one population, two lineages</text>
+<rect x="312" y="76" width="276" height="220" rx="14" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.4"/>
+<text x="450" y="102.0" font-size="15.5" font-weight="700" fill="#3d5fa8" text-anchor="middle">Bilineal MPAL</text>
+<text x="450" y="121.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">two populations, one lineage each</text>
+<rect x="612" y="76" width="276" height="220" rx="14" fill="#f1eff2" stroke="#5d5663" stroke-width="1.4"/>
+<text x="750" y="102.0" font-size="15.5" font-weight="700" fill="#5d5663" text-anchor="middle">Undifferentiated (AUL)</text>
+<text x="750" y="121.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">no lineage marker at all</text>
+<path d="M92 135 A15 15 0 0 0 92 165Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M92 135 A15 15 0 0 1 92 165Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M150 135 A15 15 0 0 0 150 165Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M150 135 A15 15 0 0 1 150 165Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M208 135 A15 15 0 0 0 208 165Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M208 135 A15 15 0 0 1 208 165Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M92 171 A15 15 0 0 0 92 201Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M92 171 A15 15 0 0 1 92 201Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M150 171 A15 15 0 0 0 150 201Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M150 171 A15 15 0 0 1 150 201Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M208 171 A15 15 0 0 0 208 201Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M208 171 A15 15 0 0 1 208 201Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M92 207 A15 15 0 0 0 92 237Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M92 207 A15 15 0 0 1 92 237Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M150 207 A15 15 0 0 0 150 237Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M150 207 A15 15 0 0 1 150 237Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<path d="M208 207 A15 15 0 0 0 208 237Z" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<path d="M208 207 A15 15 0 0 1 208 237Z" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="392" cy="150" r="15" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="450" cy="150" r="15" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="508" cy="150" r="15" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="392" cy="186" r="15" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="450" cy="186" r="15" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="508" cy="186" r="15" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="392" cy="222" r="15" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="450" cy="222" r="15" fill="#7aa0d8" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="508" cy="222" r="15" fill="#e08a8a" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="692" cy="150" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="750" cy="150" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="808" cy="150" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="692" cy="186" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="750" cy="186" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="808" cy="186" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="692" cy="222" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="750" cy="222" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<circle cx="808" cy="222" r="15" fill="#d9d4cc" stroke="#1d1a24" stroke-width="1"/>
+<text x="150" y="262.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">e.g. CD19+CD10+ and MPO+ on the same cell</text>
+<text x="450" y="262.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">e.g. B lymphoblasts plus myeloblasts</text>
+<text x="750" y="262.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">CD34, HLA-DR, CD38 only; MPO −</text>
+<circle cx="330" cy="283" r="6" fill="#7aa0d8" stroke="#1d1a24"/>
+<text x="340" y="287.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="start">B-lineage marker</text>
+<circle cx="470" cy="283" r="6" fill="#e08a8a" stroke="#1d1a24"/>
+<text x="480" y="287.0" font-size="11.5" font-weight="400" fill="#5d5663" text-anchor="start">myeloid marker</text>
+<rect x="20" y="316" width="860" height="204" rx="12" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="450" y="342.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="middle">WHO 2022 lineage-assignment criteria</text>
+<rect x="80.0" y="359" width="170" height="22" rx="11" fill="#fff" stroke="#3d5fa8" stroke-width="1.1"/>
+<text x="165" y="374.7" font-size="13" font-weight="700" fill="#3d5fa8" text-anchor="middle">B lineage</text>
+<text x="165" y="400.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">CD19 strong + 1 of CD10,</text>
+<text x="165" y="419.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">CD22, CD79a strong</text>
+<text x="165" y="438.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">or CD19 weak + 2 of them</text>
+<text x="165" y="457.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(CD79a not used if T is possible)</text>
+<rect x="365.0" y="359" width="170" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="450" y="374.7" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="middle">T lineage</text>
+<text x="450" y="400.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">cytoplasmic or surface CD3</text>
+<text x="450" y="419.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">brighter than 50% of normal</text>
+<text x="450" y="438.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">mature T cells</text>
+<text x="450" y="457.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(or IHC, non-zeta antibody)</text>
+<rect x="650.0" y="359" width="170" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="735" y="374.7" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Myeloid lineage</text>
+<text x="735" y="400.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">MPO above 50% of the</text>
+<text x="735" y="419.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">mature neutrophil level</text>
+<text x="735" y="438.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">or ≥2 monocytic markers:</text>
+<text x="735" y="457.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">NSE, CD11c, CD14, CD64, lysozyme</text>
+<text x="450" y="500.0" font-size="12.5" font-weight="700" fill="#5d5663" text-anchor="middle">Aberrant single markers (CD13/CD33 on ALL, CD7/CD19 on AML) are common and do not make MPAL.</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 550" width="860" height="550" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="860" height="550" fill="#fff"/>
+<text x="430" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">What controls hepcidin</text>
+<text x="430" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Hepcidin, made by the liver, destroys ferroportin and so shuts iron out of the plasma.</text>
+<path d="M310 240 C300 170 410 155 470 180 C550 190 580 230 540 270 C490 310 370 320 330 290 C310 275 308 255 310 240Z" fill="#e9c3bd" stroke="#a3223a" stroke-width="1.6"/>
+<text x="430" y="238.0" font-size="18" font-weight="700" fill="#a3223a" text-anchor="middle">Liver</text>
+<text x="430" y="262.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">hepatocytes make</text>
+<rect x="390.84000000000003" y="277" width="78.32" height="22" rx="11" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.1"/>
+<text x="430" y="292.7" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">HEPCIDIN</text>
+<text x="150" y="100.0" font-size="12" font-weight="700" fill="#2f7d4f" text-anchor="middle" letter-spacing="1.5">RAISE HEPCIDIN</text>
+<rect x="40" y="120" width="190" height="60" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="135" y="146.0" font-size="15" font-weight="700" fill="#2f7d4f" text-anchor="middle">Iron stores high</text>
+<text x="135" y="166.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(BMP6 signalling)</text>
+<path d="M234 150 L302 220.0" fill="none" stroke="#2f7d4f" stroke-width="2.2" marker-end="url(#ag)"/>
+<circle cx="260" cy="162.6" r="11" fill="#fff" stroke="#2f7d4f" stroke-width="2"/><path d="M254.5 162.6H265.5M260 157.1V168.1" stroke="#2f7d4f" stroke-width="2.4"/>
+<rect x="40" y="320" width="190" height="60" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="135" y="346.0" font-size="15" font-weight="700" fill="#2f7d4f" text-anchor="middle">Inflammation</text>
+<text x="135" y="366.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">IL-6 → STAT3</text>
+<path d="M234 350 L302 280.0" fill="none" stroke="#2f7d4f" stroke-width="2.2" marker-end="url(#ag)"/>
+<circle cx="260" cy="337.4" r="11" fill="#fff" stroke="#2f7d4f" stroke-width="2"/><path d="M254.5 337.4H265.5M260 331.9V342.9" stroke="#2f7d4f" stroke-width="2.4"/>
+<text x="770" y="80.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="middle" letter-spacing="1.5">LOWER HEPCIDIN</text>
+<rect x="650" y="82" width="200" height="56" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="750" y="106.0" font-size="14.5" font-weight="700" fill="#a3223a" text-anchor="middle">Anaemia, hypoxia</text>
+<text x="750" y="125.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(HIF)</text>
+<path d="M646 110 L580 201.0" fill="none" stroke="#a3223a" stroke-width="2.2" marker-end="url(#ar)"/>
+<circle cx="624" cy="123.65" r="11" fill="#fff" stroke="#a3223a" stroke-width="2"/><path d="M618.5 123.65H629.5" stroke="#a3223a" stroke-width="2.4"/>
+<rect x="650" y="182" width="200" height="56" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="750" y="206.0" font-size="14.5" font-weight="700" fill="#a3223a" text-anchor="middle">Erythropoietin</text>
+<text x="750" y="225.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">via erythroferrone</text>
+<path d="M646 210 L580 236.0" fill="none" stroke="#a3223a" stroke-width="2.2" marker-end="url(#ar)"/>
+<circle cx="624" cy="213.9" r="11" fill="#fff" stroke="#a3223a" stroke-width="2"/><path d="M618.5 213.9H629.5" stroke="#a3223a" stroke-width="2.4"/>
+<rect x="650" y="282" width="200" height="56" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="750" y="306.0" font-size="14.5" font-weight="700" fill="#a3223a" text-anchor="middle">Ineffective erythropoiesis</text>
+<text x="750" y="325.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(thalassaemia)</text>
+<path d="M646 310 L580 271.0" fill="none" stroke="#a3223a" stroke-width="2.2" marker-end="url(#ar)"/>
+<circle cx="624" cy="304.15" r="11" fill="#fff" stroke="#a3223a" stroke-width="2"/><path d="M618.5 304.15H629.5" stroke="#a3223a" stroke-width="2.4"/>
+<rect x="650" y="382" width="200" height="56" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="750" y="406.0" font-size="14.5" font-weight="700" fill="#a3223a" text-anchor="middle">Iron deficiency</text>
+<text x="750" y="425.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">(TMPRSS6 / matriptase-2)</text>
+<path d="M646 410 L580 306.0" fill="none" stroke="#a3223a" stroke-width="2.2" marker-end="url(#ar)"/>
+<circle cx="624" cy="394.4" r="11" fill="#fff" stroke="#a3223a" stroke-width="2"/><path d="M618.5 394.4H629.5" stroke="#a3223a" stroke-width="2.4"/>
+<rect x="230" y="450" width="400" height="84" rx="12" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="430" y="476.0" font-size="14" font-weight="700" fill="#1d1a24" text-anchor="middle">High hepcidin →</text>
+<text x="430" y="498.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">less duodenal absorption, iron trapped</text>
+<text x="430" y="516.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">in macrophages: low serum iron (ACD)</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="480" fill="#fff"/>
+<text x="450" y="34.0" font-size="19" font-weight="700" fill="#1d1a24" text-anchor="middle">Myeloid neoplasms after cytotoxic therapy: two classic patterns</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">The drug class predicts the latency, the genetics and the course.</text>
+<line x1="110" y1="120" x2="850" y2="120" stroke="#1d1a24" stroke-width="2"/>
+<line x1="110.0" y1="114" x2="110.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="110.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">0</text>
+<line x1="184.0" y1="114" x2="184.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="184.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">1</text>
+<line x1="258.0" y1="114" x2="258.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="258.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">2</text>
+<line x1="332.0" y1="114" x2="332.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="332.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">3</text>
+<line x1="406.0" y1="114" x2="406.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="406.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">4</text>
+<line x1="480.0" y1="114" x2="480.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="480.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">5</text>
+<line x1="554.0" y1="114" x2="554.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="554.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">6</text>
+<line x1="628.0" y1="114" x2="628.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="628.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">7</text>
+<line x1="702.0" y1="114" x2="702.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="702.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">8</text>
+<line x1="776.0" y1="114" x2="776.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="776.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">9</text>
+<line x1="850.0" y1="114" x2="850.0" y2="126" stroke="#1d1a24" stroke-width="1.5"/>
+<text x="850.0" y="144.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">10</text>
+<text x="480" y="164.0" font-size="11.5" font-weight="700" fill="#5d5663" text-anchor="middle">years after therapy</text>
+<rect x="184.0" y="176" width="148.0" height="16" rx="6" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.4"/>
+<text x="258.0" y="212.0" font-size="13" font-weight="700" fill="#3d5fa8" text-anchor="middle">Topo II inhibitors: 1–3 years</text>
+<rect x="480.0" y="176" width="148.0" height="16" rx="6" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.4"/>
+<text x="554.0" y="212.0" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Alkylators, radiation: 5–7 years</text>
+<text x="110" y="96.0" font-size="12" font-weight="700" fill="#1d1a24" text-anchor="start">cytotoxic therapy</text>
+<path d="M110 100 v12" stroke="#1d1a24" stroke-width="2"/>
+<rect x="30" y="226" width="410" height="240" rx="12" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.4"/>
+<text x="235" y="252.0" font-size="15" font-weight="700" fill="#3d5fa8" text-anchor="middle">Type 2: topoisomerase II</text>
+<text x="235" y="280.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">Etoposide, anthracyclines,</text>
+<text x="235" y="303.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">mitoxantrone</text>
+<text x="235" y="326.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">20–30% of AML-pCT</text>
+<text x="235" y="349.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">Overt AML, no MDS phase</text>
+<text x="235" y="372.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">Balanced translocations:</text>
+<text x="235" y="395.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">KMT2A (11q23), t(15;17),</text>
+<text x="235" y="418.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">inv(16), t(8;21), RUNX1</text>
+<text x="235" y="441.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">Outcome close to de novo AML</text>
+<rect x="460" y="226" width="410" height="240" rx="12" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.4"/>
+<text x="665" y="252.0" font-size="15" font-weight="700" fill="#a3223a" text-anchor="middle">Type 1: alkylators, radiation</text>
+<text x="665" y="280.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">Melphalan, cyclophosphamide,</text>
+<text x="665" y="303.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">busulfan, platinum; radiation</text>
+<text x="665" y="326.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">60–70% of AML-pCT</text>
+<text x="665" y="349.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">Preceding MDS phase</text>
+<text x="665" y="372.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">Unbalanced, complex karyotype:</text>
+<text x="665" y="395.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">−5/5q−, −7/7q−, 17p−</text>
+<text x="665" y="418.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">TP53 often (≥2 hits)</text>
+<text x="665" y="441.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">Survival under a year</text>
+</svg>

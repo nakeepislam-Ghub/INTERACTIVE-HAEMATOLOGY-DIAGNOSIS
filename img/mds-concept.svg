@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="500" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">MDS: a busy marrow but empty blood</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">A mutated stem cell clone grows, but its progeny die before release (ineffective haemopoiesis).</text>
+<rect x="10" y="80" width="260" height="330" rx="14" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.4"/>
+<text x="140" y="106.0" font-size="15.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">Normal stem cell</text>
+<rect x="320" y="80" width="260" height="330" rx="14" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.4"/>
+<text x="450" y="106.0" font-size="15.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">MDS stem cell clone</text>
+<rect x="630" y="80" width="260" height="330" rx="14" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.4"/>
+<text x="760" y="106.0" font-size="15.5" font-weight="700" fill="#a3223a" text-anchor="middle">Acute myeloid leukaemia</text>
+<circle cx="140" cy="150" r="18" fill="#bcd7c3" stroke="#2f7d4f" stroke-width="1.3"/>
+<circle cx="140" cy="150" r="9.9" fill="#2f7d4f"/>
+<path d="M140 170 L70 226" fill="none" stroke="#2f7d4f" stroke-width="1.6" marker-end="url(#ag)"/>
+<circle cx="70" cy="246" r="15" fill="#d9485f" stroke="#8d8693" stroke-width="1.3"/>
+<path d="M140 170 L140 226" fill="none" stroke="#2f7d4f" stroke-width="1.6" marker-end="url(#ag)"/>
+<circle cx="140" cy="246" r="15" fill="#f2f2f2" stroke="#8d8693" stroke-width="1.3"/>
+<path d="M140 170 L210 226" fill="none" stroke="#2f7d4f" stroke-width="1.6" marker-end="url(#ag)"/>
+<circle cx="210" cy="246" r="15" fill="#c79be0" stroke="#8d8693" stroke-width="1.3"/>
+<text x="140" y="290.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">red cells, white cells,</text>
+<text x="140" y="308.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">platelets in balance</text>
+<rect x="85.76" y="339" width="108.47999999999999" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="140" y="354.3" font-size="12" font-weight="700" fill="#2f7d4f" text-anchor="middle">normal counts</text>
+<path d="M272 240 L316 240" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<text x="294" y="226.0" font-size="11.5" font-weight="700" fill="#5d5663" text-anchor="middle">mutations</text>
+<circle cx="422" cy="150" r="13" fill="#d6c3ec" stroke="#5b3f8c" stroke-width="1.3"/>
+<circle cx="422" cy="150" r="7.15" fill="#8e5bb8"/>
+<circle cx="450" cy="142" r="13" fill="#d6c3ec" stroke="#5b3f8c" stroke-width="1.3"/>
+<circle cx="450" cy="142" r="7.15" fill="#8e5bb8"/>
+<circle cx="478" cy="150" r="13" fill="#d6c3ec" stroke="#5b3f8c" stroke-width="1.3"/>
+<circle cx="478" cy="150" r="7.15" fill="#8e5bb8"/>
+<circle cx="436" cy="170" r="13" fill="#d6c3ec" stroke="#5b3f8c" stroke-width="1.3"/>
+<circle cx="436" cy="170" r="7.15" fill="#8e5bb8"/>
+<circle cx="464" cy="170" r="13" fill="#d6c3ec" stroke="#5b3f8c" stroke-width="1.3"/>
+<circle cx="464" cy="170" r="7.15" fill="#8e5bb8"/>
+<text x="450" y="198.0" font-size="12.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">clone expands: hypercellular marrow</text>
+<path d="M450 206 L370 234" fill="none" stroke="#5b3f8c" stroke-width="1.6" marker-end="url(#ap)"/>
+<circle cx="370" cy="254" r="15" fill="#d9485f" stroke="#8d8693" stroke-width="1.3"/>
+<path d="M359 243 l22 22 M381 243 l-22 22" stroke="#a3223a" stroke-width="2.4"/>
+<path d="M450 206 L450 234" fill="none" stroke="#5b3f8c" stroke-width="1.6" marker-end="url(#ap)"/>
+<circle cx="450" cy="254" r="15" fill="#f2f2f2" stroke="#8d8693" stroke-width="1.3"/>
+<path d="M439 243 l22 22 M461 243 l-22 22" stroke="#a3223a" stroke-width="2.4"/>
+<path d="M450 206 L530 234" fill="none" stroke="#5b3f8c" stroke-width="1.6" marker-end="url(#ap)"/>
+<circle cx="530" cy="254" r="15" fill="#c79be0" stroke="#8d8693" stroke-width="1.3"/>
+<path d="M519 243 l22 22 M541 243 l-22 22" stroke="#a3223a" stroke-width="2.4"/>
+<text x="450" y="292.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">dysplastic precursors die by</text>
+<text x="450" y="310.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">apoptosis (TNF-α, FAS, TRAIL)</text>
+<rect x="347.04" y="339" width="205.92" height="22" rx="11" fill="#fff" stroke="#5b3f8c" stroke-width="1.1"/>
+<text x="450" y="354.3" font-size="12" font-weight="700" fill="#5b3f8c" text-anchor="middle">cytopenias + dysplasia ≥10%</text>
+<path d="M582 240 L626 240" fill="none" stroke="#a3223a" stroke-width="2.4" marker-end="url(#ar)"/>
+<text x="604" y="226.0" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="middle">more hits</text>
+<circle cx="700" cy="140" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="700" cy="140" r="8.25" fill="#a3223a"/>
+<circle cx="760" cy="140" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="760" cy="140" r="8.25" fill="#a3223a"/>
+<circle cx="820" cy="140" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="820" cy="140" r="8.25" fill="#a3223a"/>
+<circle cx="700" cy="182" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="700" cy="182" r="8.25" fill="#a3223a"/>
+<circle cx="760" cy="182" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="760" cy="182" r="8.25" fill="#a3223a"/>
+<circle cx="820" cy="182" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="820" cy="182" r="8.25" fill="#a3223a"/>
+<circle cx="700" cy="224" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="700" cy="224" r="8.25" fill="#a3223a"/>
+<circle cx="760" cy="224" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="760" cy="224" r="8.25" fill="#a3223a"/>
+<circle cx="820" cy="224" r="15" fill="#e7c0c7" stroke="#a3223a" stroke-width="1.3"/>
+<circle cx="820" cy="224" r="8.25" fill="#a3223a"/>
+<text x="760" y="292.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">maturation blocked,</text>
+<text x="760" y="310.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">blasts take over</text>
+<rect x="712.72" y="339" width="94.55999999999999" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="760" y="354.3" font-size="12" font-weight="700" fill="#a3223a" text-anchor="middle">blasts ≥20%</text>
+<rect x="20" y="430" width="860" height="52" rx="10" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="450" y="452.0" font-size="13.5" font-weight="700" fill="#1d1a24" text-anchor="middle">Blasts climb across the spectrum: &lt;5% marrow (low blasts) → 5–19% (increased blasts) → ≥20% (AML).</text>
+<text x="450" y="472.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">Other mechanisms: immune attack (hypoplastic MDS), angiogenesis (VEGF), poor growth-factor response.</text>
+</svg>

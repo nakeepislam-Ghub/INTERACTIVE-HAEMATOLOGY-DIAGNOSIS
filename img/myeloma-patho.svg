@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="600" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">How myeloma makes people ill</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Four routes from the clone to the clinic; CRAB features are shown in red.</text>
+<rect x="320.0" y="89.0" width="260" height="58" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="450" y="114.0" font-size="15" font-weight="700" fill="#a3223a" text-anchor="middle">Clonal plasma cells</text>
+<text x="450" y="132.7" font-size="15" font-weight="700" fill="#a3223a" text-anchor="middle">in the bone marrow</text>
+<path d="M450 147 L450 170 L120 170 L120 196" fill="none" stroke="#b3541e" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="20" y="200" width="200" height="120" rx="12" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.5"/>
+<text x="120" y="226.0" font-size="16" font-weight="700" fill="#b3541e" text-anchor="middle">Bone</text>
+<text x="120" y="252.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">IL-6, TNF-α, VEGF and other</text>
+<text x="120" y="267.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">cytokines switch osteoclasts on</text>
+<text x="120" y="282.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">and osteoblasts off</text>
+<path d="M120 328 L120 346" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="30" y="350" width="180" height="54" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.6"/>
+<text x="120" y="373.5" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Bone pain, lytic lesions,</text>
+<text x="120" y="389.8" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">fractures</text>
+<path d="M120 412 L120 430" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="30" y="434" width="180" height="38" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.6"/>
+<text x="120" y="457.5" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Hypercalcaemia</text>
+<path d="M120 480 L120 498" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="30" y="502" width="180" height="38" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.2"/>
+<text x="120" y="525.5" font-size="13" font-weight="600" fill="#1d1a24" text-anchor="middle">Cord compression</text>
+<path d="M450 147 L450 170 L340 170 L340 196" fill="none" stroke="#5b3f8c" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="240" y="200" width="200" height="120" rx="12" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.5"/>
+<text x="340" y="226.0" font-size="16" font-weight="700" fill="#5b3f8c" text-anchor="middle">Marrow</text>
+<text x="340" y="252.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">Infiltration displaces</text>
+<text x="340" y="267.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">haemopoiesis; inflammation</text>
+<text x="340" y="282.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">and renal failure add</text>
+<path d="M340 328 L340 346" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="250" y="350" width="180" height="38" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.6"/>
+<text x="340" y="373.5" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Anaemia</text>
+<path d="M340 396 L340 414" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="250" y="418" width="180" height="38" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.2"/>
+<text x="340" y="441.5" font-size="13" font-weight="600" fill="#1d1a24" text-anchor="middle">Infection, bleeding</text>
+<path d="M450 147 L450 170 L560 170 L560 196" fill="none" stroke="#3d5fa8" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="460" y="200" width="200" height="120" rx="12" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.5"/>
+<text x="560" y="226.0" font-size="16" font-weight="700" fill="#3d5fa8" text-anchor="middle">M protein</text>
+<text x="560" y="252.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">Intact Ig or free light chains</text>
+<text x="560" y="267.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">circulate, deposit or</text>
+<text x="560" y="282.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">block tubules</text>
+<path d="M560 328 L560 346" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="470" y="350" width="180" height="54" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.6"/>
+<text x="560" y="373.5" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Renal failure</text>
+<text x="560" y="389.8" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">(cast nephropathy)</text>
+<path d="M560 412 L560 430" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="470" y="434" width="180" height="38" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.2"/>
+<text x="560" y="457.5" font-size="13" font-weight="600" fill="#1d1a24" text-anchor="middle">Hyperviscosity</text>
+<path d="M560 480 L560 498" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="470" y="502" width="180" height="38" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.2"/>
+<text x="560" y="525.5" font-size="13" font-weight="600" fill="#1d1a24" text-anchor="middle">Amyloid, LCDD</text>
+<path d="M450 147 L450 170 L780 170 L780 196" fill="none" stroke="#2f7d4f" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="680" y="200" width="200" height="120" rx="12" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="780" y="226.0" font-size="16" font-weight="700" fill="#2f7d4f" text-anchor="middle">Immunity</text>
+<text x="780" y="252.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">Low normal Ig, T-cell and</text>
+<text x="780" y="267.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">dendritic cell dysfunction,</text>
+<text x="780" y="282.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">therapy</text>
+<path d="M780 328 L780 346" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="690" y="350" width="180" height="38" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.2"/>
+<text x="780" y="373.5" font-size="13" font-weight="600" fill="#1d1a24" text-anchor="middle">Recurrent infection</text>
+<path d="M780 396 L780 414" fill="none" stroke="#3b3540" stroke-width="1.4" marker-end="url(#ak)"/>
+<rect x="690" y="418" width="180" height="54" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.2"/>
+<text x="780" y="441.5" font-size="13" font-weight="600" fill="#1d1a24" text-anchor="middle">Poor vaccine</text>
+<text x="780" y="457.8" font-size="13" font-weight="600" fill="#1d1a24" text-anchor="middle">response</text>
+<rect x="40" y="556" width="820" height="34" rx="10" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="450" y="578.0" font-size="12.5" font-weight="600" fill="#1d1a24" text-anchor="middle">Myeloma-defining events: CRAB, or BM plasma cells ≥60%, involved/uninvolved FLC ratio ≥100, or more than 1 focal lesion on MRI.</text>
+</svg>

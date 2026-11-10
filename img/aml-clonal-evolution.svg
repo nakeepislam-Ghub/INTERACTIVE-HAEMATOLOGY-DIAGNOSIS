@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="520" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">AML arises by clonal evolution</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Each new mutation gives a sub-clone that grows faster, until blasts fill the marrow.</text>
+<text x="100" y="96.0" font-size="14" font-weight="700" fill="#2f7d4f" text-anchor="middle">Normal stem cell</text>
+<text x="100" y="114.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">balanced output</text>
+<circle cx="100" cy="150" r="20" fill="#cfe8d5" stroke="#2f7d4f" stroke-width="1.4"/>
+<path d="M128 150 L247 150" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<text x="275" y="96.0" font-size="14" font-weight="700" fill="#a8700f" text-anchor="middle">1st mutation</text>
+<text x="275" y="114.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">clonal haemopoiesis</text>
+<circle cx="275" cy="150" r="20" fill="#fbe7a6" stroke="#a8700f" stroke-width="1.4"/>
+<path d="M303 150 L422 150" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<text x="450" y="96.0" font-size="14" font-weight="700" fill="#b3541e" text-anchor="middle">2nd mutation</text>
+<text x="450" y="114.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">pre-leukaemic clone</text>
+<polygon points="470.0,150.0 463.9,153.7 467.3,160.0 460.2,160.2 460.0,167.3 453.7,163.9 450.0,170.0 446.3,163.9 440.0,167.3 439.8,160.2 432.7,160.0 436.1,153.7 430.0,150.0 436.1,146.3 432.7,140.0 439.8,139.8 440.0,132.7 446.3,136.1 450.0,130.0 453.7,136.1 460.0,132.7 460.2,139.8 467.3,140.0 463.9,146.3" fill="#f7c89b" stroke="#b3541e" stroke-width="1.4"/>
+<path d="M478 150 L597 150" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<text x="625" y="96.0" font-size="14" font-weight="700" fill="#c2502f" text-anchor="middle">3rd mutation</text>
+<text x="625" y="114.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">growth advantage</text>
+<polygon points="645.0,150.0 638.9,153.7 642.3,160.0 635.2,160.2 635.0,167.3 628.7,163.9 625.0,170.0 621.3,163.9 615.0,167.3 614.8,160.2 607.7,160.0 611.1,153.7 605.0,150.0 611.1,146.3 607.7,140.0 614.8,139.8 615.0,132.7 621.3,136.1 625.0,130.0 628.7,136.1 635.0,132.7 635.2,139.8 642.3,140.0 638.9,146.3" fill="#f2a48f" stroke="#c2502f" stroke-width="1.4"/>
+<path d="M653 150 L772 150" fill="none" stroke="#3b3540" stroke-width="1.8" marker-end="url(#ak)"/>
+<text x="800" y="96.0" font-size="14" font-weight="700" fill="#a3223a" text-anchor="middle">4th or later</text>
+<text x="800" y="114.0" font-size="12" font-weight="400" fill="#5d5663" text-anchor="middle">acute leukaemia</text>
+<polygon points="820.0,150.0 813.9,153.7 817.3,160.0 810.2,160.2 810.0,167.3 803.7,163.9 800.0,170.0 796.3,163.9 790.0,167.3 789.8,160.2 782.7,160.0 786.1,153.7 780.0,150.0 786.1,146.3 782.7,140.0 789.8,139.8 790.0,132.7 796.3,136.1 800.0,130.0 803.7,136.1 810.0,132.7 810.2,139.8 817.3,140.0 813.9,146.3" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<path d="M100 172 L87.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<circle cx="87.0" cy="210" r="11" fill="#cfe8d5" stroke="#2f7d4f" stroke-width="1.4"/>
+<path d="M100 172 L113.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<circle cx="113.0" cy="240" r="11" fill="#cfe8d5" stroke="#2f7d4f" stroke-width="1.4"/>
+<circle cx="70" cy="300" r="10" fill="#d9485f" stroke="#8d8693" stroke-width="1.4"/>
+<circle cx="100" cy="300" r="10" fill="#f2f2f2" stroke="#8d8693" stroke-width="1.4"/>
+<circle cx="130" cy="300" r="10" fill="#c79be0" stroke="#8d8693" stroke-width="1.4"/>
+<text x="100" y="330.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">red cells, white</text>
+<text x="100" y="346.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">cells, platelets</text>
+<path d="M275 172 L249.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<circle cx="249.0" cy="210" r="11" fill="#fbe7a6" stroke="#a8700f" stroke-width="1.4"/>
+<path d="M275 172 L275.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<circle cx="275.0" cy="240" r="11" fill="#fbe7a6" stroke="#a8700f" stroke-width="1.4"/>
+<path d="M275 172 L301.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<circle cx="301.0" cy="210" r="11" fill="#fbe7a6" stroke="#a8700f" stroke-width="1.4"/>
+<path d="M450 172 L411.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="422.0,210.0 418.7,212.0 420.5,215.5 416.6,215.6 416.5,219.5 413.0,217.7 411.0,221.0 409.0,217.7 405.5,219.5 405.4,215.6 401.5,215.5 403.3,212.0 400.0,210.0 403.3,208.0 401.5,204.5 405.4,204.4 405.5,200.5 409.0,202.3 411.0,199.0 413.0,202.3 416.5,200.5 416.6,204.4 420.5,204.5 418.7,208.0" fill="#f7c89b" stroke="#b3541e" stroke-width="1.4"/>
+<path d="M450 172 L437.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="448.0,240.0 444.7,242.0 446.5,245.5 442.6,245.6 442.5,249.5 439.0,247.7 437.0,251.0 435.0,247.7 431.5,249.5 431.4,245.6 427.5,245.5 429.3,242.0 426.0,240.0 429.3,238.0 427.5,234.5 431.4,234.4 431.5,230.5 435.0,232.3 437.0,229.0 439.0,232.3 442.5,230.5 442.6,234.4 446.5,234.5 444.7,238.0" fill="#f7c89b" stroke="#b3541e" stroke-width="1.4"/>
+<path d="M450 172 L463.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="474.0,210.0 470.7,212.0 472.5,215.5 468.6,215.6 468.5,219.5 465.0,217.7 463.0,221.0 461.0,217.7 457.5,219.5 457.4,215.6 453.5,215.5 455.3,212.0 452.0,210.0 455.3,208.0 453.5,204.5 457.4,204.4 457.5,200.5 461.0,202.3 463.0,199.0 465.0,202.3 468.5,200.5 468.6,204.4 472.5,204.5 470.7,208.0" fill="#f7c89b" stroke="#b3541e" stroke-width="1.4"/>
+<path d="M450 172 L489.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="500.0,240.0 496.7,242.0 498.5,245.5 494.6,245.6 494.5,249.5 491.0,247.7 489.0,251.0 487.0,247.7 483.5,249.5 483.4,245.6 479.5,245.5 481.3,242.0 478.0,240.0 481.3,238.0 479.5,234.5 483.4,234.4 483.5,230.5 487.0,232.3 489.0,229.0 491.0,232.3 494.5,230.5 494.6,234.4 498.5,234.5 496.7,238.0" fill="#f7c89b" stroke="#b3541e" stroke-width="1.4"/>
+<path d="M625 172 L573.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="584.0,210.0 580.7,212.0 582.5,215.5 578.6,215.6 578.5,219.5 575.0,217.7 573.0,221.0 571.0,217.7 567.5,219.5 567.4,215.6 563.5,215.5 565.3,212.0 562.0,210.0 565.3,208.0 563.5,204.5 567.4,204.4 567.5,200.5 571.0,202.3 573.0,199.0 575.0,202.3 578.5,200.5 578.6,204.4 582.5,204.5 580.7,208.0" fill="#f2a48f" stroke="#c2502f" stroke-width="1.4"/>
+<path d="M625 172 L599.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="610.0,240.0 606.7,242.0 608.5,245.5 604.6,245.6 604.5,249.5 601.0,247.7 599.0,251.0 597.0,247.7 593.5,249.5 593.4,245.6 589.5,245.5 591.3,242.0 588.0,240.0 591.3,238.0 589.5,234.5 593.4,234.4 593.5,230.5 597.0,232.3 599.0,229.0 601.0,232.3 604.5,230.5 604.6,234.4 608.5,234.5 606.7,238.0" fill="#f2a48f" stroke="#c2502f" stroke-width="1.4"/>
+<path d="M625 172 L625.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="636.0,210.0 632.7,212.0 634.5,215.5 630.6,215.6 630.5,219.5 627.0,217.7 625.0,221.0 623.0,217.7 619.5,219.5 619.4,215.6 615.5,215.5 617.3,212.0 614.0,210.0 617.3,208.0 615.5,204.5 619.4,204.4 619.5,200.5 623.0,202.3 625.0,199.0 627.0,202.3 630.5,200.5 630.6,204.4 634.5,204.5 632.7,208.0" fill="#f2a48f" stroke="#c2502f" stroke-width="1.4"/>
+<path d="M625 172 L651.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="662.0,240.0 658.7,242.0 660.5,245.5 656.6,245.6 656.5,249.5 653.0,247.7 651.0,251.0 649.0,247.7 645.5,249.5 645.4,245.6 641.5,245.5 643.3,242.0 640.0,240.0 643.3,238.0 641.5,234.5 645.4,234.4 645.5,230.5 649.0,232.3 651.0,229.0 653.0,232.3 656.5,230.5 656.6,234.4 660.5,234.5 658.7,238.0" fill="#f2a48f" stroke="#c2502f" stroke-width="1.4"/>
+<path d="M625 172 L677.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="688.0,210.0 684.7,212.0 686.5,215.5 682.6,215.6 682.5,219.5 679.0,217.7 677.0,221.0 675.0,217.7 671.5,219.5 671.4,215.6 667.5,215.5 669.3,212.0 666.0,210.0 669.3,208.0 667.5,204.5 671.4,204.4 671.5,200.5 675.0,202.3 677.0,199.0 679.0,202.3 682.5,200.5 682.6,204.4 686.5,204.5 684.7,208.0" fill="#f2a48f" stroke="#c2502f" stroke-width="1.4"/>
+<path d="M800 172 L722.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="733.0,210.0 729.7,212.0 731.5,215.5 727.6,215.6 727.5,219.5 724.0,217.7 722.0,221.0 720.0,217.7 716.5,219.5 716.4,215.6 712.5,215.5 714.3,212.0 711.0,210.0 714.3,208.0 712.5,204.5 716.4,204.4 716.5,200.5 720.0,202.3 722.0,199.0 724.0,202.3 727.5,200.5 727.6,204.4 731.5,204.5 729.7,208.0" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<path d="M800 172 L748.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="759.0,240.0 755.7,242.0 757.5,245.5 753.6,245.6 753.5,249.5 750.0,247.7 748.0,251.0 746.0,247.7 742.5,249.5 742.4,245.6 738.5,245.5 740.3,242.0 737.0,240.0 740.3,238.0 738.5,234.5 742.4,234.4 742.5,230.5 746.0,232.3 748.0,229.0 750.0,232.3 753.5,230.5 753.6,234.4 757.5,234.5 755.7,238.0" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<path d="M800 172 L774.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="785.0,210.0 781.7,212.0 783.5,215.5 779.6,215.6 779.5,219.5 776.0,217.7 774.0,221.0 772.0,217.7 768.5,219.5 768.4,215.6 764.5,215.5 766.3,212.0 763.0,210.0 766.3,208.0 764.5,204.5 768.4,204.4 768.5,200.5 772.0,202.3 774.0,199.0 776.0,202.3 779.5,200.5 779.6,204.4 783.5,204.5 781.7,208.0" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<path d="M800 172 L800.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="811.0,240.0 807.7,242.0 809.5,245.5 805.6,245.6 805.5,249.5 802.0,247.7 800.0,251.0 798.0,247.7 794.5,249.5 794.4,245.6 790.5,245.5 792.3,242.0 789.0,240.0 792.3,238.0 790.5,234.5 794.4,234.4 794.5,230.5 798.0,232.3 800.0,229.0 802.0,232.3 805.5,230.5 805.6,234.4 809.5,234.5 807.7,238.0" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<path d="M800 172 L826.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="837.0,210.0 833.7,212.0 835.5,215.5 831.6,215.6 831.5,219.5 828.0,217.7 826.0,221.0 824.0,217.7 820.5,219.5 820.4,215.6 816.5,215.5 818.3,212.0 815.0,210.0 818.3,208.0 816.5,204.5 820.4,204.4 820.5,200.5 824.0,202.3 826.0,199.0 828.0,202.3 831.5,200.5 831.6,204.4 835.5,204.5 833.7,208.0" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<path d="M800 172 L852.0 226" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="863.0,240.0 859.7,242.0 861.5,245.5 857.6,245.6 857.5,249.5 854.0,247.7 852.0,251.0 850.0,247.7 846.5,249.5 846.4,245.6 842.5,245.5 844.3,242.0 841.0,240.0 844.3,238.0 842.5,234.5 846.4,234.4 846.5,230.5 850.0,232.3 852.0,229.0 854.0,232.3 857.5,230.5 857.6,234.4 861.5,234.5 859.7,238.0" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<path d="M800 172 L878.0 196" fill="none" stroke="#b8b1bd" stroke-width="1" marker-end="url(#ak)"/>
+<polygon points="889.0,210.0 885.7,212.0 887.5,215.5 883.6,215.6 883.5,219.5 880.0,217.7 878.0,221.0 876.0,217.7 872.5,219.5 872.4,215.6 868.5,215.5 870.3,212.0 867.0,210.0 870.3,208.0 868.5,204.5 872.4,204.4 872.5,200.5 876.0,202.3 878.0,199.0 880.0,202.3 883.5,200.5 883.6,204.4 887.5,204.5 885.7,208.0" fill="#e0303f" stroke="#a3223a" stroke-width="1.4"/>
+<rect x="560" y="286" width="320" height="72" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="720" y="310.0" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">Blasts ≥20% (or a defining</text>
+<text x="720" y="328.0" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">genetic change): differentiation</text>
+<text x="720" y="346.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">blocked, normal haemopoiesis suppressed</text>
+<rect x="20" y="384" width="860" height="116" rx="10" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="450" y="408.0" font-size="14.5" font-weight="700" fill="#1d1a24" text-anchor="middle">Two kinds of hit cooperate</text>
+<rect x="40" y="420" width="400" height="66" rx="8" fill="#fff" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="240" y="442.0" font-size="13.5" font-weight="700" fill="#3d5fa8" text-anchor="middle">Block differentiation</text>
+<text x="240" y="462.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">PML::RARA, RUNX1::RUNX1T1, CBFB::MYH11,</text>
+<text x="240" y="478.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">CEBPA, NPM1, KMT2A</text>
+<rect x="460" y="420" width="400" height="66" rx="8" fill="#fff" stroke="#a3223a" stroke-width="1.3"/>
+<text x="660" y="442.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">Drive proliferation and survival</text>
+<text x="660" y="462.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">FLT3-ITD, KIT, NRAS, KRAS</text>
+<text x="660" y="478.0" font-size="12" font-weight="400" fill="#1d1a24" text-anchor="middle">plus epigenetic genes (DNMT3A, TET2, IDH1/2)</text>
+</svg>

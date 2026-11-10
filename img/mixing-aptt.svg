@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" width="900" height="760" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="760" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Prolonged APTT: the mixing study</text>
+<rect x="350.0" y="63.0" width="200" height="54" rx="9" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="450.0" y="82.0" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">Prolonged APTT:</text>
+<text x="450.0" y="98.9" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">mix 1:1 with normal plasma</text>
+<path d="M450.0 117.0 V160.0 H364.0 V201.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="321.65" y="163.0" width="84.69999999999999" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="364.0" y="178.1" font-size="11.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">Correction</text>
+<rect x="264.0" y="203.0" width="200" height="54" rx="9" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="364.0" y="222.0" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">Repeat after</text>
+<text x="364.0" y="238.9" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">2 h at 37 °C</text>
+<path d="M364.0 257.0 V300.0 H278.0 V341.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="235.65" y="303.0" width="84.69999999999999" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="278.0" y="318.1" font-size="11.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">Correction</text>
+<rect x="178.0" y="343.0" width="200" height="54" rx="9" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="278.0" y="362.0" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">Mix with adsorbed plasma</text>
+<text x="278.0" y="378.9" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">(lacks II, VII, IX, X)</text>
+<path d="M278.0 397.0 V440.0 H192.0 V481.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="149.65" y="443.0" width="84.69999999999999" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="192.0" y="458.1" font-size="11.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">Correction</text>
+<rect x="92.0" y="483.0" width="200" height="54" rx="9" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="192.0" y="502.0" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">Mix with aged plasma</text>
+<text x="192.0" y="518.9" font-size="13.5" font-weight="600" fill="#1d1a24" text-anchor="middle">(lacks V, VIII)</text>
+<path d="M192.0 537.0 V580.0 H106.0 V621.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="63.650000000000006" y="583.0" width="84.69999999999999" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="106.0" y="598.1" font-size="11.5" font-weight="700" fill="#2f7d4f" text-anchor="middle">Correction</text>
+<rect x="27.0" y="623.0" width="158.0" height="54" rx="9" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="106.0" y="642.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">Factor XII or XI</text>
+<text x="106.0" y="658.9" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">(or I if PT long)</text>
+<path d="M192.0 537.0 V580.0 H278.0 V621.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="225.645" y="583.0" width="104.71" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="278.0" y="598.1" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="middle">No correction</text>
+<rect x="199.0" y="623.0" width="158.0" height="54" rx="9" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="278.0" y="642.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">Factor VIII or V</text>
+<text x="278.0" y="658.9" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">(PT long → V)</text>
+<path d="M278.0 397.0 V440.0 H450.0 V481.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="397.645" y="443.0" width="104.71" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="450.0" y="458.1" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="middle">No correction</text>
+<rect x="371.0" y="483.0" width="158.0" height="54" rx="9" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="450.0" y="502.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">Factor IX, X or II</text>
+<text x="450.0" y="518.9" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">(PT normal → IX)</text>
+<path d="M364.0 257.0 V300.0 H622.0 V341.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="569.645" y="303.0" width="104.71" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="622.0" y="318.1" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="middle">No correction</text>
+<rect x="543.0" y="343.0" width="158.0" height="54" rx="9" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="622.0" y="362.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">Time-dependent</text>
+<text x="622.0" y="378.9" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">inhibitor (FVIII)</text>
+<path d="M450.0 117.0 V160.0 H794.0 V201.0" fill="none" stroke="#3b3540" stroke-width="1.6" marker-end="url(#ak)"/>
+<rect x="741.645" y="163.0" width="104.71" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="794.0" y="178.1" font-size="11.5" font-weight="700" fill="#a3223a" text-anchor="middle">No correction</text>
+<rect x="715.0" y="203.0" width="158.0" height="54" rx="9" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="794.0" y="222.0" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">Immediate inhibitor</text>
+<text x="794.0" y="238.9" font-size="13.5" font-weight="700" fill="#a3223a" text-anchor="middle">(lupus anticoagulant)</text>
+<text x="450" y="742.0" font-size="12.5" font-weight="400" fill="#5d5663" text-anchor="middle">Adsorbed plasma keeps I, V, VIII, XI, XII; aged plasma keeps all factors except V and VIII. The missing factor is one the corrector supplies.</text>
+</svg>

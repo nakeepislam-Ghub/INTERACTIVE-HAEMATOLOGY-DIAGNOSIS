@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="880" height="380" fill="#fff"/>
+<text x="440" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">How a spherocyte forms</text>
+<text x="440" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">A vertical membrane defect (spectrin, ankyrin, band 3, protein 4.2) lets the lipid bilayer bud off.</text>
+<circle cx="110" cy="170" r="62" fill="#d9485f" stroke="#a3223a" stroke-width="1.5"/>
+<circle cx="110" cy="170" r="29.759999999999998" fill="#f6c6cd"/>
+<text x="110" y="262.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="middle">Biconcave disc</text>
+<text x="110" y="282.0" font-size="13" font-weight="400" fill="#5d5663" text-anchor="middle">large surface for its volume</text>
+<circle cx="300" cy="170" r="56" fill="#d9485f" stroke="#a3223a" stroke-width="1.5"/>
+<circle cx="300" cy="170" r="15.680000000000001" fill="#f6c6cd"/>
+<text x="300" y="262.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="middle">Loses membrane</text>
+<text x="300" y="282.0" font-size="13" font-weight="400" fill="#5d5663" text-anchor="middle">as small vesicles</text>
+<circle cx="490" cy="170" r="46" fill="#d9485f" stroke="#a3223a" stroke-width="1.5"/>
+<text x="490" y="262.0" font-size="15" font-weight="700" fill="#1d1a24" text-anchor="middle">Spherocyte</text>
+<text x="490" y="282.0" font-size="13" font-weight="400" fill="#5d5663" text-anchor="middle">dense, no central pallor</text>
+<circle cx="362" cy="132" r="6" fill="#f2a9b4" stroke="#a3223a" stroke-width="1"/>
+<circle cx="376" cy="144" r="5" fill="#f2a9b4" stroke="#a3223a" stroke-width="1"/>
+<circle cx="368" cy="158" r="4" fill="#f2a9b4" stroke="#a3223a" stroke-width="1"/>
+<circle cx="352" cy="182" r="6" fill="#f2a9b4" stroke="#a3223a" stroke-width="1"/>
+<circle cx="366" cy="194" r="5" fill="#f2a9b4" stroke="#a3223a" stroke-width="1"/>
+<circle cx="358" cy="208" r="4" fill="#f2a9b4" stroke="#a3223a" stroke-width="1"/>
+<path d="M190 170 L220 170" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<path d="M380 170 L410 170" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="600" y="90" width="250" height="200" rx="14" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.3"/>
+<text x="725" y="114.0" font-size="15" font-weight="700" fill="#5b3f8c" text-anchor="middle">Spleen</text>
+<path d="M620 180 H710 M740 180 H830" stroke="#5b3f8c" stroke-width="6" stroke-linecap="round"/>
+<circle cx="690" cy="180" r="20" fill="#d9485f" stroke="#a3223a" stroke-width="1.5"/>
+<text x="725" y="222.0" font-size="13" font-weight="700" fill="#1d1a24" text-anchor="middle">Cannot squeeze through</text>
+<text x="725" y="240.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">the slits between sinus cells,</text>
+<text x="725" y="258.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">so it is trapped and eaten</text>
+<path d="M540 170 L616 172" fill="none" stroke="#3b3540" stroke-width="2.4" marker-end="url(#ak)"/>
+<rect x="40" y="310" width="800" height="48" rx="10" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="440" y="340.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">Result: extravascular haemolysis, raised MCHC, increased osmotic fragility. Splenectomy stops the destruction, not the defect.</text>
+</svg>

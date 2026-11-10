@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interactive Haematology Diagnosis</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Interactive Haematology Diagnosis: a free, open teaching book by Prof. Abeer Mohammed and Ass. Prof. Islam Fathy Elnakeeb">
+<meta name="theme-color" content="#8f0e31">
+<script>(function(){var d=document.documentElement;try{var p=localStorage.getItem('palette'),t=localStorage.getItem('theme'),z=localStorage.getItem('tsize');d.setAttribute('data-palette',p||'giemsa');if(t&&t!=='auto')d.setAttribute('data-theme',t);if(z)d.style.fontSize=z}catch(e){d.setAttribute('data-palette','giemsa')}})();</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="img/icon-192.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script>window.BOOK_READY=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50];</script>
+
+</head>
+<body>
+<div class="bar">
+  <button class="btn menu-btn" id="menuBtn" aria-controls="toc" aria-expanded="false">Contents</button>
+  <div class="book"><a class="brand" href="#" aria-label="Interactive Haematology Diagnosis, home"><img class="logo" src="img/logo.png" alt="" width="40" height="40"><span class="bt"><b>Interactive Haematology Diagnosis</b><span class="au"><span><i>Prof. Abeer Mohammed</i><u>Scientific content</u></span><span><i>Ass. Prof. Islam Fathy Elnakeeb</i><u>Concept &amp; design</u></span></span></span></a> <small id="crumb"></small></div>
+  <nav class="tools" id="tools" aria-label="Page navigation">
+    <button class="btn ic" id="prevBtn" aria-label="Previous chapter" title="Previous chapter (←)"><span aria-hidden="true">‹</span><span class="tl">Previous</span></button>
+    <button class="btn" id="otpBtn" aria-expanded="false" aria-controls="otp" title="Sections of this chapter"><span aria-hidden="true">☰</span><span class="tl">On this page</span></button>
+    <button class="btn ic" id="nextBtn" aria-label="Next chapter" title="Next chapter (→)"><span class="tl">Next</span><span aria-hidden="true">›</span></button>
+    <button class="btn ic" id="topBtn" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span><span class="tl">Top</span></button>
+  </nav>
+  <span class="net" id="net">Online</span>
+  <button class="btn" id="themeBtn" aria-expanded="false" aria-controls="disp" title="Colours, light or dark, text size">Display</button>
+  <div class="prog" aria-hidden="true"><i id="progBar"></i></div>
+</div>
+
+<div class="pop otp" id="otp" hidden role="dialog" aria-label="On this page">
+  <div class="pop-h"><b>On this page</b><span><button class="btn sm" data-all="open">Expand all</button> <button class="btn sm" data-all="close">Collapse all</button></span></div>
+  <ol id="otpList"></ol>
+</div>
+
+<div class="pop disp" id="disp" hidden role="dialog" aria-label="Display settings">
+  <div class="pop-h"><b>Display</b></div>
+  <div class="dsec"><div class="eyebrow">Colours</div><div class="swatches" role="group" aria-label="Colour palette">
+    <button class="sw" data-pal="giemsa" aria-pressed="false"><i style="background:linear-gradient(135deg,#b0123b 50%,#5b2c94 50%)"></i>Giemsa<small>blood red and stain violet</small></button>
+    <button class="sw" data-pal="he" aria-pressed="false"><i style="background:linear-gradient(135deg,#c2185b 50%,#303f9f 50%)"></i>H&amp;E<small>eosin pink and haematoxylin blue</small></button>
+    <button class="sw" data-pal="classic" aria-pressed="false"><i style="background:linear-gradient(135deg,#a3223a 50%,#c98a1b 50%)"></i>Classic<small>wine and amber</small></button>
+  </div></div>
+  <div class="dsec"><div class="eyebrow">Light or dark</div><div class="chips" role="group" aria-label="Light or dark">
+    <button class="chip" data-mode="auto" aria-pressed="false">Automatic</button><button class="chip" data-mode="light" aria-pressed="false">Light</button><button class="chip" data-mode="dark" aria-pressed="false">Dark</button></div></div>
+  <div class="dsec"><div class="eyebrow">Text size</div><div class="chips" role="group" aria-label="Text size">
+    <button class="chip" data-size="94%" aria-pressed="false">Small</button><button class="chip" data-size="" aria-pressed="false">Normal</button><button class="chip" data-size="110%" aria-pressed="false">Large</button><button class="chip" data-size="122%" aria-pressed="false">Extra large</button></div></div>
+</div>
+
+<div class="shell">
+<nav class="toc" id="toc" aria-label="Book contents">
+  <div class="toc-top"><button class="btn toc-close" id="tocClose">Close</button>
+  <label class="toc-search"><span class="sr">Search chapters</span><input id="tocQ" type="search" placeholder="Search chapters…" autocomplete="off"></label></div>
+  <div class="toc-all"><button class="lnk" data-tall="open">Expand all</button> · <button class="lnk" data-tall="close">Collapse all</button></div>
+  <div id="tocList"></div>
+</nav>
+
+<main id="view"></main>
+</div>
+
+<div class="lb" id="lb" hidden><button class="btn x" id="lbX">Close</button><figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure></div>
+<script src="app.js"></script>
+</body>
+</html>

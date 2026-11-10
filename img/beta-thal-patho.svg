@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 604" width="880" height="604" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="880" height="604" fill="#fff"/>
+<text x="440" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">β thalassaemia major: from gene to complications</text>
+<rect x="290.0" y="64.0" width="300" height="40" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="440" y="88.9" font-size="14" font-weight="700" fill="#a3223a" text-anchor="middle">β-globin gene mutation (β⁰ or β⁺)</text>
+<rect x="280.0" y="128.0" width="320" height="52" rx="10" fill="#fff" stroke="#b8b1bd" stroke-width="1.3"/>
+<text x="440" y="150.2" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">Too few β chains, so free α chains</text>
+<text x="440" y="167.7" font-size="14" font-weight="600" fill="#1d1a24" text-anchor="middle">are left over</text>
+<rect x="270.0" y="210.0" width="340" height="52" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="440" y="232.2" font-size="14" font-weight="700" fill="#a3223a" text-anchor="middle">α chains precipitate in red cell precursors</text>
+<text x="440" y="249.7" font-size="14" font-weight="700" fill="#a3223a" text-anchor="middle">(inclusion bodies, membrane damage)</text>
+<path d="M440 104 L440 126" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<path d="M440 180 L440 208" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<rect x="105.0" y="304.0" width="250" height="52" rx="10" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.3"/>
+<text x="230" y="326.2" font-size="14" font-weight="700" fill="#b3541e" text-anchor="middle">Ineffective erythropoiesis</text>
+<text x="230" y="343.7" font-size="14" font-weight="700" fill="#b3541e" text-anchor="middle">(precursors die in the marrow)</text>
+<rect x="525.0" y="304.0" width="250" height="52" rx="10" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.3"/>
+<text x="650" y="326.2" font-size="14" font-weight="700" fill="#b3541e" text-anchor="middle">Haemolysis of circulating</text>
+<text x="650" y="343.7" font-size="14" font-weight="700" fill="#b3541e" text-anchor="middle">cells in the spleen</text>
+<path d="M380 262 L260 302" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<path d="M500 262 L620 302" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<rect x="340.0" y="390.0" width="200" height="40" rx="10" fill="#a3223a" stroke="#a3223a" stroke-width="1.3"/>
+<text x="440" y="415.2" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Severe anaemia</text>
+<path d="M260 356 L380 390" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<path d="M620 356 L500 390" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<rect x="30.0" y="474.0" width="240" height="52" rx="10" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="150" y="496.2" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">High EPO: marrow expansion</text>
+<text x="150" y="513.7" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">(skull, facial bones, fractures)</text>
+<rect x="315.0" y="474.0" width="250" height="52" rx="10" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="440" y="496.2" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">Extramedullary haemopoiesis</text>
+<text x="440" y="513.7" font-size="14" font-weight="700" fill="#3d5fa8" text-anchor="middle">and splenomegaly</text>
+<rect x="610.0" y="474.0" width="240" height="52" rx="10" fill="#fbeccb" stroke="#a8700f" stroke-width="1.3"/>
+<text x="730" y="504.9" font-size="14" font-weight="700" fill="#a8700f" text-anchor="middle">Regular transfusion</text>
+<path d="M380 430 L200 472" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<path d="M440 430 L440 472" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<path d="M500 430 L690 472" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)"/>
+<rect x="440" y="550" width="420" height="40" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="650" y="575.0" font-size="14" font-weight="700" fill="#a3223a" text-anchor="middle">Iron overload: heart, liver, endocrine glands</text>
+<path d="M730 526 L730 548" fill="none" stroke="#a3223a" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M105 342 L16 342 L16 578 L436 578" fill="none" stroke="#a3223a" stroke-width="1.8" marker-end="url(#ar)" stroke-dasharray="5 4"/>
+<text x="30" y="562.0" font-size="12.5" font-weight="400" fill="#a3223a" text-anchor="start">low hepcidin → more iron absorbed</text>
+</svg>

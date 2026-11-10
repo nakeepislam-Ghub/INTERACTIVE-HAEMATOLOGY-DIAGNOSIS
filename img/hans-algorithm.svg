@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="900" height="440" fill="#fff"/>
+<text x="450" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Cell of origin in DLBCL: the Hans algorithm</text>
+<text x="450" y="56.0" font-size="13.5" font-weight="400" fill="#5d5663" text-anchor="middle">Three immunostains, each positive when 30% or more of tumour cells stain.</text>
+<rect x="45.0" y="114.0" width="170" height="52" rx="10" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="130" y="145.6" font-size="16" font-weight="700" fill="#3d5fa8" text-anchor="middle">CD10</text>
+<rect x="345.0" y="114.0" width="170" height="52" rx="10" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="430" y="145.6" font-size="16" font-weight="700" fill="#3d5fa8" text-anchor="middle">BCL6</text>
+<rect x="643.0" y="114.0" width="170" height="52" rx="10" fill="#e3eaf6" stroke="#3d5fa8" stroke-width="1.3"/>
+<text x="728" y="145.6" font-size="16" font-weight="700" fill="#3d5fa8" text-anchor="middle">MUM1</text>
+<rect x="55" y="266" width="150" height="68" rx="10" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.5"/>
+<text x="130" y="296.0" font-size="15" font-weight="700" fill="#5b3f8c" text-anchor="middle">GCB</text>
+<text x="130" y="316.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">germinal centre</text>
+<rect x="355" y="266" width="150" height="68" rx="10" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.5"/>
+<text x="430" y="296.0" font-size="15" font-weight="700" fill="#b3541e" text-anchor="middle">Non-GCB</text>
+<text x="430" y="316.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">activated B cell</text>
+<rect x="573" y="266" width="150" height="68" rx="10" fill="#e9e2f4" stroke="#5b3f8c" stroke-width="1.5"/>
+<text x="648" y="296.0" font-size="15" font-weight="700" fill="#5b3f8c" text-anchor="middle">GCB</text>
+<text x="648" y="316.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">germinal centre</text>
+<rect x="735" y="266" width="150" height="68" rx="10" fill="#fbe3d2" stroke="#b3541e" stroke-width="1.5"/>
+<text x="810" y="296.0" font-size="15" font-weight="700" fill="#b3541e" text-anchor="middle">Non-GCB</text>
+<text x="810" y="316.0" font-size="11.5" font-weight="400" fill="#1d1a24" text-anchor="middle">activated B cell</text>
+<path d="M130 166 L130 264" fill="none" stroke="#2f7d4f" stroke-width="2" marker-end="url(#ag)"/>
+<text x="140" y="220.0" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="start">≥30%</text>
+<path d="M215 140 L343 140" fill="none" stroke="#a3223a" stroke-width="2" marker-end="url(#ar)"/>
+<text x="279" y="130.0" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">&lt;30%</text>
+<path d="M430 166 L430 264" fill="none" stroke="#a3223a" stroke-width="2" marker-end="url(#ar)"/>
+<text x="440" y="220.0" font-size="13" font-weight="700" fill="#a3223a" text-anchor="start">&lt;30%</text>
+<path d="M515 140 L641 140" fill="none" stroke="#2f7d4f" stroke-width="2" marker-end="url(#ag)"/>
+<text x="578" y="130.0" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="middle">≥30%</text>
+<path d="M703 166 L648 264" fill="none" stroke="#a3223a" stroke-width="2" marker-end="url(#ar)"/>
+<text x="655" y="216.0" font-size="13" font-weight="700" fill="#a3223a" text-anchor="end">&lt;30%</text>
+<path d="M753 166 L810 264" fill="none" stroke="#2f7d4f" stroke-width="2" marker-end="url(#ag)"/>
+<text x="803" y="216.0" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="start">≥30%</text>
+<rect x="30" y="360" width="840" height="58" rx="10" fill="#f1eff2" stroke="none" stroke-width="0"/>
+<text x="450" y="384.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">GCB: EZH2, GNA13, MEF2B, KMT2D, CREBBP mutations; t(14;18) BCL2.</text>
+<text x="450" y="404.0" font-size="13" font-weight="400" fill="#1d1a24" text-anchor="middle">Non-GCB (ABC): MYD88, CD79B, PIM1, PRDM1 mutations; NF-κB on; BCL6 rearrangement; worse with R-CHOP.</text>
+</svg>

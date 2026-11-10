@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420" font-family="'Source Sans 3','Segoe UI',Helvetica,Arial,sans-serif">
+<defs><marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b3540"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a3223a"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d4f"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3d5fa8"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a8700f"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b3f8c"/></marker></defs>
+<rect width="860" height="420" fill="#fff"/>
+<text x="430" y="34.0" font-size="20" font-weight="700" fill="#1d1a24" text-anchor="middle">Pernicious anaemia: why B12 is not absorbed</text>
+<rect x="20" y="60" width="400" height="340" rx="14" fill="#fff" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="220" y="88.0" font-size="16" font-weight="700" fill="#2f7d4f" text-anchor="middle">Normal</text>
+<ellipse cx="100" cy="150" rx="52" ry="30" fill="#e9e2f4" stroke="#5b3f8c"/>
+<text x="100" y="155.0" font-size="12.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">Parietal cell</text>
+<rect x="247.0" y="139" width="46" height="22" rx="11" fill="#fff" stroke="#2f7d4f" stroke-width="1.1"/>
+<text x="270" y="154.7" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="middle">IF</text>
+<path d="M154 150 L242 150" fill="none" stroke="#2f7d4f" stroke-width="2" marker-end="url(#ag)"/>
+<rect x="324.0" y="139" width="52" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="350" y="154.7" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">B12</text>
+<text x="310" y="190.0" font-size="13" font-weight="700" fill="#2f7d4f" text-anchor="middle">IF–B12 complex</text>
+<path d="M310 200 L310 290" fill="none" stroke="#2f7d4f" stroke-width="2" marker-end="url(#ag)"/>
+<rect x="80" y="300" width="280" height="70" rx="10" fill="#e3f1e8" stroke="#2f7d4f" stroke-width="1.3"/>
+<text x="220" y="328.0" font-size="14" font-weight="700" fill="#2f7d4f" text-anchor="middle">Ileal cubilin takes it up</text>
+<text x="220" y="348.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">B12 reaches the plasma</text>
+<rect x="440" y="60" width="400" height="340" rx="14" fill="#fff" stroke="#a3223a" stroke-width="1.5"/>
+<text x="640" y="88.0" font-size="16" font-weight="700" fill="#a3223a" text-anchor="middle">Pernicious anaemia</text>
+<ellipse cx="520" cy="150" rx="52" ry="30" fill="#e9e2f4" stroke="#5b3f8c"/>
+<text x="520" y="155.0" font-size="12.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">Parietal cell</text>
+<path d="M486 128 L554 172 M554 128 L486 172" stroke="#a3223a" stroke-width="3" opacity=".45"/>
+<text x="520" y="155.0" font-size="12.5" font-weight="700" fill="#5b3f8c" text-anchor="middle">Parietal cell</text>
+<text x="520" y="200.0" font-size="12" font-weight="400" fill="#a3223a" text-anchor="middle">destroyed by</text>
+<text x="520" y="215.0" font-size="12" font-weight="700" fill="#a3223a" text-anchor="middle">anti-parietal cell Ab</text>
+<rect x="667.0" y="139" width="46" height="22" rx="11" fill="#f1eff2" stroke="#b8b1bd" stroke-width="1.1"/>
+<text x="690" y="154.7" font-size="13" font-weight="700" fill="#b8b1bd" text-anchor="middle">IF</text>
+<path d="M574 150 L662 150" fill="none" stroke="#3b3540" stroke-width="2" marker-end="url(#ak)" stroke-dasharray="4 3"/>
+<rect x="744.0" y="139" width="52" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="770" y="154.7" font-size="13" font-weight="700" fill="#a3223a" text-anchor="middle">B12</text>
+<rect x="644.75" y="215" width="90.5" height="22" rx="11" fill="#fff" stroke="#a3223a" stroke-width="1.1"/>
+<text x="690" y="230.5" font-size="12.5" font-weight="700" fill="#a3223a" text-anchor="middle">anti-IF Ab</text>
+<path d="M690 214 L690 166" fill="none" stroke="#a3223a" stroke-width="2" marker-end="url(#ar)"/>
+<text x="690" y="252.0" font-size="12" font-weight="400" fill="#a3223a" text-anchor="middle">blocks B12 binding</text>
+<rect x="500" y="300" width="280" height="70" rx="10" fill="#f6d9dd" stroke="#a3223a" stroke-width="1.3"/>
+<text x="640" y="328.0" font-size="14" font-weight="700" fill="#a3223a" text-anchor="middle">No IF–B12 complex</text>
+<text x="640" y="348.0" font-size="12.5" font-weight="400" fill="#1d1a24" text-anchor="middle">B12 is not absorbed in the ileum</text>
+</svg>
