@@ -135,12 +135,18 @@ function home(){
     <p class="by"><b>Prof. Abeer Mohammed, MD PhD</b><small>Professor of Clinical Pathology, Faculty of Medicine for Girls, Al-Azhar University</small><b>Ass. Prof. Islam Fathy Elnakeeb</b><small>Assistant Professor of Clinical Pathology, Faculty of Medicine, Aswan University</small></p>
     <p class="lede">For medical students, haematology residents, and Master's and MD candidates: Prof. Abeer Mohammed's lecture notes rebuilt with her videos, 3D animations, clickable diagrams, blood film galleries, calculators, cases and quizzes.</p>
     <p class="ded">Offered free by the authors for public benefit.</p>
+    <p class="inst" id="instBox" hidden><button class="btn primary" id="instBtn">⬇ Install on this device</button><span class="note">Works offline and updates itself.</span></p>
     <a class="at-cta" href="#atlas"><span class="eyebrow">Atlas</span><b>Haematology atlas</b><span>Every blood film, marrow and lab image in one place, with an Identify quiz.</span></a>
     <a class="at-cta" href="#practice"><span class="eyebrow">Practice</span><b>Flashcards, questions and cases</b><span>176 revision cards, 76 questions, 19 stepwise cases, diagnostic algorithms and reporting checklists.</span></a>
     <div class="hparts">${parts}</div>
     <p class="note" style="margin-top:2rem"><a href="#credits">Credits and sources</a></p>
   </div>`;
+  instSync();
   document.title="Interactive Haematology Diagnosis";buildToc(0);scrollTo(0,0)}
+let INST=null;
+function instSync(){const b=$('#instBox');if(!b)return;b.hidden=!INST;const t=$('#instBtn');if(t)t.onclick=async()=>{if(!INST)return;INST.prompt();try{await INST.userChoice}catch(e){}INST=null;instSync()}}
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();INST=e;instSync()});
+addEventListener('appinstalled',()=>{INST=null;instSync()});
 const PRE={1:[45,50],2:[45],3:[45],4:[45],5:[45],6:[45],7:[45],11:[44,49],12:[44],13:[44,49],15:[49],17:[44,46],20:[47],21:[47],24:[47],28:[48],30:[48],35:[46],36:[46],37:[47],40:[50],43:[49]};
 async function chapter(n){
   view.innerHTML='<p class="col note" style="padding-top:2rem">Loading chapter…</p>';

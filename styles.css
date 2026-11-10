@@ -632,3 +632,4 @@ small.cc{display:block;font-size:.72rem;color:var(--ink-2);margin-top:.25rem;lin
 .pre-link{display:flex;flex-wrap:wrap;gap:.4rem .6rem;align-items:center;font-size:.9rem;margin:.2rem 0 .6rem;color:var(--ink-2)}
 .pre-link a{border:1px dashed var(--stain);border-radius:999px;padding:.2rem .7rem;color:var(--stain);text-decoration:none;font-weight:600}
 .pre-link a:hover{border-style:solid}
+.inst{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:var(--s3) 0}
