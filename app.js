@@ -50,7 +50,7 @@ const TITLES={},LABEL={},ORDER=[];
 const BOOK=(()=>{let n=0;return PARTS.map(([p,chs,o])=>({p,items:chs.map((c,i)=>{const k=o?o.start+i:++n;TITLES[k]=c;LABEL[k]=o?o.pre+(i+1):String(k);if(READY.includes(k))ORDER.push(k);return {n:k,c}})}))})();
 const adj=(n,d)=>{const i=ORDER.indexOf(n);return i<0?null:ORDER[i+d]||null};
 let CUR=null;
-function buildToc(cur){let html='<a class="home-link'+(cur===0?' cur':'')+'" href="#home">Cover and contents</a><a class="home-link'+(cur==='atlas'?' cur':'')+'" href="#atlas">Haematology atlas</a><a class="home-link'+(cur==='practice'?' cur':'')+'" href="#practice">Practice: flashcards and cases</a><a class="home-link'+(cur==='credits'?' cur':'')+'" href="#credits">Credits and sources</a>';
+function buildToc(cur){let html='<a class="home-link'+(cur===0?' cur':'')+'" href="#home">Cover and contents</a><a class="home-link'+(cur==='atlas'?' cur':'')+'" href="#atlas">Haematology atlas</a><a class="home-link'+(cur==='practice'?' cur':'')+'" href="#practice">Practice: flashcards and cases</a><a class="home-link'+(cur==='exam'?' cur':'')+'" href="#exam">Mock exam</a><a class="home-link'+(cur==='credits'?' cur':'')+'" href="#credits">Credits and sources</a>';
   BOOK.forEach(({p,items:its})=>{const chs=its;let items='',ready=0,has=false;
     its.forEach(({n,c})=>{if(READY.includes(n))ready++;if(n===cur)has=true;
       items+= READY.includes(n)?`<li><a class="live${n===cur?' cur':''}" href="#ch${n}"${n===cur?' aria-current="page"':''}><span class="n">${LABEL[n]}</span>${c}</a></li>`:`<li><span><span class="n">${LABEL[n]}</span>${c}<span class="soon">soon</span></span></li>`});
@@ -138,6 +138,7 @@ function home(){
     <p class="inst" id="instBox" hidden><button class="btn primary" id="instBtn">⬇ Install on this device</button><span class="note">Works offline and updates itself.</span></p>
     <a class="at-cta" href="#atlas"><span class="eyebrow">Atlas</span><b>Haematology atlas</b><span>Every blood film, marrow and lab image in one place, with an Identify quiz.</span></a>
     <a class="at-cta" href="#practice"><span class="eyebrow">Practice</span><b>Flashcards, questions and cases</b><span>176 revision cards, 76 questions, 19 stepwise cases, diagnostic algorithms and reporting checklists.</span></a>
+    <a class="at-cta" href="#exam"><span class="eyebrow">Mock exam</span><b>Test yourself on the whole book</b><span>Random timed exams from 479 questions, with your score by part and a review of every mistake.</span></a>
     <div class="hparts">${parts}</div>
     <p class="note" style="margin-top:2rem"><a href="#credits">Credits and sources</a></p>
   </div>`;
@@ -168,10 +169,11 @@ function route(){const h=location.hash.slice(1);const m=/^ch(\d+)$/.exec(h);
   else if(h==='atlas')atlas();
   else if(h==='credits')credits();
   else if(h==='practice')practice();
+  else if(h==='exam')exam();
   else if(!h||h==='home'||m)home();
   else{const t=document.getElementById(h);if(t){reveal(t);t.scrollIntoView()}}}
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);
-  if(id==='home'||id==='atlas'||id==='credits'||id==='practice'||/^ch\d+$/.test(id))return;const t=document.getElementById(id);if(t){e.preventDefault();reveal(t);t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}});
+  if(id==='home'||id==='atlas'||id==='credits'||id==='practice'||id==='exam'||/^ch\d+$/.test(id))return;const t=document.getElementById(id);if(t){e.preventDefault();reveal(t);t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}});
 addEventListener('hashchange',route);
 
 /* ---------- Credits ---------- */
@@ -1561,6 +1563,59 @@ function prDraw(){const D=PRACT[PR.deck],body=$('#prBody');
   else if(PR.mode==='cases'){const c=D.cases[PR.sub];body.innerHTML=sub(D.cases.map(x=>x.title));el=mk('case',c.steps);body.appendChild(el);W.case(el)}
   else if(PR.mode==='trees'){const t=D.trees[PR.sub];body.innerHTML=sub(D.trees.map(x=>x.title))+`<p>${esc(t.intro||'')}</p>`;el=mk('calc',t.nodes);body.appendChild(el);W.dtree(el)}
   else{const c=D.check;body.innerHTML=`<h2 class="pr-h">${esc(c.title)}</h2><p>${esc(c.intro||'')}</p>`;el=mk('calc',c.steps.map(s=>[esc(s[0]),esc(s[1])]));el.dataset.key='practice-check-'+D.id;body.appendChild(el);W.steps(el)}}
+
+/* ---------- Mock exam ---------- */
+let EXAMQ=null;const EX={n:20,part:'all',timed:true,run:null};
+const exPart=c=>{if(!c)return 'Practice decks';const b=BOOK.find(p=>p.items.some(i=>i.n===c));return b?b.p:'Other'};
+const exHist=()=>{try{return JSON.parse(store.get('exam-hist')||'[]')}catch(e){return []}};
+const exTime=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+async function exam(){
+  view.innerHTML='<p class="col note" style="padding-top:2rem">Loading exam…</p>';
+  try{if(!EXAMQ){const r=await fetch('exam.json');if(!r.ok)throw 0;EXAMQ=await r.json()}}
+  catch(e){view.innerHTML=`<div class="col"><h1>Exam not available</h1><p>Open this page once while online so it is saved for offline use.</p><p><a href="#home">Back to contents</a></p></div>`;return}
+  if(EX.run&&EX.run.timer)clearInterval(EX.run.timer);EX.run=null;
+  view.innerHTML=`<article class="col chead" id="top"><div class="eyebrow">Mock exam</div><h1>Test yourself on the whole book</h1>
+    <p>Random single best answer questions drawn from every chapter. Answers and explanations appear at the end, with your score by part.</p></article>
+    <section class="col" id="exBox"></section>`+footer();
+  document.title='Mock exam · Interactive Haematology Diagnosis';buildToc('exam');exSetup();scrollTo(0,0)}
+function exSetup(){const parts=[...new Set(EXAMQ.map(q=>exPart(q.c)))],H=exHist();
+  const pool=()=>EXAMQ.filter(q=>EX.part==='all'||exPart(q.c)===EX.part);
+  $('#exBox').innerHTML=`<div class="calc" style="display:block"><div class="ex-set">
+    <label>Questions from<select id="exPart"><option value="all">The whole book (${EXAMQ.length} questions)</option>${parts.map(p=>`<option${p===EX.part?' selected':''}>${p}</option>`).join('')}</select></label>
+    <div><div class="eyebrow">Number of questions</div><div class="chips" data-g="n">${[10,20,40,60,100].map(n=>`<button class="chip" data-v="${n}" aria-pressed="${n===EX.n}">${n}</button>`).join('')}</div></div>
+    <label class="chk"><input type="checkbox" id="exTimed"${EX.timed?' checked':''}> Timed: one minute per question</label>
+    <p class="note" id="exInfo"></p><div><button class="btn primary" id="exGo">Start the exam</button></div></div></div>
+    ${H.length?`<h2 class="pr-h" style="margin-top:var(--s5)">Your last attempts</h2><div class="tbl"><table><thead><tr><th>Date</th><th>Questions from</th><th>Score</th><th>Time</th></tr></thead><tbody>${H.slice().reverse().map(h=>`<tr><td>${h.d}</td><td>${esc(h.p)}</td><td><b>${h.r} / ${h.n}</b> (${Math.round(h.r/h.n*100)}%)</td><td>${exTime(h.t)}</td></tr>`).join('')}</tbody></table></div><p><button class="btn sm" id="exClr">Clear history</button></p>`:''}`;
+  const info=()=>{const m=Math.min(EX.n,pool().length);$('#exInfo').textContent=`${m} questions`+(EX.timed?`, ${m} minutes.`:', no time limit.')};
+  $('#exPart').onchange=e=>{EX.part=e.target.value;info()};$('#exTimed').onchange=e=>{EX.timed=e.target.checked;info()};
+  $('#exBox').querySelector('[data-g=n]').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;EX.n=+b.dataset.v;b.parentNode.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));info()};
+  if($('#exClr'))$('#exClr').onclick=()=>{store.set('exam-hist','[]');exSetup()};
+  $('#exGo').onclick=()=>{const qs=pool().sort(()=>Math.random()-.5).slice(0,EX.n).map(q=>{const ord=q.o.map((_,i)=>i).sort(()=>Math.random()-.5);return {q,ord,pick:null,flag:false}});
+    EX.run={qs,i:0,t0:Date.now(),left:EX.timed?qs.length*60:null,timer:null};
+    if(EX.timed)EX.run.timer=setInterval(()=>{const R=EX.run;if(!R||!$('#exClock')){clearInterval(R&&R.timer);return}R.left--;$('#exClock').textContent=exTime(Math.max(0,R.left));if(R.left<=0)exFinish()},1000);
+    exDraw();scrollTo(0,0)};info()}
+function exDraw(){const R=EX.run,x=R.qs[R.i],done=R.qs.filter(q=>q.pick!==null).length;
+  $('#exBox').innerHTML=`<div class="score ex-bar"><span class="qn">Question ${R.i+1} of ${R.qs.length} · ${done} answered</span>${R.left!==null?`<b class="ex-clock" id="exClock">${exTime(R.left)}</b>`:''}</div>
+    <div class="step"><p><b>${x.q.q}</b></p><div class="opts">${x.ord.map(j=>`<button class="opt${x.pick===j?' picked':''}" data-j="${j}">${x.q.o[j]}</button>`).join('')}</div></div>
+    <div class="fc-nav"><button class="btn" data-a="prev"${R.i?'':' disabled'}>‹ Previous</button><button class="btn" data-a="flag" aria-pressed="${x.flag}">${x.flag?'⚑ Flagged':'⚐ Flag'}</button><button class="btn" data-a="next"${R.i<R.qs.length-1?'':' disabled'}>Next ›</button><button class="btn primary" data-a="end">Finish</button></div>
+    <div class="ex-map">${R.qs.map((q,k)=>`<button data-k="${k}" class="${q.pick!==null?'done':''}${q.flag?' flag':''}${k===R.i?' cur':''}" aria-label="Question ${k+1}">${k+1}</button>`).join('')}</div>`;
+  $('#exBox').onclick=e=>{const b=e.target.closest('button');if(!b||!EX.run)return;
+    if(b.dataset.j!==undefined){x.pick=+b.dataset.j;if(R.i<R.qs.length-1)R.i++;exDraw()}
+    else if(b.dataset.k!==undefined){R.i=+b.dataset.k;exDraw()}
+    else if(b.dataset.a==='prev'){R.i--;exDraw()}else if(b.dataset.a==='next'){R.i++;exDraw()}
+    else if(b.dataset.a==='flag'){x.flag=!x.flag;exDraw()}
+    else if(b.dataset.a==='end'){const left=R.qs.filter(q=>q.pick===null).length;if(!left||b.dataset.sure){exFinish()}else{b.dataset.sure=1;b.textContent=`${left} unanswered. Finish anyway?`}}}}
+function exFinish(){const R=EX.run;if(!R)return;clearInterval(R.timer);EX.run=null;const box=$('#exBox');if(!box)return;box.onclick=null;
+  const n=R.qs.length,r=R.qs.filter(x=>x.pick===x.q.a).length,t=Math.round((Date.now()-R.t0)/1000),pc=Math.round(r/n*100);
+  const H=exHist();H.push({d:new Date().toISOString().slice(0,10),p:EX.part==='all'?'The whole book':EX.part,r,n,t});store.set('exam-hist',JSON.stringify(H.slice(-10)));
+  const by={};R.qs.forEach(x=>{const p=exPart(x.q.c);by[p]=by[p]||[0,0];by[p][1]++;if(x.pick===x.q.a)by[p][0]++});
+  const wrong=R.qs.filter(x=>x.pick!==x.q.a);
+  box.innerHTML=`<div class="verdict ex-res"><span class="eyebrow">Result</span><h2>${r} / ${n} <small>(${pc}%)</small></h2><p>Time ${exTime(t)}. ${pc>=80?'Excellent.':pc>=60?'A pass, with gaps to close below.':'Review the chapters below and try again.'}</p></div>
+    <div class="tbl"><table><thead><tr><th>Part</th><th>Score</th></tr></thead><tbody>${Object.entries(by).map(([p,v])=>`<tr><td>${p}</td><td><b>${v[0]} / ${v[1]}</b></td></tr>`).join('')}</tbody></table></div>
+    <div class="fc-nav" style="justify-content:flex-start"><button class="btn primary" id="exAgain">New exam</button></div>
+    <h2 class="pr-h" style="margin-top:var(--s5)">${wrong.length?`Review: ${wrong.length} to revisit`:'All correct'}</h2>
+    <div class="case">${wrong.map(x=>`<div class="step"><div class="eyebrow">${x.q.c?`<a href="#ch${x.q.c}">Chapter ${LABEL[x.q.c]} · ${TITLES[x.q.c]}</a>`:esc(x.q.d||'Practice')}</div><p><b>${x.q.q}</b></p><div class="opts">${x.q.o.map((o,j)=>`<button class="opt${j===x.q.a?' right':j===x.pick?' wrong':''}" disabled>${o}</button>`).join('')}</div><div class="expl">${x.pick===null?'<b>Not answered.</b> ':''}${x.q.e}</div></div>`).join('')}</div>`;
+  $('#exAgain').onclick=()=>{exSetup();scrollTo(0,0)};scrollTo(0,0)}
 
 W.lab3d=function(w){const sc=w.dataset.scene,m=L3META[sc]||['3D model',''];
   w.innerHTML='<div class="l3-poster" style="background-image:url(img/3d-'+sc+'.jpg)"><div class="l3-pin"><span class="l3-badge">3D</span><h3>'+esc(m[0])+'</h3><p>'+esc(m[1])+'</p><button type="button" class="l3-go">▶ Open the 3D model</button><small>Works offline. Drag to rotate, pinch to zoom.</small></div></div>';

@@ -633,3 +633,16 @@ small.cc{display:block;font-size:.72rem;color:var(--ink-2);margin-top:.25rem;lin
 .pre-link a{border:1px dashed var(--stain);border-radius:999px;padding:.2rem .7rem;color:var(--stain);text-decoration:none;font-weight:600}
 .pre-link a:hover{border-style:solid}
 .inst{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:var(--s3) 0}
+.ex-set{display:grid;gap:var(--s4)}
+.ex-set select{display:block;width:100%;max-width:34rem;margin-top:.3rem;font:1rem var(--body);padding:.5rem .6rem;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink)}
+.ex-bar{position:sticky;top:4.2rem;z-index:3;background:var(--paper);padding:.4rem 0}
+.ex-clock{font:600 1.1rem var(--mono);color:var(--haem)}
+.opt.picked{border-color:var(--stain);background:color-mix(in srgb,var(--stain) 14%,var(--paper));font-weight:600}
+.ex-map{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:var(--s4)}
+.ex-map button{min-width:2.1rem;font:500 .8rem var(--mono);padding:.3rem 0;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink);cursor:pointer}
+.ex-map .done{background:color-mix(in srgb,var(--stain) 22%,var(--paper));border-color:var(--stain)}
+.ex-map .flag{box-shadow:inset 0 -3px 0 var(--haem)}
+.ex-map .cur{outline:2px solid var(--ink)}
+.ex-res h2{font:2.2rem var(--display);margin:.2rem 0}.ex-res h2 small{font-size:1.1rem;color:var(--ink-2)}.ex-res p{margin:0}
+.ex-res{margin-bottom:var(--s4)}
+@media (max-width:860px){.ex-bar{top:7.2rem}}
