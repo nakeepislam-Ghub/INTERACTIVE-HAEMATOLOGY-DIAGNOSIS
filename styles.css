@@ -646,3 +646,24 @@ small.cc{display:block;font-size:.72rem;color:var(--ink-2);margin-top:.25rem;lin
 .ex-res h2{font:2.2rem var(--display);margin:.2rem 0}.ex-res h2 small{font-size:1.1rem;color:var(--ink-2)}.ex-res p{margin:0}
 .ex-res{margin-bottom:var(--s4)}
 @media (max-width:860px){.ex-bar{top:7.2rem}}
+.an-idx input[type=search]{width:100%;max-width:34rem;font:1rem var(--body);padding:.55rem .7rem;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);margin-bottom:var(--s5)}
+.an-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:var(--s4)}
+.an-grid figure{margin:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card);display:grid;align-content:start}
+.an-grid figure[hidden]{display:none}
+.an-grid figure>a{position:relative;display:block}
+.an-grid img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.an-grid .an-svg img{object-fit:contain;background:#fff;padding:.3rem}
+.an-badge{position:absolute;left:.5rem;bottom:.5rem;font:600 .72rem var(--body);background:rgba(20,8,14,.78);color:#fff;border-radius:999px;padding:.15rem .6rem}
+.an-grid figcaption{display:grid;gap:.3rem;padding:.6rem .75rem .75rem;font-size:.86rem;line-height:1.35}
+.an-grid figcaption b{font:1.02rem var(--display)}
+.an-grid figcaption small{font-size:.8rem}
+.vd-idx input[type=search]{width:100%;font:1rem var(--body);padding:.55rem .7rem;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:var(--ink);margin-bottom:var(--s4)}
+.vd-part{margin-top:var(--s5)}.vd-part[hidden],.vd-ch[hidden],.vd-ch li[hidden]{display:none}
+.vd-ch{margin:var(--s4) 0}
+.vd-ch h3{font:600 1.05rem var(--body);margin:0 0 .4rem;display:flex;flex-wrap:wrap;gap:.3rem .6rem;align-items:baseline}
+.vd-ch h3 a{color:var(--ink);text-decoration:none}.vd-ch h3 a:hover{color:var(--haem)}
+.vd-ch h3 .n{font:500 .85rem var(--mono);color:var(--haem);margin-right:.2rem}
+.vd-ch h3 small{font-weight:400;color:var(--ink-2);font-size:.82rem}
+.vd-ch a.vm-it{text-decoration:none;color:var(--ink)}
+.vd-idx .vm-list{max-height:none;overflow:visible}
+.vd-idx{min-width:0}.vd-idx .vm-list li{min-width:0}.vd-idx .vm-it{min-width:0;overflow-wrap:anywhere}.vd-idx input[type=search]{box-sizing:border-box;max-width:100%}.an-idx input[type=search]{box-sizing:border-box}.an-grid figcaption{text-align:left}

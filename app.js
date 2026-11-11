@@ -50,7 +50,7 @@ const TITLES={},LABEL={},ORDER=[];
 const BOOK=(()=>{let n=0;return PARTS.map(([p,chs,o])=>({p,items:chs.map((c,i)=>{const k=o?o.start+i:++n;TITLES[k]=c;LABEL[k]=o?o.pre+(i+1):String(k);if(READY.includes(k))ORDER.push(k);return {n:k,c}})}))})();
 const adj=(n,d)=>{const i=ORDER.indexOf(n);return i<0?null:ORDER[i+d]||null};
 let CUR=null;
-function buildToc(cur){let html='<a class="home-link'+(cur===0?' cur':'')+'" href="#home">Cover and contents</a><a class="home-link'+(cur==='atlas'?' cur':'')+'" href="#atlas">Haematology atlas</a><a class="home-link'+(cur==='practice'?' cur':'')+'" href="#practice">Practice: flashcards and cases</a><a class="home-link'+(cur==='exam'?' cur':'')+'" href="#exam">Mock exam</a><a class="home-link'+(cur==='credits'?' cur':'')+'" href="#credits">Credits and sources</a>';
+function buildToc(cur){let html='<a class="home-link'+(cur===0?' cur':'')+'" href="#home">Cover and contents</a><a class="home-link'+(cur==='atlas'?' cur':'')+'" href="#atlas">Haematology atlas</a><a class="home-link'+(cur==='practice'?' cur':'')+'" href="#practice">Practice: flashcards and cases</a><a class="home-link'+(cur==='anim'?' cur':'')+'" href="#animations">Animations index</a><a class="home-link'+(cur==='videos'?' cur':'')+'" href="#videos">Videos index</a><a class="home-link'+(cur==='exam'?' cur':'')+'" href="#exam">Mock exam</a><a class="home-link'+(cur==='credits'?' cur':'')+'" href="#credits">Credits and sources</a>';
   BOOK.forEach(({p,items:its})=>{const chs=its;let items='',ready=0,has=false;
     its.forEach(({n,c})=>{if(READY.includes(n))ready++;if(n===cur)has=true;
       items+= READY.includes(n)?`<li><a class="live${n===cur?' cur':''}" href="#ch${n}"${n===cur?' aria-current="page"':''}><span class="n">${LABEL[n]}</span>${c}</a></li>`:`<li><span><span class="n">${LABEL[n]}</span>${c}<span class="soon">soon</span></span></li>`});
@@ -138,6 +138,8 @@ function home(){
     <p class="inst" id="instBox" hidden><button class="btn primary" id="instBtn">⬇ Install on this device</button><span class="note">Works offline and updates itself.</span></p>
     <a class="at-cta" href="#atlas"><span class="eyebrow">Atlas</span><b>Haematology atlas</b><span>Every blood film, marrow and lab image in one place, with an Identify quiz.</span></a>
     <a class="at-cta" href="#practice"><span class="eyebrow">Practice</span><b>Flashcards, questions and cases</b><span>176 revision cards, 76 questions, 19 stepwise cases, diagnostic algorithms and reporting checklists.</span></a>
+    <a class="at-cta" href="#animations"><span class="eyebrow">Animations</span><b>Every animation in one place</b><span>11 narrated 3D scenes and 42 animated diagrams, each with a direct link to its place in the book.</span></a>
+    <a class="at-cta" href="#videos"><span class="eyebrow">Videos</span><b>Every lecture video in one place</b><span>Prof. Abeer Mohammed's lectures and playlists, listed by chapter with direct links.</span></a>
     <a class="at-cta" href="#exam"><span class="eyebrow">Mock exam</span><b>Test yourself on the whole book</b><span>Random timed exams from 479 questions, with your score by part and a review of every mistake.</span></a>
     <div class="hparts">${parts}</div>
     <p class="note" style="margin-top:2rem"><a href="#credits">Credits and sources</a></p>
@@ -164,8 +166,11 @@ async function chapter(n){
   view.querySelector('footer').before(nav);
   scrollTo(0,0)}
 function footer(){return `<footer class="wide"><b>Interactive Haematology Diagnosis</b>, a free teaching book for public benefit. Lecture content by Prof. Abeer Mohammed, MD PhD (Al-Azhar University), from her notes on the Egyptian Clinical Pathology Atlas (ecpatlas.com). Concept, design and interactive edition by Ass. Prof. Islam Fathy Elnakeeb (Aswan University). For education only, not a substitute for clinical judgement. Videos stream from YouTube and need an internet connection; everything else works offline once the book is installed.</footer>`}
-function route(){const h=location.hash.slice(1);const m=/^ch(\d+)$/.exec(h);
-  if(m&&READY.includes(+m[1]))chapter(+m[1]);
+function goSpot(a){let t=null;const f=/^fig-(\d+)$/.exec(a),vd=/^vid-(\d+)$/.exec(a);if(f)t=view.querySelectorAll('figure.redraw')[+f[1]];else if(vd)t=view.querySelectorAll('.video')[+vd[1]];else t=document.getElementById(a);if(!t)return;reveal(t);setTimeout(()=>t.scrollIntoView({block:f||vd?'center':'start'}),60)}
+function route(){const h=location.hash.slice(1);const m=/^ch(\d+)(?:\/([\w-]+))?$/.exec(h);
+  if(m&&READY.includes(+m[1])){const p=chapter(+m[1]);if(m[2])p.then(()=>goSpot(m[2]))}
+  else if(h==='animations')animations();
+  else if(h==='videos')videos();
   else if(h==='atlas')atlas();
   else if(h==='credits')credits();
   else if(h==='practice')practice();
@@ -173,7 +178,7 @@ function route(){const h=location.hash.slice(1);const m=/^ch(\d+)$/.exec(h);
   else if(!h||h==='home'||m)home();
   else{const t=document.getElementById(h);if(t){reveal(t);t.scrollIntoView()}}}
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);
-  if(id==='home'||id==='atlas'||id==='credits'||id==='practice'||id==='exam'||/^ch\d+$/.test(id))return;const t=document.getElementById(id);if(t){e.preventDefault();reveal(t);t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}});
+  if(id==='home'||id==='atlas'||id==='credits'||id==='practice'||id==='exam'||id==='animations'||id==='videos'||/^ch\d+(\/[\w-]+)?$/.test(id))return;const t=document.getElementById(id);if(t){e.preventDefault();reveal(t);t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}});
 addEventListener('hashchange',route);
 
 /* ---------- Credits ---------- */
@@ -1616,6 +1621,47 @@ function exFinish(){const R=EX.run;if(!R)return;clearInterval(R.timer);EX.run=nu
     <h2 class="pr-h" style="margin-top:var(--s5)">${wrong.length?`Review: ${wrong.length} to revisit`:'All correct'}</h2>
     <div class="case">${wrong.map(x=>`<div class="step"><div class="eyebrow">${x.q.c?`<a href="#ch${x.q.c}">Chapter ${LABEL[x.q.c]} · ${TITLES[x.q.c]}</a>`:esc(x.q.d||'Practice')}</div><p><b>${x.q.q}</b></p><div class="opts">${x.q.o.map((o,j)=>`<button class="opt${j===x.q.a?' right':j===x.pick?' wrong':''}" disabled>${o}</button>`).join('')}</div><div class="expl">${x.pick===null?'<b>Not answered.</b> ':''}${x.q.e}</div></div>`).join('')}</div>`;
   $('#exAgain').onclick=()=>{exSetup();scrollTo(0,0)};scrollTo(0,0)}
+
+/* ---------- Animations index ---------- */
+let ANIM=null;
+const AN_EXTRA={platelet:['Platelet adhesion, activation and aggregation','Follow one platelet from rest to plug, then compare Bernard–Soulier, von Willebrand disease, Glanzmann, storage pool and grey platelet.'],rbc:['Red cell shapes','Nine red cell shapes in 3D, with a cut-in-half view and a blood film view.'],membrane:['Red cell membrane skeleton','Spectrin, ankyrin, band 3 and protein 4.1: vertical and horizontal links, and what breaks in spherocytosis and elliptocytosis.'],hb:['Haemoglobin: oxygen loading, HbF and HbS','The tense and relaxed states as oxygen loads, fetal haemoglobin, and sickle haemoglobin fibres.'],coag:['Cell-based coagulation','Initiation on the tissue factor cell, amplification and propagation on the platelet, and the fibrin clot. Compare haemophilia A and B.']};
+const AN_ORDER=['iron','hb','rbc','membrane','pnh','endo','platelet','endovwf','coag','endoac','fib'];
+async function animations(){
+  view.innerHTML='<p class="col note" style="padding-top:2rem">Loading…</p>';
+  try{if(!ANIM){const r=await fetch('anim.json');if(!r.ok)throw 0;ANIM=await r.json()}}
+  catch(e){view.innerHTML=`<div class="col"><h1>Animations not available</h1><p>Open this page once while online so it is saved for offline use.</p><p><a href="#home">Back to contents</a></p></div>`;return}
+  const chl=(c,a)=>`<a href="#ch${c}/${a}">Chapter ${LABEL[c]} · ${TITLES[c]}</a>`;
+  const keys=AN_ORDER.filter(k=>ANIM.scenes[k]).concat(Object.keys(ANIM.scenes).filter(k=>!AN_ORDER.includes(k)));
+  const sc=keys.map(k=>{const m=L3META[k]||AN_EXTRA[k]||['3D model',''],L=ANIM.scenes[k];
+    return `<figure data-q="${esc((m[0]+' '+m[1]).toLowerCase())}"><a href="#ch${L[0][0]}/${L[0][1]}"><img src="img/3d-${k}.jpg" alt="" loading="lazy" width="400" height="250"><span class="an-badge">3D · narrated</span></a><figcaption><b>${m[0]}</b><span>${m[1]}</span><small>${L.map(x=>chl(x[0],x[1])).join(' · ')}</small></figcaption></figure>`}).join('');
+  const fg=ANIM.figs.map(f=>`<figure data-q="${esc((f.cap+' '+TITLES[f.c]).toLowerCase())}"><a class="an-svg" href="#ch${f.c}/fig-${f.i}"><img src="${f.src}" alt="" loading="lazy" width="400" height="250"><span class="an-badge">▶ Animate</span></a><figcaption><span>${f.cap}</span><small>${chl(f.c,'fig-'+f.i)}</small></figcaption></figure>`).join('');
+  view.innerHTML=`<article class="col chead" id="top"><div class="eyebrow">Animations</div><h1>Every animation in one place</h1>
+    <p>${keys.length} narrated 3D scenes and ${ANIM.figs.length} animated diagrams. Tap one to open it at its place in the book.</p></article>
+    <section class="wide an-idx"><input type="search" id="anQ" placeholder="Search, e.g. platelet, hepcidin, flow" aria-label="Search animations">
+      <h2 class="pr-h">3D scenes</h2><p class="note">Press the play button on the scene, then Play. Turn on 🔈 for the voice narration.</p><div class="an-grid" id="anSc">${sc}</div>
+      <h2 class="pr-h" style="margin-top:var(--s6)">Animated diagrams</h2><p class="note">Each opens at the diagram; press ▶ Animate under it to watch it build step by step.</p><div class="an-grid" id="anFg">${fg}</div>
+      <p class="nomatch note" id="anNone" hidden>No animation matches.</p></section>`+footer();
+  $('#anQ').oninput=e=>{const v=e.target.value.trim().toLowerCase();let n=0;view.querySelectorAll('.an-grid figure').forEach(f=>{const ok=!v||f.dataset.q.includes(v);f.hidden=!ok;if(ok)n++});$('#anNone').hidden=n>0};
+  document.title='Animations · Interactive Haematology Diagnosis';buildToc('anim');scrollTo(0,0)}
+
+/* ---------- Videos index ---------- */
+let VIDS=null;
+async function videos(){
+  view.innerHTML='<p class="col note" style="padding-top:2rem">Loading…</p>';
+  try{if(!VIDS){const r=await fetch('videos.json');if(!r.ok)throw 0;VIDS=await r.json()}}
+  catch(e){view.innerHTML=`<div class="col"><h1>Videos not available</h1><p>Open this page once while online so it is saved for offline use.</p><p><a href="#home">Back to contents</a></p></div>`;return}
+  const by={};VIDS.forEach(c=>by[c.c]=c.items);let total=0,html='';
+  BOOK.forEach(({p,items})=>{const chs=items.filter(i=>by[i.n]);if(!chs.length)return;
+    html+=`<section class="vd-part"><h2 class="pr-h">${p}</h2>`+chs.map(({n,c})=>{const L=by[n];total+=L.length;
+      return `<div class="vd-ch"><h3><a href="#ch${n}/vid-${L[0].k}"><span class="n">${LABEL[n]}</span> ${c}</a> <small>${L.length} video${L.length===1?'':'s'}</small></h3><ol class="vm-list">${L.map(x=>{const yt=x.v?`https://www.youtube.com/watch?v=${x.v}${x.list?'&list='+x.list:''}`:`https://www.youtube.com/playlist?list=${x.list}`;
+        return `<li data-q="${esc((x.t+' '+c).toLowerCase())}"><a class="vm-it" href="#ch${n}/vid-${x.k}">${x.v?`<img src="https://i.ytimg.com/vi/${x.v}/mqdefault.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="vm-pl" aria-hidden="true">☰</span>'}<span class="vm-t">${esc(x.t)}${x.short?' <small>short</small>':''}${x.v&&!x.list?'':' <small>playlist</small>'}</span></a><a class="vm-yt" href="${yt}" target="_blank" rel="noopener" aria-label="Open ${esc(x.t)} on YouTube">YouTube ↗</a></li>`}).join('')}</ol></div>`}).join('')+'</section>'});
+  view.innerHTML=`<article class="col chead" id="top"><div class="eyebrow">Videos</div><h1>Every lecture video in one place</h1>
+    <p>${total} lectures and playlists by Prof. Abeer Mohammed, listed by chapter. Tap a title to open it in its chapter, or YouTube to watch it there.</p>
+    <div class="meta"><span>Videos stream from YouTube and need an internet connection</span></div></article>
+    <section class="col vd-idx"><input type="search" id="vdQ" placeholder="Search videos, e.g. thalassemia, platelet, flow" aria-label="Search videos">${html}<p class="note" id="vdNone" hidden>No video matches.</p></section>`+footer();
+  $('#vdQ').oninput=e=>{const v=e.target.value.trim().toLowerCase();let n=0;view.querySelectorAll('.vd-ch').forEach(ch=>{let k=0;ch.querySelectorAll('li').forEach(li=>{const ok=!v||li.dataset.q.includes(v);li.hidden=!ok;if(ok)k++});ch.hidden=!k;n+=k});
+    view.querySelectorAll('.vd-part').forEach(p=>p.hidden=!p.querySelector('.vd-ch:not([hidden])'));$('#vdNone').hidden=n>0};
+  document.title='Videos · Interactive Haematology Diagnosis';buildToc('videos');scrollTo(0,0)}
 
 W.lab3d=function(w){const sc=w.dataset.scene,m=L3META[sc]||['3D model',''];
   w.innerHTML='<div class="l3-poster" style="background-image:url(img/3d-'+sc+'.jpg)"><div class="l3-pin"><span class="l3-badge">3D</span><h3>'+esc(m[0])+'</h3><p>'+esc(m[1])+'</p><button type="button" class="l3-go">▶ Open the 3D model</button><small>Works offline. Drag to rotate, pinch to zoom.</small></div></div>';
