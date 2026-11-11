@@ -3805,6 +3805,19 @@ const BadgesModal: React.FC<{ ui: UI; stats: MasteryStats; onClose: () => void }
 // 11. MAIN APPLICATION
 // ============================================================================
 
+// When embedded in the book (same-origin iframe) follow the book's light/dark setting.
+function readHostTheme(): 'dark' | 'light' | null {
+  try {
+    if (window.parent === window) return null;
+    const root = window.parent.document.documentElement;
+    const t = root.dataset.theme;
+    if (t === 'light' || t === 'dark') return t;
+    return window.parent.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  } catch {
+    return null;
+  }
+}
+
 type ModuleId = 1 | 2 | 3 | 4 | 5;
 
 const MODULES: { id: ModuleId; label: string; icon: React.ReactNode }[] = [
@@ -3816,8 +3829,31 @@ const MODULES: { id: ModuleId; label: string; icon: React.ReactNode }[] = [
 ];
 
 export default function App() {
-  const [themeMode, setThemeMode] = useState<'dark' | 'light'>('dark');
+  const embedded = useMemo(() => readHostTheme() !== null, []);
+  const [themeMode, setThemeMode] = useState<'dark' | 'light'>(() => readHostTheme() ?? 'dark');
   const isLight = themeMode === 'light';
+
+  useEffect(() => {
+    if (!embedded) return;
+    const sync = () => {
+      const t = readHostTheme();
+      if (t) setThemeMode(t);
+    };
+    let observer: MutationObserver | undefined;
+    let mq: MediaQueryList | undefined;
+    try {
+      observer = new MutationObserver(sync);
+      observer.observe(window.parent.document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+      mq = window.parent.matchMedia('(prefers-color-scheme: dark)');
+      mq.addEventListener('change', sync);
+    } catch {
+      // host not accessible: keep the current theme
+    }
+    return () => {
+      observer?.disconnect();
+      mq?.removeEventListener('change', sync);
+    };
+  }, [embedded]);
   const ui = isLight ? UI_LIGHT : UI_DARK;
   // Deep links: #gating, #singlet, #compensation, #glossary, #cases (used when embedded in the book)
   const [activeModule, setActiveModule] = useState<ModuleId>(() => {
@@ -3874,9 +3910,11 @@ export default function App() {
           <button onClick={() => setShowBadgesModal(true)} className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs ${ui.btn}`}>
             <Award className="h-4 w-4" /> Badges
           </button>
-          <button onClick={() => setThemeMode(isLight ? 'dark' : 'light')} className={`rounded-lg p-2 ${ui.btn}`} aria-label="Toggle theme">
-            {isLight ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-          </button>
+          {!embedded && (
+            <button onClick={() => setThemeMode(isLight ? 'dark' : 'light')} className={`rounded-lg p-2 ${ui.btn}`} aria-label="Toggle theme">
+              {isLight ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+            </button>
+          )}
         </div>
       </header>
 
