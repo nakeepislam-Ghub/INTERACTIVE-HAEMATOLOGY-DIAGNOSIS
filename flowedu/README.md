@@ -1,4 +1,4 @@
-# FlowEdu: clinical flow cytometry simulator
+# Egypt Flow Educational App
 
 A self-contained simulator added to the Interactive Haematology Diagnosis book. Open `flowedu/index.html` (served at `/flowedu/` on GitHub Pages).
 

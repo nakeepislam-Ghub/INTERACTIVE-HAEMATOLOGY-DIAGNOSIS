@@ -3840,7 +3840,7 @@ export default function App() {
           <div className="mr-2 flex items-center gap-2">
             <FlaskConical className="h-6 w-6 text-cyan-500" />
             <div>
-              <div className="text-base font-black leading-tight">FlowEdu</div>
+              <div className="text-base font-black leading-tight">Egypt Flow Educational App</div>
               <div className={`text-[11px] leading-tight ${ui.muted}`}>Clinical flow cytometry simulator</div>
             </div>
           </div>
