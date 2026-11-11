@@ -3820,6 +3820,8 @@ function readHostTheme(): 'dark' | 'light' | null {
 
 type ModuleId = 1 | 2 | 3 | 4 | 5;
 
+const MODULE_BY_HASH: Record<string, ModuleId> = { gating: 1, singlet: 2, compensation: 3, glossary: 4, cases: 5 };
+
 const MODULES: { id: ModuleId; label: string; icon: React.ReactNode }[] = [
   { id: 1, label: 'Gating Lab', icon: <Crosshair className="h-4 w-4" /> },
   { id: 2, label: 'Singlet Gating', icon: <Layers className="h-4 w-4" /> },
@@ -3856,10 +3858,16 @@ export default function App() {
   }, [embedded]);
   const ui = isLight ? UI_LIGHT : UI_DARK;
   // Deep links: #gating, #singlet, #compensation, #glossary, #cases (used when embedded in the book)
-  const [activeModule, setActiveModule] = useState<ModuleId>(() => {
-    const byHash: Record<string, ModuleId> = { gating: 1, singlet: 2, compensation: 3, glossary: 4, cases: 5 };
-    return byHash[window.location.hash.replace('#', '')] ?? 1;
-  });
+  const [activeModule, setActiveModule] = useState<ModuleId>(() => MODULE_BY_HASH[window.location.hash.replace('#', '')] ?? 1);
+
+  useEffect(() => {
+    const onHash = () => {
+      const m = MODULE_BY_HASH[window.location.hash.replace('#', '')];
+      if (m) setActiveModule(m);
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
   const [showBadgesModal, setShowBadgesModal] = useState<boolean>(false);
   const [customCases, setCustomCases] = useState<ClinicalCase[]>([]);
   const allClinicalCases = useMemo(() => [...CLINICAL_CASES, ...customCases], [customCases]);

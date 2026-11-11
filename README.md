@@ -16,6 +16,7 @@ The authors offer this book free for public benefit.
 - 43 lecture chapters from Prof. Abeer Mohammed's notes: red cells, spleen and marrow failure, myeloid and lymphoid neoplasms, flow cytometry, haemostasis and thrombosis, white cell and histiocytic disorders, laboratory haematology.
 - A supplementary Foundations part (F1 to F7) on normal blood and marrow, written from standard textbooks.
 - Narrated 3D animations, animated diagrams, yes/no work-up charts, calculators, cases and quizzes.
+- A Flow lab (Egypt Flow Educational App): a flow cytometry simulator with gating, singlet and compensation labs and 14 scored clinical cases, on its own page and inside chapters 26 and 27.
 - A haematology atlas with an Identify quiz, and a Practice page with flashcards, questions, cases, algorithms and checklists.
 
 ## Install it on your device
