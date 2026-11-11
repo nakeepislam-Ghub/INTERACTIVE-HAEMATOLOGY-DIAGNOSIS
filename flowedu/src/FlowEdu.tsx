@@ -3808,7 +3808,11 @@ export default function App() {
   const [themeMode, setThemeMode] = useState<'dark' | 'light'>('dark');
   const isLight = themeMode === 'light';
   const ui = isLight ? UI_LIGHT : UI_DARK;
-  const [activeModule, setActiveModule] = useState<ModuleId>(1);
+  // Deep links: #gating, #singlet, #compensation, #glossary, #cases (used when embedded in the book)
+  const [activeModule, setActiveModule] = useState<ModuleId>(() => {
+    const byHash: Record<string, ModuleId> = { gating: 1, singlet: 2, compensation: 3, glossary: 4, cases: 5 };
+    return byHash[window.location.hash.replace('#', '')] ?? 1;
+  });
   const [showBadgesModal, setShowBadgesModal] = useState<boolean>(false);
   const [customCases, setCustomCases] = useState<ClinicalCase[]>([]);
   const allClinicalCases = useMemo(() => [...CLINICAL_CASES, ...customCases], [customCases]);
