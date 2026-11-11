@@ -192,21 +192,23 @@ function envMap(ren){const s=new T.Scene();const box=new T.Mesh(new T.SphereGeom
   L(0xfff1e6,6,[4,12,6],[14,8,1]);L(0x9fc4ff,3,[-12,4,-8],[10,10,1]);L(0xff7a5a,2,[0,-10,4],[20,6,1]);L(0xffffff,2.5,[10,2,-10],[6,10,1]);
   const pm=new T.PMREMGenerator(ren),rt=pm.fromScene(s,.04);pm.dispose();s.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material)o.material.dispose()});return rt.texture}
 const C_REST=new T.Color(0x8299b3),C_GLOW=new T.Color(0xffb54d),C_PALE=new T.Color(0x93a3c4),C_GREY=new T.Color(0xb8b6bd),E_GLOW=new T.Color(0xff8a1e);
-function Platelet(scene,M,seed){
+function rimify(mat,hex,k,pw){const c=new T.Color(hex);mat.onBeforeCompile=sh=>{sh.uniforms.uRimC={value:c};sh.uniforms.uRimK={value:k};
+  sh.fragmentShader='uniform vec3 uRimC;uniform float uRimK;\n'+sh.fragmentShader.replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\n totalEmissiveRadiance+=uRimC*uRimK*pow(1.-clamp(abs(dot(normalize(normal),normalize(vViewPosition))),0.,1.),'+(pw||3).toFixed(1)+');')};mat.customProgramCacheKey=()=>'rim'+hex+k+(pw||3);return mat}
+function Platelet(scene,M,seed,lite){
   const g=new T.Group();scene.add(g);const W=72,H=48;
   const geo=new T.SphereGeometry(1,W,H),base=geo.attributes.position.array.slice();
-  const bodyM=M.body.clone(),body=new T.Mesh(geo,bodyM);body.renderOrder=2;g.add(body);
+  const bodyM=rimify(M.body.clone(),0xcfe0ff,.55,2.6),body=new T.Mesh(geo,bodyM);body.renderOrder=2;g.add(body);
   const R=rng(seed),tmp=new V3(),tmp2=new V3();
   const gran=[];for(let i=0;i<40;i++){const dense=i>=33;let p;do{p=new V3(R()*2-1,R()*2-1,R()*2-1)}while(p.length()>1);p.multiplyScalar(.8);
     const m=new T.Mesh(M.sph,dense?M.dense:M.alpha);m.userData={p,dense,s:dense?.075:.06+R()*.06};g.add(m);gran.push(m)}
   const band=new T.Mesh(M.torus,M.band.clone());g.add(band);
-  const fil=[];for(let i=0;i<14;i++){const a=i*2.399963+seed,y=-.6+(i%6)*.22,r=Math.sqrt(1-y*y);const d=new V3(Math.cos(a)*r,y,Math.sin(a)*r);const m=new T.Mesh(M.filo,bodyM);m.userData.d=d;m.userData.k=.75+R()*.6;g.add(m);fil.push(m)}
+  const fil=[];for(let i=0;i<14;i++){const a=i*2.399963+seed,y=-.6+(i%6)*.22,r=Math.sqrt(1-y*y);const d=new V3(Math.cos(a)*r,y,Math.sin(a)*r);const m=new T.Mesh(M.filo,bodyM);m.userData.d=d;m.userData.k=.75+R()*.6;m.userData.spin=R()*6.283;g.add(m);fil.push(m)}
   const itgM=M.itg.clone();
   const mk=(n,off,kind)=>{const L=[];for(let i=0;i<n;i++){const d=fib(n,i,off),q=new T.Group();
     if(kind==='gp'){const s=new T.Mesh(M.stalk,M.gp);s.position.y=.13;s.scale.set(1.5,1,1.5);const h=new T.Mesh(M.head,M.gp);h.position.y=.29;h.scale.set(1.35,1.15,1.35);q.add(s,h)}
     else{for(const x of[-.035,.035]){const s=new T.Mesh(M.stalk,itgM);s.position.set(x,.12,0);s.scale.y=.92;q.add(s)}const h=new T.Mesh(M.head,itgM);h.position.y=.27;h.scale.set(1.35,.85,1.1);q.add(h)}
     q.userData.d=d;g.add(q);L.push(q)}return L};
-  const gp=mk(13,0,'gp'),itg=mk(15,1.2,'itg');
+  const gp=mk(lite?13:20,0,'gp'),itg=mk(lite?15:24,1.2,'itg');
   let key='';const self={g,body,gran,gp,itg,fil,band,S:DISC};
   self.local=(d,out)=>surf(d,self.S,out);
   self.world=(d,out)=>g.localToWorld(surf(d,self.S,out));
@@ -225,7 +227,7 @@ function Platelet(scene,M,seed){
     for(const m of gran){const u=m.userData;const show=u.dense?!s.noDense:!s.noAlpha;const sc=u.s*(1-ease(rel)*.85);m.visible=show&&sc>.005;if(!m.visible)continue;
       m.position.set(u.p.x*S.xz*.62*(1-.55*c),u.p.y*S.ys*.55*(1-.4*c)+S.egg*.45,u.p.z*S.xz*.62*(1-.55*c));m.scale.setScalar(sc)}
     const bk=lerp(.9,.42,s.bandC||0);band.scale.set(bk*S.xz,1,bk*S.xz);band.position.y=S.egg*.3;band.material.opacity=.85*(s.bandO===undefined?1:s.bandO)*Math.max(gl,s.open||0,.0);band.visible=band.material.opacity>.02;
-    for(const m of fil){const L=(s.fil||0)*m.userData.k;m.visible=L>.03;if(!m.visible)continue;const d=m.userData.d;self.local(d,m.position);tmp.set(d.x,d.y*(1-(s.flat||0)*.9),d.z).normalize();m.quaternion.setFromUnitVectors(UP,tmp);m.scale.set(1,L,1)}
+    for(const m of fil){const L=(s.fil||0)*m.userData.k;m.visible=L>.03;if(!m.visible)continue;const d=m.userData.d;self.local(d,m.position);tmp.set(d.x,d.y*(1-(s.flat||0)*.9),d.z).normalize();m.quaternion.setFromUnitVectors(UP,tmp);m.rotateY(m.userData.spin+.25*Math.sin((s.now||0)*1.3+m.userData.spin));m.scale.set(1,L,1)}
     const place=(q,ys)=>{self.local(q.userData.d,q.position);snorm(q.userData.d,S,tmp);q.quaternion.setFromUnitVectors(UP,tmp);q.scale.set(1,ys,1)};
     for(const q of gp){q.visible=!s.noGP;if(q.visible)place(q,1)}
     const a=s.act||0;itgM.color.setRGB(lerp(.56,.2,a),lerp(.59,.89,a),lerp(.64,.63,a));itgM.emissive.setRGB(0,.35*a,.2*a);
@@ -238,7 +240,8 @@ function buildPlatelet(api){
   scene.environment=envMap(ren);
   scene.add(new T.HemisphereLight(0xffeee6,0x3a1016,.45));ren.toneMappingExposure=.9;
   const key=new T.DirectionalLight(0xfff0e0,2.4);key.position.set(4,10,6);scene.add(key);
-  const rim=new T.DirectionalLight(0x8fb4ff,1.8);rim.position.set(-6,4,-8);scene.add(rim);
+  const rim=new T.DirectionalLight(0x8fb4ff,2.3);rim.position.set(-6,4,-8);scene.add(rim);
+  const spot=new T.SpotLight(0xffd9b0,20,18,.5,.7,1.4);spot.position.set(1.5,7.5,2.5);spot.target.position.set(0,0,0);scene.add(spot,spot.target);
   const bump=noiseTex(256,3,900);bump.repeat.set(3,2);
   const M={sph:new T.SphereGeometry(1,16,12),
     body:new T.MeshPhysicalMaterial({color:C_REST,transparent:true,opacity:.97,roughness:.55,sheen:.6,sheenRoughness:.5,sheenColor:new T.Color(0xdbe8ff),clearcoat:.25,clearcoatRoughness:.5,bumpMap:bump,bumpScale:1.2,envMapIntensity:.8}),
@@ -246,7 +249,7 @@ function buildPlatelet(api){
     dense:new T.MeshStandardMaterial({color:0x2a1b22,roughness:.3,metalness:.2}),
     torus:new T.TorusGeometry(1,.03,8,96).rotateX(Math.PI/2),
     band:new T.MeshStandardMaterial({color:0xfff2dd,emissive:0x664422,transparent:true,opacity:.85}),
-    filo:new T.CylinderGeometry(.022,.07,1,8).translate(0,.5,0),
+    filo:(()=>{const g=new T.CylinderGeometry(.014,.075,1,8,14).translate(0,.5,0),p=g.attributes.position;for(let i=0;i<p.count;i++){const y=p.getY(i),k=1+.9*Math.exp(-(((y-1)/.06)**2));p.setX(i,p.getX(i)*k+.16*y*y);p.setZ(i,p.getZ(i)*k+.05*Math.sin(y*5))}g.computeVertexNormals();return g})(),
     stalk:new T.CylinderGeometry(.018,.018,.26,6),head:new T.SphereGeometry(.062,14,10),
     gp:new T.MeshStandardMaterial({color:0x4f86d9,emissive:0x0a1f44,roughness:.45}),
     itg:new T.MeshStandardMaterial({color:0x8f96a3,roughness:.35})};
@@ -259,9 +262,9 @@ function buildPlatelet(api){
   const eg=new T.SphereGeometry(1,api.low?14:22,api.low?8:12);
   const endo=new T.InstancedMesh(eg,new T.MeshStandardMaterial({color:0xffffff,roughness:.62,bumpMap:noiseTex(128,9,300),bumpScale:.6,envMapIntensity:.35}),cells.length),nuc=new T.InstancedMesh(eg,new T.MeshStandardMaterial({color:0xffffff,roughness:.45}),cells.length);
   const onWall=(x,s,lift)=>{const a=s/RV;dum.position.set(x,CY-(RV-lift)*Math.cos(a),(RV-lift)*Math.sin(a));tq.set(0,Math.cos(a),-Math.sin(a));dum.quaternion.setFromUnitVectors(UP,tq)};
-  cells.forEach(([x,s],i)=>{onWall(x,s,.05);dum.rotateY((R()-.5)*.35);dum.scale.set(.86,.27,.52);dum.updateMatrix();endo.setMatrixAt(i,dum.matrix);
-    col.setHSL(.012+R()*.025,.5,.33+R()*.07);endo.setColorAt(i,col);onWall(x+(R()-.5)*.2,s,.18);dum.scale.set(.32,.13,.2);dum.updateMatrix();nuc.setMatrixAt(i,dum.matrix);col.setHSL(.065,.65,.42);nuc.setColorAt(i,col)});
-  scene.add(endo,nuc);
+  cells.forEach(([x,s],i)=>{onWall(x,s,.05);dum.rotateY((R()-.5)*.35);dum.scale.set(1.0,.15,.53);dum.updateMatrix();endo.setMatrixAt(i,dum.matrix);
+    col.setHSL(.008+R()*.022,.44,.34+R()*.06);endo.setColorAt(i,col);onWall(x+(R()-.5)*.2,s,.1);dum.scale.set(.36,.13,.22);dum.updateMatrix();nuc.setMatrixAt(i,dum.matrix);col.setHSL(.96,.34,.3);nuc.setColorAt(i,col)});
+  scene.add(endo,nuc);rimify(endo.material,0xffb9a8,.22,3);
   const sub=new T.Mesh(new T.CircleGeometry(1,64).rotateX(-Math.PI/2),new T.MeshStandardMaterial({color:0x9a7656,roughness:.9}));sub.scale.set(3.4,1,2.9);sub.position.y=-.3;scene.add(sub);
   // collagen meshwork: many fine wavy fibres
   const fibs=[];for(let i=0;i<(api.low?150:240);i++){let x=(R()*2-1)*3.2,z=(R()*2-1)*2.7;if(!inj(x*.95,z*.95)&&R()<.7){i--;continue}const a=R()*Math.PI,L=1.2+R()*2.6,y=-.27+R()*.24,pts=[];
@@ -272,16 +275,16 @@ function buildPlatelet(api){
   // vWF strands (lavender bead chains, recomputed each frame)
   const AN=[[-1.4,-.6],[-.5,.35],[.4,-.35],[-.1,.95],[1.5,.6],[-2,.9],[1.9,-.7],[.6,1.6],[-1,-1.6],[1.1,-1.5],[-2.4,-.3],[2.3,1.2]].map(([x,z])=>new V3(x,-.08,z));
   const NB=30,beads=new T.InstancedMesh(new T.SphereGeometry(.042,8,6),new T.MeshStandardMaterial({color:0xa799e0,emissive:0x2a2050,roughness:.4}),AN.length*NB);scene.add(beads);
-  const P1=Platelet(scene,M,1),P2=Platelet(scene,M,2),P3=Platelet(scene,M,3);
+  const P1=Platelet(scene,M,1,api.low),P2=Platelet(scene,M,2,api.low),P3=Platelet(scene,M,3,api.low),P4=api.low?null:Platelet(scene,M,4,true),P5=api.low?null:Platelet(scene,M,5,true);
   // fibrinogen bridges
   const fibM=new T.MeshStandardMaterial({color:0xffb347,emissive:0x6a3400,roughness:.35}),rodG=new T.CylinderGeometry(.02,.02,1,6),nodG=new T.SphereGeometry(.055,10,8);
   const mkB=(n,sd)=>{const r=rng(sd),L=[];for(let i=0;i<n;i++){const o=new T.Group(),rod=new T.Mesh(rodG,fibM),a=new T.Mesh(nodG,fibM),m=new T.Mesh(nodG,fibM),b=new T.Mesh(nodG,fibM);m.scale.setScalar(1.25);o.add(rod,a,m,b);scene.add(o);
     L.push({o,rod,a,m,b,off:new V3(r()-.5,r()-.5,r()-.5).multiplyScalar(.9),off2:new V3(r()-.5,r()-.5,r()-.5).multiplyScalar(.9)})}return L};
-  const B12=mkB(7,11),B13=mkB(6,12);
+  const B12=mkB(7,11),B13=mkB(6,12),B24=P4?mkB(4,13):[],B35=P5?mkB(4,14):[],B45=P5?mkB(3,15):[];
   // fibrin mesh (thrombin) that grows over the plug
-  const fR=rng(21),FIB=[];const fibrinM=new T.MeshStandardMaterial({color:0xe2552a,emissive:0x5a1204,roughness:.45});
-  for(let i=0;i<22;i++){const pts=[];let p=new V3((fR()*2-1)*3.4,.15+fR()*2.6,(fR()*2-1)*2.6);for(let k=0;k<5;k++){pts.push(p.clone());p=p.clone().add(new V3((fR()*2-1)*1.8,(fR()*2-1)*.9,(fR()*2-1)*1.6));p.y=clamp(p.y,.1,3.2)}
-    const tg=new T.TubeGeometry(new T.CatmullRomCurve3(pts),60,.028+fR()*.02,5);const m=new T.Mesh(tg,fibrinM);m.userData.n=tg.index.count;m.userData.d=fR()*.4;tg.setDrawRange(0,0);m.frustumCulled=false;scene.add(m);FIB.push(m)}
+  const fR=rng(21),FIB=[];const fibrinM=new T.MeshStandardMaterial({color:0xffe2a8,emissive:0x8a5210,roughness:.4});
+  for(let i=0;i<(api.low?24:44);i++){const pts=[];let p=new V3((fR()*2-1)*3.4,.15+fR()*2.6,(fR()*2-1)*2.6);for(let k=0;k<5;k++){pts.push(p.clone());p=p.clone().add(new V3((fR()*2-1)*1.8,(fR()*2-1)*.9,(fR()*2-1)*1.6));p.y=clamp(p.y,.1,4.2)}
+    const tg=new T.TubeGeometry(new T.CatmullRomCurve3(pts),60,.018+fR()*.016,5);const m=new T.Mesh(tg,fibrinM);m.userData.n=tg.index.count;m.userData.d=fR()*.4;tg.setDrawRange(0,0);m.frustumCulled=false;scene.add(m);FIB.push(m)}
   // secretion particles: ADP (cyan) and TXA2 (amber), glowing
   const NP=900,pg=new T.BufferGeometry(),pp=new Float32Array(NP*3),pc=new Float32Array(NP*3),PD=[];const pr=rng(5);
   for(let i=0;i<NP;i++){const dense=i%5<2;const c=new T.Color(dense?0x63f0ff:0xffa53a).multiplyScalar(1.6);pc.set([c.r,c.g,c.b],i*3);
@@ -294,7 +297,7 @@ function buildPlatelet(api){
   dg.setAttribute('position',new T.BufferAttribute(dp,3));
   const dust=new T.Points(dg,new T.PointsMaterial({size:.06,map:dot(),color:0xffd8c8,transparent:true,opacity:.55,depthWrite:false}));dust.frustumCulled=false;scene.add(dust);
   // red cells flowing in the lumen (margination)
-  const rbcG=rbcGeo(40,28,'disc'),rbcM=new T.MeshPhysicalMaterial({color:0xa80f1b,roughness:.38,clearcoat:.4,clearcoatRoughness:.35,sheen:.8,sheenColor:new T.Color(0xff6a6a),envMapIntensity:.9});
+  const rbcG=rbcGeo(40,28,'disc'),rbcM=new T.MeshPhysicalMaterial({color:0xa80f1b,roughness:.38,clearcoat:.4,clearcoatRoughness:.35,sheen:.8,sheenColor:new T.Color(0xff6a6a),envMapIntensity:.9});rimify(rbcM,0xff8a7a,.35,2.4);
   const NR=api.low?50:90,rbcI=new T.InstancedMesh(rbcG,rbcM,NR);rbcI.frustumCulled=false;scene.add(rbcI);const RB=[];const rr=rng(23);
   for(let i=0;i<NR;i++){let a,r,y,z;do{a=rr()*6.28;r=2+rr()*(RV-1.5);y=CY+r*Math.cos(a);z=r*Math.sin(a)}while((z>-2.5&&y<9.5)||y<3);RB.push({x:rr()*44-22,y,z,r,sp:2.2*(1-(r/RV)**2)+.5,ph:rr()*6.28,s:.5+rr()*.12})}
   RB.forEach(b=>b.m={position:new V3()});
@@ -309,15 +312,17 @@ function buildPlatelet(api){
     const u1=ease(seg(t,.3,.46)),u2=ease(seg(t,.72,.9));const S=s.S=mixS(mixS(DISC,SPH,u1),SPREAD,u2);
     const gap=lerp(lerp(.5,.42,u1),.07,u2),rest=bottom(S)+gap;
     if(t<.12){const u=t/.12;s.pos.set(lerp(-9,-2.8,u),lerp(2.7,1.7,u),.1);s.rz=.35*Math.sin(u*6);s.rx=.2*Math.cos(u*4)}
-    else{const u=1-(1-seg(t,.12,.28))**2;s.pos.set(lerp(-2.8,0,u),lerp(1.7,rest,ease(seg(t,.12,.22))),lerp(.1,0,u));s.rz=u<1?-Math.PI*u:0;s.rx=0}
+    else{let u=1-(1-seg(t,.12,.28))**2;u=c01(u+.045*Math.sin(u*18.85)*(1-u));s.pos.set(lerp(-2.8,0,u),lerp(1.7,rest,ease(seg(t,.12,.22))),lerp(.1,0,u));s.rz=u<1?-Math.PI*u:0;s.rx=0}
     s.fil=ease(seg(t,.33,.47))*1.7*(1-.45*u2);s.glow=ease(seg(t,.5,.58))*(1-ease(seg(t,.72,.86)));s.pale=ease(seg(t,.74,.9));s.open=ease(seg(t,.3,.46))*.4;s.now=NOW;s.flat=u2;s.bandC=u1;s.bandO=1-u2;s.central=ease(seg(t,.5,.58));s.rel=ease(seg(t,.58,.7));s.act=dis==='gt'?0:ease(seg(t,.6,.74));return s}
-  const F2=new V3(1.25,0,.55),F3=new V3(-1.35,0,-.6);
+  const F2=new V3(1.25,0,.55),F3=new V3(-1.35,0,-.6),F4=new V3(.75,1.05,-.75),F5=new V3(-.55,1.15,.6);
+  const PT0={2:.7,3:.79,4:.85,5:.9},PT1={2:.84,3:.92,4:.96,5:.995},PF={2:F2,3:F3,4:F4,5:F5};
   function pN(t,which){const s={pos:new V3(),S:DISC,noGP:false,noItg:dis==='gt',noDense:dis==='spd',noAlpha:dis==='gps',grey:dis==='gps',vis:false};
     if(dis==='bss'||dis==='vwd')return s;
-    const t0=which===2?.7:.79,t1=which===2?.84:.92,F=which===2?F2:F3;if(t<t0)return s;s.vis=true;
+    if(which>3&&dis!=='normal'&&dis!=='gps')return s;
+    const t0=PT0[which],t1=PT1[which],F=PF[which];if(t<t0)return s;s.vis=true;
     const a=ease(seg(t,t0+.03,t1));s.S=mixS(DISC,SPH,a);s.fil=a*1.5;s.pale=a;s.glow=a*(1-a)*1.2;s.now=NOW;s.act=dis==='gt'?0:a;s.bandC=a;s.bandO=1;s.rel=dis==='spd'?0:a*.6;s.central=a;
     const top=bottom(SPREAD)+.07+SPREAD.ys+SPREAD.egg,fy=top+.3+s.S.ys*(1-s.S.flat*.85);
-    const u=1-(1-seg(t,t0,t1))**2;s.pos.set(lerp(-9,F.x,u),lerp(3.6,fy,u),lerp(F.z+.8,F.z,u));s.rz=(1-u)*1.5;
+    const u=1-(1-seg(t,t0,t1))**2;s.pos.set(lerp(-9,F.x,u),lerp(3.6+F.y,fy+F.y,u),lerp(F.z+.8,F.z,u));s.rz=(1-u)*1.5;
     const away=dis==='gt'||(dis==='spd'&&which===3);
     if(away){const v=ease(seg(t,t1-.02,1));s.pos.x+=v*9;s.pos.y+=v*2.2;s.rz-=v*4;s.act=0}
     return s}
@@ -374,17 +379,25 @@ function buildPlatelet(api){
     {title:'Fibrin',r:5,pos:()=>{const m=FIB[3];return m.visible&&lv(.93,1)?m.localToWorld(m.geometry.parameters.path.getPoint(.4)):null},text:'Thrombin generated on the activated platelet surface cleaves fibrinogen into fibrin. Fibrin strands, cross-linked by factor XIIIa, weave through the platelet plug and turn it into a stable clot.'},
     {title:'Red cell',r:9,pos:()=>{let best=null,bd=1e9;for(const b of RB){const p=b.m.position;const d=Math.abs(p.x-3)+Math.abs(p.y-4)*2+Math.abs(p.z+2);if(d<bd&&Math.abs(p.x)<6){bd=d;best=p}}return best?best.clone():null},text:'Red cells travel in the centre of the stream and push platelets towards the wall (margination), which helps platelets reach an injury. A higher haematocrit improves primary haemostasis.'}];
   api.labels.forEach(L=>L.kicker='Structure');
+  // cinematic camera: one view per beat of the story
+  const v3=(x,y,z)=>new V3(x,y,z);
+  const VIEWS=[[0,{tx:v3(-1.2,1.5,0),r:12.5,ph:1.1,th:.8}],[.04,{tx:v3(.2,.15,.1),r:6.6,ph:.98,th:.45}],[.13,{tx:v3(-.9,1.0,0),r:6.4,ph:1.22,th:.3}],[.22,{tx:v3(0,.6,0),r:5.2,ph:1.25,th:.55}],
+    [.3,{tx:v3(0,.95,0),r:5.4,ph:1.12,th:.85}],[.5,{tx:v3(.3,1.1,0),r:6.6,ph:1.05,th:.25}],[.7,{tx:v3(0,1.3,0),r:8.4,ph:1.12,th:.6}],[.86,{tx:v3(0,1.7,0),r:9,ph:1.05,th:.8}],[.95,{tx:v3(0,1.7,0),r:9.8,ph:1.0,th:1.0}]];
+  let lastView=-1;
+  function camera(){if(dis==='bss'||dis==='vwd'){lastView=-1;return}let si=0;for(let i=0;i<VIEWS.length;i++)if(t>=VIEWS[i][0]-1e-6)si=i;
+    if(si!==lastView){if(lastView>=0||si>0)api.orbit.flyTo(VIEWS[si][1],si>lastView&&lastView>=0?2.2:1.2);lastView=si}}
   let first=true;
   return{focus:()=>{const o=api.orbit.st;if(P1.g.visible&&o.tx.distanceTo(P1.g.position)<2.5)return api.cam.position.distanceTo(P1.g.position);return o.r},fx:p=>{p.range=.55;p.bloom=.6},tick(dt,now){
     if(playing){t=holdT(api,t,Math.min(playTo,t+dt/22),STAGES);if(t>=playTo-1e-6)setPlay(false)}
     if(first){first=false;setPlay(true)}
     rg.value=Math.round(t*1000);pct.textContent=Math.round(t*100)+'%';caption();
-    P1.update(p1(t));P2.update(pN(t,2));P3.update(pN(t,3));vwf(t);particles(t);
+    P1.update(p1(t));P2.update(pN(t,2));P3.update(pN(t,3));if(P4){P4.update(pN(t,4));P5.update(pN(t,5))}vwf(t);particles(t);camera();
     const okB=dis==='normal'||dis==='gps'||dis==='spd';
     if(okB&&P2.g.visible)bridges(dis==='spd'?B12.slice(0,3):B12,P1,P2,seg(t,.8,.92));B12.forEach((b,i)=>{if(!(okB&&P2.g.visible&&t>=.8)||(dis==='spd'&&i>=3))b.o.visible=false});
     if(okB&&dis!=='spd'&&P3.g.visible)bridges(B13,P1,P3,seg(t,.88,.99));B13.forEach(b=>{if(!(okB&&dis!=='spd'&&P3.g.visible&&t>=.88))b.o.visible=false});
+    if(P4){const ok4=(dis==='normal'||dis==='gps');[[B24,P2,P4,.92,.975],[B35,P3,P5,.95,.995],[B45,P4,P5,.965,1]].forEach(([L,A,B,a,b])=>{const on=ok4&&A.g.visible&&B.g.visible&&t>=a;if(on)bridges(L,A,B,seg(t,a,b));else L.forEach(x=>x.o.visible=false)})}
     NOW=now;
-    for(let i=0;i<RB.length;i++){const b=RB[i];const x=((b.x+now*b.sp)%44+44)%44-22;b.m.position.set(x,b.y+.25*Math.sin(now*.6+b.ph),b.z);dum.position.copy(b.m.position);dum.rotation.set(.6+now*.35+b.ph,b.ph,.5*Math.sin(now*.4+b.ph));const cd=b.m.position.distanceTo(api.cam.position);dum.scale.setScalar(b.s*c01((cd-3.5)/2.5));dum.updateMatrix();rbcI.setMatrixAt(i,dum.matrix)}rbcI.instanceMatrix.needsUpdate=true;
+    for(let i=0;i<RB.length;i++){const b=RB[i];const x=((b.x+now*b.sp)%44+44)%44-22;b.m.position.set(x,b.y+.25*Math.sin(now*.6+b.ph),b.z);dum.position.copy(b.m.position);dum.rotation.set(.6+now*.35+b.ph,b.ph,.5*Math.sin(now*.4+b.ph));const cd=b.m.position.distanceTo(api.cam.position);dum.scale.setScalar(b.s*c01((cd-5.5)/3));dum.updateMatrix();rbcI.setMatrixAt(i,dum.matrix)}rbcI.instanceMatrix.needsUpdate=true;
     {const a=dg.attributes.position;for(let i=0;i<ND;i++){const d=DD[i];a.setXYZ(i,((d.x+now*d.sp*1.6)%44+44)%44-22,d.y,d.z)}a.needsUpdate=true}
     {const ok=dis==='normal'||dis==='gps'||dis==='spd';for(const m of FIB){const u=ok?ease(seg(t,.88+m.userData.d*.2,1)):0;const n=Math.floor(m.userData.n*u/3)*3;m.geometry.setDrawRange(0,n);m.visible=n>0}}
   }}}
