@@ -1151,7 +1151,7 @@ const CLINICAL_CASES: ClinicalCase[] = [
       blastsPeripheral: '0%',
       blastsMarrow: '1.5% by Morphology (Testing for MRD ≥ 0.01%)'
     },
-    morphologyDescription: 'Normocellular regenerating marrow in morphologic remission. Flow cytometry interrogates whether residual CD19+ cells represent normal hematogones or persistent Leukemic-Associated Immunophenotype (LAIP).',
+    morphologyDescription: 'Normocellular regenerating marrow in morphologic remission. Flow cytometry interrogates whether residual CD19+ cells represent normal hematogones or persistent Leukemic-Associated Immunophenotype (LAIP). Simulation note: the residual clone is enlarged to about 7% of events so it is visible on screen; real MRD is reported down to 0.01%.',
     morphologyFeatures: ['LAIP (Leukemia-Associated Immunophenotype)', 'Difference from Normal (DfN) Strategy', 'Overexpression of CD10, CD34, and CD58', 'Threshold: 0.01% (10⁻⁴) of Nucleated Cells'],
     cytogenetics: 'Prior hyperdiploid B-ALL clone.',
     tubes: [
@@ -1831,7 +1831,7 @@ const DotPlotCanvas: React.FC<DotPlotCanvasProps> = ({
   ]);
 
   // Convert Mouse Event to 0-100 data coordinates
-  const getCoordsFromMouse = (e: React.MouseEvent<HTMLCanvasElement>): Point2D => {
+  const getCoordsFromMouse = (e: React.PointerEvent<HTMLCanvasElement>): Point2D => {
     const canvas = canvasRef.current;
     if (!canvas) return { x: 50, y: 50 };
     const rect = canvas.getBoundingClientRect();
@@ -1845,7 +1845,14 @@ const DotPlotCanvas: React.FC<DotPlotCanvasProps> = ({
     return { x: clamp(rawX, 0, 100), y: clamp(rawY, 0, 100) };
   };
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const handleMouseDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    // Keep receiving move/up events even if the finger or pointer leaves the canvas
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      // capture is optional
+    }
     const pt = getCoordsFromMouse(e);
     if (gateMode === 'rect') {
       setDrawingRectStart(pt);
@@ -1871,7 +1878,7 @@ const DotPlotCanvas: React.FC<DotPlotCanvasProps> = ({
     }
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const handleMouseMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const pt = getCoordsFromMouse(e);
     if (gateMode === 'rect' && drawingRectStart) {
       setDrawingRectCurrent(pt);
@@ -1898,11 +1905,15 @@ const DotPlotCanvas: React.FC<DotPlotCanvasProps> = ({
     <div className="relative w-full select-none">
       <canvas
         ref={canvasRef}
-        style={{ height: `${height}px` }}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
+        style={{
+          height: `${height}px`,
+          // Drawing gates needs full control of touch; quadrant mode keeps vertical page scrolling
+          touchAction: gateMode !== 'none' ? 'none' : showQuadrants && onQuadrantChange ? 'pan-y' : 'auto'
+        }}
+        onPointerDown={handleMouseDown}
+        onPointerMove={handleMouseMove}
+        onPointerUp={handleMouseUp}
+        onPointerCancel={handleMouseUp}
         className={`w-full rounded-xl border ${isLightMode ? 'border-slate-300 bg-white' : 'border-slate-800 bg-[#090d16]'} shadow-inner ${
           gateMode !== 'none' ? 'cursor-crosshair' : showQuadrants ? 'cursor-move' : 'cursor-default'
         }`}
@@ -2695,7 +2706,7 @@ const GatingLab: React.FC<GatingLabProps> = ({ ui, isLight, cases, onGateCreated
           <h2 className="text-lg font-bold">Gating Lab</h2>
           <label className="flex items-center gap-1.5 text-xs">
             <span className={ui.muted}>Sample</span>
-            <select value={caseIdx} onChange={(e) => setCaseIdx(Number(e.target.value))} className={`rounded-lg px-2 py-1 text-xs ${ui.input}`}>
+            <select value={caseIdx} onChange={(e) => setCaseIdx(Number(e.target.value))} className={`min-w-0 max-w-[13rem] rounded-lg px-2 py-1 text-xs sm:max-w-sm ${ui.input}`}>
               {cases.map((c, i) => (
                 <option key={c.id} value={i}>
                   #{c.number} {c.title}
@@ -2930,7 +2941,7 @@ const SingletLab: React.FC<SingletLabProps> = ({ ui, isLight, cases, onPassed })
           <h2 className="text-lg font-bold">Singlet Discrimination (FSC-A vs FSC-H)</h2>
           <label className="flex items-center gap-1.5 text-xs">
             <span className={ui.muted}>Sample</span>
-            <select value={caseIdx} onChange={(e) => setCaseIdx(Number(e.target.value))} className={`rounded-lg px-2 py-1 text-xs ${ui.input}`}>
+            <select value={caseIdx} onChange={(e) => setCaseIdx(Number(e.target.value))} className={`min-w-0 max-w-[13rem] rounded-lg px-2 py-1 text-xs sm:max-w-sm ${ui.input}`}>
               {cases.map((c, i) => (
                 <option key={c.id} value={i}>
                   #{c.number} {c.title}
