@@ -15,8 +15,10 @@ The authors offer this book free for public benefit.
 
 - 43 lecture chapters from Prof. Abeer Mohammed's notes: red cells, spleen and marrow failure, myeloid and lymphoid neoplasms, flow cytometry, haemostasis and thrombosis, white cell and histiocytic disorders, laboratory haematology.
 - A supplementary Foundations part (F1 to F7) on normal blood and marrow, written from standard textbooks.
+- An Original books reader with Prof. Abeer's six books: flow cytometry, myeloid neoplasms, lymphoid neoplasms, haemostasis, and the full and concise red cell notes.
+- The FlowEdu flow cytometry simulator, built in and working offline.
 - Narrated 3D animations, animated diagrams, yes/no work-up charts, calculators, cases and quizzes.
-- A haematology atlas with an Identify quiz, and a Practice page with flashcards, questions, cases, algorithms and checklists.
+- A haematology atlas with an Identify quiz, a Practice page and a mock exam.
 
 ## Install it on your device
 
@@ -26,8 +28,11 @@ The authors offer this book free for public benefit.
 
 Lecture videos stream from YouTube and need an internet connection.
 
-## Credits and licences
+## Permission, licence and credits
 
-Lecture content © Prof. Abeer Mohammed. Openly licensed photographs from Wikimedia Commons keep their own licences; each is credited in its caption and on the Credits page inside the book, together with all sources.
+- **Permission.** Prof. Abeer Mohammed's six original books and the lecture content drawn from them are used with her written permission. Lecture content © Prof. Abeer Mohammed.
+- **Licence.** The text, redrawn diagrams and software of this edition are shared under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (see [LICENSE](LICENSE)): you may share and adapt them for non-commercial use, with credit, under the same licence.
+- **Third-party figures.** The licence does not cover third-party figures and photographs; they keep their own rights. Openly licensed photographs from Wikimedia Commons keep their own licences and are credited in their captions and on the Credits page inside the book. An audit of image sources is in progress.
+- **Pending review.** The Egyptian Arabic voice in FlowEdu and the newer FlowEdu guided lessons are trial content, pending Prof. Abeer's review. A whole-book scientific review is also with her, and approved corrections will follow in a later version.
 
 For education only. Not a substitute for clinical judgement.

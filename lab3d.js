@@ -85,8 +85,10 @@ void main(){float d=texture2D(tD,vUv).x;float z=-perspectiveDepthToViewZ(d,near,
 /* ---------- narration: pre-recorded English voice for every caption ---------- */
 const NARR={on:false,keys:null,au:null,owner:null,
   hash(s){let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)}return(h>>>0).toString(16).padStart(8,'0')},
-  load(){if(this.keys)return this.keys;this.keys=fetch('audio/narr.json').then(r=>r.ok?r.json():[]).then(a=>new Set(a)).catch(()=>new Set());return this.keys},
-  say(api,text){const k=this.hash(text);this.load().then(set=>{if(!this.on||!set.has(k))return;if(!this.au)this.au=new Audio();const a=this.au;a.pause();this.owner=api;this.want=k;this.pend=true;const done=()=>{if(this.want===k)this.pend=false};fetch('audio/'+k+'.mp3').then(r=>r.blob()).then(b=>{if(this.want!==k||!this.on)return;if(this.url)URL.revokeObjectURL(this.url);this.url=URL.createObjectURL(b);a.src=this.url;a.play().then(done,done)}).catch(done)})},
+  load(){if(this.keys)return this.keys;this.keys=fetch('audio/narr.json').then(r=>r.ok?r.json():{}).then(o=>{this.map=o;return new Set(Object.keys(o))}).catch(()=>new Set());return this.keys},
+  pack(n){this.pk=this.pk||{};return this.pk[n]||(this.pk[n]=fetch('audio/pk'+n+'.json').then(r=>r.json()).catch(e=>{delete this.pk[n];throw e}))},
+  blob(k){return this.pack(this.map[k]).then(P=>{const b=atob(P[k]),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new Blob([u],{type:'audio/mpeg'})})},
+  say(api,text){const k=this.hash(text);this.load().then(set=>{if(!this.on||!set.has(k))return;if(!this.au)this.au=new Audio();const a=this.au;a.pause();this.owner=api;this.want=k;this.pend=true;const done=()=>{if(this.want===k)this.pend=false};this.blob(k).then(b=>{if(this.want!==k||!this.on)return;if(this.url)URL.revokeObjectURL(this.url);this.url=URL.createObjectURL(b);a.src=this.url;a.play().then(done,done)}).catch(done)})},
   stop(){this.pend=false;this.want=null;if(this.au)this.au.pause()},
   busy(api){const a=this.au;return!!(this.on&&a&&this.owner===api&&(this.pend||(!a.paused&&!a.ended&&a.src)))}};
 window.__narr=NARR;try{NARR.on=localStorage.getItem('l3snd')==='1'}catch(_){}
@@ -584,7 +586,8 @@ function buildMembrane(api){
     {title:'Glycophorin C',r:5,pos:()=>GP[1].g.visible?new V3(GP[1].tip.x*sx,1.1,GP[1].tip.z/Math.sqrt(sx)):null,text:'A transmembrane glycoprotein that ties the bilayer to protein 4.1 (a second vertical link). Carries the Gerbich blood group antigens.'},
     {title:'Microvesicle',r:6,pos:()=>{const v=VES[0];return v.g.visible&&v.g.position.y>1.6?v.g.position.clone():null},text:'In HS, bilayer that has lost its anchor buds off. The cell loses surface area but keeps its volume, so it becomes spherical.'}];
   api.labels.forEach(L=>L.kicker='Structure');
-  return{focus:()=>api.orbit.st.r,fx:p=>{p.range=.5;p.bloom=.15},tick(dt,now){UI.update(dt);const t=UI.t;
+  const VM=[{tx:new V3(0,-.2,0),r:10.5,ph:1.95,th:.45},{tx:new V3(-1,-.9,0),r:8,ph:2.25,th:.6},{tx:new V3(0,0,0),r:12.5,ph:1.5,th:.3},{tx:new V3(0,.5,0),r:11,ph:1.15,th:.45}];let lastM=-1;api.views=VM;
+  return{focus:()=>api.orbit.st.r,fx:p=>{p.range=.5;p.bloom=.15},tick(dt,now){UI.update(dt);const t=UI.t;{const si=UI.stage();if(si!==lastM){lastM=si;if(UI.playing)api.orbit.flyTo(VM[si],1.6)}}
     // stretch profile
     const up=ease(seg(t,.38,.56)),down=ease(seg(t,.66,.86));const peak=1.5,rest=mode==='he'?1.32:1;sx=1+(peak-1)*up-(peak-rest)*down;
     skel.scale.set(sx,1,1/Math.sqrt(sx));
@@ -664,8 +667,8 @@ function buildHb(api){
     {title:'β6 valine',r:3.5,pos:()=>mode==='hbs'?val.getWorldPosition(new V3()):null,text:'The single amino acid change of sickle cell disease. In deoxy-HbS it docks into a hydrophobic pocket (β85–β88) of the next molecule, starting polymerisation.'},
     {title:'HbS polymer fibre',r:9,pos:()=>mode==='hbs'&&UI.t>.86?new V3(-1,4.7,-3.5):null,text:'Seven pairs of twisted double strands form a 14-strand fibre about 21 nm wide. Bundles of fibres deform the cell into a sickle and make it rigid.'}];
   api.labels.forEach(L=>L.kicker='Structure');
-  const st0=api.orbit;
-  return{focus:()=>api.orbit.st.r,fx:p=>{p.range=.55;p.bloom=.12},tick(dt,now){UI.update(dt);const t=UI.t;if(mode==='hbs'&&t>.74&&t<.8&&!this.fl){this.fl=1;api.orbit.flyTo({tx:new V3(0,1.6,-1.5),r:17,ph:1.25},1.6)}if(t<.7)this.fl=0;
+  const st0=api.orbit;const VH=[{tx:new V3(0,0,0),r:9,ph:1.2,th:.4},{tx:new V3(0,0,-.6),r:6.2,ph:1.25,th:.9},{tx:new V3(0,0,0),r:7.4,ph:1.1,th:-.3},{tx:new V3(0,.4,0),r:10.5,ph:1.25,th:.4}];let lastH=-1;api.views=VH;
+  return{focus:()=>api.orbit.st.r,fx:p=>{p.range=.55;p.bloom=.12},tick(dt,now){UI.update(dt);const t=UI.t;{const si=UI.stage();if(si!==lastH){lastH=si;if(UI.playing&&!(mode==='hbs'&&si===3))api.orbit.flyTo(VH[si],1.6)}}if(mode==='hbs'&&t>.74&&t<.8&&!this.fl){this.fl=1;api.orbit.flyTo({tx:new V3(0,1.6,-1.5),r:17,ph:1.25},1.6)}if(t<.7)this.fl=0;
     const hbf=mode==='hbf',hbs=mode==='hbs';
     S[2].m.geometry=S[3].m.geometry=hbf?gG:gB;val.visible=hbs;
     // T -> R transition while loading, back to T in tissues
@@ -699,8 +702,8 @@ function buildCoag(api){
   const RC=8,CL=new V3(-6.6,-7.4,0),CP=new V3(6.6,-7.4,0);
   const onCell=(C,x,z,lift)=>{const dx=x-C.x,dz=z-C.z;const y=C.y+Math.sqrt(Math.max(0,RC*RC-dx*dx-dz*dz));const n=new V3(dx,y-C.y,dz).normalize();return{p:new V3(x,y,z).addScaledVector(n,lift||0),n}};
   const bump=noiseTex(256,5,1200);bump.repeat.set(6,3);
-  const tfCell=new T.Mesh(new T.SphereGeometry(RC,96,64),new T.MeshPhysicalMaterial({color:0xc4826a,roughness:.55,sheen:.6,sheenColor:new T.Color(0xffd0b0),bumpMap:bump,bumpScale:1.5}));tfCell.position.copy(CL);scene.add(tfCell);
-  const pltM=new T.MeshPhysicalMaterial({color:0x8a84b4,roughness:.55,envMapIntensity:.45,sheen:.3,sheenColor:new T.Color(0xe6e0ff),bumpMap:bump,bumpScale:1.2,emissive:0x000000});
+  const tfCell=new T.Mesh(new T.SphereGeometry(RC,96,64),rimify(new T.MeshPhysicalMaterial({color:0xc4826a,roughness:.55,sheen:.6,sheenColor:new T.Color(0xffd0b0),bumpMap:bump,bumpScale:1.5}),0xffb48a,.38,2.6));tfCell.position.copy(CL);scene.add(tfCell);
+  const pltM=rimify(new T.MeshPhysicalMaterial({color:0x8a84b4,roughness:.55,envMapIntensity:.45,sheen:.3,sheenColor:new T.Color(0xe6e0ff),bumpMap:bump,bumpScale:1.2,emissive:0x000000}),0xb9a8ff,.38,2.6);
   const plt=new T.Mesh(new T.SphereGeometry(RC,96,64),pltM);plt.position.copy(CP);scene.add(plt);
   // filopodia on the platelet
   const filM=pltM;for(let i=0;i<14;i++){const x=CP.x+(R()-.5)*9,z=(R()-.5)*7;const s=onCell(CP,x,z,0);const m=new T.Mesh(new T.CylinderGeometry(.035,.1,1,8).translate(0,.5,0),filM);m.position.copy(s.p);m.quaternion.setFromUnitVectors(UP,s.n.clone().add(new V3((R()-.5)*.6,0,(R()-.5)*.6)).normalize());m.scale.set(1,1.2+R()*2,1);scene.add(m)}
@@ -757,7 +760,8 @@ function buildCoag(api){
     {title:'Antithrombin',r:5,pos:()=>mode==='hep'?ATs[0].m.position.clone():null,text:'A serpin that traps thrombin and Xa in a 1:1 complex. Heparin makes it work about 1000 times faster.'}];
   api.labels.forEach(L=>L.kicker='Structure');
   const flyP=(m,from,to,a,b,ref)=>{const u=ease(seg(UI.t,a,b));m.position.lerpVectors(from,to,u);return u};
-  return{focus:()=>api.orbit.st.r,fx:p=>{p.range=.6;p.bloom=.25},tick(dt,now){UI.update(dt);const t=UI.t;const ha=mode==='ha',hb=mode==='hb',hep=mode==='hep';const bob=x=>Math.sin(now*1.3+x)*.06;
+  const VIEWS=[{tx:new V3(-3.2,1.3,0),r:11,ph:1.18,th:-.12},{tx:new V3(0,1.9,0),r:14,ph:1.2,th:.12},{tx:new V3(3.6,1.4,0),r:10.5,ph:1.15,th:.22},{tx:new V3(0,2.8,0),r:19,ph:1.2,th:0}];api.views=VIEWS;let lastStC=-1;
+  return{focus:()=>api.orbit.st.r,fx:p=>{p.range=.8;p.bloom=.2},tick(dt,now){UI.update(dt);{const si=UI.stage();if(si!==lastStC){lastStC=si;if(UI.playing)api.orbit.flyTo(VIEWS[si],1.5)}}const t=UI.t;const ha=mode==='ha',hb=mode==='hb',hep=mode==='hep';const bob=x=>Math.sin(now*1.3+x)*.06;
     // initiation
     VII.forEach((v,i)=>{flyP(v.m,v.from,v.to,.02+i*.03,.1+i*.03);v.m.rotation.set(now*.3+i,now*.2,0)});
     {const a=flyP(XL.m,XL.from,XL.site,.08,.16);recol(XL.m,ease(seg(t,.16,.2))>0?C.xa:C.x,1);XL.m.position.lerp(VAL.site.clone().add(new V3(.55,0,.2)),ease(seg(t,.19,.24)))}
@@ -873,19 +877,19 @@ function buildFib(api){
   // endothelium: a floor of bulging endothelial cells
   const bump=noiseTex(256,9,1400);bump.repeat.set(5,5);
   const floor=new T.Mesh(new T.PlaneGeometry(60,40,1,1).rotateX(-Math.PI/2),new T.MeshPhysicalMaterial({color:0x8a3c44,roughness:.6,sheen:.5,sheenColor:new T.Color(0xffb0a0),bumpMap:bump,bumpScale:1}));floor.position.y=EY-.25;scene.add(floor);
-  const NEC=46,ec=new T.InstancedMesh(new T.SphereGeometry(1,32,16),new T.MeshPhysicalMaterial({color:0xb4606a,roughness:.5,sheen:.6,sheenColor:new T.Color(0xffc4b4),bumpMap:bump,bumpScale:.8}),NEC);
+  const NEC=46,ec=new T.InstancedMesh(new T.SphereGeometry(1,32,16),rimify(new T.MeshPhysicalMaterial({color:0xb4606a,roughness:.5,sheen:.6,sheenColor:new T.Color(0xffc4b4),bumpMap:bump,bumpScale:.8}),0xff9aa4,.3,3),NEC);
   for(let i=0;i<NEC;i++){const x=(i%9-4)*3.2+(R()-.5)*1.2+((i/9|0)%2)*1.6,z=((i/9|0)-2.5)*2.4+(R()-.5)*.6;dum.position.set(x,EY-.2,z);dum.rotation.set(0,R()*3,0);dum.scale.set(1.9+R()*.4,.38,1.1+R()*.3);dum.updateMatrix();ec.setMatrixAt(i,dum.matrix)}scene.add(ec);
   // fibrin network: nodes and fibres (each fibre = two halves so a cut can recoil)
   const NN=78,nodes=[];while(nodes.length<NN){const p=new V3((R()-.5)*2,(R()-.5)*2,(R()-.5)*2);if(p.lengthSq()>1)continue;p.multiply(new V3(6.6,2.7,3.8));p.y+=.2;nodes.push(p)}
   const E=[],seen=new Set();nodes.forEach((a,i)=>{const d=nodes.map((b,j)=>[a.distanceTo(b),j]).sort((x,y)=>x[0]-y[0]);for(let k=1;k<=3;k++){const j=d[k][1],key=Math.min(i,j)+'_'+Math.max(i,j);if(seen.has(key))continue;seen.add(key);const b=nodes[j];const m=a.clone().lerp(b,.5).add(new V3((R()-.5)*.5,(R()-.5)*.5,(R()-.5)*.5));const dir=b.clone().sub(a).normalize();let nrm=new V3(0,1,0).cross(dir);if(nrm.lengthSq()<.01)nrm.set(1,0,0);nrm.normalize();E.push({a,b,m,nrm,bi:nrm.clone().cross(dir).normalize(),r:R()})}});
   const NE=E.length;
   const fibBump=noiseTex(128,12,500);fibBump.wrapS=fibBump.wrapT=T.RepeatWrapping;fibBump.repeat.set(1,6);
-  const fibG=new T.CylinderGeometry(.075,.075,1,10,6,true).translate(0,.5,0);
-  const fibM=new T.MeshPhysicalMaterial({color:0xd9c9a8,roughness:.5,sheen:.6,sheenColor:new T.Color(0xfff4dc),bumpMap:fibBump,bumpScale:2.5,envMapIntensity:.7});
+  const fibG=new T.CylinderGeometry(.05,.05,1,10,6,true).translate(0,.5,0);
+  const fibM=rimify(new T.MeshPhysicalMaterial({color:0xe6dcc4,roughness:.42,sheen:.7,sheenColor:new T.Color(0xfff6e2),bumpMap:fibBump,bumpScale:2,envMapIntensity:.8}),0xffe9b8,.35,2.5);
   const halves=new T.InstancedMesh(fibG,fibM,NE*2);halves.frustumCulled=false;scene.add(halves);
-  const knots=new T.InstancedMesh(new T.IcosahedronGeometry(.13,2),fibM,NN);nodes.forEach((p,i)=>{dum.position.copy(p);dum.rotation.set(0,0,0);dum.scale.setScalar(1+R()*.4);dum.updateMatrix();knots.setMatrixAt(i,dum.matrix)});scene.add(knots);
+  const knots=new T.InstancedMesh(new T.IcosahedronGeometry(.085,2),fibM,NN);nodes.forEach((p,i)=>{dum.position.copy(p);dum.rotation.set(0,0,0);dum.scale.setScalar(1+R()*.4);dum.updateMatrix();knots.setMatrixAt(i,dum.matrix)});scene.add(knots);
   // trapped red cells
-  const NR=13,rbcI=new T.InstancedMesh(rbcGeo(32,20,'disc'),new T.MeshPhysicalMaterial({color:0xa30f1c,roughness:.4,sheen:.6,sheenColor:new T.Color(0xff6a6a)}),NR);rbcI.frustumCulled=false;scene.add(rbcI);
+  const NR=13,rbcI=new T.InstancedMesh(rbcGeo(32,20,'disc'),rimify(new T.MeshPhysicalMaterial({color:0xa30f1c,roughness:.4,sheen:.6,sheenColor:new T.Color(0xff6a6a)}),0xff4a4a,.4,3),NR);rbcI.frustumCulled=false;scene.add(rbcI);
   const RB=[];for(let i=0;i<NR;i++){const p=new V3((R()-.5)*9,(R()-.5)*3.2,(R()-.5)*4.4);RB.push({p,rot:new T.Euler(R()*3,R()*3,R()*3),v:p.clone().setY(p.y*.3+1.2).normalize()})}
   // molecules (instanced, white vertex colours tinted per instance)
   const IM=(g,c,em)=>{const m=new T.InstancedMesh(g,new T.MeshStandardMaterial({vertexColors:true,roughness:.35,envMapIntensity:.8,color:c,emissive:em||0x000000}),NE);m.frustumCulled=false;scene.add(m);return m};
@@ -978,9 +982,9 @@ function buildPnh(api){
   const onS=(x,z,lift)=>{const y=Math.sqrt(Math.max(0,RC*RC-x*x-z*z))-RC;const n=new V3(x,y+RC,z).normalize();return{p:new V3(x,y,z).addScaledVector(n,lift||0),n}};
   const basis=n=>{let a=new V3(1,0,0).cross(n);if(a.lengthSq()<.01)a.set(0,0,1);a.normalize();return[a,n.clone().cross(a).normalize()]};
   const bump=noiseTex(256,17,1600);bump.repeat.set(8,8);
-  const memM=new T.MeshPhysicalMaterial({color:0xb4232f,roughness:.45,sheen:.7,sheenColor:new T.Color(0xff8a8a),bumpMap:bump,bumpScale:1.4,clearcoat:.25,clearcoatRoughness:.5});
+  const memM=rimify(new T.MeshPhysicalMaterial({color:0xb4232f,roughness:.45,sheen:.7,sheenColor:new T.Color(0xff8a8a),bumpMap:bump,bumpScale:1.4,clearcoat:.25,clearcoatRoughness:.5}),0xff6a70,.4,2.8);
   const mem=new T.Mesh(new T.SphereGeometry(RC,128,80),memM);mem.position.copy(CC);scene.add(mem);
-  {const bg=new T.InstancedMesh(rbcGeo(40,24,'disc'),new T.MeshPhysicalMaterial({color:0x8a1420,roughness:.45,sheen:.6,sheenColor:new T.Color(0xff6a6a)}),9);for(let i=0;i<9;i++){const a=i/9*6.283+R()*.4,el=.15+R()*.7;dum.position.set(Math.cos(a)*Math.cos(el)*24,Math.sin(el)*16-2,Math.sin(a)*Math.cos(el)*24);dum.rotation.set(R()*3,R()*3,R()*3);dum.scale.setScalar(.9+R()*.4);dum.updateMatrix();bg.setMatrixAt(i,dum.matrix)}scene.add(bg)}
+  {const bg=new T.InstancedMesh(rbcGeo(40,24,'disc'),rimify(new T.MeshPhysicalMaterial({color:0x8a1420,roughness:.45,sheen:.6,sheenColor:new T.Color(0xff6a6a)}),0xff4a4a,.45,3),9);for(let i=0;i<9;i++){const a=i/9*6.283+R()*.4,el=.15+R()*.7;dum.position.set(Math.cos(a)*Math.cos(el)*24,Math.sin(el)*16-2,Math.sin(a)*Math.cos(el)*24);dum.rotation.set(R()*3,R()*3,R()*3);dum.scale.setScalar(.9+R()*.4);dum.updateMatrix();bg.setMatrixAt(i,dum.matrix)}scene.add(bg)}
   const C_RED=new T.Color(0xb4232f),C_GHOST=new T.Color(0xd9a0a4);
   const MOL=(n,seed,sz,c,em)=>{const g=molGeo(n,seed,[1,1,1],sz);return()=>new T.Mesh(g,new T.MeshStandardMaterial({vertexColors:true,roughness:.38,envMapIntensity:.85,color:c,emissive:em||0}))};
   const scatter=(n,rad,minD,avoid)=>{const out=[];let g=0;while(out.length<n&&g++<4000){const a=R()*6.283,r=Math.sqrt(R())*rad;const x=Math.cos(a)*r,z=Math.sin(a)*r;if(out.concat(avoid||[]).some(q=>Math.hypot(q[0]-x,q[1]-z)<minD))continue;out.push([x,z])}return out};
@@ -1322,7 +1326,269 @@ function buildEndo(api,pk){
         const stop=mode==='ttp'?.62:1;from.lerp(tgt,ua*stop);const fs=cut?1-seg(cut,.6,1):1;if(mode==='ttp')from.y+=Math.sin(now*2+s)*.08;put(adI,s,from,fs,now*.3+s,s);if(s===1)cur.ad=from.clone();
         if(mode==='ttp')put(igI,s,from.clone().add(v(.2,.16,.05)),1,s,now*.2)}}
     [cellI,nucI,hairI,musI,rbcI,pltI].concat(dyn).forEach(I=>{I.instanceMatrix.needsUpdate=true;if(I.instanceColor)I.instanceColor.needsUpdate=true})}}}
+/* ================= SPLEEN (red pulp filter) ================= */
+function buildSpleen(api){
+  const{scene,ren}=api;const BG=0x130a13;ren.setClearColor(BG);scene.fog=new T.Fog(BG,22,52);scene.environment=envMap(ren);
+  scene.add(new T.HemisphereLight(0xffe8ee,0x26121c,.62));const k1=new T.DirectionalLight(0xfff0e2,2.4);k1.position.set(6,10,9);scene.add(k1);const k2=new T.DirectionalLight(0x9fb4ff,1.2);k2.position.set(-8,3,-7);scene.add(k2);
+  const pl=new T.PointLight(0xff7a70,26,14,1.6);pl.position.set(0,-2.6,0);scene.add(pl);
+  const R=rng(211),dum=new T.Object3D(),col=new T.Color(),frac=x=>x-Math.floor(x);
+  const YC=-2.6,RS=3.2,A0=.35,A1=4.36,NS=20,dA=(A1-A0)/(NS-1),XL=40;
+  const wall=(x,a,r)=>new V3(x,YC+r*Math.sin(a),r*Math.cos(a));
+  // venous sinus: stave (littoral) cells with nuclei bulging into the lumen
+  const bump=noiseTex(256,17,1200);bump.repeat.set(10,1);
+  const stM=rimify(new T.MeshPhysicalMaterial({color:0xc56c7c,roughness:.5,sheen:.7,sheenColor:new T.Color(0xffc2c8),bumpMap:bump,bumpScale:.6,envMapIntensity:.7}),0xff8a9c,.45,3);
+  const stI=new T.InstancedMesh(new T.CapsuleGeometry(1,XL,8,18).rotateZ(Math.PI/2),stM,NS);
+  const nuI=new T.InstancedMesh(new T.SphereGeometry(1,20,14),stM,NS*2);
+  for(let k=0;k<NS;k++){const a=A0+k*dA;dum.position.copy(wall(0,a,RS));dum.rotation.set(Math.PI/2-a,0,0);dum.scale.set(1,.15,.305);dum.updateMatrix();stI.setMatrixAt(k,dum.matrix);
+    for(let j=0;j<2;j++){dum.position.copy(wall(-10+j*10+R()*8,a,RS-.16));dum.scale.set(.95,.24,.25);dum.updateMatrix();nuI.setMatrixAt(k*2+j,dum.matrix)}}
+  scene.add(stI,nuI);
+  // ring fibres of basement membrane
+  const rgM=new T.MeshPhysicalMaterial({color:0xdcc79c,roughness:.55,sheen:.5,sheenColor:new T.Color(0xfff2d0)});
+  for(let x=-12;x<=12.01;x+=1.5){const P=[];for(let i=0;i<=40;i++)P.push(wall(x+Math.sin(i*.7+x)*.05,A0-.08+(A1-A0+.16)*i/40,RS+.25));scene.add(new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(P),80,.055,6,false),rgM))}
+  // macrophages of the cord
+  const macB=noiseTex(256,23,2200);macB.repeat.set(3,2);
+  const NM=7,macG=(()=>{const g=new T.SphereGeometry(1,56,40),p=g.attributes.position,d=new V3(),r=rng(5),pods=[];for(let i=0;i<7;i++)pods.push([new V3(r()*2-1,r()*1.2-.6,r()*2-1).normalize(),.35+r()*.4]);
+    for(let i=0;i<p.count;i++){d.fromBufferAttribute(p,i).normalize();let k=1+.1*Math.sin(d.x*4+1)*Math.sin(d.y*3.3)+.08*Math.sin(d.z*5+d.x*2);for(const[q,h]of pods)k+=h*Math.exp(-(1-d.dot(q))/.035);p.setXYZ(i,d.x*k,d.y*k*.85,d.z*k)}g.computeVertexNormals();fixSeams(g,56,40);return g})();
+  const MAC=[];for(let i=0;i<NM;i++){const a=1.3+(i%3)*.25+R()*.1,p=wall(-6.6+i*2.25+(R()-.5)*.5,a,RS+1.75+R()*.5);
+    const m=new T.Mesh(macG,rimify(new T.MeshPhysicalMaterial({color:0x8f78b8,roughness:.55,sheen:.5,sheenColor:new T.Color(0xd8c4ff),emissive:0xff9a5a,emissiveIntensity:0,envMapIntensity:.5,bumpMap:macB,bumpScale:.8}),0xb48cff,.3,3));
+    m.position.copy(p);m.rotation.set(R()*6,R()*6,R()*6);scene.add(m);MAC.push({m,p,a,load:0,s:.92+R()*.2})}
+  // reticular meshwork
+  {const nodes=[];let g=0;while(nodes.length<74&&g++<4000){const p=wall((R()-.5)*24,.15+R()*3.5,RS+.9+R()*5);if(p.y<YC-.5)continue;nodes.push(p)}MAC.forEach(M=>nodes.push(M.p.clone()));
+   const E=[],seen=new Set();nodes.forEach((a,i)=>{const d=nodes.map((b,j)=>[a.distanceTo(b),j]).sort((x,y)=>x[0]-y[0]);for(let k=1;k<=3;k++){const j=d[k][1],key=Math.min(i,j)+'_'+Math.max(i,j);if(seen.has(key)||d[k][0]>5.5)continue;seen.add(key);E.push([a,nodes[j]])}});
+   const fI=new T.InstancedMesh(new T.CylinderGeometry(.028,.028,1,6).translate(0,.5,0),new T.MeshStandardMaterial({color:0x5f536e,roughness:.8}),E.length),dir=new V3();
+   E.forEach(([a,b],i)=>{dir.subVectors(b,a);const L=dir.length();dir.normalize();dum.position.copy(a);dum.quaternion.setFromUnitVectors(UP,dir);dum.scale.set(1,L,1);dum.updateMatrix();fI.setMatrixAt(i,dum.matrix)});scene.add(fI);dum.quaternion.identity()}
+  // penicillar arteriole ending openly in the cord
+  const MOUTH=new V3(-8.8,5.4,0),arte=new T.CatmullRomCurve3([new V3(-19,11.5,-2),new V3(-13.2,8,-.8),MOUTH]);
+  scene.add(new T.Mesh(new T.TubeGeometry(arte,48,1.0,24,false),rimify(new T.MeshPhysicalMaterial({color:0xb5485a,roughness:.5,sheen:.6,sheenColor:new T.Color(0xffb0b0),side:T.DoubleSide,bumpMap:bump,bumpScale:.5}),0xff7a8a,.4,3)));
+  // red cells
+  const N=32,cellM=()=>rimify(new T.MeshPhysicalMaterial({color:0xffffff,roughness:.38,sheen:.6,sheenColor:new T.Color(0xff7a7a),envMapIntensity:.8}),0xff3a3a,.35,3);
+  const mk=g=>{const m=new T.InstancedMesh(g,cellM(),N);m.frustumCulled=false;for(let i=0;i<N;i++)m.setColorAt(i,col.set(0xb3121f));scene.add(m);return m};
+  const I={disc:mk(rbcGeo(32,20,'disc')),sph:mk(rbcGeo(24,16,'sphero')),sick:mk(rbcGeo(32,20,'sickle'))},SC={disc:.19,sph:.17,sick:.15};
+  const hjI=new T.InstancedMesh(new T.SphereGeometry(.1,12,8),new T.MeshStandardMaterial({color:0x35125e,roughness:.3,emissive:0x2a0a55,emissiveIntensity:.8}),N);hjI.frustumCulled=false;scene.add(hjI);
+  const igI=new T.InstancedMesh(new T.SphereGeometry(.1,10,8),new T.MeshStandardMaterial({color:0xffd24a,emissive:0xffa000,emissiveIntensity:1.3,roughness:.3}),N*4);igI.frustumCulled=false;scene.add(igI);
+  const IGO=[new V3(.52,.2,.2),new V3(-.42,.2,-.35),new V3(.1,-.2,.55),new V3(-.3,-.2,-.4)];
+  const m4=new T.Matrix4(),C=[];
+  for(let i=0;i<N;i++){const sp=i%10===3||i%10===7,mi=sp?(i%10===3?2:3)+(i>19?1:0):(R()*NM)|0;
+    const k=1+((R()*4)|0),a=A0+(k+.5)*dA,xs=sp?MAC[mi].p.x+(R()-.5)*1.2:-5.5+R()*11;
+    let best=0,bd=1e9;const pre=wall(xs,a,RS+.95);MAC.forEach((M,j)=>{const d=M.p.distanceTo(pre);if(d<bd){bd=d;best=j}});
+    const off=new V3((R()-.5)*.3,(R()-.5)*1.1,(R()-.5)*1.1);
+    const w1=new V3(lerp(MOUTH.x,xs,.35)+(R()-.5)*2,3+R()*2.6,(R()-.5)*3.6),w2=new V3(lerp(MOUTH.x,xs,.75)+(R()-.5)*1.5,2+R()*2.2,(R()-.2)*3);
+    const M2=MAC[best].p,touch=M2.clone().add(new V3((R()-.5)*.6,1.05,.5+R()*.4));
+    const rA=new V3(0,Math.sin(a),Math.cos(a)),tA=new V3(0,Math.cos(a),-Math.sin(a));
+    C.push({ph:(i*.618034+R()*.02)%1,q:R(),hjq:i%10===7,old:i%10===3,a,xs,pre,off,mac:best,
+      path:new T.CatmullRomCurve3([MOUTH.clone().add(off.clone().multiplyScalar(.6)),w1,w2,pre]),
+      pathA:new T.CatmullRomCurve3([MOUTH.clone().add(off.clone().multiplyScalar(.6)),w1,touch,pre]),
+      qs:new T.Quaternion().setFromRotationMatrix(m4.makeBasis(rA,tA,new V3(-1,0,0))),
+      lum:new V3(0,YC+(R()-.5)*3,(R()-.5)*3),e:new T.Euler(R()*6,R()*6,R()*6),sp:.25+R()*.4})}
+  // blood already flowing in the sinus
+  const NB=14,bgI=new T.InstancedMesh(rbcGeo(24,14,'disc'),new T.MeshPhysicalMaterial({color:0xa30f1c,roughness:.42,sheen:.6,sheenColor:new T.Color(0xff6a6a)}),NB);bgI.frustumCulled=false;scene.add(bgI);
+  const BGc=[];for(let i=0;i<NB;i++)BGc.push({ph:R(),a:R()*6.28,r:R()*1.9,e:new T.Euler(R()*6,R()*6,R()*6)});
+  let mode='normal';
+  const MODES={normal:{name:'Normal',caps:[
+      'The red pulp has an open circulation. Penicillar arterioles end openly and empty their blood straight into the cords of Billroth, outside any vessel.',
+      'In the cords, red cells creep through a reticular meshwork crowded with macrophages. The cords are short of glucose and oxygen and slightly acidic: a stress test that only healthy cells pass.',
+      'To return to the circulation, each cell must squeeze through a slit of only 1–3 µm between the stave-shaped endothelial cells of a venous sinus. A normal disc, 7–8 µm across, folds and passes.',
+      'Pitting: a rigid inclusion such as a Howell–Jolly body (violet) cannot cross the slit, so it is pinched off and eaten by a macrophage while the cell goes on. Culling: an aged, stiff cell (dark) cannot fold, is held in the cord and is phagocytosed.',
+      'Cells that pass flow along the venous sinus to the splenic vein. The spleen receives about 5% of the cardiac output, so red cells are tested again and again during their 120-day life.']},
+    hs:{name:'Hereditary spherocytosis',title:'Hereditary spherocytosis',info:'Loss of membrane (defects of ankyrin, band 3, spectrin or protein 4.2) gives spherocytes with too little surface for their volume. They cannot fold through the slits, are held in the cords, lose still more membrane there and are finally phagocytosed: extravascular haemolysis with splenomegaly. Splenectomy stops the haemolysis, although spherocytes remain on the film.',caps:[null,
+      'Spherocytes arrive with the normal cells. In the cords, low glucose and acidity cost them still more membrane: splenic conditioning.',
+      'A sphere has no spare membrane, so it cannot fold through a slit of 1–3 µm. Spherocytes are turned back on the cord side.',
+      'Trapped spherocytes are eaten by cord macrophages: extravascular haemolysis, with jaundice, gallstones and a large spleen.',
+      'Only the remaining discs reach the sinus. Splenectomy removes the filter, so the anaemia is corrected although spherocytes stay on the film.']},
+    sickle:{name:'Sickle cell disease',title:'Sickle cell disease',info:'Deoxygenated HbS polymerises in the slow, hypoxic cords. Rigid sickled cells are trapped. In young children, sudden trapping of a large volume of blood causes acute splenic sequestration: a falling haemoglobin with a rapidly enlarging spleen. Repeated infarction then shrinks the spleen (autosplenectomy), with Howell–Jolly bodies on the film and a risk of pneumococcal sepsis.',caps:[null,
+      'The cords are slow, hypoxic and acidic: ideal conditions for HbS to polymerise. More cells sickle here.',
+      'Rigid sickled cells cannot pass the slits. They stay in the cords and block them.',
+      'Trapped sickle cells are phagocytosed, and congested cords can hold a large volume of blood: acute splenic sequestration.',
+      'Repeated blockage infarcts the spleen. By late childhood it is small and fibrotic (autosplenectomy) and the patient is hyposplenic.']},
+    aiha:{name:'Warm AIHA',title:'Warm autoimmune haemolytic anaemia',info:'IgG, with or without complement, coats the red cells. Cord macrophages carry Fc receptors for IgG: they swallow some cells whole and bite pieces of membrane off others, which reseal as microspherocytes. The direct antiglobulin test is positive. Steroids are first line; rituximab and splenectomy are used for relapse.',caps:[
+      'Red cells coated with IgG (gold) enter the cords from the arteriole.',
+      'Macrophage Fc receptors recognise the IgG. Some cells are swallowed whole. Others lose a bite of membrane and reseal as spherocytes.',
+      'Spherocytes are less deformable, so each passage through a slit is harder than the last.',
+      'Phagocytosis in the cords is extravascular haemolysis: jaundice, a raised LDH, spherocytes on the film and a positive direct antiglobulin test.',null]}};
+  ['hs','sickle','aiha'].forEach(k=>MODES[k].caps=MODES[k].caps.map((c,i)=>c||MODES.normal.caps[i]));
+  const slitP=wall((MAC[3].p.x+MAC[4].p.x)/2,A0+2.5*dA,RS);
+  const VIEWS=[{tx:new V3(-2,1.2,0),r:24,ph:1.1,th:.35},{tx:new V3(-6.2,3.9,0),r:10.5,ph:1.12,th:.12},{tx:slitP,r:6.5,ph:1.2,th:.75},{tx:MAC[3].p.clone().lerp(wall(MAC[3].p.x,A0+2.5*dA,RS),.5),r:8,ph:1.1,th:.3},{tx:new V3(5,YC+.3,0),r:12.5,ph:1.5,th:1.15}];
+  const UI=storyUI(api,{dur:38,stages:[['Open circulation',0,.16],['Cords of Billroth',.16,.38],['The slit',.38,.6],['Pitting and culling',.6,.82],['Venous sinus',.82,1]],modes:MODES,modeLabel:'Compare',onMode:m=>{mode=m}});
+  let lastSt=-1;const cur={slit:null};api.views=VIEWS;
+  api.labels=[
+    {title:'Penicillar arteriole',r:9,pos:()=>arte.getPoint(.82).add(new V3(0,1,0)),text:'A terminal branch of the central arteriole. Most end openly in the cords (open, slow circulation); a minority connect straight to a sinus (closed, fast pathway).'},
+    {title:'Cord of Billroth',r:9,pos:()=>new V3(-3.4,4.6,-1),text:'The tissue between the sinuses: reticular fibres, reticular cells and many macrophages. Blood percolates slowly here, with a high haematocrit and little glucose.'},
+    {title:'Macrophage',r:5.5,pos:()=>MAC[3].p.clone().add(new V3(0,.8,0)),text:'Cord macrophages remove aged and abnormal red cells, inclusions, antibody-coated cells and bacteria. Iron from haem is recycled to transferrin and the porphyrin ring becomes bilirubin.'},
+    {title:'Stave (littoral) cell',r:7,pos:()=>wall(5.2,A0+dA*2,RS+.2),text:'Long endothelial cells that run along the sinus like the staves of a barrel. They have slits between them and no tight junctions.'},
+    {title:'Ring fibres',r:7,pos:()=>wall(-9,1.2,RS+.3),text:'Hoops of basement membrane that wrap the sinus like the hoops of a barrel. The basement membrane is discontinuous, so cells can cross between the hoops.'},
+    {title:'Interendothelial slit',r:5,pos:()=>cur.slit||slitP.clone(),text:'The gap between two stave cells, only about 1–3 µm wide when a cell is crossing. It is the narrowest passage in the circulation and the test of red cell deformability.'},
+    {title:'Venous sinus',r:9,pos:()=>new V3(7.5,YC-.2,.6),text:'Sinuses drain to pulp veins, trabecular veins and the splenic vein, which joins the portal vein.'}];
+  api.labels.forEach(L=>L.kicker='Spleen');
+  const hide=(M,i)=>{dum.position.set(0,-90,0);dum.scale.setScalar(0);dum.updateMatrix();M.setMatrixAt(i,dum.matrix)};
+  const eu=new T.Euler(),qa=new T.Quaternion(),p=new V3(),RED=new T.Color(0xb3121f),OLD=new T.Color(0x6e2420),EAT=new T.Color(0x4a1418),v3=new V3();
+  return{focus:()=>api.orbit.st.r,fx:P=>{P.range=1.3;P.bloom=.12},tick(dt,now){UI.update(dt);
+    const si=UI.stage();if(si!==lastSt){lastSt=si;if(UI.playing)api.orbit.flyTo(VIEWS[si],1.5)}
+    MAC.forEach(M=>M.load=0);cur.slit=null;
+    for(let i=0;i<N;i++){const c=C[i],u=frac(now/15+c.ph);
+      // what happens to this cell in this mode
+      let shape='disc',kind='n',tE0=.72,tE1=.9,uS=.62;
+      if(mode==='normal'){if(c.old)kind='T';else if(c.hjq)kind='hj'}
+      else if(mode==='hs'){if(c.q<.66){shape='sph';kind='T'}}
+      else if(mode==='sickle'){if(c.q<.56){shape='sick';kind='T';tE0=.82;tE1=.96}}
+      else{kind=c.q<.36?'E':'B';uS=.7}
+      const aih=mode==='aiha',path=aih?c.pathA:c.path;
+      let s=Math.min(1,u/.03),sq=0,eat=0,vis=true;
+      if(u<.12)p.copy(arte.getPoint(.5+.5*u/.12)).addScaledVector(c.off,.6);
+      else if(u<.5)p.copy(path.getPoint((u-.12)/.38));
+      else if(kind==='T'){
+        if(u<.6){const v=(u-.5)/.1;p.copy(wall(c.xs,c.a,RS+.95-.45*Math.sin(Math.PI*v)*(.7+.3*Math.sin(v*18))))}
+        else if(u<tE0){const v=ease(seg(u,.6,Math.min(tE0,.72)));p.copy(c.pre).lerp(v3.copy(MAC[c.mac].p).add(new V3(0,1.1,.3)),v);if(tE0>.75)p.x+=Math.sin(now*.8+i)*.05}
+        else{eat=seg(u,tE0,tE1);p.copy(MAC[c.mac].p).add(v3.set(0,1.1,.3).multiplyScalar(1-ease(eat)));s*=1-ease(eat);if(eat>=1)vis=false}}
+      else if(u<uS){const v=(u-.5)/(uS-.5);p.copy(wall(c.xs,c.a,lerp(RS+.95,RS-.9,ease(v))));sq=Math.sin(Math.PI*v);if(!cur.slit&&v>.2&&v<.8)cur.slit=wall(c.xs,c.a,RS)}
+      else{const v=(u-uS)/(1-uS);p.copy(wall(c.xs,c.a,RS-.9)).lerp(c.lum,ease(Math.min(1,v*2.2)));p.x=c.xs+(15.5-c.xs)*v*(.4+.6*v);s*=1-seg(u,.95,1)}
+      if(kind==='E'&&u>.373){eat=seg(u,.373,.5);p.copy(c.pathA.getPoint(.667)).lerp(MAC[c.mac].p,ease(eat));s=1-ease(eat);sq=0;if(eat>=1)vis=false}
+      if(kind==='B'&&u>.39)shape='sph';
+      if(eat>0&&eat<1)MAC[c.mac].load+=Math.sin(Math.PI*eat);
+      for(const k in I)if(k!==shape||!vis)hide(I[k],i);
+      eu.set(c.e.x+now*c.sp,c.e.y+now*c.sp*.7,c.e.z);dum.quaternion.setFromEuler(eu);
+      if(sq>0)dum.quaternion.slerp(c.qs,Math.min(1,sq*1.6));
+      if(vis){const b=SC[shape]*s,k=Math.min(1,sq*1.25);dum.position.copy(p);dum.scale.set(b*(1+.4*k),b*(1-.62*k),b*(1+.1*k));dum.updateMatrix();I[shape].setMatrixAt(i,dum.matrix);
+        col.copy(mode==='normal'&&c.old?OLD:RED);if(eat>0)col.lerp(EAT,eat);I[shape].setColorAt(i,col)}
+      // Howell-Jolly body: pinched off at the slit
+      if(kind==='hj'&&u>.03&&u<.78){if(u<.56)v3.set(.42,.06,.1).multiplyScalar(s).applyQuaternion(dum.quaternion).add(p);else if(u<.63)v3.copy(wall(c.xs,c.a,RS+.4));else v3.copy(wall(c.xs,c.a,RS+.4)).lerp(MAC[c.mac].p,ease(seg(u,.63,.76)));
+        if(u>.63)MAC[c.mac].load+=.5*Math.sin(Math.PI*seg(u,.63,.78));
+        dum.position.copy(v3);dum.scale.setScalar(s*(1-seg(u,.72,.78)));dum.updateMatrix();hjI.setMatrixAt(i,dum.matrix)}else hide(hjI,i);
+      // IgG coat
+      const ig=aih&&vis&&u>.03&&(kind==='E'?eat<.6:u<.39);qa.copy(dum.quaternion);
+      for(let j=0;j<4;j++){if(ig){v3.copy(IGO[j]).multiplyScalar(s).applyQuaternion(qa).add(p);dum.position.copy(v3);dum.scale.setScalar(s);dum.updateMatrix();igI.setMatrixAt(i*4+j,dum.matrix)}else hide(igI,i*4+j)}
+    }
+    for(const k in I){I[k].instanceMatrix.needsUpdate=true;if(I[k].instanceColor)I[k].instanceColor.needsUpdate=true}
+    hjI.instanceMatrix.needsUpdate=true;igI.instanceMatrix.needsUpdate=true;
+    MAC.forEach((M,i)=>{const L=Math.min(2,M.load);M.m.scale.setScalar(M.s*(1+.09*L+.02*Math.sin(now*1.3+i)));M.m.rotation.y+=dt*.05;M.m.material.emissiveIntensity=.03+.14*L});
+    BGc.forEach((b,i)=>{const v=frac(now/11+b.ph);dum.position.set(-13+v*28,YC+b.r*Math.sin(b.a),b.r*Math.cos(b.a));dum.rotation.set(b.e.x+now*.3,b.e.y+now*.2,b.e.z);dum.scale.setScalar(.19*Math.min(1,v/.06)*(1-seg(v,.92,1)));dum.updateMatrix();bgI.setMatrixAt(i,dum.matrix)});bgI.instanceMatrix.needsUpdate=true}}}
+
+/* ================= FLOW CYTOMETER ================= */
+function buildFlow(api){
+  const{scene,ren}=api;const BG=0x070a13;ren.setClearColor(BG);scene.fog=new T.Fog(BG,30,70);scene.environment=envMap(ren);
+  scene.add(new T.HemisphereLight(0xdfe8ff,0x10121c,.7));const k1=new T.DirectionalLight(0xffffff,2.0);k1.position.set(6,10,9);scene.add(k1);const k2=new T.DirectionalLight(0x7fa0ff,1.0);k2.position.set(-8,3,-6);scene.add(k2);
+  const dum=new T.Object3D(),frac=x=>x-Math.floor(x),hash=(i,c)=>frac(Math.sin(i*127.1+c*311.7)*43758.5453),R=rng(404);
+  const glass=(g,op,c)=>new T.Mesh(g,new T.MeshPhysicalMaterial({color:c||0xbfe6ff,transparent:true,opacity:op,roughness:.08,metalness:0,depthWrite:false,side:T.DoubleSide,envMapIntensity:1.2}));
+  const metal=c=>new T.MeshStandardMaterial({color:c,roughness:.35,metalness:.8,envMapIntensity:.9});
+  const light=(c,op)=>new T.MeshBasicMaterial({color:c,transparent:true,opacity:op,blending:T.AdditiveBlending,depthWrite:false,side:T.DoubleSide});
+  const add=(m,x,y,z)=>{m.position.set(x||0,y||0,z||0);scene.add(m);return m};
+  // ---- fluidics: nozzle, sheath, needle, core ----
+  add(glass(new T.CylinderGeometry(2.3,1,3,40,1,true),.2),0,5.5,0);
+  add(glass(new T.CylinderGeometry(1,1,9.5,40,1,true),.13),0,-.75,0);
+  add(new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(2.5,4.4,2.5)),new T.LineBasicMaterial({color:0x9fd0ff,transparent:true,opacity:.55})),0,0,0);
+  add(glass(new T.BoxGeometry(2.5,4.4,2.5),.05),0,0,0);
+  add(new T.Mesh(new T.CylinderGeometry(.93,.93,9.5,32),new T.MeshBasicMaterial({color:0x3f86d8,transparent:true,opacity:.1,depthWrite:false})),0,-.75,0);
+  add(new T.Mesh(new T.CylinderGeometry(.3,.2,3.6,20,1,true),Object.assign(metal(0xb9c2cf),{side:T.DoubleSide})),0,6.7,0);
+  const core=add(new T.Mesh(new T.CylinderGeometry(1,1,10.4,20),new T.MeshBasicMaterial({color:0xffc98a,transparent:true,opacity:.16,depthWrite:false})),0,-.3,0);
+  const NP=80,spI=new T.InstancedMesh(new T.SphereGeometry(.035,6,4),new T.MeshBasicMaterial({color:0x9fd4ff,transparent:true,opacity:.7}),NP);spI.frustumCulled=false;scene.add(spI);
+  const SP=[];for(let i=0;i<NP;i++)SP.push({a:R()*6.28,r:.42+R()*.45,ph:R(),v:.8+R()*.4});
+  // ---- laser and forward scatter ----
+  add(new T.Mesh(new T.BoxGeometry(3,1.3,1.3),metal(0x2a3550)),-10,0,0);
+  add(new T.Mesh(new T.CylinderGeometry(.45,.45,.14,28).rotateZ(Math.PI/2),new T.MeshPhysicalMaterial({color:0xcfe8ff,transparent:true,opacity:.45,roughness:.05})),-4.6,0,0);
+  add(new T.Mesh(new T.CylinderGeometry(.07,.07,8.5,10).rotateZ(Math.PI/2),light(0x35a0ff,.85)),-4.25,0,0);
+  const beam2=add(new T.Mesh(new T.CylinderGeometry(.06,.06,6.6,10).rotateZ(Math.PI/2),light(0x35a0ff,.5)),3.3,0,0);
+  const fscC=add(new T.Mesh(new T.ConeGeometry(1.05,8.2,28,1,true).translate(0,-4.1,0).rotateZ(Math.PI/2),light(0x4ab0ff,.1)));
+  add(new T.Mesh(new T.BoxGeometry(.12,.42,1.6),new T.MeshStandardMaterial({color:0x111318,roughness:.6})),6.6,0,0);
+  add(new T.Mesh(new T.BoxGeometry(.6,2.4,2.4),metal(0x2a3550)),8.6,0,0);
+  const fscF=add(new T.Mesh(new T.CylinderGeometry(.95,.95,.08,28).rotateZ(Math.PI/2),new T.MeshStandardMaterial({color:0x0a1830,emissive:0x35a0ff,emissiveIntensity:0,roughness:.3})),8.27,0,0);
+  // ---- side optics: lens, dichroic mirrors, filters, PMTs ----
+  const ZL=2.6,Z1=4.6,Z2=6.8,Z3=9.2,XP=3.3;
+  const sideC=add(new T.Mesh(new T.ConeGeometry(.6,ZL,24,1,true).translate(0,-ZL/2,0).rotateX(-Math.PI/2),light(0xbfe0ff,.08)));
+  const lens=add(new T.Mesh(new T.SphereGeometry(.66,28,18),new T.MeshPhysicalMaterial({color:0xd8f0ff,transparent:true,opacity:.5,roughness:.03,envMapIntensity:1.5})),0,0,ZL);lens.scale.z=.3;
+  const bz=(z0,z1,c)=>add(new T.Mesh(new T.CylinderGeometry(.3,.3,z1-z0,16,1,true).rotateX(Math.PI/2),light(c,.1)),0,0,(z0+z1)/2);
+  const bx=(z,c)=>add(new T.Mesh(new T.CylinderGeometry(.3,.3,XP-.5,16,1,true).rotateZ(Math.PI/2),light(c,.1)),(XP-.5)/2,0,z);
+  const bA=bz(ZL,Z1,0xdfeaff),bB=bz(Z1,Z2,0xd8ff70),bC=bz(Z2,Z3-.6,0xff9a2e),bS=bx(Z1,0x4ab0ff),bG=bx(Z2,0x4dff7a);
+  const dich=(z,c)=>{const m=add(new T.Mesh(new T.BoxGeometry(1.25,1.1,.06),new T.MeshPhysicalMaterial({color:c,transparent:true,opacity:.55,roughness:.05,metalness:.3,envMapIntensity:1.6})),0,0,z);m.rotation.y=-Math.PI/4;return m};
+  dich(Z1,0x8fc8ff);dich(Z2,0xa8ffb0);
+  const PMT=[];const pmt=(x,z,along,c,name)=>{const g=new T.Group();g.position.set(x,0,z);if(along==='x')g.rotation.z=-Math.PI/2;else g.rotation.x=Math.PI/2;
+    const body=new T.Mesh(new T.CylinderGeometry(.55,.55,1.8,28),metal(0x1c2233));body.position.y=1.25;g.add(body);
+    const face=new T.Mesh(new T.CylinderGeometry(.5,.5,.06,28),new T.MeshStandardMaterial({color:0x101010,emissive:c,emissiveIntensity:0,roughness:.3}));face.position.y=.34;g.add(face);
+    const filt=new T.Mesh(new T.CylinderGeometry(.5,.5,.07,28),new T.MeshPhysicalMaterial({color:c,transparent:true,opacity:.6,roughness:.05}));filt.position.y=0;g.add(filt);scene.add(g);PMT.push({g,face,name});return g};
+  pmt(XP,Z1,'x',0x4ab0ff,'ssc');pmt(XP,Z2,'x',0x4dff7a,'fitc');pmt(0,Z3-.4,'z',0xff9a2e,'pe');
+  // ---- screen with live dot plots ----
+  const cv=document.createElement('canvas');cv.width=1024;cv.height=512;const cx=cv.getContext('2d'),tex=new T.CanvasTexture(cv);tex.colorSpace=T.SRGBColorSpace;tex.anisotropy=4;
+  const SCR=new V3(8.2,5.6,-3.2),scr=new T.Group();scr.position.copy(SCR);scr.rotation.y=-.38;scene.add(scr);
+  scr.add(new T.Mesh(new T.BoxGeometry(8.5,4.4,.25),metal(0x1a2030)));const face=new T.Mesh(new T.PlaneGeometry(8,4),new T.MeshBasicMaterial({map:tex,toneMapped:false}));face.position.z=.14;scr.add(face);
+  [[8.9,0,0],[XP+2.2,0,Z1],[XP+2.2,0,Z2],[0,0,Z3+1.6]].forEach((p,i)=>{const a=new V3(p[0],p[1],p[2]),b=SCR.clone().add(new V3(-3+i*1.6,-2.2,-.2));
+    scene.add(new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3([a,a.clone().add(new V3(1.2,-1.6,-.5)),new V3(lerp(a.x,b.x,.6)+2,-2.6,lerp(a.z,b.z,.6)),b.clone().add(new V3(0,-2.5,-.3)),b]),40,.05,6,false),new T.MeshStandardMaterial({color:0x30384c,roughness:.6})))});
+  const TY={lym:{n:'Lymphocytes',c:'#5aa0ff',h:0x6f9fe8,r:.2,fsc:.3,ssc:.12,cd45:.84,g:6,o:0},mono:{n:'Monocytes',c:'#58d68d',h:0x79c79a,r:.27,fsc:.52,ssc:.3,cd45:.7,g:5,o:0},
+    neu:{n:'Neutrophils',c:'#f5a742',h:0xe2a56a,r:.3,fsc:.62,ssc:.7,cd45:.56,g:4,o:0},bla:{n:'Blasts',c:'#ff5a6e',h:0xd9647a,r:.26,fsc:.46,ssc:.16,cd45:.36,g:2,o:4}};
+  const typeFor=(m,h)=>m==='blasts'?(h<.72?'bla':h<.85?'lym':h<.96?'neu':'mono'):(h<.6?'neu':h<.9?'lym':'mono');
+  let mode='normal',EV=[],dirty=true,rc=.2;
+  const gs=()=>{let s=0;for(let i=0;i<4;i++)s+=R();return(s-2)*.9};
+  const addEv=(k,dbl)=>{const t=TY[k],w=(mode==='high'?.17:.1)*(k==='neu'?1.25:1);EV.push({k,fx:clamp(t.fsc*(dbl?1.75:1)+gs()*w,.03,.97),fy:clamp(t.ssc*(dbl?1.25:1)+gs()*w*1.2,.03,.97),cx:clamp(t.cd45+gs()*w,.03,.97),age:0});if(EV.length>460)EV.shift();dirty=true};
+  const seed=()=>{EV=[];for(let i=0;i<110;i++)addEv(typeFor(mode,R()),mode==='high'&&R()<.15);EV.forEach(e=>e.age=9)};
+  function draw(){cx.fillStyle='#101a33';cx.fillRect(0,0,1024,512);
+    [['Forward scatter (FSC) →','fx'],['CD45 FITC →','cx']].forEach(([lab,key],p)=>{const X=p*512+70,Y=40,W=410,H=400;cx.fillStyle='#070b16';cx.fillRect(X,Y,W,H);cx.strokeStyle='#5d6c8f';cx.lineWidth=2;cx.strokeRect(X,Y,W,H);
+      cx.strokeStyle='rgba(120,140,180,.14)';cx.lineWidth=1;for(let i=1;i<4;i++){cx.beginPath();cx.moveTo(X+W*i/4,Y);cx.lineTo(X+W*i/4,Y+H);cx.moveTo(X,Y+H*i/4);cx.lineTo(X+W,Y+H*i/4);cx.stroke()}
+      cx.fillStyle='#c9d6f5';cx.font='600 22px system-ui,sans-serif';cx.textAlign='center';cx.fillText(lab,X+W/2,Y+H+38);cx.save();cx.translate(X-26,Y+H/2);cx.rotate(-Math.PI/2);cx.fillText('Side scatter (SSC) →',0,0);cx.restore();
+      for(const e of EV){cx.fillStyle=TY[e.k].c;cx.globalAlpha=e.age<.6?1:.8;const s=e.age<.6?13:7;cx.fillRect(X+e[key]*W-s/2,Y+H-e.fy*H-s/2,s,s)}cx.globalAlpha=1;
+      const seen={};EV.forEach(e=>seen[e.k]=1);cx.font='600 17px system-ui,sans-serif';cx.textAlign='left';for(const k in seen){const t=TY[k];cx.fillStyle=t.c;cx.fillText(t.n,X+clamp((key==='fx'?t.fsc:t.cd45)*W+26,6,W-120),Y+H-t.ssc*H-22)}});
+    tex.needsUpdate=true;dirty=false}
+  // ---- cells ----
+  const NSL=10,CAP=NSL*2,bumpN=noiseTex(128,31,900);
+  const cI={};for(const k in TY){const m=new T.InstancedMesh(new T.SphereGeometry(1,28,18),rimify(new T.MeshPhysicalMaterial({color:TY[k].h,emissive:TY[k].h,emissiveIntensity:.35,roughness:.45,sheen:.4,sheenColor:new T.Color(0xffffff),bumpMap:k==='neu'?bumpN:null,bumpScale:k==='neu'?1.6:0,envMapIntensity:.7}),0xffffff,.25,3),CAP);m.frustumCulled=false;scene.add(m);cI[k]=m}
+  const gI=new T.InstancedMesh(new T.SphereGeometry(.06,8,6),new T.MeshBasicMaterial({color:0x58ff8a}),CAP*6);gI.frustumCulled=false;scene.add(gI);
+  const oI=new T.InstancedMesh(new T.SphereGeometry(.07,8,6),new T.MeshBasicMaterial({color:0xffa030}),CAP*4);oI.frustumCulled=false;scene.add(oI);
+  const GD=[],OD=[];for(let j=0;j<6;j++)GD.push(fib(6,j,.4));for(let j=0;j<4;j++)OD.push(fib(4,j,1.7));
+  const hideI=(M,i)=>{dum.position.set(0,-90,0);dum.scale.setScalar(0);dum.updateMatrix();M.setMatrixAt(i,dum.matrix)};
+  const done=new Array(NSL).fill(-1);
+  const MODES={normal:{name:'Normal blood',caps:[
+      'The sample is injected into the centre of a faster stream of sheath fluid. The sheath squeezes it into a narrow core, so the cells line up in single file: hydrodynamic focusing.',
+      'One by one, the cells cross a focused laser beam at the interrogation point. Each crossing lasts a few microseconds and gives one pulse of light at every detector.',
+      'Light scattered forwards, at a small angle to the beam, rises with cell size: forward scatter. A bar blocks the direct beam. Light scattered at 90 degrees rises with granules and nuclear complexity: side scatter.',
+      'Antibodies carry fluorochromes. Excited at 488 nm, FITC emits green and PE emits orange. Dichroic mirrors split the light by wavelength, and a bandpass filter in front of each photomultiplier tube lets one colour through.',
+      'The electronics turn every pulse into a number, so each cell becomes one dot, called an event. On CD45 against side scatter, lymphocytes, monocytes and neutrophils fall into separate clusters that can be gated.']},
+    blasts:{name:'Acute leukaemia',title:'Acute leukaemia',info:'Blasts have dim CD45 and low side scatter, so they fall into the blast gate, between the lymphocytes and the granulocytes on the CD45 against side scatter plot. In this sample they also carry CD34, labelled with PE (orange).',caps:[null,null,
+      'Blasts are medium-sized cells with few granules: forward scatter is moderate and side scatter is low.',
+      'Blasts carry less CD45 than mature cells, so their green signal is dim. The CD34 antibody, labelled with PE, lights up the blasts only.',
+      'A new cluster appears with dim CD45 and low side scatter: the blast gate. The normal clusters shrink.']},
+    high:{name:'High flow rate',title:'High flow rate',info:'Raising the sample pressure pushes more sample through and widens the core. Cells no longer cross the centre of the beam, and two may cross together (coincidence). Data are acquired faster but measurements are less precise, with a higher CV. Use a low rate when resolution matters, as in DNA ploidy analysis.',caps:[
+      'At a high flow rate the sample core widens and the cells are no longer in single file.',
+      'Cells cross the beam off centre, and sometimes two cross together: a doublet is recorded as one large event.',null,null,
+      'The clusters spread out, and doublets appear with a high forward scatter. Doublets are removed by plotting pulse area against pulse height.']}};
+  ['blasts','high'].forEach(k=>MODES[k].caps=MODES[k].caps.map((c,i)=>c||MODES.normal.caps[i]));
+  const VIEWS=[{tx:new V3(0,4.6,0),r:10.5,ph:1.25,th:.45},{tx:new V3(0,0,0),r:6.5,ph:1.3,th:.55},{tx:new V3(2,0,2.2),r:19,ph:.8,th:.5},{tx:new V3(1.4,0,6.4),r:10.5,ph:.95,th:1.25},{tx:SCR.clone(),r:9.5,ph:1.45,th:-.3}];
+  const UI=storyUI(api,{dur:40,stages:[['Fluidics',0,.18],['Laser',.18,.36],['Scatter',.36,.58],['Fluorescence',.58,.8],['Dot plot',.8,1]],modes:MODES,modeLabel:'Compare',modeKicker:'Sample',onMode:m=>{mode=m;seed()}});
+  seed();api.views=VIEWS;let lastSt=-1;
+  api.labels=[
+    {title:'Sample needle',r:7,pos:()=>new V3(.3,7.6,0),text:'The sample (cells stained with antibodies) is injected through a needle into the centre of the flow cell. The sample pressure sets the flow rate.'},
+    {title:'Sheath fluid',r:7,pos:()=>new V3(1.6,5.4,.6),text:'Buffered saline that surrounds the sample. It flows faster than the sample and narrows it into a thin core without mixing with it (laminar flow).'},
+    {title:'Core stream',r:6,pos:()=>new V3(0,2.9,.2),text:'The focused sample stream. At a low flow rate it is about as wide as one cell, so each cell crosses the centre of the beam.'},
+    {title:'Laser, 488 nm',r:8,pos:()=>new V3(-9.4,.7,0),text:'The blue argon-type laser excites FITC, PE, PerCP and PE tandem dyes. Clinical instruments add red (633 nm) and violet (405 nm) lasers for more colours.'},
+    {title:'Interrogation point',r:5,pos:()=>new V3(0,0,.5),text:'Where the laser meets the stream. Light is scattered and fluorochromes are excited only while a cell is inside the beam.'},
+    {title:'Obscuration bar',r:7,pos:()=>new V3(6.6,.35,0),text:'Blocks the direct laser beam so that only light scattered at a small angle (about 0.5 to 10 degrees) reaches the forward detector.'},
+    {title:'FSC detector',r:8,pos:()=>new V3(8.4,1.3,0),text:'A photodiode in line with the laser. Forward scatter is roughly proportional to cell size and is also used as the threshold that triggers an event.'},
+    {title:'Collection lens',r:6,pos:()=>new V3(0,.7,ZL),text:'Collects light leaving the cell at 90 degrees: side scatter and all the fluorescence.'},
+    {title:'Dichroic mirror',r:6,pos:()=>new V3(0,.65,Z1),text:'Reflects light below (or above) a set wavelength and transmits the rest, so each colour is steered to its own detector. Long-pass and short-pass types exist.'},
+    {title:'Bandpass filter',r:5,pos:()=>new V3(XP,.6,Z2),text:'Passes a narrow band only, for example 530/30 nm for FITC and 585/42 nm for PE. Overlap of emission spectra that still gets through is corrected by compensation.'},
+    {title:'PMT',r:6,pos:()=>new V3(XP+1.4,.65,Z1),text:'A photomultiplier tube turns a few photons into a measurable electrical pulse. Its voltage sets the gain of that channel. Side scatter and each fluorescence colour have their own PMT.'},
+    {title:'Dot plot',r:9,pos:()=>SCR.clone().add(new V3(-3.4,1.9,.4)),text:'Each dot is one cell (event). Its position shows two measurements at once. Clusters are selected with gates and reported as percentages.'}];
+  api.labels.forEach(L=>L.kicker='Flow cytometer');
+  let F=0,lastNow=null;
+  return{focus:()=>api.orbit.st.r,fx:P=>{P.range=1.5;P.bloom=.2},tick(dt,now){UI.update(dt);
+    const si=UI.stage();if(si!==lastSt){lastSt=si;if(UI.playing)api.orbit.flyTo(VIEWS[si],1.5)}
+    const hi=mode==='high';rc=lerp(rc,hi?.55:.2,Math.min(1,dt*3+(dt===0?1:0)));core.scale.set(rc,1,rc);
+    const dn=lastNow===null?0:Math.max(0,Math.min(1.2,now-lastNow));lastNow=now;F+=dn*(hi?.26:.15);
+    let fsc=0,ssc=0,gr=0,or=0,n=0;for(const k in cI)cI[k].count=0;let ng=0,no=0;const cnt={lym:0,mono:0,neu:0,bla:0};
+    for(let i=0;i<NSL;i++){const q=F+i/NSL,u=frac(q),cyc=Math.floor(q),h=hash(i,cyc),k=typeFor(mode,h),dbl=hi&&hash(i+50,cyc)<.24;
+      const y=8-u*13.5,a=hash(i+9,cyc)*6.28,rr=hi?rc*.75*hash(i+20,cyc):.03;
+      for(let d=0;d<(dbl?2:1);d++){const kk=d?typeFor(mode,hash(i+70,cyc)):k,t=TY[kk],yy=y+d*(t.r+TY[k].r+.03),x=Math.cos(a+d*2)*rr,z=Math.sin(a+d*2)*rr,M=cI[kk],idx=cnt[kk]++;
+        const vis=yy<4.9;dum.position.set(x,yy,z);dum.rotation.set(now*.6+i,now*.4,i);dum.scale.setScalar(vis?t.r*Math.min(1,(4.9-yy)*4+.3):0);dum.updateMatrix();M.setMatrixAt(idx,dum.matrix);
+        for(let j=0;j<t.g;j++){if(vis){dum.position.copy(GD[j]).multiplyScalar(t.r*1.02).applyEuler(dum.rotation).add(new V3(x,yy,z));const e=dum.rotation.clone();dum.scale.setScalar(1);dum.updateMatrix();gI.setMatrixAt(ng++,dum.matrix);dum.rotation.copy(e)}}
+        for(let j=0;j<t.o;j++){if(vis){dum.position.copy(OD[j]).multiplyScalar(t.r*1.02).applyEuler(dum.rotation).add(new V3(x,yy,z));dum.scale.setScalar(1);dum.updateMatrix();oI.setMatrixAt(no++,dum.matrix)}}
+        const g=Math.exp(-(yy/.24)*(yy/.24))*(hi?Math.exp(-rr*rr*2):1);fsc+=g*t.fsc*1.6;ssc+=g*t.ssc*1.5;gr+=g*t.cd45*t.g/5;or+=g*(t.o?1:0)}
+      if(y<=0&&done[i]!==cyc){if(done[i]!==-1||u<.7)addEv(k,dbl);done[i]=cyc}}
+    for(const k in cI){cI[k].count=cnt[k];cI[k].instanceMatrix.needsUpdate=true}gI.count=ng;oI.count=no;gI.instanceMatrix.needsUpdate=true;oI.instanceMatrix.needsUpdate=true;
+    SP.forEach((s,i)=>{const v=frac(F*s.v*1.6+s.ph),y=7-v*12.4,k=y>4?1+(y-4)/3*1.15:1;dum.position.set(Math.cos(s.a)*s.r*k,y,Math.sin(s.a)*s.r*k);dum.rotation.set(0,0,0);dum.scale.setScalar(1);dum.updateMatrix();spI.setMatrixAt(i,dum.matrix)});spI.instanceMatrix.needsUpdate=true;
+    fsc=Math.min(1,fsc);ssc=Math.min(1,ssc);gr=Math.min(1,gr);or=Math.min(1,or);const any=Math.max(ssc,gr,or);
+    beam2.material.opacity=.5-.3*Math.min(1,fsc+ssc);fscC.material.opacity=.05+.5*fsc;fscF.material.emissiveIntensity=.2+2.2*fsc;
+    sideC.material.opacity=.04+.4*any;bA.material.opacity=.05+.5*any;bS.material.opacity=.015+.75*ssc;bB.material.opacity=.015+.55*Math.max(gr,or);bG.material.opacity=.015+.75*gr;bC.material.opacity=.012+.8*or;
+    PMT[0].face.material.emissiveIntensity=.15+2.5*ssc;PMT[1].face.material.emissiveIntensity=.15+2.5*gr;PMT[2].face.material.emissiveIntensity=.15+2.5*or;
+    let fresh=false;for(const e of EV){if(e.age<.6){fresh=true}e.age+=dn}if(dirty||fresh)draw()}}}
+
 const SCENES={
+  flowcyt:{aria:'3D model of a flow cytometer',build:buildFlow,labels:true,cam:{target:new V3(1.5,1.2,2.5),r:23,th:.7,ph:1.12,phMin:.1,phMax:1.6,rMin:3,rMax:45}},
+  spleen:{aria:'3D model of red cell filtration in the red pulp of the spleen',build:buildSpleen,labels:true,cam:{target:new V3(-2,1.2,0),r:24,th:.35,ph:1.1,phMin:.15,phMax:1.6,rMin:3,rMax:40}},
   endo:{aria:'3D model of the roles of endothelium in haemostasis',build:a=>buildEndo(a,'full'),labels:true,cam:{target:new V3(0,.8,-.5),r:21,th:.3,ph:1.12,phMin:.15,phMax:1.5,rMin:3,rMax:34}},
   endoac:{aria:'3D model of the natural anticoagulants on endothelium',build:a=>buildEndo(a,'ac'),labels:true,cam:{target:new V3(-7.8,.9,-2.2),r:8.5,th:.3,ph:1.2,phMin:.15,phMax:1.5,rMin:2.5,rMax:30}},
   endovwf:{aria:'3D model of von Willebrand factor release and ADAMTS13',build:a=>buildEndo(a,'vwf'),labels:true,cam:{target:new V3(-4,.2,-1.6),r:8.5,th:.3,ph:1.0,phMin:.15,phMax:1.5,rMin:2.5,rMax:30}},
