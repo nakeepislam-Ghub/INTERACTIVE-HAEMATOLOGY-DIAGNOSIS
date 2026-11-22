@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="bar">
-  <button class="btn menu-btn" id="menuBtn" aria-controls="toc" aria-expanded="false">Contents</button>
+  <button class="btn menu-btn" id="menuBtn" aria-controls="toc" aria-expanded="false" aria-label="Contents and search"><span class="mb-d">Contents</span><span class="mb-m" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span></button>
   <div class="book"><a class="brand" href="#" aria-label="Interactive Haematology Diagnosis, home"><img class="logo" src="img/logo.png" alt="" width="40" height="40"><span class="bt"><b>Interactive Haematology Diagnosis</b><span class="au"><span><i>Prof. Abeer Mohammed</i><u>Scientific content</u></span><span><i>Ass. Prof. Islam Fathy Elnakeeb</i><u>Concept &amp; design</u></span></span></span></a> <small id="crumb"></small></div>
   <nav class="tools" id="tools" aria-label="Page navigation">
     <button class="btn ic" id="prevBtn" aria-label="Previous chapter" title="Previous chapter (←)"><span aria-hidden="true">‹</span><span class="tl">Previous</span></button>
@@ -31,6 +31,13 @@
   <div class="prog" aria-hidden="true"><i id="progBar"></i></div>
 </div>
 
+<nav class="subbar" id="subbar" aria-label="Main sections">
+  <a href="#home" data-tab="home"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <button type="button" id="subCh" data-tab="ch" aria-expanded="false" aria-controls="chPanel"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Chapters</span><i class="caret" aria-hidden="true"></i></button>
+  <a href="#book" data-tab="book"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h13v16H6.5A1.5 1.5 0 015 18.5z"/><path d="M5 18.5A1.5 1.5 0 016.5 17H18"/></svg><span>Book</span></a><a href="#videos" data-tab="videos"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5l5-3v9l-5-3"/></svg><span>Videos</span></a><a href="#animations" data-tab="anim"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span>Animations</span></a><a href="#atlas" data-tab="atlas"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Atlas</span></a><a href="#practice" data-tab="practice"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 12l2.5 2.5 5-5"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/></svg><span>Practice</span></a>
+  <a href="#flowedu" data-tab="flowedu" title="FlowEdu: flow cytometry simulator (works offline)"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg><span>FlowEdu</span></a><button type="button" id="subSearch" data-tab="search"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>Search</span></button>
+</nav>
+<div class="chpanel" id="chPanel" hidden role="dialog" aria-label="All chapters"></div>
 <div class="pop otp" id="otp" hidden role="dialog" aria-label="On this page">
   <div class="pop-h"><b>On this page</b><span><button class="btn sm" data-all="open">Expand all</button> <button class="btn sm" data-all="close">Collapse all</button></span></div>
   <ol id="otpList"></ol>
@@ -52,14 +59,21 @@
 <div class="shell">
 <nav class="toc" id="toc" aria-label="Book contents">
   <div class="toc-top"><button class="btn toc-close" id="tocClose">Close</button>
-  <label class="toc-search"><span class="sr">Search chapters</span><input id="tocQ" type="search" placeholder="Search chapters…" autocomplete="off"></label></div>
-  <div class="toc-all"><button class="lnk" data-tall="open">Expand all</button> · <button class="lnk" data-tall="close">Collapse all</button></div>
+  <label class="toc-search"><span class="sr">Search the whole book</span><input id="tocQ" type="search" placeholder="Search everything: CML, flow, iron…" autocomplete="off"></label></div>
+  <div id="tocHits" hidden></div>
   <div id="tocList"></div>
 </nav>
 
 <main id="view"></main>
 </div>
 
+<nav class="tabs" id="tabs" aria-label="Main sections">
+  <a href="#home" data-tab="home"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>Home</span></a>
+  <button type="button" id="tabCh" data-tab="ch" aria-controls="toc"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Chapters</span></button>
+  <button type="button" id="tabSearch" data-tab="search"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>Search</span></button>
+  <a href="#book" data-tab="book"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h13v16H6.5A1.5 1.5 0 015 18.5z"/><path d="M5 18.5A1.5 1.5 0 016.5 17H18"/></svg><span>Book</span></a>
+  <a href="#practice" data-tab="practice"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 12l2.5 2.5 5-5"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/></svg><span>Practice</span></a>
+</nav>
 <div class="lb" id="lb" hidden><button class="btn x" id="lbX">Close</button><figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure></div>
 <script src="app.js"></script>
 </body>

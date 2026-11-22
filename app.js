@@ -50,25 +50,86 @@ const TITLES={},LABEL={},ORDER=[];
 const BOOK=(()=>{let n=0;return PARTS.map(([p,chs,o])=>({p,items:chs.map((c,i)=>{const k=o?o.start+i:++n;TITLES[k]=c;LABEL[k]=o?o.pre+(i+1):String(k);if(READY.includes(k))ORDER.push(k);return {n:k,c}})}))})();
 const adj=(n,d)=>{const i=ORDER.indexOf(n);return i<0?null:ORDER[i+d]||null};
 let CUR=null;
-function buildToc(cur){let html='<a class="home-link'+(cur===0?' cur':'')+'" href="#home">Cover and contents</a><a class="home-link'+(cur==='atlas'?' cur':'')+'" href="#atlas">Haematology atlas</a><a class="home-link'+(cur==='practice'?' cur':'')+'" href="#practice">Practice: flashcards and cases</a><a class="home-link'+(cur==='anim'?' cur':'')+'" href="#animations">Animations index</a><a class="home-link'+(cur==='videos'?' cur':'')+'" href="#videos">Videos index</a><a class="home-link'+(cur==='exam'?' cur':'')+'" href="#exam">Mock exam</a><a class="home-link'+(cur==='credits'?' cur':'')+'" href="#credits">Credits and sources</a>';
-  BOOK.forEach(({p,items:its})=>{const chs=its;let items='',ready=0,has=false;
+const NVI={home:'<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',book:'<path d="M5 4h13v16H6.5A1.5 1.5 0 015 18.5z"/><path d="M5 18.5A1.5 1.5 0 016.5 17H18"/>',atlas:'<rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/>',practice:'<path d="M8.5 12l2.5 2.5 5-5"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/>',exam:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',anim:'<path d="M8 5.5v13l11-6.5z"/>',videos:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5l5-3v9l-5-3"/>',credits:'<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.2"/>'};
+const nvi=k=>`<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${NVI[k]}</svg>`;
+const NAVP={atlas:['Haematology atlas','#atlas'],practice:['Practice','#practice'],anim:['Animations','#animations'],videos:['Videos','#videos'],book:['Original notes','#book'],exam:['Mock exam','#exam'],credits:['Credits and sources','#credits']};
+function lastPos(){try{const o=JSON.parse(lsGet('lastpos','null'));return o&&o.h&&o.t?o:null}catch(e){return null}}
+function crumbs(list){const old=view.querySelector('.crumbs');if(old)old.remove();if(!list||!list.length)return;
+  view.insertAdjacentHTML('afterbegin',`<nav class="crumbs col" aria-label="You are here"><ol>${list.map(([t,h],k)=>`<li>${h&&k<list.length-1?`<a href="${h}">${esc(t)}</a>`:`<span aria-current="page">${esc(t)}</span>`}</li>`).join('')}</ol></nav>`)}
+function partOf(n){return BOOK.findIndex(b=>b.items.some(x=>x.n===n))}
+function buildToc(cur){const isCh=typeof cur==='number'&&cur>0;
+  if(isCh)lsSet('lastpos',JSON.stringify({h:'#ch'+cur,t:`${LABEL[cur]} · ${TITLES[cur]}`}));
+  const lp=lastPos(),lpN=lp&&/^#ch(\d+)$/.exec(lp.h),openP=isCh?partOf(cur):lpN?partOf(+lpN[1]):-1;
+  const nv=(k,h,t)=>`<a class="nv${cur===k?' cur':''}" href="${h}"${cur===k?' aria-current="page"':''}>${nvi(typeof k==='string'?k:'home')}<span>${t}</span></a>`;
+  let html='<div class="nv-main">'+nv(0,'#home','Cover and contents')+nv('book','#book','Original book')+nv('atlas','#atlas','Atlas')+nv('practice','#practice','Practice')+nv('exam','#exam','Mock exam')+'</div>';
+  if(lp&&!(isCh&&lp.h==='#ch'+cur))html+=`<a class="nv-last" href="${lp.h}"><small>Continue where you stopped</small><span>${esc(lp.t)}</span></a>`;
+  html+='<div class="nv-h"><span>Chapters</span><span class="toc-all"><button class="lnk" data-tall="open">Open all</button> · <button class="lnk" data-tall="close">Close all</button></span></div>';
+  BOOK.forEach(({p,items:its},pi)=>{const chs=its;let items='',ready=0,has=false;
     its.forEach(({n,c})=>{if(READY.includes(n))ready++;if(n===cur)has=true;
-      items+= READY.includes(n)?`<li><a class="live${n===cur?' cur':''}" href="#ch${n}"${n===cur?' aria-current="page"':''}><span class="n">${LABEL[n]}</span>${c}</a></li>`:`<li><span><span class="n">${LABEL[n]}</span>${c}<span class="soon">soon</span></span></li>`});
-    const open=typeof cur==='number'&&cur>0?has:true;
-    html+=`<details class="tpart${has?' has-cur':''}"${open?' open':''}><summary><span>${p}</span><span class="tp-c" title="${ready} of ${chs.length} chapters ready">${ready}/${chs.length}</span></summary><ol>${items}</ol></details>`});
-  $('#tocList').innerHTML=html+'<p class="nomatch" hidden>No chapter matches.</p>';
-  const q=$('#tocQ');if(q&&q.value)tocFilter(q.value);
-  navState(typeof cur==='number'&&cur>0?cur:null)}
+      items+= READY.includes(n)?`<li><a class="live${n===cur?' cur':''}" href="#ch${n}" title="${esc(LABEL[n]+' · '+c)}"${n===cur?' aria-current="page"':''}><span class="n">${LABEL[n]}</span>${c}</a></li>`:`<li><span><span class="n">${LABEL[n]}</span>${c}<span class="soon">soon</span></span></li>`});
+    html+=`<details class="tpart${has?' has-cur':''}"${pi===openP?' open':''}><summary><span>${p}</span><span class="tp-c" title="${ready} of ${chs.length} chapters ready">${ready}/${chs.length}</span></summary><ol>${items}</ol></details>`});
+  const mo=['anim','videos','credits'].includes(cur);
+  html+=`<details class="tpart nv-more"${mo?' open':''}><summary><span>More</span></summary><div class="nv-main">${nv('anim','#animations','Animations index')+nv('videos','#videos','Videos index')+nv('credits','#credits','Credits and sources')}${nv('flowedu','#flowedu','FlowEdu simulator')}</div></details>`;
+  $('#tocList').innerHTML=html;
+  const q=$('#tocQ');if(q&&q.value)gsearch(q.value);
+  const tab=cur===0?'home':isCh?'ch':cur==='exam'?'practice':cur;
+  document.querySelectorAll('#tabs [data-tab],#subbar [data-tab]').forEach(b=>b.classList.toggle('cur',b.dataset.tab===tab));
+  if(isCh){const pi=partOf(cur);crumbs([['Contents','#home'],[BOOK[pi].p,'#part-'+pi],[`${LABEL[cur]} · ${TITLES[cur]}`]])}
+  else if(NAVP[cur])crumbs([['Contents','#home'],[NAVP[cur][0]]]);
+  const cu=$('#tocList .tpart[open] a.cur');if(cu&&cu.scrollIntoView)try{cu.scrollIntoView({block:'nearest'})}catch(e){}
+  navState(isCh?cur:null)}
+/* ---------- search across the whole book ---------- */
+let SX=null,SXP=null,SXQ='';
+function sxLoad(){if(SXP)return SXP;SXP=(async()=>{const X=[];
+  await Promise.all(ORDER.map(async n=>{try{const r=await fetch(`chapters/ch${n}.html`);if(!r.ok)return;const d=new DOMParser().parseFromString(await r.text(),'text/html');
+    d.querySelectorAll('.lec > section').forEach((s,i)=>{const h=s.querySelector(':scope > h2');if(!h)return;const raw=s.textContent.replace(/\s+/g,' ');
+      X.push({g:'sec',o:ORDER.indexOf(n)*100+i,t:h.textContent.trim().replace(/^([F\d]+\.\d+)(?=\S)/,'$1 '),sub:`${LABEL[n]} · ${TITLES[n]}`,h:`#ch${n}/sec-${i+1}`,raw,x:raw.toLowerCase()})})}catch(e){}}));
+  X.sort((a,b)=>a.o-b.o);
+  await Promise.all(Object.keys(BOOKS).map(async slug=>{try{if(!BKC[slug]){const r=await fetch(`book/${slug}.json`);if(!r.ok)return;BKC[slug]=await r.json()}
+    BKC[slug].sections.forEach((x,k)=>{const raw=x.html.replace(/<span class="bk-pg".*?<\/span>/g,' ').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\s+/g,' ');
+      X.push({g:'book',t:x.t,sub:`${BOOKS[slug].t} · original p. ${x.p}`,h:`#book/${slug}/${k}`,raw,x:raw.toLowerCase()})})}catch(e){}}));
+  try{if(!VIDS){const r=await fetch('videos.json');if(r.ok)VIDS=await r.json()}
+    (VIDS||[]).forEach(c=>c.items.forEach(v=>X.push({g:'vid',t:v.t,sub:`${LABEL[c.c]} · ${TITLES[c.c]}`,h:`#ch${c.c}/vid-${v.k}`})))}catch(e){}
+  try{if(!PRACT){const r=await fetch('practice.json');if(r.ok)PRACT=await r.json()}
+    (PRACT||[]).forEach((d,di)=>{(d.facts||[]).forEach(f=>X.push({g:'prac',t:f[0],sub:`Flashcard · ${d.title}`,h:`#practice/${di}/flash`,raw:f[1]||'',x:(f[1]||'').toLowerCase()}));
+      (d.quiz||[]).forEach(q=>{const raw=(q.o||[]).join(' · ');X.push({g:'prac',t:q.q,sub:`Question · ${d.title}`,h:`#practice/${di}/quiz`,raw,x:raw.toLowerCase()})});
+      (d.cases||[]).forEach((c,ci)=>X.push({g:'prac',t:c.title,sub:`Case · ${d.title}`,h:`#practice/${di}/cases/${ci}`,raw:c.tag||'',x:(c.tag||'').toLowerCase()}))})}catch(e){}
+  try{const r=await fetch('atlas.json');if(r.ok)(await r.json()).forEach(a=>{const c=(a.chs||[])[0];if(c)X.push({g:'atlas',t:a.name,sub:`${a.sys||'Atlas'} · chapter ${LABEL[c]}`,h:`#ch${c}`,raw:a.cap||'',x:(a.cap||'').toLowerCase()})})}catch(e){}
+  SX=X;return X})();return SXP}
+function gsearch(v){v=v.trim().toLowerCase();SXQ=v;const H=$('#tocHits'),L=$('#tocList');
+  if(v.length<2){H.hidden=true;L.hidden=false;return}
+  L.hidden=true;H.hidden=false;
+  const mk=(t)=>{const i=t.toLowerCase().indexOf(v);return i<0?esc(t):esc(t.slice(0,i))+'<mark>'+esc(t.slice(i,i+v.length))+'</mark>'+esc(t.slice(i+v.length))};
+  const row=(h,t,sub,sn)=>`<li><a href="${h}"><b>${mk(t)}</b>${sub?`<small>${esc(sub)}</small>`:''}${sn?`<span class="sx-sn">${sn}</span>`:''}</a></li>`;
+  const grp=(name,rows,more)=>rows.length?`<div class="sx-g"><h4>${name}${more>0?` <small>+${more} more</small>`:''}</h4><ol>${rows.join('')}</ol></div>`:'';
+  let out='';const ch=ORDER.filter(n=>(LABEL[n]+' '+TITLES[n]).toLowerCase().includes(v));
+  out+=grp('Chapters',ch.slice(0,8).map(n=>row('#ch'+n,`${LABEL[n]} · ${TITLES[n]}`,BOOK[partOf(n)].p)),ch.length-8);
+  if(!SX){H.innerHTML=out+'<p class="note sx-load">Searching inside the chapters, the original book, videos and atlas…</p>';sxLoad().then(()=>{if(SXQ===v)gsearch(v)});return}
+  const take=(g,name,max)=>{const a=[],b=[];for(const e of SX){if(e.g!==g)continue;if(e.t.toLowerCase().includes(v))a.push(e);else if(e.x&&e.x.includes(v))b.push(e)}
+    const all=a.concat(b);return grp(name,all.slice(0,max).map(e=>{let sn='';if(e.x&&!e.t.toLowerCase().includes(v)){const i=e.x.indexOf(v);sn='…'+esc(e.raw.slice(Math.max(0,i-36),i))+'<mark>'+esc(e.raw.slice(i,i+v.length))+'</mark>'+esc(e.raw.slice(i+v.length,i+v.length+50))+'…'}return row(e.h,e.t,e.sub,sn)}),all.length-max)};
+  out+=take('sec','Sections in the chapters',8)+take('book','Original book',6)+take('vid','Videos',5)+take('atlas','Atlas images',5)+take('prac','Practice cards, questions and cases',6);
+  H.innerHTML=out||'<p class="note">Nothing found. Try a shorter word.</p>'}
+/* ---------- second bar (desktop) ---------- */
+function setHdr(){const b=document.querySelector('.bar'),sb=$('#subbar');if(!b)return;const bh=b.getBoundingClientRect().height,sv=sb&&getComputedStyle(sb).display!=='none'?sb.getBoundingClientRect().height:0;
+  const r=document.documentElement.style;r.setProperty('--barh',bh+'px');r.setProperty('--hdr',(bh+sv)+'px');const bb=document.querySelector('.bk-bar');if(bb)bb.style.top=(bh+sv-1)+'px'}
+addEventListener('resize',setHdr);addEventListener('load',setHdr);setHdr();setTimeout(setHdr,400);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(setHdr);
+function chPanelOpen(on){const P=$('#chPanel'),B=$('#subCh');if(on&&!P.dataset.built){P.innerHTML=`<div class="chp-grid">${BOOK.map(({p,items:its},pi)=>`<section><h3>${p}</h3><ol>${its.map(({n,c})=>READY.includes(n)?`<li><a href="#ch${n}"${n===CUR?' aria-current="page"':''}><span class="n">${LABEL[n]}</span>${c}</a></li>`:`<li class="off"><span class="n">${LABEL[n]}</span>${c}</li>`).join('')}</ol></section>`).join('')}</div>`;P.dataset.built=1}
+  P.hidden=!on;B.setAttribute('aria-expanded',String(on));B.classList.toggle('on',on);if(on){P.style.top=(document.querySelector('#subbar').getBoundingClientRect().bottom)+'px';P.querySelectorAll('a[aria-current]').forEach(a=>a.removeAttribute('aria-current'));const c=P.querySelector(`a[href="#ch${CUR}"]`);if(c)c.setAttribute('aria-current','page')}}
+$('#subCh').onclick=e=>{e.stopPropagation();chPanelOpen($('#chPanel').hidden)};
+$('#subSearch').onclick=()=>{chPanelOpen(false);const q=$('#tocQ');q.focus();q.select();try{q.scrollIntoView({block:'nearest'})}catch(e){}};
+document.addEventListener('click',e=>{const P=$('#chPanel');if(P.hidden)return;if(e.target.closest('#chPanel a')||!e.target.closest('#chPanel,#subCh'))chPanelOpen(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#chPanel').hidden){chPanelOpen(false);$('#subCh').focus()}});
 function tocFilter(v){v=v.trim().toLowerCase();let any=false;
   document.querySelectorAll('#tocList .tpart').forEach(d=>{let m=0;
     d.querySelectorAll('li').forEach(li=>{const ok=!v||li.textContent.toLowerCase().includes(v)||d.querySelector('summary').textContent.toLowerCase().includes(v);li.hidden=!ok;if(ok)m++});
     d.hidden=!m;if(v&&m)d.open=true;if(m)any=true});
   $('#tocList .nomatch').hidden=any}
-$('#tocQ').addEventListener('input',e=>tocFilter(e.target.value));
-document.querySelector('.toc-all').addEventListener('click',e=>{const b=e.target.closest('[data-tall]');if(b)document.querySelectorAll('#tocList .tpart').forEach(d=>d.open=b.dataset.tall==='open')});
+$('#tocQ').addEventListener('input',e=>gsearch(e.target.value));$('#tocQ').addEventListener('focus',()=>{sxLoad()},{once:true});$('#tocHits').addEventListener('click',e=>{if(e.target.closest('a')){$('#tocQ').value='';gsearch('')}});
+$('#tocList').addEventListener('click',e=>{const b=e.target.closest('[data-tall]');if(b)document.querySelectorAll('#tocList .tpart:not(.nv-more)').forEach(d=>d.open=b.dataset.tall==='open')});
 
 /* ---------- page navigation: prev/next, on this page, progress ---------- */
-function navState(n){CUR=n;const pv=n?adj(n,-1):null,nx=n?adj(n,1):null;
+function navState(n){CUR=n;document.body.classList.toggle('in-ch',!!n);const pv=n?adj(n,-1):null,nx=n?adj(n,1):null;
   const P=$('#prevBtn'),N=$('#nextBtn');
   P.hidden=N.hidden=$('#otpBtn').hidden=!n;P.disabled=!pv;N.disabled=!nx;
   P.title=pv?`Previous: ${LABEL[pv]}. ${TITLES[pv]} (←)`:'';N.title=nx?`Next: ${LABEL[nx]}. ${TITLES[nx]} (→)`:'';
@@ -120,15 +181,16 @@ document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.shi
   else if(e.key==='ArrowRight'&&CUR&&!$('#nextBtn').disabled){$('#nextBtn').click()}
   else if(e.key==='/'&&innerWidth>900){e.preventDefault();$('#tocQ').focus()}});
 const toc=$('#toc');
-$('#menuBtn').onclick=()=>{toc.classList.add('open');$('#menuBtn').setAttribute('aria-expanded','true')};
-$('#tocClose').onclick=()=>{toc.classList.remove('open');$('#menuBtn').setAttribute('aria-expanded','false')};
-toc.addEventListener('click',e=>{if(e.target.closest('a'))toc.classList.remove('open')});
+const tocOpen=(on,focus)=>{toc.classList.toggle('open',on);$('#menuBtn').setAttribute('aria-expanded',String(on));$('#tabCh').classList.toggle('on',on);if(!on)$('#tabSearch').classList.remove('on');if(on&&focus)setTimeout(()=>$('#tocQ').focus(),220)};
+$('#menuBtn').onclick=()=>tocOpen(true,innerWidth<=900);$('#tabCh').onclick=()=>tocOpen(!toc.classList.contains('open'));$('#tabSearch').onclick=()=>{tocOpen(true,true);$('#tabCh').classList.remove('on');$('#tabSearch').classList.add('on')};$('#tabs').addEventListener('click',e=>{if(e.target.closest('a'))tocOpen(false)});addEventListener('keydown',e=>{if(e.key==='Escape'&&toc.classList.contains('open'))tocOpen(false)});
+$('#tocClose').onclick=()=>tocOpen(false);
+toc.addEventListener('click',e=>{if(e.target.closest('a'))tocOpen(false)});
 
 /* ---------- router ---------- */
 const view=$('#view');
 function home(){
   let parts='';
-  BOOK.forEach(({p,items:its})=>{const items=its.map(({n,c})=>READY.includes(n)?`<li><a href="#ch${n}"><span class="n">${LABEL[n]}</span>${c}</a></li>`:`<li class="off"><span class="n">${LABEL[n]}</span>${c}</li>`).join('');parts+=`<section class="hpart"><h3>${p}</h3><ol>${items}</ol></section>`});
+  BOOK.forEach(({p,items:its})=>{const items=its.map(({n,c})=>READY.includes(n)?`<li><a href="#ch${n}"><span class="n">${LABEL[n]}</span>${c}</a></li>`:`<li class="off"><span class="n">${LABEL[n]}</span>${c}</li>`).join('');parts+=`<section class="hpart" id="part-${BOOK.findIndex(b=>b.p===p)}"><h3>${p}</h3><ol>${items}</ol></section>`});const lp=lastPos();
   view.innerHTML=`<div class="cover wide">
     <div class="eyebrow">Interactive</div>
     <h1>Haematology Diagnosis</h1>
@@ -136,10 +198,12 @@ function home(){
     <p class="lede">For medical students, haematology residents, and Master's and MD candidates: Prof. Abeer Mohammed's lecture notes rebuilt with her videos, 3D animations, clickable diagrams, blood film galleries, calculators, cases and quizzes.</p>
     <p class="ded">Offered free by the authors for public benefit.</p>
     <p class="inst" id="instBox" hidden><button class="btn primary" id="instBtn">⬇ Install on this device</button><span class="note">Works offline and updates itself.</span></p>
+    ${lp?`<a class="at-cta nv-cont" href="${lp.h}"><span class="eyebrow">Continue</span><b>${esc(lp.t)}</b><span>Go back to where you stopped reading.</span></a>`:''}
     <a class="at-cta" href="#atlas"><span class="eyebrow">Atlas</span><b>Haematology atlas</b><span>Every blood film, marrow and lab image in one place, with an Identify quiz.</span></a>
     <a class="at-cta" href="#practice"><span class="eyebrow">Practice</span><b>Flashcards, questions and cases</b><span>176 revision cards, 76 questions, 19 stepwise cases, diagnostic algorithms and reporting checklists.</span></a>
     <a class="at-cta" href="#animations"><span class="eyebrow">Animations</span><b>Every animation in one place</b><span>11 narrated 3D scenes and 42 animated diagrams, each with a direct link to its place in the book.</span></a>
     <a class="at-cta" href="#videos"><span class="eyebrow">Videos</span><b>Every lecture video in one place</b><span>Prof. Abeer Mohammed's lectures and playlists, listed by chapter with direct links.</span></a>
+    <a class="at-cta" href="#book"><span class="eyebrow">Original notes</span><b>Read the original book</b><span>Prof. Abeer Mohammed's lecture notes in a clean reader for tablets, with links into the interactive chapters. All six of Prof. Abeer's books are available: red cells (full and concise), myeloid, lymphoid, haemostasis and flow cytometry.</span></a>
     <a class="at-cta" href="#exam"><span class="eyebrow">Mock exam</span><b>Test yourself on the whole book</b><span>Random timed exams from 479 questions, with your score by part and a review of every mistake.</span></a>
     <div class="hparts">${parts}</div>
     <p class="note" style="margin-top:2rem"><a href="#credits">Credits and sources</a></p>
@@ -159,6 +223,7 @@ async function chapter(n){
   view.querySelectorAll('[data-widget]').forEach(w=>{const f=W[w.dataset.widget];if(f)try{f(w)}catch(err){console.error(err)}});
   const pre=PRE[n],hd=view.querySelector('.chead .jump');
   if(pre&&hd)hd.insertAdjacentHTML('beforebegin',`<p class="pre-link"><b>Foundations first:</b> ${pre.filter(k=>READY.includes(k)).map(k=>`<a href="#ch${k}">${LABEL[k]} · ${TITLES[k]}</a>`).join('')}</p>`);
+  if(BKREF[n]&&hd)hd.insertAdjacentHTML('beforebegin',`<p class="pre-link bk-ref"><b>Original notes:</b> <a href="#book/${BKREF[n][0]}/pg${BKREF[n][1]}">📖 Read this chapter in Prof. Abeer's original book</a>${BKREF2[n]?` <a href="#book/${BKREF2[n][0]}/pg${BKREF2[n][1]}">📖 Concise version</a>`:''}</p>`);
   view.querySelectorAll('.video').forEach(video);animFigures(view);enhanceChapter();
   const nx=adj(n,1),pv=adj(n,-1);
   const nav=document.createElement('nav');nav.className='wide chnav';
@@ -167,29 +232,34 @@ async function chapter(n){
   scrollTo(0,0)}
 function footer(){return `<footer class="wide"><b>Interactive Haematology Diagnosis</b>, a free teaching book for public benefit. Lecture content by Prof. Abeer Mohammed, MD PhD (Al-Azhar University), from her notes on the Egyptian Clinical Pathology Atlas (ecpatlas.com). Concept, design and interactive edition by Ass. Prof. Islam Fathy Elnakeeb (Aswan University). For education only, not a substitute for clinical judgement. Videos stream from YouTube and need an internet connection; everything else works offline once the book is installed.</footer>`}
 function goSpot(a){let t=null;const f=/^fig-(\d+)$/.exec(a),vd=/^vid-(\d+)$/.exec(a);if(f)t=view.querySelectorAll('figure.redraw')[+f[1]];else if(vd)t=view.querySelectorAll('.video')[+vd[1]];else t=document.getElementById(a);if(!t)return;reveal(t);setTimeout(()=>t.scrollIntoView({block:f||vd?'center':'start'}),60)}
-function route(){const h=location.hash.slice(1);const m=/^ch(\d+)(?:\/([\w-]+))?$/.exec(h);
+function route(){const h=location.hash.slice(1);document.body.classList.toggle('fe-full',/^flowedu(\/|$)/.test(h));const bk=/^book(?:\/(\w+)(?:\/([\w-]+))?(?:\/([\w-]+))?)?$/.exec(h);if(bk){book(bk[1],bk[2],bk[3]);return}const fe=/^flowedu(?:\/(\w+))?$/.exec(h);if(fe){flowedu(fe[1]);return}const m=/^ch(\d+)(?:\/([\w-]+))?$/.exec(h);
   if(m&&READY.includes(+m[1])){const p=chapter(+m[1]);if(m[2])p.then(()=>goSpot(m[2]))}
   else if(h==='animations')animations();
   else if(h==='videos')videos();
   else if(h==='atlas')atlas();
   else if(h==='credits')credits();
-  else if(h==='practice')practice();
+  else if(/^practice(\/|$)/.test(h))practice();
   else if(h==='exam')exam();
+  else if(/^part-\d+$/.test(h)){home();const t=document.getElementById(h);if(t)t.scrollIntoView()}
   else if(!h||h==='home'||m)home();
   else{const t=document.getElementById(h);if(t){reveal(t);t.scrollIntoView()}}}
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href').slice(1);
-  if(id==='home'||id==='atlas'||id==='credits'||id==='practice'||id==='exam'||id==='animations'||id==='videos'||/^ch\d+(\/[\w-]+)?$/.test(id))return;const t=document.getElementById(id);if(t){e.preventDefault();reveal(t);t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}});
-addEventListener('hashchange',route);
+  if(id==='home'||id==='atlas'||id==='credits'||/^practice(\/|$)/.test(id)||id==='exam'||id==='animations'||id==='videos'||/^book(\/|$)/.test(id)||/^flowedu(\/|$)/.test(id)||/^ch\d+(\/[\w-]+)?$/.test(id))return;const t=document.getElementById(id);if(t){e.preventDefault();reveal(t);t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}});
+addEventListener('hashchange',()=>{tocOpen(false);chPanelOpen(false);route()});
 
 /* ---------- Credits ---------- */
 const CC_PHOTOS=[["Basophilic normoblast", "Bobjgalindo", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Prorubricyte.jpg"], ["Polychromatic normoblast", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1PolychromaticErythroblast.jpg"], ["Orthochromatic normoblast", "Bobjgalindo", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Metarubricyte.jpg"], ["Reticulocytes (supravital stain)", "Ed Uthman, MD, pathologist, Houston, Texas, USA", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Reticulocytes_Human_Blood_Supravital_Stain.jpg"], ["Normal red cells", "Keith Chambers", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Normal_Adult_Blood_Smear.JPG"], ["Promyelocyte", "isis325", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Ww325_promyelocyte.jpg"], ["Myelocyte", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1Myelocyte.jpg"], ["Metamyelocyte", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1Metamyelocyte.jpg"], ["Band neutrophil", "Ajay Kumar Chaurasiya", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Band_form_neutrophil_in_Wright_stained_PBS_microscopy.jpg"], ["Segmented neutrophil", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1SegmNeutrophile.jpg"], ["Eosinophil", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1Eosinophile.jpg"], ["Basophil", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1Basophile.jpg"], ["Monocyte", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1Monocyte.jpg"], ["Small lymphocyte", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1Lymphocyte.jpg"], ["Normal megakaryocyte", "Simon Caulton", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Megakaryocyte.jpg"], ["Platelet clumps", "Tommaso Leonardi (Tleonardi)", "CC BY 3.0", "https://commons.wikimedia.org/wiki/File:Platelets.jpg"], ["Mast cell", "Ed Uthman", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Mast_Cell,_Bone_Marrow_Aspirate,_Wright_Stain_(5916735712).jpg"], ["Spherocytes (hereditary spherocytosis)", "Joan-Lluis Vives-Corrons et al.", "CC BY 4.0", "https://commons.wikimedia.org/wiki/File:Peripheral_blood_smear_stained_with_MGG_from_a_patient_with_hereditary_spherocytosis.png"], ["Target cells", "Ed Uthman", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Target_Cells,_Peripheral_Blood_Smear_(39144139915).jpg"], ["Schistocytes", "Mikael Häggström", "CC0", "https://commons.wikimedia.org/wiki/File:Micrograph_of_schistocytes.jpg"], ["Sickle cells", "Ed Uthman", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Sickle_Cell_Anemia_(5610746554).jpg"], ["Acanthocytes", "S Bhimji", "CC BY 4.0", "https://commons.wikimedia.org/wiki/File:Human_blood_film_with_acanthocytes_01.jpg"], ["Howell–Jolly bodies", "El*Falaf", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Howell-Jolly_body_in_erythrocyte_(bottom_left).jpg"], ["Pappenheimer bodies", "Paulo Henrique Orlandi Mourão", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Pappenheimer_bodies_smear_2015-08-31.jpg"], ["Megaloblastic marrow", "Makysm", "CC0", "https://commons.wikimedia.org/wiki/File:Megaloblasts.jpg"], ["Ring sideroblasts (Perls)", "Paulo Henrique Orlandi Mourão", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Ring_Sideroblast_smear_2010-01-13.JPG"], ["Hypersegmented neutrophil", "Ed Uthman", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Hypersegmented_neutrophil.jpg"], ["Polychromatic red cell", "Mikael Häggström", "CC0", "https://commons.wikimedia.org/wiki/File:Peripheral_blood_smear_with_polychromasia.jpg"], ["Teardrop cell", "Mikael Häggström", "CC0", "https://commons.wikimedia.org/wiki/File:Micrograph_of_a_tear_drop_cell_(dacrocyte).jpg"], ["Basophilic stippling", "Mikael Häggström", "CC0", "https://commons.wikimedia.org/wiki/File:Micrograph_of_a_red_blood_cell_with_basophilic_stippling.jpg"], ["Elliptocyte", "Mikael Häggström", "CC0", "https://commons.wikimedia.org/wiki/File:Micrograph_of_an_elliptocyte_on_a_peripheral_blood_smear_02.jpg"], ["Myeloblast with Auer rod", "Armed Forces Institute of Pathology (US)", "Public domain", "https://commons.wikimedia.org/wiki/File:Two_myeloblasts_with_Auer_rods.jpg"], ["Iron deficiency anaemia", "Ed Uthman", "CC BY 2.0", "https://commons.wikimedia.org/wiki/File:Iron-deficiency_Anemia,_Peripheral_Blood_Smear_(4422704616).jpg"], ["Hypergranular APL (M3)", "Armed Forces Institute of Pathology (US)", "Public domain", "https://commons.wikimedia.org/wiki/File:AML-M3.jpg"], ["Lymphoblasts (ALL)", "VashiDonsk (English Wikipedia)", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Acute_leukemia-ALL.jpg"], ["Myeloma plasma cells", "Dr Roshan Nasimudeen", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Multiple_myeloma.jpg"], ["Sézary cell", "El*Falaf", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Hem1SezaryCell.jpg"], ["Toxic granulation", "DaFerRod", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Cayado_con_granulaci%C3%B3n_t%C3%B3xica.jpg"]];
 const CC_LIC={"CC0": "https://creativecommons.org/publicdomain/zero/1.0/", "CC BY 2.0": "https://creativecommons.org/licenses/by/2.0/", "CC BY 3.0": "https://creativecommons.org/licenses/by/3.0/", "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/", "CC BY-SA 2.0": "https://creativecommons.org/licenses/by-sa/2.0/", "CC BY-SA 2.5": "https://creativecommons.org/licenses/by-sa/2.5/", "CC BY-SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/", "CC BY-SA 4.0": "https://creativecommons.org/licenses/by-sa/4.0/"};
+function flowedu(tab){
+  view.innerHTML=`<iframe class="fe-frame" id="feFrame" title="FlowEdu flow cytometry simulator" src="flowedu.html${tab?'#'+tab:''}"></iframe>`;
+  document.title="FlowEdu simulator · Interactive Haematology Diagnosis";buildToc('flowedu');scrollTo(0,0)}
 function credits(){
   const src=[['Part 1 · Red cell disorders','Red Cells Disorders notes','Chapters 1–9'],['Part 2 · Spleen and marrow failure','Spleen, Pancytopenia and Bone Marrow Failure notes','Chapters 10–11'],['Part 3 · Myeloid neoplasms','Myeloid Proliferations and Neoplasms notes','Chapters 12–19'],['Part 4 · Lymphoid neoplasms','Lymphoid Neoplasms notes','Chapters 20–25'],['Part 5 · Flow cytometry','Flow cytometry notes','Chapters 26–27'],['Part 6 · Haemostasis and thrombosis','Hemostasis notes','Chapters 28–34'],['Part 7 · White cell and histiocytic disorders','Leukocyte Disorders, Histiocytic/Dendritic Cell Disorders, Lysosomal Storage Diseases and Autoimmune Lymphoproliferative Disorders notes','Chapters 35–39'],['Part 8 · Laboratory haematology','Haematological Investigations and Haematological and Lymphoid Neoplasms: Introduction notes','Chapters 40–43']];
   view.innerHTML=`<article class="col chead" id="top"><div class="eyebrow">About this book</div><h1>Credits and sources</h1><p>Who wrote what, where every image comes from, and the tools that make the book work offline.</p></article>
   <div class="col lec">
   <section><h2>Authors</h2><p><b>Prof. Abeer Mohammed, MD PhD</b>, Professor of Clinical Pathology, Faculty of Medicine for Girls, Al-Azhar University: scientific content. <b>Ass. Prof. Islam Fathy Elnakeeb</b>, Assistant Professor of Clinical Pathology, Faculty of Medicine, Aswan University: concept, design, editing and the interactive edition, built with AI assistance (Claude). The authors offer this book free for public benefit.</p><p>All lecture content, criteria, algorithms, micrographs and laboratory images in Parts 1 to 8 come from her lecture notes and her teaching on the <a href="https://www.ecpatlas.com/hematology-atlas/hema-lectures" target="_blank" rel="noopener">Egyptian Clinical Pathology Atlas</a>. Lecture content © Prof. Abeer Mohammed. The Foundations part and the Practice page are supplementary and are described below.</p></section>
   <section><h2>Source notes</h2><div class="tbl"><table><thead><tr><th>Part</th><th>Dr Abeer's notes</th><th>Chapters</th></tr></thead><tbody>${src.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div><p class="note">Each chapter names the exact pages it draws on under its title.</p></section>
+  <section><h2>Permission and licence</h2><p>The six original books by Prof. Abeer Mohammed in the <a href="#book">Original books</a> reader (flow cytometry, myeloid neoplasms, lymphoid neoplasms, haemostasis, and the full and concise red cell notes), and the lecture content drawn from them, are used with her written permission.</p><p>The text, redrawn diagrams and software of this edition are shared under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence. This licence does not cover third-party figures and photographs, which keep their own rights; an audit of image sources is in progress.</p><p class="note">Trial content pending Prof. Abeer's review: the Egyptian Arabic voice in the FlowEdu simulator and the newer FlowEdu guided lessons.</p></section>
   <section><h2>Supplementary material</h2><p><b>The Foundations part, normal blood and marrow (chapters F1–F7)</b> and the <a href="#practice">Practice</a> page (flashcards, questions, cases, algorithms and checklists) were not taken from Dr Abeer's notes. They were written by Ass. Prof. Islam Fathy Elnakeeb, with AI assistance, from standard references, and are labelled as supplementary wherever they appear:</p><ul><li>Dacie and Lewis Practical Haematology, 11th ed.</li><li>Bain, Blood Cells: A Practical Guide, 5th ed.; Bain et al., Bone Marrow Pathology, 4th ed.</li><li>Hoffbrand et al., Postgraduate Haematology, 7th ed.</li><li>Jaffe et al., Hematopathology, 2nd ed.</li><li>WHO Classification of Haematolymphoid Tumours, 5th ed. (2022) and the International Consensus Classification (2022); ELN 2022 AML recommendations; IMWG myeloma criteria</li><li>ISTH guidance and the ASH/ISTH/NHF/WFH 2021 von Willebrand disease guidelines</li></ul><p class="note">Each supplementary chapter lists its own references at the end.</p></section>
   <section><h2>Videos</h2><p>All videos are Dr Abeer's own lectures on her YouTube channel, <a href="https://www.youtube.com/@abeermohammed135" target="_blank" rel="noopener">@abeermohammed135</a>. They stream from YouTube and need an internet connection.</p></section>
   <section><h2>Images</h2><ul>
@@ -1222,7 +1292,7 @@ async function animStart(img,bar){
   raf=requestAnimationFrame(frame);upd()}
 
 /* ---------- 3D lab (lazy-loads three.js) ---------- */
-const L3META={endo:['Endothelium in haemostasis','One vessel wall, six scenes: the barrier, prostacyclin and nitric oxide, the anticoagulant surface, fibrinolysis, then injury and the switch to a procoagulant surface.'],endoac:['Natural anticoagulants on the endothelium','Watch antithrombin on heparan sulphate, TFPI, thrombomodulin and activated protein C at work. Compare factor V Leiden and protein C deficiency.'],endovwf:['Von Willebrand factor release and ADAMTS13','Weibel–Palade bodies release ultra-large strings that catch platelets until ADAMTS13 trims them. Compare TTP.'],pnh:['Complement and PNH','See CD55 and CD59 on their GPI anchors protect a red cell, then watch C3b and the membrane attack complex punch holes in a PNH cell. Compare eculizumab and proximal inhibitors.'],fib:['Fibrinolysis','Watch tPA and plasminogen meet on fibrin, plasmin cut the fibres and D-dimer break free, then PAI-1 and α2-antiplasmin shut it down. Compare tranexamic acid, thrombolysis and high PAI-1.'],iron:['Iron absorption and hepcidin','Follow iron from the gut lumen through DMT1, ferritin and ferroportin onto transferrin, and see how hepcidin shuts the gate. Compare iron deficiency, inflammation and haemochromatosis.'],
+const L3META={flowcyt:['Inside a flow cytometer','Follow cells from the sheath stream through the laser, see forward and side scatter and two fluorescence colours reach their detectors, and watch each cell become a dot on the plot. Compare normal blood, acute leukaemia and a high flow rate.'],spleen:['The spleen as a red cell filter','Follow red cells from an open arteriole through the cords of Billroth and watch them squeeze through the slits of a venous sinus. See pitting and culling, then compare hereditary spherocytosis, sickle cell disease and warm AIHA.'],endo:['Endothelium in haemostasis','One vessel wall, six scenes: the barrier, prostacyclin and nitric oxide, the anticoagulant surface, fibrinolysis, then injury and the switch to a procoagulant surface.'],endoac:['Natural anticoagulants on the endothelium','Watch antithrombin on heparan sulphate, TFPI, thrombomodulin and activated protein C at work. Compare factor V Leiden and protein C deficiency.'],endovwf:['Von Willebrand factor release and ADAMTS13','Weibel–Palade bodies release ultra-large strings that catch platelets until ADAMTS13 trims them. Compare TTP.'],pnh:['Complement and PNH','See CD55 and CD59 on their GPI anchors protect a red cell, then watch C3b and the membrane attack complex punch holes in a PNH cell. Compare eculizumab and proximal inhibitors.'],fib:['Fibrinolysis','Watch tPA and plasminogen meet on fibrin, plasmin cut the fibres and D-dimer break free, then PAI-1 and α2-antiplasmin shut it down. Compare tranexamic acid, thrombolysis and high PAI-1.'],iron:['Iron absorption and hepcidin','Follow iron from the gut lumen through DMT1, ferritin and ferroportin onto transferrin, and see how hepcidin shuts the gate. Compare iron deficiency, inflammation and haemochromatosis.'],
   coag:['Coagulation on cell surfaces','Initiation on the tissue-factor cell, amplification and propagation on the platelet, then fibrin. Compare haemophilia A and B, and heparin with antithrombin.'],
   hb:['Haemoglobin molecule','Watch oxygen load cooperatively as the molecule switches from T to R and 2,3-DPG leaves. Compare HbF and HbS, and see sickle fibres form.'],
   membrane:['Red cell membrane','See the lipid bilayer, band 3, ankyrin and the spectrin net. Stretch it, then compare a vertical defect (spherocytosis) with a horizontal one (elliptocytosis).'],
@@ -1546,6 +1616,7 @@ W.dtree=function(w){const N=data(w);let path=['start'];
 /* ---------- Practice page ---------- */
 let PRACT=null;const PR={deck:0,mode:'flash',sub:0};
 async function practice(){
+  {const pm=/^practice\/(\d+)\/(\w+)(?:\/(\d+))?$/.exec(location.hash.slice(1));if(pm){PR.deck=+pm[1];PR.mode=pm[2];PR.sub=+(pm[3]||0)}}
   view.innerHTML='<p class="col note" style="padding-top:2rem">Loading practice…</p>';
   try{if(!PRACT){const r=await fetch('practice.json');if(!r.ok)throw 0;PRACT=await r.json()}}
   catch(e){view.innerHTML=`<div class="col"><h1>Practice not available</h1><p>Open this page once while online so it is saved for offline use.</p><p><a href="#home">Back to contents</a></p></div>`;return}
@@ -1646,6 +1717,60 @@ async function animations(){
 
 /* ---------- Videos index ---------- */
 let VIDS=null;
+/* ---- Original notes: book reader ---- */
+const BOOKS={flow:{t:'Flow cytometry',sub:'69 pages · Chapters 26 and 27 in the app'},myeloid:{t:'Myeloid proliferations and neoplasms',sub:'337 pages · Chapters 12 to 19 in the app'},lymphoid:{t:'Lymphoid neoplasms',sub:'237 pages · Chapters 20 to 25 in the app'},hemostasis:{t:'Haemostasis and thrombosis',sub:'183 pages · Chapters 28 to 34 in the app'},rbc:{t:'Red cell disorders, full notes',sub:'260 pages · Chapters 1 to 9 in the app'},rbcmini:{t:'Red cell disorders, concise notes',sub:'122 pages · The short version, chapters 1 to 9 in the app'}};
+const BKREF={26:['flow',2],27:['flow',17],12:['myeloid',2],13:['myeloid',9],14:['myeloid',113],15:['myeloid',131],16:['myeloid',170],17:['myeloid',193],18:['myeloid',284],19:['myeloid',300],20:['lymphoid',2],21:['lymphoid',29],22:['lymphoid',69],23:['lymphoid',91],24:['lymphoid',130],25:['lymphoid',183],28:['hemostasis',2],29:['hemostasis',47],30:['hemostasis',77],31:['hemostasis',118],32:['hemostasis',155],33:['hemostasis',158],34:['hemostasis',173],1:['rbc',3],2:['rbc',6],3:['rbc',54],4:['rbc',103],5:['rbc',110],6:['rbc',161],7:['rbc',176],8:['rbc',196],9:['rbc',235]};
+const BKREF2={1:['rbcmini',3],2:['rbcmini',8],3:['rbcmini',31],4:['rbcmini',45],5:['rbcmini',47],6:['rbcmini',74],7:['rbcmini',83],8:['rbcmini',92],9:['rbcmini',113]};
+const BKC={};
+function lsGet(k,d){try{const v=localStorage.getItem(k);return v===null?d:v}catch(e){return d}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function bookShelf(){
+  view.innerHTML=`<article class="col chead" id="top"><div class="eyebrow">Original notes</div><h1>Prof. Abeer Mohammed's lecture notes</h1>
+    <p>Her original text and figures, unchanged, laid out for comfortable reading on a tablet or phone. Each section links to the matching interactive chapter, and each chapter links back here.</p>
+    <div class="meta"><span>Works offline once saved</span></div></article>
+    <section class="col">${Object.entries(BOOKS).map(([k,b])=>`<div class="bk-shelf"><a class="at-cta" href="#book/${k}"><span class="eyebrow">Book</span><b>${b.t}</b><span>${b.sub}</span></a><button class="btn sm bk-save" data-slug="${k}">⬇ Save pictures for offline reading</button></div>`).join('')}
+    <p class="note">The text of every book is saved with the app. The pictures are saved when you open a section, or all at once with the button under each book (about 5 to 12 MB each).</p></section>`+footer();
+  view.querySelectorAll('.bk-save').forEach(btn=>btn.onclick=async()=>{const slug=btn.dataset.slug;btn.disabled=true;let k=0,bytes=0;
+    try{for(;;){btn.textContent=`Saving… part ${k+1}`;const r=await fetch(`book/${slug}-img${k}.json`);if(!r.ok||/html/.test(r.headers.get('content-type')||''))break;bytes+=(await r.blob()).size;k++}
+      btn.textContent=k?`✓ Saved for offline (${(bytes/1048576).toFixed(1)} MB)`:'Nothing to save'}catch(e){btn.textContent='Could not save. Check the connection and try again.';btn.disabled=false}});
+  document.title='Original notes · Interactive Haematology Diagnosis';buildToc('book');scrollTo(0,0)}
+async function book(slug,a,b){
+  if(!slug||!BOOKS[slug]){bookShelf();return}
+  if(!BKC[slug]){view.innerHTML='<p class="col note" style="padding-top:2rem">Loading book…</p>';
+    try{const r=await fetch(`book/${slug}.json`);if(!r.ok)throw 0;BKC[slug]=await r.json()}
+    catch(e){view.innerHTML=`<div class="col"><h1>Book not available</h1><p>Open this book once while online so it is saved for offline reading.</p><p><a href="#home">Back to contents</a></p></div>`;return}}
+  const B=BKC[slug],S=B.sections;let i,spot=b;
+  if(a===undefined)i=Math.min(S.length-1,+lsGet('bkpos-'+slug,0)||0);
+  else if(/^pg\d+$/.test(a)){const pg=+a.slice(2);i=0;S.forEach((s,k)=>{if(s.p<=pg)i=k});spot=a}
+  else i=Math.max(0,Math.min(S.length-1,+a||0));
+  const s=S[i];lsSet('bkpos-'+slug,i);
+  const chip=n=>READY.includes(n)?`<a class="bk-app" href="#ch${n}">▶ Open in the app: ${LABEL[n]} · ${TITLES[n]}</a>`:'';
+  const tools=(s.links||[]).map(([t,h])=>`<a href="${h}">${esc(t)}</a>`).join('');
+  const toc=S.map((x,k)=>`<li${k===i?' class="cur"':''}><a href="#book/${slug}/${k}"><span>${esc(x.t)}</span><small>p. ${x.p}</small></a>${k===i&&x.toc.length?`<ol>${x.toc.map((t,j)=>`<li><a href="#book/${slug}/${k}/s${k}-${j}">${esc(t)}</a></li>`).join('')}</ol>`:''}</li>`).join('');
+  view.innerHTML=`<div class="col bk" id="top">
+    <div class="bk-bar"><button class="btn" id="bkToc" aria-expanded="false">☰ Contents</button>
+      <span class="bk-where"><b>${esc(B.title)}</b> · ${i+1} of ${S.length}</span>
+      <span class="bk-fs"><button class="btn" id="bkMinus" aria-label="Smaller text">A−</button><button class="btn" id="bkPlus" aria-label="Larger text">A+</button></span>
+      ${s.ch&&READY.includes(s.ch)?`<a class="btn primary bk-go" href="#ch${s.ch}">▶ App</a>`:''}</div>
+    <nav class="bk-toc" id="bkTocBox" hidden><input type="search" id="bkQ" placeholder="Search this book" aria-label="Search this book"><ol id="bkList">${toc}</ol><ol id="bkHits" hidden></ol></nav>
+    <header class="bk-head"><div class="eyebrow">Original notes · Prof. Abeer Mohammed · from page ${s.p}</div><h1>${esc(s.t)}</h1>
+      <p class="bk-links">${chip(s.ch)}${tools?`<span class="bk-tools"><b>Practise:</b> ${tools}</span>`:''}</p></header>
+    <div class="bk-body" id="bkBody">${s.html}</div>
+    <p class="bk-links bk-end">${chip(s.ch)}</p>
+    <nav class="chnav">${i?`<a href="#book/${slug}/${i-1}">← ${esc(S[i-1].t)}</a>`:'<span></span>'}${i<S.length-1?`<a href="#book/${slug}/${i+1}">${esc(S[i+1].t)} →</a>`:`<a href="#book">All books</a>`}</nav></div>`+footer();
+  setHdr();const body=$('#bkBody');let fs=+lsGet('bkfs',1)||1;const setFs=()=>{body.style.fontSize=fs+'em'};setFs();
+  $('#bkMinus').onclick=()=>{fs=Math.max(.85,+(fs-.1).toFixed(2));lsSet('bkfs',fs);setFs()};$('#bkPlus').onclick=()=>{fs=Math.min(1.6,+(fs+.1).toFixed(2));lsSet('bkfs',fs);setFs()};
+  const box=$('#bkTocBox'),tb=$('#bkToc');tb.onclick=()=>{box.hidden=!box.hidden;tb.setAttribute('aria-expanded',String(!box.hidden));if(!box.hidden){const c=box.querySelector('li.cur');if(c)c.scrollIntoView({block:'nearest'})}};
+  $('#bkQ').oninput=e=>{const v=e.target.value.trim().toLowerCase(),L=$('#bkList'),H=$('#bkHits');if(v.length<2){L.hidden=false;H.hidden=true;return}
+    if(!B._txt)B._txt=S.map(x=>x.html.replace(/<span class="bk-pg".*?<\/span>/g,' ').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\s+/g,' '));
+    let out='';B._txt.forEach((t,k)=>{const lo=t.toLowerCase();let at=lo.indexOf(v),n=0;if(at<0&&!S[k].t.toLowerCase().includes(v))return;let c=at;while(c>=0){n++;c=lo.indexOf(v,c+v.length)}
+      const sn=at<0?'':esc(t.slice(Math.max(0,at-40),at))+'<mark>'+esc(t.slice(at,at+v.length))+'</mark>'+esc(t.slice(at+v.length,at+v.length+60));
+      out+=`<li><a href="#book/${slug}/${k}"><span>${esc(S[k].t)}</span><small>${n} match${n===1?'':'es'}</small></a>${sn?`<p class="bk-sn">…${sn}…</p>`:''}</li>`});
+    H.innerHTML=out||'<li class="note">No match in this book.</li>';L.hidden=true;H.hidden=false};
+  if(s.pk!=null){const pk=slug+'#'+s.pk;(BKC[pk]||(BKC[pk]=fetch(`book/${slug}-img${s.pk}.json`).then(r=>r.json()))).then(P=>{body.querySelectorAll('img[data-n]').forEach(im=>{const u=P[im.dataset.n];if(u)im.src=u})}).catch(()=>{delete BKC[pk]})}
+  body.querySelectorAll('.bk-fig img').forEach(im=>{im.addEventListener('click',()=>im.closest('figure').classList.toggle('big'))});
+  document.title=`${s.t} · ${B.title} (original notes)`;lsSet('lastpos',JSON.stringify({h:`#book/${slug}/${i}`,t:`${B.title}: ${s.t} (original notes)`}));buildToc('book');crumbs([['Contents','#home'],['Original notes','#book'],[B.title,`#book/${slug}/0`],[s.t]]);
+  const t=spot&&document.getElementById(spot);if(t)setTimeout(()=>t.scrollIntoView({block:'start'}),60);else scrollTo(0,0)}
 async function videos(){
   view.innerHTML='<p class="col note" style="padding-top:2rem">Loading…</p>';
   try{if(!VIDS){const r=await fetch('videos.json');if(!r.ok)throw 0;VIDS=await r.json()}}
