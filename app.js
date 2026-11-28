@@ -197,6 +197,7 @@ function home(){
     <p class="by"><b>Prof. Abeer Mohammed, MD PhD</b><small>Professor of Clinical Pathology, Faculty of Medicine for Girls, Al-Azhar University</small><b>Ass. Prof. Islam Fathy Elnakeeb</b><small>Assistant Professor of Clinical Pathology, Faculty of Medicine, Aswan University</small></p>
     <p class="lede">For medical students, haematology residents, and Master's and MD candidates: Prof. Abeer Mohammed's lecture notes rebuilt with her videos, 3D animations, clickable diagrams, blood film galleries, calculators, cases and quizzes.</p>
     <p class="ded">Offered free by the authors for public benefit.</p>
+    <figure class="promo"><div class="vloc"><video controls preload="none" playsinline poster="media/promo.jpg" src="media/promo.mp4">Your browser does not play this video.</video></div><figcaption class="note">One-minute introduction to the book · <span dir="rtl" lang="ar">فيديو تعريفي في دقيقة</span></figcaption></figure>
     <p class="inst" id="instBox" hidden><button class="btn primary" id="instBtn">⬇ Install on this device</button><span class="note">Works offline and updates itself.</span></p>
     ${lp?`<a class="at-cta nv-cont" href="${lp.h}"><span class="eyebrow">Continue</span><b>${esc(lp.t)}</b><span>Go back to where you stopped reading.</span></a>`:''}
     <a class="at-cta" href="#atlas"><span class="eyebrow">Atlas</span><b>Haematology atlas</b><span>Every blood film, marrow and lab image in one place, with an Identify quiz.</span></a>
